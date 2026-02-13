@@ -24,6 +24,10 @@ const EncounterState = {
     // Track unsaved changes
     _isDirty: false,
 
+    // Auto-save support
+    _autoSaveTimer: null,
+    _AUTO_SAVE_KEY: 'wng-bestiary-autosave',
+
     // Initialize the state
     init() {
         // Start with a clean, empty encounter
@@ -33,6 +37,7 @@ const EncounterState = {
     // Mark encounter as having unsaved changes
     markDirty() {
         this._isDirty = true;
+        this._scheduleAutoSave();
     },
 
     // Mark encounter as saved (no unsaved changes)
@@ -791,5 +796,49 @@ const EncounterState = {
         this.playerCharacters = [];
         this.encounterOrder = null;
         this.markClean(); // Fresh encounter has no unsaved changes
+        this.clearAutoSave();
+    },
+
+    // ===== Auto-Save =====
+
+    // Schedule an auto-save after a 2-second debounce
+    _scheduleAutoSave() {
+        clearTimeout(this._autoSaveTimer);
+        this._autoSaveTimer = setTimeout(() => this._performAutoSave(), 2000);
+    },
+
+    // Perform the auto-save to localStorage
+    _performAutoSave() {
+        if (this.isEmpty()) return;
+        try {
+            const data = {
+                encounter: this.getEncounterData(),
+                timestamp: Date.now()
+            };
+            localStorage.setItem(this._AUTO_SAVE_KEY, JSON.stringify(data));
+        } catch (e) {
+            console.warn('Auto-save failed:', e);
+        }
+    },
+
+    // Check if an auto-save exists
+    hasAutoSave() {
+        return localStorage.getItem(this._AUTO_SAVE_KEY) !== null;
+    },
+
+    // Get the auto-saved data
+    getAutoSave() {
+        try {
+            const raw = localStorage.getItem(this._AUTO_SAVE_KEY);
+            return raw ? JSON.parse(raw) : null;
+        } catch (e) {
+            console.warn('Failed to read auto-save:', e);
+            return null;
+        }
+    },
+
+    // Clear the auto-save
+    clearAutoSave() {
+        localStorage.removeItem(this._AUTO_SAVE_KEY);
     }
 };
