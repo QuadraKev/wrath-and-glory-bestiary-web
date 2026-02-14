@@ -466,6 +466,9 @@ const EncounterTab = {
                            min="0" max="99">
                     <span class="encounter-item-name">${this.escapeHtml(pc.name)}</span>
                     <span class="player-badge">PC</span>
+                    <button class="delete-btn" data-id="${item.id}" data-type="player" title="Remove Player">
+                        <span>&times;</span>
+                    </button>
                 </div>
             </div>
         `;
@@ -869,7 +872,7 @@ const EncounterTab = {
                     </div>
                 </div>
 
-                <p class="mob-death-note">Members die if they take damage exceeding Resilience, or Shock equal to Max Shock.</p>
+                <p class="mob-death-note">Troops are considered dead when they exceed max Shock. Elites and Adversaries are Exhausted at max Shock.</p>
 
                 <div class="mob-members-section">
                     <div class="mob-members-header">Members</div>
@@ -1300,6 +1303,9 @@ const EncounterTab = {
             EncounterState.removeIndividual(id);
         } else if (type === 'mob') {
             EncounterState.removeMob(id);
+        } else if (type === 'player') {
+            EncounterState.removePlayerCharacter(id);
+            this.renderPlayerCharacterInputs();
         }
         if (this.selectedId === id) {
             this.selectedId = null;

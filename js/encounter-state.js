@@ -195,12 +195,11 @@ const EncounterState = {
         return this.individuals.find(i => i.id === id);
     },
 
-    // Check if individual is dead (wounds >= max OR shock >= max)
+    // Check if individual is dead (wounds >= max only; shock does not auto-kill)
     isIndividualDead(id) {
         const individual = this.individuals.find(i => i.id === id);
         if (!individual) return false;
-        return individual.currentWounds >= individual.maxWounds ||
-               (individual.maxShock > 0 && individual.currentShock >= individual.maxShock);
+        return individual.currentWounds >= individual.maxWounds;
     },
 
     // Mark an individual as dead (set wounds to max)
