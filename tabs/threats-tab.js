@@ -215,10 +215,19 @@ const ThreatsTab = {
         this.selectedThreatId = threatId;
         this.selectedWeaponId = null;
 
+        // Update URL hash without triggering hashchange
+        history.replaceState(null, '', '#threats/' + threatId);
+
         // Update list selection
         document.querySelectorAll('.threat-list-item').forEach(item => {
             item.classList.toggle('selected', item.dataset.threatId === threatId);
         });
+
+        // Scroll selected item into view in the list
+        const selectedItem = document.querySelector('.threat-list-item.selected');
+        if (selectedItem) {
+            selectedItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
 
         // Render detail
         this.renderThreatDetail(threatId);

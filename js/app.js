@@ -37,7 +37,29 @@ const App = {
         // Check for auto-saved state
         this.checkAutoSave();
 
+        // Handle deep link from URL hash
+        this.handleDeepLink();
+        window.addEventListener('hashchange', () => this.handleDeepLink());
+
         console.log('Application initialized.');
+    },
+
+    // Handle deep link navigation from URL hash
+    handleDeepLink() {
+        const hash = location.hash;
+        if (!hash || hash.length < 2) return;
+
+        const parts = hash.substring(1).split('/');
+        const section = parts[0];
+        const id = parts.slice(1).join('/');
+
+        if (section === 'threats' && id) {
+            this.switchTab('threats');
+            ThreatsTab.selectThreat(id);
+        } else if (section === 'glossary' && id) {
+            this.switchTab('glossary');
+            GlossaryTab.navigateToEntry(id);
+        }
     },
 
     // Initialize close confirmation handler

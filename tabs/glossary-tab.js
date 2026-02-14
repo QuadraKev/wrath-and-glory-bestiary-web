@@ -150,10 +150,16 @@ const GlossaryTab = {
             this.expandedEntries.delete(entryId);
             entryElement.classList.remove('expanded');
             body.classList.add('hidden');
+
+            // Clear URL hash
+            history.replaceState(null, '', location.pathname + location.search);
         } else {
             this.expandedEntries.add(entryId);
             entryElement.classList.add('expanded');
             body.classList.remove('hidden');
+
+            // Update URL hash
+            history.replaceState(null, '', '#glossary/' + entryId);
 
             // Enhance glossary terms if not already done
             const description = body.querySelector('.glossary-entry-description');
@@ -162,5 +168,43 @@ const GlossaryTab = {
                 description.dataset.enhanced = 'true';
             }
         }
+    },
+
+    // Navigate to a specific entry by ID (for deep linking)
+    navigateToEntry(entryId) {
+        // Reset filters so the entry is visible
+        this.currentCategory = 'all';
+        this.searchText = '';
+        document.getElementById('glossary-search').value = '';
+        document.querySelectorAll('.glossary-filter-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.category === 'all');
+        });
+
+        // Re-render to ensure all entries are in the DOM
+        this.renderGlossary();
+
+        // Find the target entry element
+        const entryEl = document.querySelector(`.glossary-entry[data-entry-id="${entryId}"]`);
+        if (!entryEl) return;
+
+        // Expand it
+        this.expandedEntries.add(entryId);
+        entryEl.classList.add('expanded');
+        const body = entryEl.querySelector('.glossary-entry-body');
+        body.classList.remove('hidden');
+
+        // Enhance glossary terms
+        const description = body.querySelector('.glossary-entry-description');
+        if (description && !description.dataset.enhanced) {
+            Glossary.enhanceElement(description);
+            description.dataset.enhanced = 'true';
+        }
+
+        // Scroll into view
+        entryEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        // Highlight briefly
+        entryEl.classList.add('glossary-entry-highlight');
+        setTimeout(() => entryEl.classList.remove('glossary-entry-highlight'), 2000);
     }
 };

@@ -917,6 +917,15 @@ body {
     border-color: var(--accent-gold);
 }
 
+.glossary-entry.glossary-entry-highlight {
+    animation: glossary-highlight-fade 2s ease-out;
+}
+
+@keyframes glossary-highlight-fade {
+    0% { box-shadow: 0 0 12px 2px var(--accent-gold); }
+    100% { box-shadow: none; }
+}
+
 .glossary-entry-header {
     display: flex;
     align-items: center;
