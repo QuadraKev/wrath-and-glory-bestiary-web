@@ -91,60 +91,14 @@ const App = {
 
     // ===== Auto-Save Restore =====
 
-    // Check for auto-saved state on startup
+    // Check for auto-saved state on startup and auto-load it
     checkAutoSave() {
-        const saved = EncounterState.getAutoSave();
-        if (saved) {
-            this.showRestoreBanner(saved.timestamp);
-        }
-    },
-
-    // Show the restore banner
-    showRestoreBanner(timestamp) {
-        const banner = document.createElement('div');
-        banner.className = 'autosave-banner';
-        banner.id = 'autosave-banner';
-
-        const date = new Date(timestamp);
-        const timeStr = date.toLocaleString();
-
-        banner.innerHTML = `
-            <span class="autosave-text">Unsaved encounter found from <strong>${timeStr}</strong></span>
-            <div class="autosave-actions">
-                <button class="autosave-btn-restore" id="autosave-restore">Restore</button>
-                <button class="autosave-btn-dismiss" id="autosave-dismiss">Dismiss</button>
-            </div>
-        `;
-
-        const tabNav = document.querySelector('.tab-nav');
-        tabNav.parentNode.insertBefore(banner, tabNav.nextSibling);
-
-        document.getElementById('autosave-restore').addEventListener('click', () => {
-            this.restoreAutoSave();
-        });
-        document.getElementById('autosave-dismiss').addEventListener('click', () => {
-            EncounterState.clearAutoSave();
-            this.removeRestoreBanner();
-        });
-    },
-
-    // Restore auto-saved state
-    restoreAutoSave() {
         const saved = EncounterState.getAutoSave();
         if (!saved || !saved.encounter) return;
 
         EncounterState.loadFromData(saved.encounter);
         this.switchTab('encounter');
         EncounterTab.refresh();
-        this.removeRestoreBanner();
-    },
-
-    // Remove the restore banner with animation
-    removeRestoreBanner() {
-        const banner = document.getElementById('autosave-banner');
-        if (!banner) return;
-        banner.classList.add('autosave-banner-hide');
-        setTimeout(() => banner.remove(), 300);
     }
 };
 
