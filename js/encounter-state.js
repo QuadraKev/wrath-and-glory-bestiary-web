@@ -5,7 +5,8 @@ const EncounterState = {
     settings: {
         tier: 1,
         playerCount: 4,
-        name: "Unnamed Encounter"
+        name: "Unnamed Encounter",
+        round: 1
     },
 
     // Individual threat instances
@@ -611,6 +612,20 @@ const EncounterState = {
         this.markDirty();
     },
 
+    // ===== Round Tracking =====
+
+    incrementRound() {
+        this.settings.round++;
+        this.markDirty();
+    },
+
+    decrementRound() {
+        if (this.settings.round > 1) {
+            this.settings.round--;
+            this.markDirty();
+        }
+    },
+
     // ===== Helpers =====
 
     // Check if a threat can be in a mob at current tier
@@ -766,8 +781,9 @@ const EncounterState = {
 
         if (result.success && result.data) {
             const parsed = result.data;
-            this.settings = parsed.settings || { tier: 1, playerCount: 4, name: result.fileName };
+            this.settings = parsed.settings || { tier: 1, playerCount: 4, name: result.fileName, round: 1 };
             this.settings.name = result.fileName; // Use filename as encounter name
+            if (this.settings.round === undefined) this.settings.round = 1;
             this.individuals = parsed.individuals || [];
             this.mobs = parsed.mobs || [];
             this.playerCharacters = parsed.playerCharacters || [];
@@ -780,7 +796,8 @@ const EncounterState = {
 
     // Load encounter from data object (used by close dialog save)
     loadFromData(data) {
-        this.settings = data.settings || { tier: 1, playerCount: 4, name: "Unnamed Encounter" };
+        this.settings = data.settings || { tier: 1, playerCount: 4, name: "Unnamed Encounter", round: 1 };
+        if (this.settings.round === undefined) this.settings.round = 1;
         this.individuals = data.individuals || [];
         this.mobs = data.mobs || [];
         this.playerCharacters = data.playerCharacters || [];
@@ -789,7 +806,7 @@ const EncounterState = {
 
     // Clear the current encounter
     clearEncounter() {
-        this.settings = { tier: 1, playerCount: 4, name: "Unnamed Encounter" };
+        this.settings = { tier: 1, playerCount: 4, name: "Unnamed Encounter", round: 1 };
         this.individuals = [];
         this.mobs = [];
         this.playerCharacters = [];

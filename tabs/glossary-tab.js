@@ -4,13 +4,15 @@ const GlossaryTab = {
     currentCategory: 'all',
     searchText: '',
     expandedEntries: new Set(),
+    _searchTimer: null,
 
     init() {
         // Initialize search
         const searchInput = document.getElementById('glossary-search');
         searchInput.addEventListener('input', (e) => {
             this.searchText = e.target.value.toLowerCase();
-            this.renderGlossary();
+            clearTimeout(this._searchTimer);
+            this._searchTimer = setTimeout(() => this.renderGlossary(), 300);
         });
 
         // Initialize category filters
@@ -119,6 +121,20 @@ const GlossaryTab = {
             });
         });
 
+        // Bind copy buttons
+        container.querySelectorAll('.btn-copy').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const name = btn.dataset.copyName;
+                const desc = btn.dataset.copyDesc;
+                const text = `${name}: ${desc}`;
+                navigator.clipboard.writeText(text).then(() => {
+                    btn.textContent = 'Copied!';
+                    setTimeout(() => { btn.textContent = 'Copy'; }, 1500);
+                });
+            });
+        });
+
         // Enhance glossary terms in descriptions
         container.querySelectorAll('.glossary-entry-description').forEach(el => {
             Glossary.enhanceElement(el);
@@ -138,6 +154,7 @@ const GlossaryTab = {
                 </div>
                 <div class="glossary-entry-body ${isExpanded ? '' : 'hidden'}">
                     <div class="glossary-entry-description">${entry.description}</div>
+                    <button class="btn-copy" data-copy-name="${this.escapeAttr(entry.name)}" data-copy-desc="${this.escapeAttr(this.stripHtml(entry.description))}">Copy</button>
                 </div>
             </div>
         `;
@@ -206,5 +223,16 @@ const GlossaryTab = {
         // Highlight briefly
         entryEl.classList.add('glossary-entry-highlight');
         setTimeout(() => entryEl.classList.remove('glossary-entry-highlight'), 2000);
+    },
+
+    stripHtml(html) {
+        const div = document.createElement('div');
+        div.innerHTML = html;
+        return div.textContent || div.innerText || '';
+    },
+
+    escapeAttr(text) {
+        if (!text) return '';
+        return text.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     }
 };

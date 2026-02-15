@@ -1253,6 +1253,42 @@ body {
     color: var(--accent-red);
 }
 
+/* Round Tracker */
+.encounter-round-section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.round-btn {
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1;
+    transition: all 0.2s;
+}
+
+.round-btn:hover {
+    background: var(--bg-hover);
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+}
+
+.round-display {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--accent-gold);
+    min-width: 24px;
+    text-align: center;
+}
+
 /* Encounter content wrapper */
 .encounter-content-wrapper {
     display: flex;
@@ -2939,4 +2975,38 @@ body {
 @keyframes autosave-slide-out {
     from { max-height: 60px; opacity: 1; }
     to { max-height: 0; opacity: 0; padding-top: 0; padding-bottom: 0; border-bottom-width: 0; }
+}
+
+/* ===== Copy Button ===== */
+.btn-copy {
+    display: inline-block;
+    padding: 3px 10px;
+    margin-top: 8px;
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 11px;
+    transition: all 0.2s;
+}
+
+.btn-copy:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+    border-color: var(--accent-gold);
+}
+
+/* Threat Card Header Actions */
+.threat-card-header-actions {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.threat-card-header-actions .btn-copy {
+    margin-top: 0;
+    padding: 6px 12px;
+    font-size: 12px;
 }

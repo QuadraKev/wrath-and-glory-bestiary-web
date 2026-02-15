@@ -3,6 +3,7 @@
 const ThreatsTab = {
     selectedThreatId: null,
     selectedWeaponId: null,
+    _searchTimer: null,
     filters: {
         search: '',
         selectedTier: 'all',
@@ -16,7 +17,8 @@ const ThreatsTab = {
         const searchInput = document.getElementById('search-input');
         searchInput.addEventListener('input', (e) => {
             this.filters.search = e.target.value;
-            this.renderThreatList();
+            clearTimeout(this._searchTimer);
+            this._searchTimer = setTimeout(() => this.renderThreatList(), 300);
         });
 
         // Initialize tier filter dropdown
@@ -292,6 +294,18 @@ const ThreatsTab = {
 
         // Attach add to encounter handlers
         this.bindAddToEncounterEvents(container, threatId);
+
+        // Attach copy handler
+        const copyBtn = container.querySelector('#btn-copy-threat');
+        if (copyBtn) {
+            copyBtn.addEventListener('click', () => {
+                const text = this.buildThreatCopyText(threat);
+                navigator.clipboard.writeText(text).then(() => {
+                    copyBtn.textContent = 'Copied!';
+                    setTimeout(() => { copyBtn.textContent = 'Copy'; }, 1500);
+                });
+            });
+        }
     },
 
     bindAddToEncounterEvents(container, threatId) {
@@ -404,7 +418,10 @@ const ThreatsTab = {
                 <div class="threat-card-header">
                     <div class="threat-card-header-top">
                         <h2 class="threat-card-title">${threat.name}</h2>
-                        ${addToEncounterHtml}
+                        <div class="threat-card-header-actions">
+                            <button class="btn-copy" id="btn-copy-threat">Copy</button>
+                            ${addToEncounterHtml}
+                        </div>
                     </div>
                     ${threat.source ? `<span class="threat-card-source">${DataLoader.normalizeSource(threat.source)}</span>` : ''}
                     ${threat.quote ? `
@@ -730,6 +747,111 @@ const ThreatsTab = {
                 ` : ''}
             </div>
         `;
+    },
+
+    buildThreatCopyText(threat) {
+        const lines = [];
+
+        // Name
+        lines.push(threat.name);
+
+        // Source + Keywords
+        const parts = [];
+        if (threat.source) parts.push(DataLoader.normalizeSource(threat.source));
+        if (threat.keywords && threat.keywords.length > 0) {
+            parts.push('Keywords: ' + threat.keywords.join(', '));
+        }
+        if (parts.length > 0) lines.push(parts.join(' | '));
+
+        // Tier/Threat
+        if (threat.tierThreat) {
+            const tierLabels = { 'T': 'Troop', 'E': 'Elite', 'A': 'Adversary', 'MC': 'Mob/Crew', '-': '-' };
+            const tiers = Object.keys(threat.tierThreat).sort((a, b) => parseInt(a) - parseInt(b));
+            const tierParts = tiers.map(t => `Tier ${t}: ${tierLabels[threat.tierThreat[t]] || threat.tierThreat[t]}`);
+            lines.push(tierParts.join(' | '));
+        }
+
+        // Attributes
+        if (threat.attributes) {
+            lines.push('');
+            lines.push('ATTRIBUTES');
+            const attrOrder = ['S', 'T', 'A', 'I', 'Wil', 'Int', 'Fel'];
+            const attrParts = attrOrder.map(a => `${a}: ${threat.attributes[a] || '-'}`);
+            lines.push(attrParts.join(' | '));
+        }
+
+        // Defence, Resilience, Wounds, Shock
+        lines.push('');
+        const resValue = threat.resilience?.value || '-';
+        const resNote = threat.resilience?.note ? ` (${threat.resilience.note})` : '';
+        const combatParts = [
+            `Defence: ${threat.defence || '-'}`,
+            `Resilience: ${resValue}${resNote}`,
+            `Wounds: ${threat.wounds || '-'}`,
+            `Shock: ${threat.shock || '-'}`
+        ];
+        lines.push(combatParts.join(' | '));
+
+        // Speed, Size, Conviction, Resolve
+        const speedNote = threat.speedNote ? ` (${threat.speedNote})` : '';
+        const bottomParts = [
+            `Speed: ${threat.speed || '-'}${speedNote}`,
+            `Size: ${threat.size || '-'}`,
+            `Conviction: ${threat.conviction ?? '-'}`,
+            `Resolve: ${threat.resolve ?? '-'}`
+        ];
+        lines.push(bottomParts.join(' | '));
+
+        // Skills
+        if (threat.skills) {
+            lines.push('');
+            lines.push('SKILLS');
+            lines.push(threat.skills);
+        }
+
+        // Abilities
+        if (threat.abilities && threat.abilities.length > 0) {
+            lines.push('');
+            lines.push('ABILITIES');
+            threat.abilities.forEach(ability => {
+                let line = `${ability.type}: ${ability.name}`;
+                if (ability.type === 'ACTION' && ability.weaponId) {
+                    const weapon = DataLoader.getThreatWeapon(ability.weaponId);
+                    if (weapon) {
+                        line += ` ${this.formatWeaponStats(weapon)}`;
+                    }
+                } else if (ability.stats) {
+                    line += `, ${ability.stats}`;
+                }
+                lines.push(line);
+                if (ability.description) {
+                    const div = document.createElement('div');
+                    div.innerHTML = ability.description;
+                    const plainDesc = div.textContent || div.innerText || '';
+                    lines.push(`  ${plainDesc}`);
+                }
+            });
+        }
+
+        // Bonuses
+        if (threat.bonuses && threat.bonuses.length > 0) {
+            lines.push('');
+            lines.push('BONUSES');
+            threat.bonuses.forEach(bonus => {
+                const div = document.createElement('div');
+                div.innerHTML = bonus.description;
+                const plainDesc = div.textContent || div.innerText || '';
+                lines.push(`${bonus.name}: ${plainDesc}`);
+            });
+        }
+
+        // Determination
+        if (threat.determination) {
+            lines.push('');
+            lines.push(`DETERMINATION: ${threat.determination}`);
+        }
+
+        return lines.join('\n');
     },
 
     showKeywordPopup(keyword, anchorElement) {

@@ -6,7 +6,7 @@
     <meta name="robots" content="noindex, nofollow">
 
     <title>Wrath and Glory Bestiary</title>
-    <link rel="stylesheet" href="css/styles.css?v=6">
+    <link rel="stylesheet" href="css/styles.css?v=7">
 </head>
 <body>
     <div id="app">
@@ -126,6 +126,12 @@
                         <label class="action-bar-label">Encounter:</label>
                         <input type="text" id="encounter-name" class="encounter-name-input" placeholder="Unnamed Encounter">
                     </div>
+                    <div class="encounter-round-section">
+                        <label class="action-bar-label">Round:</label>
+                        <button id="btn-round-minus" class="round-btn">&minus;</button>
+                        <span id="round-display" class="round-display">1</span>
+                        <button id="btn-round-plus" class="round-btn">+</button>
+                    </div>
                     <div class="encounter-actions">
                         <button id="btn-save-encounter" class="btn-action">Save Encounter</button>
                         <button id="btn-load-encounter" class="btn-action">Load Encounter</button>
@@ -238,13 +244,13 @@
     </script>
 
     <!-- Scripts -->
-    <script src="js/web-api.js?v=6"></script>
-    <script src="js/data-loader.js?v=6"></script>
-    <script src="js/glossary.js?v=6"></script>
-    <script src="js/encounter-state.js?v=6"></script>
-    <script src="tabs/threats-tab.js?v=6"></script>
-    <script src="tabs/glossary-tab.js?v=6"></script>
-    <script src="tabs/encounter-tab.js?v=6"></script>
-    <script src="js/app.js?v=6"></script>
+    <script src="js/web-api.js?v=7"></script>
+    <script src="js/data-loader.js?v=7"></script>
+    <script src="js/glossary.js?v=7"></script>
+    <script src="js/encounter-state.js?v=7"></script>
+    <script src="tabs/threats-tab.js?v=7"></script>
+    <script src="tabs/glossary-tab.js?v=7"></script>
+    <script src="tabs/encounter-tab.js?v=7"></script>
+    <script src="js/app.js?v=7"></script>
 </body>
 </html>

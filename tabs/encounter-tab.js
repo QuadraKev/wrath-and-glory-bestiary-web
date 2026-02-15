@@ -60,6 +60,17 @@ const EncounterTab = {
         document.getElementById('btn-load-players').addEventListener('click', () => {
             this.handleLoadPlayers();
         });
+
+        // Round tracker
+        document.getElementById('btn-round-minus').addEventListener('click', () => {
+            EncounterState.decrementRound();
+            this.renderRoundDisplay();
+        });
+
+        document.getElementById('btn-round-plus').addEventListener('click', () => {
+            EncounterState.incrementRound();
+            this.renderRoundDisplay();
+        });
     },
 
     render() {
@@ -75,6 +86,11 @@ const EncounterTab = {
         document.getElementById('encounter-tier').value = EncounterState.settings.tier;
         document.getElementById('encounter-players').value = EncounterState.settings.playerCount;
         document.getElementById('encounter-name').value = EncounterState.settings.name;
+        this.renderRoundDisplay();
+    },
+
+    renderRoundDisplay() {
+        document.getElementById('round-display').textContent = EncounterState.settings.round;
     },
 
     // ===== Player Character Inputs =====
