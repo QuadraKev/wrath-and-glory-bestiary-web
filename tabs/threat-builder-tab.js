@@ -792,9 +792,9 @@ const ThreatBuilderTab = {
                         <span class="ability-picker-item-type">${item.ability.type}</span>
                         <span class="ability-picker-item-name">${item.ability.name}</span>
                         <span class="ability-picker-item-threat">${item.threatName}</span>
+                        <button class="btn-builder-small ability-picker-import" data-type="${item.ability.type}" data-name="${this.escapeAttr(item.ability.name)}" data-desc="${this.escapeAttr(item.ability.description || '')}" data-stats="${this.escapeAttr(item.ability.stats || '')}">Import</button>
                     </div>
                     ${descText ? `<div class="ability-picker-item-desc">${this.truncate(descText, 150)}</div>` : ''}
-                    <button class="btn-builder-small ability-picker-import" data-type="${item.ability.type}" data-name="${this.escapeAttr(item.ability.name)}" data-desc="${this.escapeAttr(item.ability.description || '')}" data-stats="${this.escapeAttr(item.ability.stats || '')}">Import</button>
                 </div>
             `;
         }).join('');
@@ -856,9 +856,9 @@ const ThreatBuilderTab = {
                     <span class="ability-picker-item-type">BONUS</span>
                     <span class="ability-picker-item-name">${item.bonus.name}</span>
                     <span class="ability-picker-item-threat">${item.threatName}</span>
+                    <button class="btn-builder-small ability-picker-import" data-bname="${this.escapeAttr(item.bonus.name)}" data-bdesc="${this.escapeAttr(item.bonus.description || '')}">Import</button>
                 </div>
                 ${item.bonus.description ? `<div class="ability-picker-item-desc">${this.truncate(this.stripHtml(item.bonus.description), 120)}</div>` : ''}
-                <button class="btn-builder-small ability-picker-import" data-bname="${this.escapeAttr(item.bonus.name)}" data-bdesc="${this.escapeAttr(item.bonus.description || '')}">Import</button>
             </div>
         `).join('');
     },
