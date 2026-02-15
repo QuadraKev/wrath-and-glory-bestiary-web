@@ -3,6 +3,7 @@
 const ThreatBuilderTab = {
     _previewTimer: null,
     _templateSearchTimer: null,
+    _pickerSort: { field: null, asc: true }, // 'name' or 'threat'
 
     init() {
         this.bindEvents();
@@ -651,6 +652,9 @@ const ThreatBuilderTab = {
         const existing = document.querySelector('.ability-picker-overlay');
         if (existing) existing.remove();
 
+        // Reset sort state
+        this._pickerSort = { field: null, asc: true };
+
         const overlay = document.createElement('div');
         overlay.className = 'ability-picker-overlay';
 
@@ -696,6 +700,9 @@ const ThreatBuilderTab = {
             });
         }
 
+        // Bind column sort headers
+        this._bindColumnSortHandlers(overlay, mode, searchInput);
+
         // Bind import buttons
         this.bindPickerImportButtons(overlay, mode);
     },
@@ -714,6 +721,11 @@ const ThreatBuilderTab = {
                         <button class="ability-picker-type-btn active" data-type="ALL">ALL</button>
                         ${types.map(t => `<button class="ability-picker-type-btn" data-type="${t}">${t}</button>`).join('')}
                     </div>
+                </div>
+                <div class="ability-picker-columns">
+                    <span class="picker-col-type">Type</span>
+                    <span class="picker-col-name picker-col-sortable" data-sort="name">Name ${this._sortIndicator('name')}</span>
+                    <span class="picker-col-threat picker-col-sortable" data-sort="threat">Threat ${this._sortIndicator('threat')}</span>
                 </div>
                 <div class="ability-picker-list">
                     ${this.renderAbilityPickerItems('ALL', '')}
@@ -742,6 +754,9 @@ const ThreatBuilderTab = {
             );
         }
 
+        // Apply sorting
+        this._sortItems(items, 'ability');
+
         // Limit to 100 results for performance
         items = items.slice(0, 100);
 
@@ -749,17 +764,40 @@ const ThreatBuilderTab = {
             return '<div class="ability-picker-empty">No matching abilities found</div>';
         }
 
-        return items.map((item, i) => `
-            <div class="ability-picker-item" data-picker-index="${i}">
-                <div class="ability-picker-item-header">
-                    <span class="ability-picker-item-type">${item.ability.type}</span>
-                    <span class="ability-picker-item-name">${item.ability.name}</span>
-                    <span class="ability-picker-item-threat">${item.threatName}</span>
+        return items.map((item, i) => {
+            // Build description, including weapon stats for ACTIONs
+            let descText = '';
+            if (item.ability.type === 'ACTION' && item.ability.weaponId) {
+                const weapon = DataLoader.getThreatWeapon(item.ability.weaponId);
+                if (weapon) {
+                    descText = this.formatWeaponStats(weapon);
+                    if (item.ability.description) {
+                        descText += ' — ' + this.stripHtml(item.ability.description);
+                    }
+                } else if (item.ability.description) {
+                    descText = this.stripHtml(item.ability.description);
+                }
+            } else if (item.ability.stats) {
+                descText = item.ability.stats;
+                if (item.ability.description) {
+                    descText += ' — ' + this.stripHtml(item.ability.description);
+                }
+            } else if (item.ability.description) {
+                descText = this.stripHtml(item.ability.description);
+            }
+
+            return `
+                <div class="ability-picker-item" data-picker-index="${i}">
+                    <div class="ability-picker-item-header">
+                        <span class="ability-picker-item-type">${item.ability.type}</span>
+                        <span class="ability-picker-item-name">${item.ability.name}</span>
+                        <span class="ability-picker-item-threat">${item.threatName}</span>
+                    </div>
+                    ${descText ? `<div class="ability-picker-item-desc">${this.truncate(descText, 150)}</div>` : ''}
+                    <button class="btn-builder-small ability-picker-import" data-type="${item.ability.type}" data-name="${this.escapeAttr(item.ability.name)}" data-desc="${this.escapeAttr(item.ability.description || '')}" data-stats="${this.escapeAttr(item.ability.stats || '')}">Import</button>
                 </div>
-                ${item.ability.description ? `<div class="ability-picker-item-desc">${this.truncate(this.stripHtml(item.ability.description), 120)}</div>` : ''}
-                <button class="btn-builder-small ability-picker-import" data-type="${item.ability.type}" data-name="${this.escapeAttr(item.ability.name)}" data-desc="${this.escapeAttr(item.ability.description || '')}" data-stats="${this.escapeAttr(item.ability.stats || '')}">Import</button>
-            </div>
-        `).join('');
+            `;
+        }).join('');
     },
 
     filterAbilityPicker(overlay, searchText) {
@@ -767,6 +805,7 @@ const ThreatBuilderTab = {
         const list = overlay.querySelector('.ability-picker-list');
         list.innerHTML = this.renderAbilityPickerItems(activeType, searchText);
         this.bindPickerImportButtons(overlay, 'ability');
+        this._updateColumnHeaders(overlay);
     },
 
     renderBonusPickerContent() {
@@ -778,6 +817,10 @@ const ThreatBuilderTab = {
                 </div>
                 <div class="ability-picker-filters">
                     <input type="text" class="ability-picker-search" placeholder="Search bonuses...">
+                </div>
+                <div class="ability-picker-columns">
+                    <span class="picker-col-name picker-col-sortable" data-sort="name">Name ${this._sortIndicator('name')}</span>
+                    <span class="picker-col-threat picker-col-sortable" data-sort="threat">Threat ${this._sortIndicator('threat')}</span>
                 </div>
                 <div class="ability-picker-list">
                     ${this.renderBonusPickerItems('')}
@@ -797,6 +840,9 @@ const ThreatBuilderTab = {
                 item.threatName.toLowerCase().includes(searchLower)
             );
         }
+
+        // Apply sorting
+        this._sortItems(items, 'bonus');
 
         items = items.slice(0, 100);
 
@@ -821,6 +867,7 @@ const ThreatBuilderTab = {
         const list = overlay.querySelector('.ability-picker-list');
         list.innerHTML = this.renderBonusPickerItems(searchText);
         this.bindPickerImportButtons(overlay, 'bonus');
+        this._updateColumnHeaders(overlay);
     },
 
     bindPickerImportButtons(overlay, mode) {
@@ -937,6 +984,76 @@ const ThreatBuilderTab = {
             notification.classList.remove('show');
             setTimeout(() => notification.remove(), 300);
         }, 3000);
+    },
+
+    // ===== Picker Sorting =====
+
+    _sortItems(items, itemType) {
+        const { field, asc } = this._pickerSort;
+        if (!field) return;
+
+        const dir = asc ? 1 : -1;
+        items.sort((a, b) => {
+            let aVal, bVal;
+            if (field === 'name') {
+                aVal = (itemType === 'ability' ? a.ability.name : a.bonus.name).toLowerCase();
+                bVal = (itemType === 'ability' ? b.ability.name : b.bonus.name).toLowerCase();
+            } else {
+                aVal = a.threatName.toLowerCase();
+                bVal = b.threatName.toLowerCase();
+            }
+            if (aVal < bVal) return -1 * dir;
+            if (aVal > bVal) return 1 * dir;
+            return 0;
+        });
+    },
+
+    _sortIndicator(field) {
+        if (this._pickerSort.field !== field) return '';
+        return this._pickerSort.asc ? ' ▲' : ' ▼';
+    },
+
+    _bindColumnSortHandlers(overlay, mode, searchInput) {
+        overlay.querySelectorAll('.picker-col-sortable').forEach(col => {
+            col.addEventListener('click', () => {
+                const sortField = col.dataset.sort;
+                if (this._pickerSort.field === sortField) {
+                    this._pickerSort.asc = !this._pickerSort.asc;
+                } else {
+                    this._pickerSort.field = sortField;
+                    this._pickerSort.asc = true;
+                }
+                const search = searchInput?.value || '';
+                if (mode === 'ability') {
+                    this.filterAbilityPicker(overlay, search);
+                } else {
+                    this.filterBonusPicker(overlay, search);
+                }
+            });
+        });
+    },
+
+    _updateColumnHeaders(overlay) {
+        overlay.querySelectorAll('.picker-col-sortable').forEach(col => {
+            const field = col.dataset.sort;
+            const label = field === 'name' ? 'Name' : 'Threat';
+            col.textContent = label + this._sortIndicator(field);
+        });
+    },
+
+    formatWeaponStats(weapon) {
+        const parts = [];
+        if (weapon.damage !== undefined) parts.push(`${weapon.damage}`);
+        if (weapon.ed !== undefined) parts.push(`+${weapon.ed} ED`);
+        if (weapon.ap !== undefined && weapon.ap !== 0) parts.push(`AP ${weapon.ap}`);
+        if (weapon.range) parts.push(`Range ${weapon.range}`);
+        if (weapon.salvo) parts.push(`Salvo ${weapon.salvo}`);
+
+        let result = parts.join(' / ');
+        if (weapon.traits && weapon.traits.length > 0) {
+            result += ` [${weapon.traits.join(', ')}]`;
+        }
+        return result;
     },
 
     // ===== Utilities =====
