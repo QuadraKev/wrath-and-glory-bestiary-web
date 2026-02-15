@@ -17,6 +17,9 @@ const ThreatBuilderState = {
     // Track unsaved state
     _isDirty: false,
 
+    // Snapshot of the last-injected threat data (without id) for change detection
+    _lastInjectedSnapshot: null,
+
     // Initialize with an empty threat
     init() {
         this.clear();
@@ -106,6 +109,7 @@ const ThreatBuilderState = {
         // Give it a new custom ID
         this.threat.id = this._generateId();
         this._isDirty = true;
+        this._lastInjectedSnapshot = null;
     },
 
     // Update a field by dot-path (e.g., 'attributes.S', 'name')
@@ -240,6 +244,7 @@ const ThreatBuilderState = {
             mobAbilities: ''
         };
         this._isDirty = false;
+        this._lastInjectedSnapshot = null;
     },
 
     // Save the current threat to a .threat file
@@ -273,7 +278,16 @@ const ThreatBuilderState = {
         if (!data.name) {
             return { success: false, error: 'Threat must have a name' };
         }
-        // Use the builder's stable ID so all adds reference the same threat
+        // Compare current data (minus id) against the last-injected snapshot.
+        // If the threat has changed, assign a new ID so previous copies keep their stats.
+        const snapshot = JSON.stringify({ ...data, id: null });
+        if (this._lastInjectedSnapshot && snapshot !== this._lastInjectedSnapshot) {
+            const newId = this._generateId();
+            this.threat.id = newId;
+            data.id = newId;
+        }
+        this._lastInjectedSnapshot = snapshot;
+
         DataLoader.injectThreat(data);
         App.updateThreatCount();
         // Add one individual referencing this threat
