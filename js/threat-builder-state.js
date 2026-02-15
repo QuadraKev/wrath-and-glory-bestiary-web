@@ -267,15 +267,19 @@ const ThreatBuilderState = {
         return result;
     },
 
-    // Inject the current threat into DataLoader cache so Encounter Builder can find it
+    // Inject the current threat into DataLoader cache and add it to the encounter
     injectIntoEncounter() {
         const data = this.getThreatData();
         if (!data.name) {
             return { success: false, error: 'Threat must have a name' };
         }
+        // Give a fresh ID each time so multiple injects create separate threats
+        data.id = this._generateId();
         DataLoader.injectThreat(data);
         App.updateThreatCount();
-        return { success: true, name: data.name };
+        // Directly add to the encounter
+        const ids = EncounterState.addIndividual(data.id, 1, false);
+        return { success: true, name: data.name, addedToEncounter: ids.length > 0 };
     },
 
     // Generate a unique custom threat ID

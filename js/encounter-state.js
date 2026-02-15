@@ -662,10 +662,15 @@ const EncounterState = {
         // Add standalone individuals
         this.getStandaloneIndividuals().forEach(individual => {
             const threat = DataLoader.getThreat(individual.threatId);
+            let name = threat ? threat.name : 'Unknown';
+            // Distinguish custom threats by showing source
+            if (threat && individual.threatId.startsWith('custom_') && threat.source) {
+                name += ` (${threat.source})`;
+            }
             items.push({
                 type: 'individual',
                 id: individual.id,
-                name: threat ? threat.name : 'Unknown',
+                name: name,
                 bonus: individual.bonus,
                 initiative: individual.initiative,
                 isDead: this.isIndividualDead(individual.id),

@@ -65,7 +65,7 @@ const ThreatBuilderTab = {
         document.getElementById('btn-builder-inject').addEventListener('click', () => {
             const result = ThreatBuilderState.injectIntoEncounter();
             if (result.success) {
-                this.showNotification(`"${result.name}" added to threat list! You can now add it via the Encounter Builder.`);
+                this.showNotification(`"${result.name}" added to the encounter!`);
             } else {
                 this.showNotification('Error: ' + result.error);
             }
