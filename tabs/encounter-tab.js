@@ -1001,7 +1001,7 @@ const EncounterTab = {
                     statsHtml = this.formatWeaponStats(weapon);
                 }
             } else if (ability.stats) {
-                statsHtml = `: ${ability.stats}`;
+                statsHtml = ` | ${ability.stats}`;
             }
 
             return `

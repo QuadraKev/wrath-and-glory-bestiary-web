@@ -35,6 +35,10 @@ const ThreatBuilderState = {
         });
 
         const threats = DataLoader.getAllThreats();
+
+        // Track seen abilities to deduplicate (keyed by name+type)
+        const seenAbilities = new Set();
+
         threats.forEach(threat => {
             // Index abilities
             if (threat.abilities) {
@@ -43,6 +47,23 @@ const ThreatBuilderState = {
                     if (!this._abilityIndex.has(type)) {
                         this._abilityIndex.set(type, []);
                     }
+
+                    // Deduplicate Champion into a single generic entry
+                    if (ability.name === 'Champion') {
+                        if (seenAbilities.has('Champion')) return;
+                        seenAbilities.add('Champion');
+                        this._abilityIndex.get(type).push({
+                            ability: {
+                                type: ability.type,
+                                name: 'Champion',
+                                description: 'This Threat may use Ruin Actions and has X personal Ruin.'
+                            },
+                            threatName: '(Generic)',
+                            threatId: null
+                        });
+                        return;
+                    }
+
                     this._abilityIndex.get(type).push({
                         ability: ability,
                         threatName: threat.name,

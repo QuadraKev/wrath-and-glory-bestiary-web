@@ -595,7 +595,7 @@ const ThreatsTab = {
                     statsHtml = this.formatWeaponStats(weapon);
                 }
             } else if (ability.stats) {
-                statsHtml = `, ${ability.stats}`;
+                statsHtml = ` | ${ability.stats}`;
             }
 
             if (ability.description) {
