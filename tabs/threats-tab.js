@@ -155,6 +155,16 @@ const ThreatsTab = {
         // Sort threats alphabetically by name
         threats = threats.sort((a, b) => a.name.localeCompare(b.name));
 
+        // Update threat count display
+        const totalCount = DataLoader.getAllThreats().length;
+        const filteredCount = threats.length;
+        const countEl = document.getElementById('threat-count');
+        if (filteredCount === totalCount) {
+            countEl.textContent = `${totalCount} Threats`;
+        } else {
+            countEl.textContent = `${filteredCount} of ${totalCount} Threats`;
+        }
+
         const container = document.getElementById('threat-list');
 
         if (threats.length === 0) {
