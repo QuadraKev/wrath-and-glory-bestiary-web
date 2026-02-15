@@ -659,12 +659,23 @@ const EncounterState = {
     getEncounterListItems() {
         const items = [];
 
+        // Build a set of threat names that appear under multiple distinct threat IDs,
+        // so we can annotate only when there's an actual name collision
+        const nameToIds = new Map();
+        this.individuals.forEach(ind => {
+            const t = DataLoader.getThreat(ind.threatId);
+            if (t) {
+                if (!nameToIds.has(t.name)) nameToIds.set(t.name, new Set());
+                nameToIds.get(t.name).add(ind.threatId);
+            }
+        });
+
         // Add standalone individuals
         this.getStandaloneIndividuals().forEach(individual => {
             const threat = DataLoader.getThreat(individual.threatId);
             let name = threat ? threat.name : 'Unknown';
-            // Distinguish custom threats by showing source
-            if (threat && individual.threatId.startsWith('custom_') && threat.source) {
+            // Show source only when the same name maps to different threat IDs
+            if (threat && nameToIds.get(threat.name)?.size > 1 && threat.source) {
                 name += ` (${threat.source})`;
             }
             items.push({
