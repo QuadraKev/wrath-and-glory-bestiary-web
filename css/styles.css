@@ -3684,3 +3684,132 @@ body {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
 }
+
+/* ===== Builder Inject Group (count + button) ===== */
+.builder-inject-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.builder-inject-count {
+    width: 50px;
+    padding: 6px 4px;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    text-align: center;
+    -moz-appearance: textfield;
+}
+
+.builder-inject-count::-webkit-inner-spin-button,
+.builder-inject-count::-webkit-outer-spin-button {
+    opacity: 1;
+}
+
+.builder-inject-count:focus {
+    outline: none;
+    border-color: var(--accent-gold);
+}
+
+/* ===== Inject Modal (rename prompt) ===== */
+.inject-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inject-modal {
+    width: 450px;
+    max-width: 90vw;
+    background: var(--bg-card);
+    border: 1px solid var(--accent-gold);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.inject-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: var(--bg-tertiary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.inject-modal-header h3 {
+    color: var(--accent-gold);
+    font-size: 16px;
+    margin: 0;
+}
+
+.inject-modal-close {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.inject-modal-close:hover {
+    color: var(--text-primary);
+}
+
+.inject-modal-body {
+    padding: 20px;
+}
+
+.inject-modal-warning {
+    color: var(--text-secondary);
+    font-size: 13px;
+    margin: 0 0 16px 0;
+    line-height: 1.5;
+}
+
+.inject-modal-field {
+    margin-bottom: 12px;
+}
+
+.inject-modal-field label {
+    display: block;
+    color: var(--text-muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.inject-modal-field .builder-input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.inject-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 12px 20px;
+    background: var(--bg-tertiary);
+    border-top: 1px solid var(--border-color);
+}
+
+.btn-action-primary {
+    background: var(--accent-gold) !important;
+    color: var(--bg-primary) !important;
+    font-weight: 600;
+}
+
+.btn-action-primary:hover {
+    filter: brightness(1.1);
+}

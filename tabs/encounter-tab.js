@@ -49,6 +49,10 @@ const EncounterTab = {
             this.handleClear();
         });
 
+        document.getElementById('btn-import-threat').addEventListener('click', () => {
+            this.handleImportThreat();
+        });
+
         document.getElementById('btn-sort-initiative').addEventListener('click', () => {
             this.handleSortByInitiative();
         });
@@ -1403,6 +1407,35 @@ const EncounterTab = {
         EncounterState.clearEncounterOrder();
         this.renderEncounterList();
         this.showNotification('Sorted by initiative');
+    },
+
+    async handleImportThreat() {
+        const result = await window.api.loadThreatFile();
+        if (!result.success) {
+            if (result.error && result.error !== 'Cancelled') {
+                this.showNotification('Error: ' + result.error);
+            }
+            return;
+        }
+
+        const threat = result.data;
+        if (!threat) {
+            this.showNotification('Error: Invalid threat file');
+            return;
+        }
+
+        // Ensure valid custom ID
+        if (!threat.id || !threat.id.startsWith('custom_')) {
+            threat.id = 'custom_' + Date.now() + '_' + Math.random().toString(36).substr(2, 6);
+        }
+
+        // Inject into DataLoader and add to encounter
+        DataLoader.injectThreat(threat);
+        App.updateThreatCount();
+        EncounterState.addIndividual(threat.id, 1, false);
+
+        this.render();
+        this.showNotification(`"${threat.name || 'Unnamed Threat'}" imported to encounter!`);
     },
 
     async handleSavePlayers() {

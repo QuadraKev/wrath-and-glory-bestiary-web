@@ -63,11 +63,22 @@ const ThreatBuilderTab = {
         });
 
         document.getElementById('btn-builder-inject').addEventListener('click', () => {
-            const result = ThreatBuilderState.injectIntoEncounter();
-            if (result.success) {
-                this.showNotification(`"${result.name}" added to the encounter!`);
+            const count = parseInt(document.getElementById('builder-inject-count').value) || 1;
+
+            if (ThreatBuilderState.wouldCauseNameCollision()) {
+                // Show rename modal for name collision
+                this.showInjectModal(ThreatBuilderState.threat.name, count);
             } else {
-                this.showNotification('Error: ' + result.error);
+                // Direct inject
+                const result = ThreatBuilderState.injectIntoEncounter(count);
+                if (result.success) {
+                    const msg = result.count > 1
+                        ? `${result.count}x "${result.name}" added to the encounter!`
+                        : `"${result.name}" added to the encounter!`;
+                    this.showNotification(msg);
+                } else {
+                    this.showNotification('Error: ' + result.error);
+                }
             }
         });
     },
@@ -839,6 +850,75 @@ const ThreatBuilderTab = {
                 this.refresh();
             });
         });
+    },
+
+    // ===== Inject Modal (rename prompt) =====
+
+    showInjectModal(defaultName, defaultCount) {
+        // Remove any existing modal
+        const existing = document.querySelector('.inject-modal-overlay');
+        if (existing) existing.remove();
+
+        const overlay = document.createElement('div');
+        overlay.className = 'inject-modal-overlay';
+        overlay.innerHTML = `
+            <div class="inject-modal">
+                <div class="inject-modal-header">
+                    <h3>Add to Encounter</h3>
+                    <button class="inject-modal-close">&times;</button>
+                </div>
+                <div class="inject-modal-body">
+                    <p class="inject-modal-warning">A threat named "${this.escapeHtml(defaultName)}" with different stats already exists in the encounter. Rename this variant to avoid confusion.</p>
+                    <div class="inject-modal-field">
+                        <label>Name</label>
+                        <input type="text" id="inject-modal-name" class="builder-input" value="${this.escapeAttr(defaultName)}">
+                    </div>
+                    <div class="inject-modal-field">
+                        <label>Count</label>
+                        <input type="number" id="inject-modal-count" class="builder-input" value="${defaultCount}" min="1" max="20">
+                    </div>
+                </div>
+                <div class="inject-modal-footer">
+                    <button class="btn-action" id="inject-modal-cancel">Cancel</button>
+                    <button class="btn-action btn-action-primary" id="inject-modal-add">Add</button>
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(overlay);
+
+        // Bind events
+        overlay.querySelector('.inject-modal-close').addEventListener('click', () => overlay.remove());
+        overlay.querySelector('#inject-modal-cancel').addEventListener('click', () => overlay.remove());
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) overlay.remove();
+        });
+
+        overlay.querySelector('#inject-modal-add').addEventListener('click', () => {
+            const newName = document.getElementById('inject-modal-name').value.trim();
+            const count = parseInt(document.getElementById('inject-modal-count').value) || 1;
+            if (!newName) return;
+
+            const result = ThreatBuilderState.injectIntoEncounter(count, newName);
+            overlay.remove();
+
+            if (result.success) {
+                const msg = result.count > 1
+                    ? `${result.count}x "${result.name}" added to the encounter!`
+                    : `"${result.name}" added to the encounter!`;
+                this.showNotification(msg);
+                // Refresh editor to show updated name
+                this.renderEditor();
+                this.renderPreview();
+            } else {
+                this.showNotification('Error: ' + result.error);
+            }
+        });
+
+        // Focus and select the name input
+        const nameInput = document.getElementById('inject-modal-name');
+        nameInput.focus();
+        nameInput.select();
     },
 
     // ===== Notification =====

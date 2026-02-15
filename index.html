@@ -6,7 +6,7 @@
     <meta name="robots" content="noindex, nofollow">
 
     <title>Wrath and Glory Bestiary</title>
-    <link rel="stylesheet" href="css/styles.css?v=9">
+    <link rel="stylesheet" href="css/styles.css?v=10">
 </head>
 <body>
     <div id="app">
@@ -132,7 +132,10 @@
                     <div class="builder-actions">
                         <button id="btn-builder-save" class="btn-action">Save to File</button>
                         <button id="btn-builder-load" class="btn-action">Load from File</button>
-                        <button id="btn-builder-inject" class="btn-action">Add to Encounter</button>
+                        <span class="builder-inject-group">
+                            <input type="number" id="builder-inject-count" class="builder-inject-count" value="1" min="1" max="20" title="Number to add">
+                            <button id="btn-builder-inject" class="btn-action">Add to Encounter</button>
+                        </span>
                         <button id="btn-builder-clear" class="btn-action btn-action-danger">Clear All</button>
                     </div>
                 </div>
@@ -170,6 +173,7 @@
                     <div class="encounter-actions">
                         <button id="btn-save-encounter" class="btn-action">Save Encounter</button>
                         <button id="btn-load-encounter" class="btn-action">Load Encounter</button>
+                        <button id="btn-import-threat" class="btn-action">Import Threat</button>
                         <button id="btn-clear-encounter" class="btn-action btn-action-danger">Clear Encounter</button>
                     </div>
                 </div>
@@ -279,15 +283,15 @@
     </script>
 
     <!-- Scripts -->
-    <script src="js/web-api.js?v=9"></script>
-    <script src="js/data-loader.js?v=9"></script>
-    <script src="js/glossary.js?v=9"></script>
-    <script src="js/encounter-state.js?v=9"></script>
-    <script src="js/threat-builder-state.js?v=9"></script>
-    <script src="tabs/threats-tab.js?v=9"></script>
-    <script src="tabs/glossary-tab.js?v=9"></script>
-    <script src="tabs/encounter-tab.js?v=9"></script>
-    <script src="tabs/threat-builder-tab.js?v=9"></script>
-    <script src="js/app.js?v=9"></script>
+    <script src="js/web-api.js?v=10"></script>
+    <script src="js/data-loader.js?v=10"></script>
+    <script src="js/glossary.js?v=10"></script>
+    <script src="js/encounter-state.js?v=10"></script>
+    <script src="js/threat-builder-state.js?v=10"></script>
+    <script src="tabs/threats-tab.js?v=10"></script>
+    <script src="tabs/glossary-tab.js?v=10"></script>
+    <script src="tabs/encounter-tab.js?v=10"></script>
+    <script src="tabs/threat-builder-tab.js?v=10"></script>
+    <script src="js/app.js?v=10"></script>
 </body>
 </html>

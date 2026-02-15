@@ -272,12 +272,41 @@ const ThreatBuilderState = {
         return result;
     },
 
-    // Inject/update the current threat in DataLoader cache and add one to the encounter
-    injectIntoEncounter() {
+    // Check if injecting would cause a name collision in the encounter
+    // (same name already exists with different stats)
+    wouldCauseNameCollision() {
         const data = this.getThreatData();
-        if (!data.name) {
+        if (!data.name) return false;
+
+        const snapshot = JSON.stringify({ ...data, id: null });
+        // No collision if nothing was injected before, or data hasn't changed
+        if (!this._lastInjectedSnapshot || snapshot === this._lastInjectedSnapshot) {
+            return false;
+        }
+
+        // Check if any individual in the encounter references a threat with the same name
+        for (const ind of EncounterState.individuals) {
+            const threat = DataLoader.getThreat(ind.threatId);
+            if (threat && threat.name === data.name) {
+                return true;
+            }
+        }
+        return false;
+    },
+
+    // Inject/update the current threat in DataLoader cache and add to the encounter
+    injectIntoEncounter(count = 1, newName = null) {
+        const data = this.getThreatData();
+        if (!data.name && !newName) {
             return { success: false, error: 'Threat must have a name' };
         }
+
+        // Apply name override if provided (from rename modal)
+        if (newName) {
+            data.name = newName;
+            this.threat.name = newName;
+        }
+
         // Compare current data (minus id) against the last-injected snapshot.
         // If the threat has changed, assign a new ID so previous copies keep their stats.
         const snapshot = JSON.stringify({ ...data, id: null });
@@ -290,9 +319,9 @@ const ThreatBuilderState = {
 
         DataLoader.injectThreat(data);
         App.updateThreatCount();
-        // Add one individual referencing this threat
-        const ids = EncounterState.addIndividual(data.id, 1, false);
-        return { success: true, name: data.name, addedToEncounter: ids.length > 0 };
+        // Add individuals to the encounter
+        const ids = EncounterState.addIndividual(data.id, count, false);
+        return { success: true, name: data.name, addedToEncounter: ids.length > 0, count: ids.length };
     },
 
     // Generate a unique custom threat ID
