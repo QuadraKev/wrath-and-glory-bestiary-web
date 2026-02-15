@@ -20,6 +20,10 @@ const App = {
         EncounterState.init();
         console.log('Encounter state initialized.');
 
+        // Initialize threat builder state
+        ThreatBuilderState.init();
+        console.log('Threat builder state initialized.');
+
         // Set up close confirmation listener
         this.initCloseConfirmation();
 
@@ -30,6 +34,7 @@ const App = {
         ThreatsTab.init();
         GlossaryTab.init();
         EncounterTab.init();
+        ThreatBuilderTab.init();
 
         // Update threat count
         this.updateThreatCount();
@@ -100,6 +105,8 @@ const App = {
             GlossaryTab.refresh();
         } else if (tabName === 'threats') {
             ThreatsTab.refresh();
+        } else if (tabName === 'builder') {
+            ThreatBuilderTab.refresh();
         } else if (tabName === 'encounter') {
             EncounterTab.refresh();
         }

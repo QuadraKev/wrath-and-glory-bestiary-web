@@ -6,7 +6,7 @@
     <meta name="robots" content="noindex, nofollow">
 
     <title>Wrath and Glory Bestiary</title>
-    <link rel="stylesheet" href="css/styles.css?v=7">
+    <link rel="stylesheet" href="css/styles.css?v=8">
 </head>
 <body>
     <div id="app">
@@ -28,6 +28,7 @@
         <nav class="tab-nav">
             <div class="tab-nav-tabs">
                 <button class="tab-btn active" data-tab="threats">THREATS</button>
+                <button class="tab-btn" data-tab="builder">THREAT BUILDER</button>
                 <button class="tab-btn" data-tab="encounter">ENCOUNTER BUILDER</button>
                 <button class="tab-btn" data-tab="glossary">GLOSSARY</button>
             </div>
@@ -116,6 +117,40 @@
                         </div>
                     </div>
                 </main>
+            </div>
+
+            <!-- Threat Builder Tab -->
+            <div id="tab-builder" class="tab-content">
+                <div class="builder-action-bar">
+                    <div class="builder-template-section">
+                        <label class="action-bar-label">Template:</label>
+                        <div class="builder-template-wrapper">
+                            <input type="text" id="builder-template-search" class="builder-template-input" placeholder="Search threats to load as template...">
+                            <div id="builder-template-dropdown" class="builder-template-dropdown hidden"></div>
+                        </div>
+                    </div>
+                    <div class="builder-actions">
+                        <button id="btn-builder-save" class="btn-action">Save to File</button>
+                        <button id="btn-builder-load" class="btn-action">Load from File</button>
+                        <button id="btn-builder-inject" class="btn-action">Add to Encounter</button>
+                        <button id="btn-builder-clear" class="btn-action btn-action-danger">Clear All</button>
+                    </div>
+                </div>
+                <div class="builder-content-wrapper">
+                    <div class="builder-editor">
+                        <div id="builder-editor-sections">
+                            <!-- Populated by JavaScript -->
+                        </div>
+                    </div>
+                    <div class="builder-preview">
+                        <div class="builder-preview-label">Preview</div>
+                        <div id="builder-preview-content">
+                            <div class="threat-detail-placeholder">
+                                <p>Edit threat details to see a preview</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Encounter Tab -->
@@ -244,13 +279,15 @@
     </script>
 
     <!-- Scripts -->
-    <script src="js/web-api.js?v=7"></script>
-    <script src="js/data-loader.js?v=7"></script>
-    <script src="js/glossary.js?v=7"></script>
-    <script src="js/encounter-state.js?v=7"></script>
-    <script src="tabs/threats-tab.js?v=7"></script>
-    <script src="tabs/glossary-tab.js?v=7"></script>
-    <script src="tabs/encounter-tab.js?v=7"></script>
-    <script src="js/app.js?v=7"></script>
+    <script src="js/web-api.js?v=8"></script>
+    <script src="js/data-loader.js?v=8"></script>
+    <script src="js/glossary.js?v=8"></script>
+    <script src="js/encounter-state.js?v=8"></script>
+    <script src="js/threat-builder-state.js?v=8"></script>
+    <script src="tabs/threats-tab.js?v=8"></script>
+    <script src="tabs/glossary-tab.js?v=8"></script>
+    <script src="tabs/encounter-tab.js?v=8"></script>
+    <script src="tabs/threat-builder-tab.js?v=8"></script>
+    <script src="js/app.js?v=8"></script>
 </body>
 </html>

@@ -171,6 +171,22 @@ const DataLoader = {
         return Array.from(sourceSet).sort();
     },
 
+    // Inject a custom threat into the cache at runtime
+    injectThreat(threat) {
+        const threats = this.cache['threats.json'] || [];
+        // Remove existing custom threat with same ID if re-injecting
+        const idx = threats.findIndex(t => t.id === threat.id);
+        if (idx !== -1) threats.splice(idx, 1);
+        threats.push(threat);
+        this.cache['threats.json'] = threats;
+    },
+
+    // Remove a threat from the cache by ID
+    removeThreat(threatId) {
+        const threats = this.cache['threats.json'] || [];
+        this.cache['threats.json'] = threats.filter(t => t.id !== threatId);
+    },
+
     // Filter threats by criteria
     filterThreats(criteria = {}) {
         let threats = this.getAllThreats();

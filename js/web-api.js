@@ -82,6 +82,44 @@ window.api = {
         });
     },
 
+    // Save threat file as browser download
+    saveThreatFile: async (threatData, suggestedName) => {
+        const name = (suggestedName || 'custom-threat').replace(/\.threat$/, '');
+        const blob = new Blob([JSON.stringify(threatData, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = name + '.threat';
+        a.click();
+        URL.revokeObjectURL(url);
+        return { success: true, fileName: name };
+    },
+
+    // Load threat file via file picker
+    loadThreatFile: () => {
+        return new Promise((resolve) => {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.threat,.json';
+            input.onchange = async () => {
+                if (!input.files || !input.files[0]) {
+                    resolve({ success: false, error: 'No file selected' });
+                    return;
+                }
+                try {
+                    const text = await input.files[0].text();
+                    const data = JSON.parse(text);
+                    const fileName = input.files[0].name.replace(/\.(threat|json)$/, '');
+                    resolve({ success: true, data, fileName });
+                } catch (e) {
+                    resolve({ success: false, error: 'Failed to read file: ' + e.message });
+                }
+            };
+            input.oncancel = () => resolve({ success: false, error: 'Cancelled' });
+            input.click();
+        });
+    },
+
     // Close confirmation via beforeunload
     onCheckUnsavedChanges: () => {
         // Handled by beforeunload event below
@@ -93,9 +131,13 @@ window.api = {
 
 // Set up beforeunload for unsaved changes warning
 window.addEventListener('beforeunload', (e) => {
-    if (typeof EncounterState !== 'undefined' &&
+    const encounterUnsaved = typeof EncounterState !== 'undefined' &&
         EncounterState.hasUnsavedChanges() &&
-        !EncounterState.isEmpty()) {
+        !EncounterState.isEmpty();
+    const builderUnsaved = typeof ThreatBuilderState !== 'undefined' &&
+        ThreatBuilderState.hasUnsavedChanges() &&
+        !ThreatBuilderState.isEmpty();
+    if (encounterUnsaved || builderUnsaved) {
         e.preventDefault();
     }
 });
