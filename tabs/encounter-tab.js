@@ -114,6 +114,7 @@ const EncounterTab = {
                                data-index="${i}" data-id="${pc.id}" placeholder="Player ${i + 1}">
                         <input type="number" class="pc-initiative-input" value="${pc.initiative ?? ''}"
                                data-index="${i}" data-id="${pc.id}" placeholder="Init" min="0" max="99">
+                        <button class="pc-remove-btn" data-id="${pc.id}" title="Remove">&times;</button>
                     </div>
                 `;
             } else {
@@ -175,6 +176,18 @@ const EncounterTab = {
                     EncounterState.setPlayerCharacterInitiative(newId, e.target.value);
                     this.renderPlayerCharacterInputs();
                 }
+                this.renderEncounterList();
+            });
+        });
+
+        container.querySelectorAll('.pc-remove-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const id = e.target.dataset.id;
+                EncounterState.removePlayerCharacter(id);
+                const newCount = EncounterState.settings.playerCount - 1;
+                EncounterState.updateSettings({ playerCount: Math.max(1, newCount) });
+                document.getElementById('encounter-players').value = EncounterState.settings.playerCount;
+                this.renderPlayerCharacterInputs();
                 this.renderEncounterList();
             });
         });
