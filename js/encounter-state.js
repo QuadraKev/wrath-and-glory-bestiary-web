@@ -763,6 +763,24 @@ const EncounterState = {
         return items;
     },
 
+    // ===== Custom Threat Collection =====
+
+    // Collect custom threat objects referenced by individuals in the encounter
+    _collectCustomThreats() {
+        const seen = new Set();
+        const customThreats = [];
+        this.individuals.forEach(ind => {
+            if (ind.threatId && ind.threatId.startsWith('custom_') && !seen.has(ind.threatId)) {
+                seen.add(ind.threatId);
+                const threat = DataLoader.getThreat(ind.threatId);
+                if (threat) {
+                    customThreats.push(JSON.parse(JSON.stringify(threat)));
+                }
+            }
+        });
+        return customThreats;
+    },
+
     // ===== File Persistence =====
 
     // Get encounter data for saving
@@ -773,7 +791,8 @@ const EncounterState = {
             individuals: [...this.individuals],
             mobs: [...this.mobs],
             playerCharacters: [...this.playerCharacters],
-            encounterOrder: this.encounterOrder ? [...this.encounterOrder] : null
+            encounterOrder: this.encounterOrder ? [...this.encounterOrder] : null,
+            customThreats: this._collectCustomThreats()
         };
     },
 
@@ -797,6 +816,10 @@ const EncounterState = {
 
         if (result.success && result.data) {
             const parsed = result.data;
+            // Re-inject custom threats before resolving encounter entries
+            if (parsed.customThreats) {
+                parsed.customThreats.forEach(t => DataLoader.injectThreat(t));
+            }
             this.settings = parsed.settings || { tier: 1, playerCount: 4, name: result.fileName, round: 1 };
             this.settings.name = result.fileName; // Use filename as encounter name
             if (this.settings.round === undefined) this.settings.round = 1;
@@ -810,8 +833,12 @@ const EncounterState = {
         return result;
     },
 
-    // Load encounter from data object (used by close dialog save)
+    // Load encounter from data object (used by close dialog save and auto-save restore)
     loadFromData(data) {
+        // Re-inject custom threats before resolving encounter entries
+        if (data.customThreats) {
+            data.customThreats.forEach(t => DataLoader.injectThreat(t));
+        }
         this.settings = data.settings || { tier: 1, playerCount: 4, name: "Unnamed Encounter", round: 1 };
         if (this.settings.round === undefined) this.settings.round = 1;
         this.individuals = data.individuals || [];
@@ -845,6 +872,7 @@ const EncounterState = {
         try {
             const data = {
                 encounter: this.getEncounterData(),
+                customThreats: this._collectCustomThreats(),
                 timestamp: Date.now()
             };
             localStorage.setItem(this._AUTO_SAVE_KEY, JSON.stringify(data));

@@ -306,6 +306,14 @@ const ThreatsTab = {
                 });
             });
         }
+
+        // Attach customize handler
+        const customizeBtn = container.querySelector('#btn-customize-threat');
+        if (customizeBtn) {
+            customizeBtn.addEventListener('click', () => {
+                this.customizeThreat(threatId);
+            });
+        }
     },
 
     bindAddToEncounterEvents(container, threatId) {
@@ -374,6 +382,17 @@ const ThreatsTab = {
         }, 2000);
     },
 
+    customizeThreat(threatId) {
+        if (!ThreatBuilderState.isEmpty()) {
+            if (!confirm('The Threat Builder already has content. Sending this threat to the builder will replace it. Continue?')) {
+                return;
+            }
+        }
+        ThreatBuilderState.loadTemplate(threatId);
+        App.switchTab('builder');
+        ThreatBuilderTab.refresh();
+    },
+
     renderThreatCard(threat, currentWeapon) {
         // Build tier/threat table
         const tierThreatTable = this.renderTierThreatTable(threat.tierThreat);
@@ -420,6 +439,7 @@ const ThreatsTab = {
                         <h2 class="threat-card-title">${threat.name}</h2>
                         <div class="threat-card-header-actions">
                             <button class="btn-copy" id="btn-copy-threat">Copy</button>
+                            <button class="btn-copy" id="btn-customize-threat">Customize</button>
                             ${addToEncounterHtml}
                         </div>
                     </div>

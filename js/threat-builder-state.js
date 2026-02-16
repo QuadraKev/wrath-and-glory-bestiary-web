@@ -17,6 +17,10 @@ const ThreatBuilderState = {
     // Track unsaved state
     _isDirty: false,
 
+    // Auto-save support
+    _autoSaveTimer: null,
+    _AUTO_SAVE_KEY: 'wng-bestiary-builder-autosave',
+
     // Snapshot of the last-injected threat data (without id) for change detection
     _lastInjectedSnapshot: null,
 
@@ -151,7 +155,7 @@ const ThreatBuilderState = {
         this.threat = JSON.parse(JSON.stringify(threat));
         // Give it a new custom ID
         this.threat.id = this._generateId();
-        this._isDirty = true;
+        this._markDirty();
         this._lastInjectedSnapshot = null;
     },
 
@@ -164,21 +168,21 @@ const ThreatBuilderState = {
             obj = obj[parts[i]];
         }
         obj[parts[parts.length - 1]] = value;
-        this._isDirty = true;
+        this._markDirty();
     },
 
     // Add an ability (deep copy)
     addAbility(ability) {
         if (!this.threat.abilities) this.threat.abilities = [];
         this.threat.abilities.push(JSON.parse(JSON.stringify(ability)));
-        this._isDirty = true;
+        this._markDirty();
     },
 
     // Remove ability by index
     removeAbility(index) {
         if (this.threat.abilities && index >= 0 && index < this.threat.abilities.length) {
             this.threat.abilities.splice(index, 1);
-            this._isDirty = true;
+            this._markDirty();
         }
     },
 
@@ -186,7 +190,7 @@ const ThreatBuilderState = {
     updateAbility(index, field, value) {
         if (this.threat.abilities && this.threat.abilities[index]) {
             this.threat.abilities[index][field] = value;
-            this._isDirty = true;
+            this._markDirty();
         }
     },
 
@@ -198,21 +202,21 @@ const ThreatBuilderState = {
         if (toIndex < 0 || toIndex >= abilities.length) return;
         const [moved] = abilities.splice(fromIndex, 1);
         abilities.splice(toIndex, 0, moved);
-        this._isDirty = true;
+        this._markDirty();
     },
 
     // Add a bonus (deep copy)
     addBonus(bonus) {
         if (!this.threat.bonuses) this.threat.bonuses = [];
         this.threat.bonuses.push(JSON.parse(JSON.stringify(bonus)));
-        this._isDirty = true;
+        this._markDirty();
     },
 
     // Remove bonus by index
     removeBonus(index) {
         if (this.threat.bonuses && index >= 0 && index < this.threat.bonuses.length) {
             this.threat.bonuses.splice(index, 1);
-            this._isDirty = true;
+            this._markDirty();
         }
     },
 
@@ -220,7 +224,7 @@ const ThreatBuilderState = {
     updateBonus(index, field, value) {
         if (this.threat.bonuses && this.threat.bonuses[index]) {
             this.threat.bonuses[index][field] = value;
-            this._isDirty = true;
+            this._markDirty();
         }
     },
 
@@ -229,7 +233,7 @@ const ThreatBuilderState = {
         if (!this.threat.keywords) this.threat.keywords = [];
         if (keyword && keyword.trim()) {
             this.threat.keywords.push(keyword.trim().toUpperCase());
-            this._isDirty = true;
+            this._markDirty();
         }
     },
 
@@ -237,7 +241,7 @@ const ThreatBuilderState = {
     removeKeyword(index) {
         if (this.threat.keywords && index >= 0 && index < this.threat.keywords.length) {
             this.threat.keywords.splice(index, 1);
-            this._isDirty = true;
+            this._markDirty();
         }
     },
 
@@ -288,6 +292,7 @@ const ThreatBuilderState = {
         };
         this._isDirty = false;
         this._lastInjectedSnapshot = null;
+        this.clearAutoSave();
     },
 
     // Save the current threat to a .threat file
@@ -310,7 +315,7 @@ const ThreatBuilderState = {
             if (!this.threat.id || !this.threat.id.startsWith('custom_')) {
                 this.threat.id = this._generateId();
             }
-            this._isDirty = true;
+            this._markDirty();
         }
         return result;
     },
@@ -365,6 +370,61 @@ const ThreatBuilderState = {
         // Add individuals to the encounter
         const ids = EncounterState.addIndividual(data.id, count, false);
         return { success: true, name: data.name, addedToEncounter: ids.length > 0, count: ids.length };
+    },
+
+    // Mark as dirty and schedule auto-save
+    _markDirty() {
+        this._isDirty = true;
+        this._scheduleAutoSave();
+    },
+
+    // ===== Auto-Save =====
+
+    // Schedule an auto-save after a 2-second debounce
+    _scheduleAutoSave() {
+        clearTimeout(this._autoSaveTimer);
+        this._autoSaveTimer = setTimeout(() => this._performAutoSave(), 2000);
+    },
+
+    // Perform the auto-save to localStorage
+    _performAutoSave() {
+        if (this.isEmpty()) return;
+        try {
+            const data = {
+                threat: this.getThreatData(),
+                timestamp: Date.now()
+            };
+            localStorage.setItem(this._AUTO_SAVE_KEY, JSON.stringify(data));
+        } catch (e) {
+            console.warn('Builder auto-save failed:', e);
+        }
+    },
+
+    // Get the auto-saved data
+    getAutoSave() {
+        try {
+            const raw = localStorage.getItem(this._AUTO_SAVE_KEY);
+            return raw ? JSON.parse(raw) : null;
+        } catch (e) {
+            console.warn('Failed to read builder auto-save:', e);
+            return null;
+        }
+    },
+
+    // Clear the auto-save
+    clearAutoSave() {
+        localStorage.removeItem(this._AUTO_SAVE_KEY);
+    },
+
+    // Load threat data from auto-save
+    loadFromAutoSave(threatData) {
+        this.threat = threatData;
+        // Ensure it has a valid custom ID
+        if (!this.threat.id || !this.threat.id.startsWith('custom_')) {
+            this.threat.id = this._generateId();
+        }
+        this._isDirty = true;
+        this._lastInjectedSnapshot = null;
     },
 
     // Generate a unique custom threat ID

@@ -70,8 +70,10 @@ const App = {
     // Initialize close confirmation handler
     initCloseConfirmation() {
         window.api.onCheckUnsavedChanges(() => {
-            const hasChanges = EncounterState.hasUnsavedChanges() && !EncounterState.isEmpty();
-            const encounterData = hasChanges ? EncounterState.getEncounterData() : null;
+            const encounterUnsaved = EncounterState.hasUnsavedChanges() && !EncounterState.isEmpty();
+            const builderUnsaved = ThreatBuilderState.hasUnsavedChanges() && !ThreatBuilderState.isEmpty();
+            const hasChanges = encounterUnsaved || builderUnsaved;
+            const encounterData = encounterUnsaved ? EncounterState.getEncounterData() : null;
             window.api.respondUnsavedChanges(hasChanges, encounterData);
         });
     },
@@ -122,12 +124,24 @@ const App = {
 
     // Check for auto-saved state on startup and auto-load it
     checkAutoSave() {
+        // Restore encounter auto-save (including any custom threats)
         const saved = EncounterState.getAutoSave();
-        if (!saved || !saved.encounter) return;
+        if (saved && saved.encounter) {
+            // Inject top-level custom threats first (belt-and-suspenders with loadFromData)
+            if (saved.customThreats) {
+                saved.customThreats.forEach(t => DataLoader.injectThreat(t));
+            }
+            EncounterState.loadFromData(saved.encounter);
+            this.updateThreatCount();
+            this.switchTab('encounter');
+            EncounterTab.refresh();
+        }
 
-        EncounterState.loadFromData(saved.encounter);
-        this.switchTab('encounter');
-        EncounterTab.refresh();
+        // Restore threat builder auto-save
+        const builderSave = ThreatBuilderState.getAutoSave();
+        if (builderSave && builderSave.threat) {
+            ThreatBuilderState.loadFromAutoSave(builderSave.threat);
+        }
     }
 };
 
