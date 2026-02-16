@@ -124,6 +124,7 @@ const EncounterTab = {
                                data-index="${i}" placeholder="Player ${i + 1}">
                         <input type="number" class="pc-initiative-input" value=""
                                data-index="${i}" placeholder="Init" min="0" max="99">
+                        <button class="pc-remove-btn pc-remove-blank" data-index="${i}" title="Remove">&times;</button>
                     </div>
                 `;
             }
@@ -183,7 +184,9 @@ const EncounterTab = {
         container.querySelectorAll('.pc-remove-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const id = e.target.dataset.id;
-                EncounterState.removePlayerCharacter(id);
+                if (id) {
+                    EncounterState.removePlayerCharacter(id);
+                }
                 const newCount = EncounterState.settings.playerCount - 1;
                 EncounterState.updateSettings({ playerCount: Math.max(1, newCount) });
                 document.getElementById('encounter-players').value = EncounterState.settings.playerCount;
