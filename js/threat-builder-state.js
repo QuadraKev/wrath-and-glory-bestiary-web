@@ -7,6 +7,14 @@ const ThreatBuilderState = {
         'REACTION', 'DETERMINATION', 'ANNIHILATION', 'TRAIT', 'PASSIVE', 'MOB', 'ABILITY'
     ],
 
+    // Canonical skill names (excludes Default and Awareness which are fixed fields)
+    SKILL_NAMES: [
+        'Athletics', 'Ballistic Skill', 'Cunning', 'Deception', 'Insight',
+        'Intimidation', 'Investigation', 'Leadership', 'Medicae', 'Persuasion',
+        'Pilot', 'Psychic Mastery', 'Scholar', 'Stealth', 'Survival', 'Tech',
+        'Weapon Skill'
+    ],
+
     // The current threat being edited
     threat: null,
 
@@ -155,6 +163,8 @@ const ThreatBuilderState = {
         this.threat = JSON.parse(JSON.stringify(threat));
         // Give it a new custom ID
         this.threat.id = this._generateId();
+        this._resolveWeaponIds();
+        this._parseSkillsString(this.threat.skills);
         this._markDirty();
         this._lastInjectedSnapshot = null;
     },
@@ -247,7 +257,11 @@ const ThreatBuilderState = {
 
     // Get a clean threat object for preview/save/injection
     getThreatData() {
-        return JSON.parse(JSON.stringify(this.threat));
+        this._serializeSkills();
+        const data = JSON.parse(JSON.stringify(this.threat));
+        // Remove parsedSkills from the exported data (internal only)
+        delete data.parsedSkills;
+        return data;
     },
 
     // Check if builder has unsaved work
@@ -279,6 +293,7 @@ const ThreatBuilderState = {
             wounds: 1,
             shock: 1,
             skills: '',
+            parsedSkills: { default: 0, awareness: 0, passiveAwareness: 0, entries: [] },
             abilities: [],
             bonuses: [],
             determination: '',
@@ -314,6 +329,8 @@ const ThreatBuilderState = {
             if (!this.threat.id || !this.threat.id.startsWith('custom_')) {
                 this.threat.id = this._generateId();
             }
+            this._resolveWeaponIds();
+            this._parseSkillsString(this.threat.skills);
             this._markDirty();
         }
         return result;
@@ -371,6 +388,114 @@ const ThreatBuilderState = {
         return { success: true, name: data.name, addedToEncounter: ids.length > 0, count: ids.length };
     },
 
+    // ===== Skills Parsing & Serialization =====
+
+    // Known variant normalizations
+    _SKILL_VARIANTS: {
+        'Intimidate': 'Intimidation',
+        'Investigate': 'Investigation'
+    },
+
+    // Parse a skills string like "Default 4, Awareness 5 (Passive 3), Weapon Skill 8"
+    _parseSkillsString(str) {
+        const parsed = { default: 0, awareness: 0, passiveAwareness: 0, entries: [] };
+        if (!str || !str.trim()) {
+            this.threat.parsedSkills = parsed;
+            return;
+        }
+
+        const segments = str.split(/,\s*/);
+        const regex = /^(.+?)\s+(\d+)(?:\s*\(Passive\s+(\d+)\))?$/i;
+
+        for (const seg of segments) {
+            const match = seg.trim().match(regex);
+            if (!match) continue;
+
+            let name = match[1].trim();
+            const value = parseInt(match[2]);
+            const passive = match[3] ? parseInt(match[3]) : 0;
+
+            // Normalize variants
+            if (this._SKILL_VARIANTS[name]) {
+                name = this._SKILL_VARIANTS[name];
+            }
+
+            if (name.toLowerCase() === 'default') {
+                parsed.default = value;
+            } else if (name.toLowerCase() === 'awareness') {
+                parsed.awareness = value;
+                parsed.passiveAwareness = passive;
+            } else {
+                parsed.entries.push({ name, value });
+            }
+        }
+
+        this.threat.parsedSkills = parsed;
+    },
+
+    // Serialize parsedSkills back to the skills string
+    _serializeSkills() {
+        const ps = this.threat.parsedSkills;
+        if (!ps) return;
+
+        const parts = [];
+        parts.push(`Default ${ps.default}`);
+
+        if (ps.awareness > 0) {
+            let awarenessStr = `Awareness ${ps.awareness}`;
+            if (ps.passiveAwareness > 0) {
+                awarenessStr += ` (Passive ${ps.passiveAwareness})`;
+            }
+            parts.push(awarenessStr);
+        }
+
+        for (const entry of ps.entries) {
+            if (entry.name) {
+                parts.push(`${entry.name} ${entry.value}`);
+            }
+        }
+
+        this.threat.skills = parts.join(', ');
+    },
+
+    // ===== Skills Mutation Methods =====
+
+    updateDefaultSkill(value) {
+        this.threat.parsedSkills.default = parseInt(value) || 0;
+        this._markDirty();
+    },
+
+    updateAwarenessSkill(value) {
+        this.threat.parsedSkills.awareness = parseInt(value) || 0;
+        this._markDirty();
+    },
+
+    updatePassiveAwareness(value) {
+        this.threat.parsedSkills.passiveAwareness = parseInt(value) || 0;
+        this._markDirty();
+    },
+
+    addSkillEntry(name, value) {
+        if (!this.threat.parsedSkills.entries) this.threat.parsedSkills.entries = [];
+        this.threat.parsedSkills.entries.push({ name: name || '', value: parseInt(value) || 0 });
+        this._markDirty();
+    },
+
+    removeSkillEntry(index) {
+        if (this.threat.parsedSkills.entries && index >= 0 && index < this.threat.parsedSkills.entries.length) {
+            this.threat.parsedSkills.entries.splice(index, 1);
+            this._markDirty();
+        }
+    },
+
+    updateSkillEntry(index, name, value) {
+        if (this.threat.parsedSkills.entries && this.threat.parsedSkills.entries[index]) {
+            this.threat.parsedSkills.entries[index].name = name;
+            this.threat.parsedSkills.entries[index].value = parseInt(value) || 0;
+            this._markDirty();
+        }
+    },
+
     // Mark as dirty and schedule auto-save
     _markDirty() {
         this._isDirty = true;
@@ -422,8 +547,20 @@ const ThreatBuilderState = {
         if (!this.threat.id || !this.threat.id.startsWith('custom_')) {
             this.threat.id = this._generateId();
         }
+        this._resolveWeaponIds();
+        this._parseSkillsString(this.threat.skills);
         this._isDirty = true;
         this._lastInjectedSnapshot = null;
+    },
+
+    // Remove weaponId references from abilities (stats text is already populated)
+    _resolveWeaponIds() {
+        if (!this.threat || !this.threat.abilities) return;
+        this.threat.abilities.forEach(ability => {
+            if (ability.weaponId) {
+                delete ability.weaponId;
+            }
+        });
     },
 
     // Generate a unique custom threat ID

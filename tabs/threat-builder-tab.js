@@ -135,8 +135,8 @@ const ThreatBuilderTab = {
             ${this.renderDefenceResilienceSection(t)}
             ${this.renderCombatStatsSection(t)}
             ${this.renderSkillsSection(t)}
-            ${this.renderAbilitiesSection(t)}
             ${this.renderBonusesSection(t)}
+            ${this.renderAbilitiesSection(t)}
             ${this.renderDeterminationSection(t)}
             ${this.renderBottomStatsSection(t)}
         `;
@@ -282,11 +282,50 @@ const ThreatBuilderTab = {
     },
 
     renderSkillsSection(t) {
+        const ps = t.parsedSkills || { default: 0, awareness: 0, passiveAwareness: 0, entries: [] };
+        const entries = ps.entries || [];
+
+        // Build dropdown options for each entry row, excluding already-used skills
+        const usedSkills = new Set(entries.map(e => e.name));
+
+        const renderEntryRow = (entry, index) => {
+            const availableSkills = ThreatBuilderState.SKILL_NAMES.filter(
+                s => s === entry.name || !usedSkills.has(s)
+            );
+            const options = availableSkills.map(s =>
+                `<option value="${s}" ${s === entry.name ? 'selected' : ''}>${s}</option>`
+            ).join('');
+            return `
+                <div class="builder-skill-entry" data-skill-index="${index}">
+                    <select class="builder-select builder-skill-select" data-skill-index="${index}">${options}</select>
+                    <input type="number" class="builder-input builder-skill-value" data-skill-index="${index}" value="${entry.value}" min="0">
+                    <button class="btn-builder-mini builder-skill-remove" data-skill-index="${index}" title="Remove">&times;</button>
+                </div>
+            `;
+        };
+
         return `
             <div class="builder-section">
                 <div class="builder-section-header">Skills</div>
-                <div class="builder-field-row builder-field-row-full">
-                    <input type="text" class="builder-input" data-field="skills" value="${this.escapeAttr(t.skills || '')}" placeholder="e.g. Athletics 5, Weapon Skill 7">
+                <div class="builder-skills-fixed-row">
+                    <div class="builder-stat-field">
+                        <label>Default</label>
+                        <input type="number" class="builder-input" data-skill="default" value="${ps.default}" min="0">
+                    </div>
+                    <div class="builder-stat-field">
+                        <label>Awareness</label>
+                        <input type="number" class="builder-input" data-skill="awareness" value="${ps.awareness}" min="0">
+                    </div>
+                    <div class="builder-stat-field">
+                        <label>Passive Awareness</label>
+                        <input type="number" class="builder-input" data-skill="passiveAwareness" value="${ps.passiveAwareness}" min="0">
+                    </div>
+                </div>
+                <div class="builder-skills-entries">
+                    ${entries.map((e, i) => renderEntryRow(e, i)).join('')}
+                </div>
+                <div class="builder-skills-add">
+                    <button class="btn-builder-small" id="btn-add-skill">+ Add Skill</button>
                 </div>
             </div>
         `;
@@ -554,6 +593,64 @@ const ThreatBuilderTab = {
                 this.refresh();
             });
         });
+
+        // ===== Skills Section =====
+
+        // Fixed skill fields (Default, Awareness, Passive Awareness)
+        editor.querySelectorAll('[data-skill]').forEach(el => {
+            el.addEventListener('input', (e) => {
+                const skill = e.target.dataset.skill;
+                const value = parseInt(e.target.value) || 0;
+                if (skill === 'default') {
+                    ThreatBuilderState.updateDefaultSkill(value);
+                } else if (skill === 'awareness') {
+                    ThreatBuilderState.updateAwarenessSkill(value);
+                } else if (skill === 'passiveAwareness') {
+                    ThreatBuilderState.updatePassiveAwareness(value);
+                }
+                this._debouncePreview();
+            });
+        });
+
+        // Skill entry dropdown changes
+        editor.querySelectorAll('.builder-skill-select').forEach(el => {
+            el.addEventListener('change', (e) => {
+                const index = parseInt(e.target.dataset.skillIndex);
+                const valueInput = editor.querySelector(`.builder-skill-value[data-skill-index="${index}"]`);
+                const value = valueInput ? parseInt(valueInput.value) || 0 : 0;
+                ThreatBuilderState.updateSkillEntry(index, e.target.value, value);
+                this.refresh();
+            });
+        });
+
+        // Skill entry value changes
+        editor.querySelectorAll('.builder-skill-value').forEach(el => {
+            el.addEventListener('input', (e) => {
+                const index = parseInt(e.target.dataset.skillIndex);
+                const selectEl = editor.querySelector(`.builder-skill-select[data-skill-index="${index}"]`);
+                const name = selectEl ? selectEl.value : '';
+                ThreatBuilderState.updateSkillEntry(index, name, parseInt(e.target.value) || 0);
+                this._debouncePreview();
+            });
+        });
+
+        // Add skill button
+        document.getElementById('btn-add-skill')?.addEventListener('click', () => {
+            // Pick the first unused skill
+            const usedSkills = new Set((ThreatBuilderState.threat.parsedSkills.entries || []).map(e => e.name));
+            const available = ThreatBuilderState.SKILL_NAMES.filter(s => !usedSkills.has(s));
+            const name = available.length > 0 ? available[0] : '';
+            ThreatBuilderState.addSkillEntry(name, 0);
+            this.refresh();
+        });
+
+        // Remove skill entry buttons
+        editor.querySelectorAll('.builder-skill-remove').forEach(btn => {
+            btn.addEventListener('click', () => {
+                ThreatBuilderState.removeSkillEntry(parseInt(btn.dataset.skillIndex));
+                this.refresh();
+            });
+        });
     },
 
     // ===== Preview =====
@@ -758,14 +855,13 @@ const ThreatBuilderTab = {
         // Apply sorting
         this._sortItems(items, 'ability');
 
-        // Limit to 100 results for performance
-        items = items.slice(0, 100);
-
         if (items.length === 0) {
             return '<div class="ability-picker-empty">No matching abilities found</div>';
         }
 
-        return items.map((item, i) => {
+        const countHtml = `<div class="ability-picker-count">${items.length} abilities</div>`;
+
+        return countHtml + items.map((item, i) => {
             // Build description, including weapon stats for ACTIONs
             let descText = '';
             if (item.ability.type === 'ACTION' && item.ability.weaponId) {
@@ -845,13 +941,13 @@ const ThreatBuilderTab = {
         // Apply sorting
         this._sortItems(items, 'bonus');
 
-        items = items.slice(0, 100);
-
         if (items.length === 0) {
             return '<div class="ability-picker-empty">No matching bonuses found</div>';
         }
 
-        return items.map((item, i) => `
+        const countHtml = `<div class="ability-picker-count">${items.length} bonuses</div>`;
+
+        return countHtml + items.map((item, i) => `
             <div class="ability-picker-item" data-picker-index="${i}">
                 <div class="ability-picker-item-header">
                     <span class="ability-picker-item-type">BONUS</span>
