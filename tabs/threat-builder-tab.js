@@ -40,6 +40,7 @@ const ThreatBuilderTab = {
         document.getElementById('btn-builder-clear').addEventListener('click', () => {
             if (confirm('Clear all fields? This cannot be undone.')) {
                 ThreatBuilderState.clear();
+                ThreatBuilderState.clearAutoSave();
                 this.refresh();
             }
         });

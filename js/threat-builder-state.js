@@ -292,7 +292,6 @@ const ThreatBuilderState = {
         };
         this._isDirty = false;
         this._lastInjectedSnapshot = null;
-        this.clearAutoSave();
     },
 
     // Save the current threat to a .threat file
