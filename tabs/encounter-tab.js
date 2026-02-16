@@ -1333,9 +1333,6 @@ const EncounterTab = {
             EncounterState.removeIndividual(id);
         } else if (type === 'mob') {
             EncounterState.removeMob(id);
-        } else if (type === 'player') {
-            EncounterState.removePlayerCharacter(id);
-            this.renderPlayerCharacterInputs();
         }
         if (this.selectedId === id) {
             this.selectedId = null;
