@@ -4,7 +4,20 @@ Web-based threat/NPC reference tool for the Wrath & Glory tabletop RPG.
 
 ## Architecture
 
-Vanilla JavaScript with global object pattern (no modules/bundling). Served directly as static files. No build step.
+Vanilla JavaScript with global object pattern (no modules/bundling). Each file defines a global `const` object (e.g., `const EncounterTab = {...}`). No build step -- served directly as static files.
+
+- `js/app.js` - Main controller, tab navigation, threat count display
+- `js/data-loader.js` - Async JSON loading with caching, threat/weapon lookups
+- `js/encounter-state.js` - Encounter state management (individuals, mobs, player characters, initiative, file persistence)
+- `js/glossary.js` - Tooltip system for game terms
+- `js/threat-builder-state.js` - Custom threat builder state management
+- `js/web-api.js` - Browser API shim (file save/load using File System Access API with download fallback)
+- `tabs/threats-tab.js` - Threat list, filters, detail view
+- `tabs/encounter-tab.js` - Encounter builder UI (sidebar settings, initiative list, detail panel)
+- `tabs/threat-builder-tab.js` - Custom threat editor with ability/bonus picker
+- `tabs/glossary-tab.js` - Glossary browser tab
+- `css/styles.css` - Unified dark theme with CSS variables
+- `index.html` - Main HTML structure with tab layout
 
 ## Data Files
 
@@ -12,9 +25,9 @@ All game data lives in `data/` as JSON:
 
 | File | Contents |
 |------|----------|
-| `threats.json` | All threat/NPC stat blocks |
-| `threat-weapons.json` | Weapons used by threats |
-| `glossary.json` | Game terms for tooltip system |
+| `threats.json` | All threat/NPC stat blocks (~784 threats) |
+| `threat-weapons.json` | Weapons used by threats (subset -- many threat ACTION abilities reference weapons by `weaponId` that aren't in this file; those abilities use an inline `stats` field as fallback) |
+| `glossary.json` | Game terms for tooltip system (synced with creator app's glossary) |
 
 ### Source Values
 
@@ -34,6 +47,21 @@ Each threat entry has a `source` field using these full-name identifiers (differ
 - **Shock**: Use `"-"` string for creatures without shock (daemons, constructs, etc.)
 - **Speed**: Always integer; use `speedNote` for additional info like `"Flight"`
 - **IDs**: Apocrypha-sourced IDs use `_aaa` suffix to avoid conflicts with official content
+- **Abilities**: ACTION type abilities may have a `weaponId` (referencing `threat-weapons.json`) and/or inline `stats` field. When rendering, always fall back to `stats` if the weapon lookup fails.
+
+## Encounter Builder
+
+The Encounter Builder (`tabs/encounter-tab.js` + `js/encounter-state.js`) manages combat encounters:
+
+- **Sidebar**: Tier, player count, player character inputs (name + initiative + remove button), save/load players, sort by initiative
+- **Initiative List**: Drag-and-drop reordering, wound/shock trackers, multi-select for forming mobs, bonus (Elite/Adversary) dropdown
+- **Detail Panel**: Full stat block, wound/shock controls, notes, mob management (split, disband, add/remove members)
+- **Player Characters**: Managed via sidebar inputs; removal via X buttons decrements player count. PCs appear in initiative list but are only removable from sidebar.
+- **File I/O**: Uses `showSaveFilePicker()` (Save As dialog) with auto-download fallback. File types: `.encounter`, `.players`, `.threat`
+
+## Glossary
+
+The glossary (`data/glossary.json`) should be kept in sync with the creator app's glossary. Both apps share identical categories: `characterTerms`, `conditions`, `combatTerms`, `terms`, `weaponTraits`, `armorTraits`, `keywords`, `psychicPowers`. If new terms are added to one app, copy them to the other.
 
 ## Workflow Rules
 
@@ -58,3 +86,5 @@ Note: `pdftotext` is installed for text extraction. 2-column PDFs may produce ga
 4. **Aeldari Inheritance of Embers**: Threats verified
 5. **Apocryphal Adversaries**: 486 threats from 10 books added (total: 784 threats)
 6. **Adventure Modules**: Checked 11 books -- only adventure-specific NPCs, no general content to add
+7. **Encounter Builder**: Full encounter management with individuals, mobs, player characters, initiative tracking, drag-and-drop ordering, wound/shock tracking, file save/load (Save As), threat import, custom threat builder
+8. **Glossary sync**: Bestiary glossary synced with creator (all 300 psychic powers + all other categories)
