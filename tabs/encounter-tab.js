@@ -499,9 +499,6 @@ const EncounterTab = {
                            min="0" max="99">
                     <span class="encounter-item-name">${this.escapeHtml(pc.name)}</span>
                     <span class="player-badge">PC</span>
-                    <button class="delete-btn" data-id="${item.id}" data-type="player" title="Remove Player">
-                        <span>&times;</span>
-                    </button>
                 </div>
             </div>
         `;
