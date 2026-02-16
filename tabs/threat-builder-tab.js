@@ -871,6 +871,11 @@ const ThreatBuilderTab = {
                     if (item.ability.description) {
                         descText += ' — ' + this.stripHtml(item.ability.description);
                     }
+                } else if (item.ability.stats) {
+                    descText = item.ability.stats;
+                    if (item.ability.description) {
+                        descText += ' — ' + this.stripHtml(item.ability.description);
+                    }
                 } else if (item.ability.description) {
                     descText = this.stripHtml(item.ability.description);
                 }

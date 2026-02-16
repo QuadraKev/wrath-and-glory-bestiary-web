@@ -613,6 +613,8 @@ const ThreatsTab = {
                 const weapon = currentWeapon || DataLoader.getThreatWeapon(ability.weaponId);
                 if (weapon) {
                     statsHtml = this.formatWeaponStats(weapon);
+                } else if (ability.stats) {
+                    statsHtml = ` | ${ability.stats}`;
                 }
             } else if (ability.stats) {
                 statsHtml = ` | ${ability.stats}`;
@@ -839,6 +841,8 @@ const ThreatsTab = {
                     const weapon = DataLoader.getThreatWeapon(ability.weaponId);
                     if (weapon) {
                         line += ` ${this.formatWeaponStats(weapon)}`;
+                    } else if (ability.stats) {
+                        line += `, ${ability.stats}`;
                     }
                 } else if (ability.stats) {
                     line += `, ${ability.stats}`;

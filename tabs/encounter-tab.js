@@ -1016,6 +1016,8 @@ const EncounterTab = {
                 const weapon = DataLoader.getThreatWeapon(ability.weaponId);
                 if (weapon) {
                     statsHtml = this.formatWeaponStats(weapon);
+                } else if (ability.stats) {
+                    statsHtml = ` | ${ability.stats}`;
                 }
             } else if (ability.stats) {
                 statsHtml = ` | ${ability.stats}`;
