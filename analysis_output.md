@@ -83,7 +83,7 @@ These bonuses share the exact same name AND exact same description text across a
 
 ---
 
-## Similar Bonuses (108 names)
+## Similar Bonuses (104 names)
 
 These bonuses share the same name but differ in minor ways: different numbers (e.g., different Ruin amounts), threat-specific name swaps in an otherwise identical template, minor punctuation/capitalization differences, or page reference additions.
 
@@ -223,10 +223,6 @@ Template: \"A [NAME] is unable to take any actions which would require the use o
 - Variant A (1 threat: NAVIS ARMSMAN): Full description
 - Variant B (8 threats): \"See Navis Armsman.\" (cross-reference)
 
-### Vehicle Type (8 threats, 6 variants)
-
-Each vehicle has different stats (Speed, Manoeuvrability, type: Walker/Flyer/Chariot).
-
 ### Wraithsight (7 threats, 4 variants)
 
 Two fundamentally different effects under this name:
@@ -275,14 +271,6 @@ Two different versions from different sources:
 ### Talents (6 threats, 6 variants)
 
 Each threat lists different talent names. Completely unique per threat.
-
-### Traits (6 threats, 3 variants)
-
-Vehicle traits; completely different per vehicle type.
-
-### Wargear (6 threats, 2 variants)
-
-Different wargear lists per vehicle type.
 
 ### Instinctive Behaviour (Lurk) (6 threats, 2 variants)
 
@@ -427,10 +415,6 @@ Template about Restrained condition. Two variants are nearly identical (both Cyb
 ### Ritual Dagger (3 threats, 3 variants)
 
 Template: \"Any time the Ritual Knife wounds an opponent, [NAME] gains the same number of wounds.\" Only varies by daemon name.
-
-### Crew (3 threats, 3 variants)
-
-Each lists different crew compositions.
 
 ### Acid Blood (3 threats, 3 variants)
 
@@ -1142,8 +1126,8 @@ Both on MASTER OF EXECUTIONS but from different sources:
 | Category | Bonuses | Abilities |
 |---|---|---|
 | **Identical** | 74 names | 89 names |
-| **Similar** | 108 names | 120 names |
+| **Similar** | 104 names | 120 names |
 | **Overlapping** | 14 names | 15 names |
-| **Total multi-threat names** | 196 names | 224 names |
+| **Total multi-threat names** | 192 names | 224 names |
 
 The most prolific shared bonus is **Champion** (214+ threats across both casings), and the most prolific shared ability is **Daemonic Aura** (47 threats). The overwhelming majority of \"varying\" entries are **Similar** rather than truly Overlapping -- most differences come from inserting specific threat names into an otherwise identical template, differing Ruin/dice amounts, page reference inclusion, or punctuation/capitalization differences between source books. True Overlapping cases (same name, fundamentally different mechanics) are relatively rare, numbering 14 for bonuses and 15 for abilities."}],"stop_reason":null,"stop_sequence":null,"usage":{"input_tokens":1,"cache_creation_input_tokens":1271,"cache_read_input_tokens":99069,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":1271},"output_tokens":4,"service_tier":"standard","inference_geo":"not_available"}},"requestId":"req_011CYAiTaLKkJVVAhdhGrhQN","type":"assistant","uuid":"1df5f5d5-db53-42be-a975-fa0284281394","timestamp":"2026-02-15T23:29:16.910Z"}
