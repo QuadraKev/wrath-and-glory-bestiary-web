@@ -39,8 +39,10 @@ const ThreatBuilderState = {
 
         const threats = DataLoader.getAllThreats();
 
-        // Track seen abilities to deduplicate (keyed by name+type)
-        const seenAbilities = new Set();
+        // Track seen abilities/bonuses for deduplication (keyed by name+type+description)
+        // Value is the index entry object so we can update threatName to (Multiple)
+        const seenAbilities = new Map();
+        const seenBonuses = new Map();
 
         threats.forEach(threat => {
             // Index abilities
@@ -53,36 +55,77 @@ const ThreatBuilderState = {
 
                     // Deduplicate Champion into a single generic entry
                     if (ability.name === 'Champion') {
-                        if (seenAbilities.has('Champion')) return;
-                        seenAbilities.add('Champion');
-                        this._abilityIndex.get(type).push({
-                            ability: {
-                                type: ability.type,
-                                name: 'Champion',
-                                description: 'This Threat may use Ruin Actions and has X personal Ruin.'
-                            },
-                            threatName: '(Generic)',
-                            threatId: null
-                        });
+                        if (!seenAbilities.has('Champion||')) {
+                            const entry = {
+                                ability: {
+                                    type: ability.type,
+                                    name: 'Champion',
+                                    description: 'This Threat may use Ruin Actions and has X personal Ruin.'
+                                },
+                                threatName: '(Multiple)',
+                                threatId: null
+                            };
+                            seenAbilities.set('Champion||', entry);
+                            this._abilityIndex.get(type).push(entry);
+                        }
                         return;
                     }
 
-                    this._abilityIndex.get(type).push({
+                    // Deduplicate identical abilities (same name + type + description)
+                    const abilityKey = ability.name + '|' + type + '|' + (ability.description || '');
+                    const existing = seenAbilities.get(abilityKey);
+                    if (existing) {
+                        existing.threatName = '(Multiple)';
+                        existing.threatId = null;
+                        return;
+                    }
+
+                    const entry = {
                         ability: ability,
                         threatName: threat.name,
                         threatId: threat.id
-                    });
+                    };
+                    seenAbilities.set(abilityKey, entry);
+                    this._abilityIndex.get(type).push(entry);
                 });
             }
 
-            // Index bonuses
+            // Index bonuses (deduplicate identical ones)
             if (threat.bonuses) {
                 threat.bonuses.forEach(bonus => {
-                    this._bonusIndex.push({
+                    // Deduplicate Champion bonus into a single generic entry
+                    if (bonus.name === 'Champion' || bonus.name === 'CHAMPION') {
+                        const champKey = bonus.name + '||';
+                        if (!seenBonuses.has(champKey)) {
+                            const entry = {
+                                bonus: {
+                                    name: bonus.name,
+                                    description: 'This Threat may use Ruin Actions and has X personal Ruin.'
+                                },
+                                threatName: '(Multiple)',
+                                threatId: null
+                            };
+                            seenBonuses.set(champKey, entry);
+                            this._bonusIndex.push(entry);
+                        }
+                        return;
+                    }
+
+                    const bonusKey = bonus.name + '|' + (bonus.description || '');
+                    const existing = seenBonuses.get(bonusKey);
+                    if (existing) {
+                        existing.threatName = '(Multiple)';
+                        existing.threatId = null;
+                        return;
+                    }
+
+                    const entry = {
                         bonus: bonus,
                         threatName: threat.name,
                         threatId: threat.id
-                    });
+                    };
+                    seenBonuses.set(bonusKey, entry);
+                    this._bonusIndex.push(entry);
                 });
             }
         });
