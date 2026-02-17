@@ -144,6 +144,8 @@ const GlossaryTab = {
     renderEntry(entry) {
         const isExpanded = this.expandedEntries.has(entry.key);
         const entryId = `${entry.category}-${entry.key}`;
+        const sourceRef = DataLoader.formatSourcePage(entry);
+        const sourceRefHtml = sourceRef ? `<div class="source-ref">${sourceRef}</div>` : '';
 
         return `
             <div class="glossary-entry ${isExpanded ? 'expanded' : ''}" data-entry-id="${entryId}">
@@ -154,6 +156,7 @@ const GlossaryTab = {
                 </div>
                 <div class="glossary-entry-body ${isExpanded ? '' : 'hidden'}">
                     <div class="glossary-entry-description">${entry.description}</div>
+                    ${sourceRefHtml}
                     <button class="btn-copy" data-copy-name="${this.escapeAttr(entry.name)}" data-copy-desc="${this.escapeAttr(this.stripHtml(entry.description))}">Copy</button>
                 </div>
             </div>

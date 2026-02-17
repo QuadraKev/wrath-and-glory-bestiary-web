@@ -151,11 +151,30 @@ const DataLoader = {
         return factions;
     },
 
+    // Map lowercase source IDs (used in glossary) to display names
+    sourceDisplayNames: {
+        'core': 'Core Rulebook',
+        'church': 'Church of Steel',
+        'aeldari': 'Aeldari Inheritance of Embers',
+        'fspg': "Forsaken System Player's Guide",
+        'voa': 'Vow of Absolution',
+        'redacted1': 'Redacted Records I',
+        'redacted2': 'Redacted Records II',
+        'shotguns': 'Departmento Munitorum Shotguns',
+        'dh': 'Threat Assessment: Daemons & Heretics',
+        'apocrypha': 'An Abundance of Apocrypha'
+    },
+
+    // Get display name for a source (handles both lowercase IDs and full names)
+    getSourceDisplayName(source) {
+        return this.sourceDisplayNames[source] || source || '';
+    },
+
     // Format source + page for display (e.g. "Core Rules, p. 327")
     // Uses the full individual book name, not the collapsed normalizeSource() name
     formatSourcePage(item) {
         if (!item || !item.source) return '';
-        const name = item.source;
+        const name = this.getSourceDisplayName(item.source);
         if (item.page != null) {
             return `${name}, p. ${item.page}`;
         }

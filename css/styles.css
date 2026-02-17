@@ -1123,6 +1123,14 @@ body {
     color: #60a5fa;
 }
 
+/* ===== Source Reference ===== */
+.source-ref {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 4px;
+}
+
 /* ===== Scrollbar ===== */
 ::-webkit-scrollbar {
     width: 8px;
