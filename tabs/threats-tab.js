@@ -443,11 +443,11 @@ const ThreatsTab = {
                             ${addToEncounterHtml}
                         </div>
                     </div>
-                    ${threat.source ? `<span class="threat-card-source">${DataLoader.formatSourcePage(threat)}</span>` : ''}
                     ${threat.quote ? `
                         <p class="threat-card-quote">${threat.quote}</p>
                         ${threat.attribution ? `<p class="threat-card-attribution">—${threat.attribution}</p>` : ''}
                     ` : ''}
+                    ${threat.source ? `<span class="threat-card-source">${DataLoader.formatSourcePage(threat)}</span>` : ''}
                 </div>
                 <div class="threat-card-body">
                     ${threat.description ? `
