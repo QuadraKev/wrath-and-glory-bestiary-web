@@ -476,6 +476,7 @@ body {
     font-size: 11px;
     color: var(--text-muted);
     font-style: italic;
+    margin-top: 8px;
     margin-bottom: 8px;
 }
 
