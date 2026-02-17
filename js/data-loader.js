@@ -151,6 +151,17 @@ const DataLoader = {
         return factions;
     },
 
+    // Format source + page for display (e.g. "Core Rules, p. 327")
+    // Uses the full individual book name, not the collapsed normalizeSource() name
+    formatSourcePage(item) {
+        if (!item || !item.source) return '';
+        const name = item.source;
+        if (item.page != null) {
+            return `${name}, p. ${item.page}`;
+        }
+        return name;
+    },
+
     // Normalize source name for display (combines all Apocrypha sources)
     normalizeSource(source) {
         if (source && source.toLowerCase().includes('apocrypha')) {

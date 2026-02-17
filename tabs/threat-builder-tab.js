@@ -702,7 +702,7 @@ const ThreatBuilderTab = {
             <div class="threat-card">
                 <div class="threat-card-header">
                     <h2 class="threat-card-title">${threat.name || '(Unnamed Threat)'}</h2>
-                    ${threat.source ? `<span class="threat-card-source">${threat.source}</span>` : ''}
+                    ${threat.source ? `<span class="threat-card-source">${DataLoader.formatSourcePage(threat)}</span>` : ''}
                     ${threat.quote ? `
                         <p class="threat-card-quote">${threat.quote}</p>
                         ${threat.attribution ? `<p class="threat-card-attribution">&mdash;${threat.attribution}</p>` : ''}
