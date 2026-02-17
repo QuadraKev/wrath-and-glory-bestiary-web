@@ -231,19 +231,22 @@ const DataLoader = {
         }
 
         // Filter by tier and threat levels
+        // MC (Monstrous Creature) is treated as equivalent to A (Adversary)
         if (criteria.threatLevels && criteria.threatLevels.length > 0) {
+            const matchesLevel = (level) => {
+                if (!level || level === '-') return false;
+                const normalized = level === 'MC' ? 'A' : level;
+                return criteria.threatLevels.includes(normalized);
+            };
             threats = threats.filter(t => {
                 if (!t.tierThreat) return false;
 
                 if (criteria.selectedTier) {
                     // If a specific tier is selected, check only that tier's threat level
-                    const tierLevel = t.tierThreat[criteria.selectedTier];
-                    return tierLevel && criteria.threatLevels.includes(tierLevel);
+                    return matchesLevel(t.tierThreat[criteria.selectedTier]);
                 } else {
                     // If no tier selected (all tiers), check if any tier matches
-                    return Object.values(t.tierThreat).some(level =>
-                        criteria.threatLevels.includes(level)
-                    );
+                    return Object.values(t.tierThreat).some(matchesLevel);
                 }
             });
         }
