@@ -2823,7 +2823,9 @@ body {
         gap: 6px;
     }
 
-    .threat-card-source {
+    .threat-card-source,
+    .threat-card-quote,
+    .threat-card-attribution {
         text-align: center;
     }
 
