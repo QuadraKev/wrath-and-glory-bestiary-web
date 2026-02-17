@@ -472,13 +472,14 @@ body {
 }
 
 .threat-card-source {
-    display: inline-block;
+    display: block;
     font-size: 11px;
     color: var(--text-muted);
     background: var(--bg-secondary);
     padding: 2px 8px;
     border-radius: var(--radius-sm);
     margin-bottom: 8px;
+    text-align: center;
 }
 
 .threat-card-quote {
