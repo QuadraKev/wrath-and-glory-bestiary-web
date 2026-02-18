@@ -5935,7 +5935,7 @@
   {
     "id": "cronos",
     "name": "CRONOS",
-    "description": "Like other Pain Engines, the Cronos is composed of an anemic, stimulant flushed organic biomass sutured to various mechanical components, constructed under the insane contrivances of the flesh carving Haemonculi. However, while the Talos is designed to function and serve in a variety of dark roles for their masters, the octopoid limbs of the Cronos engine are designed with a specific, twisted purpose...\n\nSemi-sentient, the Cronos follows its Haemonculi creator, drifting into battle on anti-gravitic motors and covered in a thick armored carapace. Below, mechanical tentacles trail behind it, bound together with sinew and nerve, ready to reach out and grab hold of its prey.\n\nHolding its unfortunate victims in its vice grip the Cronos siphons its very lifeforce, before processing and dissipating the stolen raw energy outward. This excruciating process creates a revitalizing field for nearby Drukhari, who bask in the malevolent, rejuvenating energies emitted by the Cronos. Once drained the withered husk of its victim is discarded before the Cronos drifts onward in search of fresh victims and life essence to plunder.",
+    "description": "Like other Pain Engines, the Cronos is composed of an anemic, stimulant flushed organic biomass sutured to various mechanical components, constructed under the insane contrivances of the flesh carving Haemonculi. However, while the Talos is designed to function and serve in a variety of dark roles for their masters, the octopoid limbs of the Cronos engine are designed with a specific, twisted purpose..\n\nSemi-sentient, the Cronos follows its Haemonculi creator, drifting into battle on anti-gravitic motors and covered in a thick armored carapace. Below, mechanical tentacles trail behind it, bound together with sinew and nerve, ready to reach out and grab hold of its prey.\n\nHolding its unfortunate victims in its vice grip the Cronos siphons its very lifeforce, before processing and dissipating the stolen raw energy outward. This excruciating process creates a revitalizing field for nearby Drukhari, who bask in the malevolent, rejuvenating energies emitted by the Cronos. Once drained the withered husk of its victim is discarded before the Cronos drifts onward in search of fresh victims and life essence to plunder.",
     "tierThreat": {
       "1": "A",
       "2": "A",
@@ -6443,7 +6443,7 @@
       },
       {
         "name": "Full Throttle",
-        "description": "When the Stormboy uses a Rokkit Pack to move, they can choose to activate Full Throttle to fly at triple their Speed for the rest of their Turn. They also gain +Rank bonus dice to Intimidation, Leadership, and Weapon Skill Tests whilst Full Throttle is active. If the Stormboy crashes whilst Full Throttle is Active they suffer a minimum of 1d6 Shock and 1 Mortal Wound, plus falling damage (Wrath & Glory, page 201)."
+        "description": "When the Stormboy uses a Rokkit Pack to move, they can choose to activate Full Throttle to fly at triple their Speed for the rest of their Turn. They also gain +Rank bonus dice to Intimidation, Leadership, and Weapon Skill Tests whilst Full Throttle is active. If the Stormboy crashes whilst Full Throttle is Active they suffer a minimum of 1d6 Shock and 1 Mortal Wound, plus falling damage."
       }
     ],
     "abilities": [
@@ -7528,7 +7528,7 @@
       {
         "type": "BATTLECRY",
         "name": "Cult Recruitment",
-        "description": "The Magus attempts to activate Possession (Wrath & Glory, page 281)."
+        "description": "The Magus attempts to activate Possession."
       },
       {
         "type": "ACTION",
@@ -9866,7 +9866,7 @@
       },
       {
         "name": "Systematic Vigour",
-        "description": "Networked Cryptothralls gain +3 bonus dice to attack Tests and reduce the Multi-Attack penalty by 2 DN when making melee attacks, as though they had the Dual Wield Talent (Wrath & Glory, page 133)."
+        "description": "Networked Cryptothralls gain +3 bonus dice to attack Tests and reduce the Multi-Attack penalty by 2 DN when making melee attacks, as though they had the Dual Wield Talent."
       }
     ],
     "abilities": [
@@ -14475,7 +14475,7 @@
     "speedNote": "Flight",
     "source": "Abundance of Apocrypha",
     "page": 465,
-    "description": "A psy-bonded (or \"psyber\") Familiar is a living creature bonded to its master by arcane technology. Cybernetic neural interface circuitry implanted in the minds of both Familiar and master (called a \"psyber-lure\") allows the creature to be directly and precisely controlled, with the master having access to the sensory experiences of the creature and able to give it instantaneous commands at great distance. Owing to the idiosyncrasies of the little understood technology, usually only small, non-sapient creatures can become psy-bonded to a Human master. Psyber-Eagles are genetically and cybernetically enhanced familiars created as gifts from the Adeptus Mechanicus to the grandees of the Imperium. They are often utilised by psykers to extend and channel their powers. The same profile can also be used for Psyber-Ravens, and similar augmented avian familiars. ."
+    "description": "A psy-bonded (or \"psyber\") Familiar is a living creature bonded to its master by arcane technology. Cybernetic neural interface circuitry implanted in the minds of both Familiar and master (called a \"psyber-lure\") allows the creature to be directly and precisely controlled, with the master having access to the sensory experiences of the creature and able to give it instantaneous commands at great distance. Owing to the idiosyncrasies of the little understood technology, usually only small, non-sapient creatures can become psy-bonded to a Human master. Psyber-Eagles are genetically and cybernetically enhanced familiars created as gifts from the Adeptus Mechanicus to the grandees of the Imperium. They are often utilised by psykers to extend and channel their powers. The same profile can also be used for Psyber-Ravens, and similar augmented avian familiars."
   },
   {
     "id": "apoc_calligraphus_servitor",
@@ -15026,7 +15026,7 @@
       },
       {
         "name": "Unholy Changes",
-        "description": "The Daemonhost’s form is twisted by the entity within. Roll one or more times on the Mutation tables on page 287 of the Wrath & Glory Core Rulebook. An Unbound Daemonhost rolls four times. A Once-Bound Daemonhost rolls three times. A Twice-Bound Daemonhost rolls twice. A Thrice-Bound Daemonhost rolls once."
+        "description": "The Daemonhost’s form is twisted by the entity within. Roll one or more times on the Mutation tables. An Unbound Daemonhost rolls four times. A Once-Bound Daemonhost rolls three times. A Twice-Bound Daemonhost rolls twice. A Thrice-Bound Daemonhost rolls once."
       }
     ],
     "abilities": [
@@ -16663,7 +16663,7 @@
       {
         "type": "ACTION",
         "name": "Maleficarum",
-        "description": "The Mindwitch attempts to activate Smite or a Maleficarum psychic power (W&G p.280)."
+        "description": "The Mindwitch attempts to activate Smite or a Maleficarum psychic power."
       },
       {
         "type": "ACTION",
@@ -17454,7 +17454,7 @@
       {
         "type": "ACTION",
         "name": "Maleficarum",
-        "description": "The Sorcerer attempts to activate Smite or a Maleficarum psychic power (W&G p.280)."
+        "description": "The Sorcerer attempts to activate Smite or a Maleficarum psychic power."
       },
       {
         "type": "RUIN",
@@ -17732,7 +17732,7 @@
       {
         "type": "ACTION",
         "name": "Maleficarum",
-        "description": "The Master of Possession attempts to activate Smite or a Maleficarum psychic power (W&G p.280)."
+        "description": "The Master of Possession attempts to activate Smite or a Maleficarum psychic power."
       },
       {
         "type": "BATTLECRY",
@@ -19672,7 +19672,7 @@
       },
       {
         "name": "Legions of Excess",
-        "description": "A Keeper of Secrets may wield an extra weapon in its free hand. It suffers no penalty for Multi-attacks, and may attack 2 different targets as if it had the Dual Wield Talent (Wrath & Glory, p. 133)."
+        "description": "A Keeper of Secrets may wield an extra weapon in its free hand. It suffers no penalty for Multi-attacks, and may attack 2 different targets as if it had the Dual Wield Talent."
       }
     ],
     "abilities": [
@@ -20151,7 +20151,7 @@
       },
       {
         "name": "Discordant Disruption",
-        "description": "All enemy Psykers within 25 metres must roll on the Perils of the Warp Table (W&G, p. 263) on a result of 1-3 on any Wrath Dice in their Psychic Mastery (Wil) Test."
+        "description": "All enemy Psykers within 25 metres must roll on the Perils of the Warp Table on a result of 1-3 on any Wrath Dice in their Psychic Mastery (Wil) Test."
       }
     ],
     "abilities": [
@@ -24374,7 +24374,7 @@
     "name": "WARBIKER",
     "quote": "",
     "attribution": "",
-    "description": "A Warbiker (pl. Warbikerz) also known as a Bikerboy (pl. Bikerboyz), are those Orks addicted to high speed. Forming Mobs, these addicts race into battle at suicidal speeds, exhausts belching greasy clouds of smoke. As they hurtle toward the enemy ranks, the Warbikerz fill the air with a murderous storm of shots from their blazing Dakkaguns.\nOrk Warbikerz are normally encountered riding Ork Warbikes (Church of Steel, p. 104), or with their bikes nearby. Remember that Ork vehicles add the rider's WIL to their Maximum Wounds. This profile can also be used for any Ork vehicle crews.",
+    "description": "A Warbiker (pl. Warbikerz) also known as a Bikerboy (pl. Bikerboyz), are those Orks addicted to high speed. Forming Mobs, these addicts race into battle at suicidal speeds, exhausts belching greasy clouds of smoke. As they hurtle toward the enemy ranks, the Warbikerz fill the air with a murderous storm of shots from their blazing Dakkaguns.\nOrk Warbikerz are normally encountered riding Ork Warbikes, or with their bikes nearby. Remember that Ork vehicles add the rider's WIL to their Maximum Wounds. This profile can also be used for any Ork vehicle crews.",
     "tierThreat": {
       "1": "E",
       "2": "T",
@@ -25411,7 +25411,7 @@
       {
         "type": "ACTION",
         "name": "Power of the WAAAGH!",
-        "description": "The Weirdboy attempts to use Smite or one of the WAAAGH psychic powers (see page 44) or attempts to Deny the Witch."
+        "description": "The Weirdboy attempts to use Smite or one of the WAAAGH psychic powers or attempts to Deny the Witch."
       },
       {
         "type": "RUIN",
@@ -25479,7 +25479,7 @@
       {
         "type": "ACTION",
         "name": "Power of the WAAAGH!",
-        "description": "The Wurrboy attempts to use Smite or one of the Beasthead psychic powers (see page 45) or attempts to Deny the Witch."
+        "description": "The Wurrboy attempts to use Smite or one of the Beasthead psychic powers or attempts to Deny the Witch."
       },
       {
         "type": "RUIN",
@@ -25868,7 +25868,7 @@
     "name": "SPEEDBOSS",
     "quote": "",
     "attribution": "",
-    "description": "Fast-moving fighting platforms favoured by some Speed Freek Warbosses, Deffkilla Wartrikes make little concession to armoured protection for their riders. Scythe-wheeled, with an enormous rokkit engine afterburner on the back, these trikes not only move at a frankly vulgar pace but also pack enough firepower to make them extra killy.\nThe Speedboss is mounted on a Deffkilla Wartrike, which can be found on page 104 of Church of Steel.",
+    "description": "Fast-moving fighting platforms favoured by some Speed Freek Warbosses, Deffkilla Wartrikes make little concession to armoured protection for their riders. Scythe-wheeled, with an enormous rokkit engine afterburner on the back, these trikes not only move at a frankly vulgar pace but also pack enough firepower to make them extra killy.\nThe Speedboss is mounted on a Deffkilla Wartrike, which can be.",
     "tierThreat": {
       "1": "A",
       "2": "A",
@@ -26589,7 +26589,7 @@
       {
         "type": "ACTION",
         "name": "Power of the WAAAGH!",
-        "description": "The Weirdboy attempts to use Smite, one of the WAAAGH psychic powers (see page 44), Beasthead psychic powers (page 45) or attempts to Deny the Witch."
+        "description": "The Weirdboy attempts to use Smite, one of the WAAAGH psychic powers, Beasthead psychic powers or attempts to Deny the Witch."
       },
       {
         "type": "RUIN",
@@ -27212,7 +27212,7 @@
       {
         "type": "ACTION",
         "name": "Voice of Command",
-        "description": "The Threat issues a single Order (page 6) as an Action. The Threat may give Regimental Orders."
+        "description": "The Threat issues a single Order as an Action. The Threat may give Regimental Orders."
       },
       {
         "type": "RUIN",
@@ -29093,7 +29093,7 @@
     "name": "WINDRIDER",
     "quote": "",
     "attribution": "",
-    "description": "Windriders, known also as Guardian Jetbike Squadrons, consist of Asuryani Guardians who take to the air riding Eldar Jetbikes. Typically recruiting from Aeldari with piloting skills from their civilian life, these pilots form a close bond with their vehicles.\nThese units are commonly assigned as forward scouts for the main Eldar host or as a rapid-response force, using their weapons to strike down the enemy as they speed past them in a brightly coloured blur. A common tactic for Jetbike riders is to circumvent enemy lines completely and then close in on their vulnerable rear, taking a fearsome toll before gunning their engines and speeding off again.\nTo an Aeldari, the mastery of the Jetbike is an exhilarating challenge. Jetbikes have long, curved vanes on either side that allow the rider to execute incredibly sharp turns in mid-air, and the strength of their anti-grav motors can be subtly manipulated to send the Jetbikes hurtling into a steep dive or sharp climb. Even for an Aeldari it takes years of practice to master a Jetbike's potential, but one who does so may build a rapport with his steed comparable to the horsemasters of Aeldari Mythology.\nGuardian Windriders are mounted upon Aeldari Jetbikes, found on page 92 of Church of Steel.",
+    "description": "Windriders, known also as Guardian Jetbike Squadrons, consist of Asuryani Guardians who take to the air riding Eldar Jetbikes. Typically recruiting from Aeldari with piloting skills from their civilian life, these pilots form a close bond with their vehicles.\nThese units are commonly assigned as forward scouts for the main Eldar host or as a rapid-response force, using their weapons to strike down the enemy as they speed past them in a brightly coloured blur. A common tactic for Jetbike riders is to circumvent enemy lines completely and then close in on their vulnerable rear, taking a fearsome toll before gunning their engines and speeding off again.\nTo an Aeldari, the mastery of the Jetbike is an exhilarating challenge. Jetbikes have long, curved vanes on either side that allow the rider to execute incredibly sharp turns in mid-air, and the strength of their anti-grav motors can be subtly manipulated to send the Jetbikes hurtling into a steep dive or sharp climb. Even for an Aeldari it takes years of practice to master a Jetbike's potential, but one who does so may build a rapport with his steed comparable to the horsemasters of Aeldari Mythology.\nGuardian Windriders are mounted upon Aeldari Jetbikes.",
     "tierThreat": {
       "1": "E",
       "2": "E",
@@ -30634,7 +30634,7 @@
     "name": "SHINING SPEAR",
     "quote": "",
     "attribution": "",
-    "description": "The Shining Spears are one of the rarest and most specialised of the Aeldari Aspect Warriors. The Shining Spears possess a bright and clear virtue that marks each one out as a warrior hero and a champion of the Aeldari race. Aeldari mythology is replete with examples of noble heroes at one with their steed and in the Shining Spears, the glories of legend are made manifest once more.\nIn battle, they fight as the Spear of Kaela Mensha Khaine, the invincible weapon of the Aeldari God of War that struck like lightning and killed any foe with a single blow. Shining Spears can be distinguished from all the other Aeldari Warrior Aspects for they are the only Aspect Warriors to make use of anti-gravity Jetbikes.\nEven a small unit of Shining Spears can turn the tide of a protracted combat, for their legendary charges hit home with the force of a thunderbolt. Apart from the twin-linked Shuriken Catapults incorporated into their Jetbikes, the ritual armament of the Shining Spears Aspect Warrior is the Laser Lance.\nThis elegant weapon can deliver intense short ranged energy blasts, and is usually used just as the Shining Spears deliver their charge.\nShining Spears are mounted upon Aeldari Jetbikes, found on page 92 of Church of Steel.",
+    "description": "The Shining Spears are one of the rarest and most specialised of the Aeldari Aspect Warriors. The Shining Spears possess a bright and clear virtue that marks each one out as a warrior hero and a champion of the Aeldari race. Aeldari mythology is replete with examples of noble heroes at one with their steed and in the Shining Spears, the glories of legend are made manifest once more.\nIn battle, they fight as the Spear of Kaela Mensha Khaine, the invincible weapon of the Aeldari God of War that struck like lightning and killed any foe with a single blow. Shining Spears can be distinguished from all the other Aeldari Warrior Aspects for they are the only Aspect Warriors to make use of anti-gravity Jetbikes.\nEven a small unit of Shining Spears can turn the tide of a protracted combat, for their legendary charges hit home with the force of a thunderbolt. Apart from the twin-linked Shuriken Catapults incorporated into their Jetbikes, the ritual armament of the Shining Spears Aspect Warrior is the Laser Lance.\nThis elegant weapon can deliver intense short ranged energy blasts, and is usually used just as the Shining Spears deliver their charge.\nShining Spears are mounted upon Aeldari Jetbikes.",
     "tierThreat": {
       "1": "A",
       "2": "E",
@@ -30709,7 +30709,7 @@
     "name": "SHINING SPEAR EXARCH",
     "quote": "",
     "attribution": "",
-    "description": "Every Aspect Shrine of the Aeldari is led by an Exarch, an Aeldari who has been called permanently to the Path of the Warrior. An Exarch has travelled so far down the Path of the Warrior that they can no longer leave it and so dedicates him or herself fully as a high priest of Khaine in service to the Aspect of the War God that they represent.\nExarchs wear more elaborate and ornate versions of Aspect Armour which incorporates the spirits of their past wearers, granting an Exarch not only wisdom and knowledge stretching across the millennia but a raw pool of potent psychic energy that can be used in combat.\nThis permanent acceptance of the Aeldari's \"war mask\" provides Exarchs with enhanced skill and dedication to their craft and entitles them to access their Shrine's oldest and most advanced wargear. Instead of the usual ritual armament, they utilise a more potent version of the Laser Lance known as a Star Lance, or even fine powered cavalry sabres called Paragon Sabres. The Exarch's secret knowledge and supernatural abilities also allow Exarchs to enhance the abilities of the Shining Spears squads they lead.\nUnder the guidance of their Exarch, a Shining Spears squad can deliver devastating hit-and-run attacks, careening past their foe and returning for another attack in much the same way as the duelling Dragon Knights of the Exodite worlds.\nShining Spear Exarchs are mounted upon Aeldari Jetbikes, found on page 92 of Church of Steel. Their master-crafted mounts have a Speed of 88, and a Manoeuvrability of 9.",
+    "description": "Every Aspect Shrine of the Aeldari is led by an Exarch, an Aeldari who has been called permanently to the Path of the Warrior. An Exarch has travelled so far down the Path of the Warrior that they can no longer leave it and so dedicates him or herself fully as a high priest of Khaine in service to the Aspect of the War God that they represent.\nExarchs wear more elaborate and ornate versions of Aspect Armour which incorporates the spirits of their past wearers, granting an Exarch not only wisdom and knowledge stretching across the millennia but a raw pool of potent psychic energy that can be used in combat.\nThis permanent acceptance of the Aeldari's \"war mask\" provides Exarchs with enhanced skill and dedication to their craft and entitles them to access their Shrine's oldest and most advanced wargear. Instead of the usual ritual armament, they utilise a more potent version of the Laser Lance known as a Star Lance, or even fine powered cavalry sabres called Paragon Sabres. The Exarch's secret knowledge and supernatural abilities also allow Exarchs to enhance the abilities of the Shining Spears squads they lead.\nUnder the guidance of their Exarch, a Shining Spears squad can deliver devastating hit-and-run attacks, careening past their foe and returning for another attack in much the same way as the duelling Dragon Knights of the Exodite worlds.\nShining Spear Exarchs are mounted upon Aeldari Jetbikes. Their master-crafted mounts have a Speed of 88, and a Manoeuvrability of 9.",
     "tierThreat": {
       "1": "-",
       "2": "A",
@@ -30802,7 +30802,7 @@
     "name": "CRIMSON HUNTER",
     "quote": "",
     "attribution": "",
-    "description": "The Crimson Hunters are amongst the most unusual of the Asuryani Aspect Warriors. Their ritual wargear is not blade or sidearm, but instead a sleek aerial fighter that represents the pinnacle of Aeldari aeronautics.\nThese formidable aircraft, known as Nightshade Interceptors, are just as much a part of the Crimson Hunter's wargear as the Howling Banshees' swords or the Dire Avengers' Shuriken Catapult. Their lethality, however, is measured on a different scale altogether.\nThe Crimson Hunters are few, though their Aspect Shrines are becoming ever more widespread amongst the Asuryani craftworlds. By training every night against their own kind—in essence, the most gifted fighter pilots in the galaxy—the proud warriors of the Crimson Hunters ensure that the act of destroying the aircraft of the \"lesser races\" is a simple exercise that proves their inherent superiority over the sluggish would-be pilots that pollute the skies of the universe.\nThe Crimson Hunters embody the war god Khaine's ability to leave a more powerful foe reeling and ready for slaughter.\nCrimson Hunters operate Nightshade Interceptors, found on page 95 of Church of Steel.",
+    "description": "The Crimson Hunters are amongst the most unusual of the Asuryani Aspect Warriors. Their ritual wargear is not blade or sidearm, but instead a sleek aerial fighter that represents the pinnacle of Aeldari aeronautics.\nThese formidable aircraft, known as Nightshade Interceptors, are just as much a part of the Crimson Hunter's wargear as the Howling Banshees' swords or the Dire Avengers' Shuriken Catapult. Their lethality, however, is measured on a different scale altogether.\nThe Crimson Hunters are few, though their Aspect Shrines are becoming ever more widespread amongst the Asuryani craftworlds. By training every night against their own kind—in essence, the most gifted fighter pilots in the galaxy—the proud warriors of the Crimson Hunters ensure that the act of destroying the aircraft of the \"lesser races\" is a simple exercise that proves their inherent superiority over the sluggish would-be pilots that pollute the skies of the universe.\nThe Crimson Hunters embody the war god Khaine's ability to leave a more powerful foe reeling and ready for slaughter.\nCrimson Hunters operate Nightshade Interceptors.",
     "tierThreat": {
       "1": "A",
       "2": "E",
@@ -30882,7 +30882,7 @@
     "name": "CRIMSON HUNTER EXARCH",
     "quote": "",
     "attribution": "",
-    "description": "Every Aspect Shrine of the Aeldari is led by an Exarch, an Aeldari who has been called permanently to the Path of the Warrior. An Exarch has travelled so far down the Path of the Warrior that they can no longer leave it and so dedicates him or herself fully as a high priest of Khaine in service to the Aspect of the War God that they represent.\nExarchs wear more elaborate and ornate versions of Aspect Armour which incorporates the spirits of their past wearers, granting an Exarch not only wisdom and knowledge stretching across the millennia but a raw pool of potent psychic energy that can be used in combat.\nCrimson Hunter Exarchs employ finely crafted Nightshade Interceptors, faster and nimbler even than the craft of their comrades.\nAs a solitary fighter ace, or leading a squadron of their students through the skies, a Crimson Hunter Exarch is a deadly combatant with centuries, if not millennia, of experience dominating the skies. Their eyes and reflexes are so keen that they can deliver pinpoint strikes against targets while flying at supersonic speeds.\nCrimson Hunter Exarchs operate master-crafted Nightshade Interceptors, found on page 95 of Church of Steel. These upgraded flyers have a Speed of 143, and a Manoeuvrability of 10.",
+    "description": "Every Aspect Shrine of the Aeldari is led by an Exarch, an Aeldari who has been called permanently to the Path of the Warrior. An Exarch has travelled so far down the Path of the Warrior that they can no longer leave it and so dedicates him or herself fully as a high priest of Khaine in service to the Aspect of the War God that they represent.\nExarchs wear more elaborate and ornate versions of Aspect Armour which incorporates the spirits of their past wearers, granting an Exarch not only wisdom and knowledge stretching across the millennia but a raw pool of potent psychic energy that can be used in combat.\nCrimson Hunter Exarchs employ finely crafted Nightshade Interceptors, faster and nimbler even than the craft of their comrades.\nAs a solitary fighter ace, or leading a squadron of their students through the skies, a Crimson Hunter Exarch is a deadly combatant with centuries, if not millennia, of experience dominating the skies. Their eyes and reflexes are so keen that they can deliver pinpoint strikes against targets while flying at supersonic speeds.\nCrimson Hunter Exarchs operate master-crafted Nightshade Interceptors. These upgraded flyers have a Speed of 143, and a Manoeuvrability of 10.",
     "tierThreat": {
       "1": "-",
       "2": "A",
@@ -37351,7 +37351,7 @@
       {
         "type": "TRAIT",
         "name": "Mark of Chaos",
-        "description": "This Threat has a Mark of Chaos (Wrath & Glory corebook, p. 136)."
+        "description": "This Threat has a Mark of Chaos."
       },
       {
         "type": "TRAIT",
@@ -37568,7 +37568,7 @@
     "name": "SYBARITE",
     "quote": "",
     "attribution": "",
-    "description": "Each band of Kabalite Warriors is led by a Sybarite, who is typically the most veteran and experienced among their number.\nSybarites are not only veteran raiders of realspace, but also the Kabalites who have the honour and duty of initiating each new warrior into the always-brutal mysteries of their Kabal.\nWhile certainly no sybarite, or any Drukhari for that matter, can claim the loyalty of their underlings, the sybarites are obeyed for the simple reason that they are the masters of the craft of war and their orders when followed are more likely to lead to success in the raid...and survival.\nA Sybarite may lead a group of Kabalite Warriors in battle, using the same statistics as a Kabalite Warrior with the following adjustments.",
+    "description": "Each band of Kabalite Warriors is led by a Sybarite, who is typically the most veteran and experienced among their number.\nSybarites are not only veteran raiders of realspace, but also the Kabalites who have the honour and duty of initiating each new warrior into the always-brutal mysteries of their Kabal.\nWhile certainly no sybarite, or any Drukhari for that matter, can claim the loyalty of their underlings, the sybarites are obeyed for the simple reason that they are the masters of the craft of war and their orders when followed are more likely to lead to success in the raid..and survival.\nA Sybarite may lead a group of Kabalite Warriors in battle, using the same statistics as a Kabalite Warrior with the following adjustments.",
     "tierThreat": {
       "1": "T",
       "2": "T",
@@ -39182,7 +39182,7 @@
     "name": "REAVER",
     "quote": "",
     "attribution": "",
-    "description": "The Reavers of Commorragh are those Drukhari fascinated by bringing death to others at high speeds. They ride to war upon the most streamlined and pared-down of all Aeldari craft -- the Reaver Jetbike, the perfect fusion of motion and lethal power.\nThe Aeldari experience sensations and emotions to a far greater degree than any other sentient species and their psyches are given over too easily to obsession. Reavers, having first gotten a taste for high-speed violence during raids into realspace, are those Drukhari consumed with achieving the maximum-impact kill.\nReavers are mounted upon Reaver Jetbikes, found on page 100 of Church of Steel.",
+    "description": "The Reavers of Commorragh are those Drukhari fascinated by bringing death to others at high speeds. They ride to war upon the most streamlined and pared-down of all Aeldari craft -- the Reaver Jetbike, the perfect fusion of motion and lethal power.\nThe Aeldari experience sensations and emotions to a far greater degree than any other sentient species and their psyches are given over too easily to obsession. Reavers, having first gotten a taste for high-speed violence during raids into realspace, are those Drukhari consumed with achieving the maximum-impact kill.\nReavers are mounted upon Reaver Jetbikes.",
     "tierThreat": {
       "1": "E",
       "2": "E",
@@ -40488,7 +40488,7 @@
       },
       {
         "name": "Shadow Creatures",
-        "description": "Mandrakes can move at full Speed when Moving Stealthily (p. 182)."
+        "description": "Mandrakes can move at full Speed when Moving Stealthily."
       },
       {
         "name": "Umbral Entities",
@@ -41748,7 +41748,7 @@
     "name": "SKRYRE WARPLOCK-ENGINEER",
     "quote": "",
     "attribution": "",
-    "description": "The Clans Skryre are the engineers and technologists of the Hrud, constantly seeking to improve and innovate... often at the cost of their underlings' lives. Warplock-Engineers scurry into battle with arcane engines strapped to their backs and crackling weapons of war clutched in their gnarled claws.",
+    "description": "The Clans Skryre are the engineers and technologists of the Hrud, constantly seeking to improve and innovate.. often at the cost of their underlings' lives. Warplock-Engineers scurry into battle with arcane engines strapped to their backs and crackling weapons of war clutched in their gnarled claws.",
     "tierThreat": {
       "1": "A",
       "2": "A",
@@ -49152,7 +49152,7 @@
         "description": "Roll 1d6 when this Threat dies; it heals 1 Wound for each Icon rolled."
       }
     ],
-    "determination": "Spend 1 Ruin to roll 3d6. Ancient Machines (page 5).",
+    "determination": "Spend 1 Ruin to roll 3d6. Ancient Machines.",
     "conviction": 6,
     "resolve": 5,
     "speed": 10,
@@ -49222,7 +49222,7 @@
         "description": "Roll 1d6 when this Threat dies; it heals 1 Wound for each Icon rolled."
       }
     ],
-    "determination": "Spend 1 Ruin to roll 5d6. Ancient Machines (page 5).",
+    "determination": "Spend 1 Ruin to roll 5d6. Ancient Machines.",
     "conviction": 6,
     "resolve": 5,
     "speed": 5,
@@ -49291,7 +49291,7 @@
         "description": "Roll 2d6 when this Threat dies; it heals 1 Wound for each Icon rolled."
       }
     ],
-    "determination": "Spend 1 Ruin to roll 7d6. Ancient Machines (page 5).",
+    "determination": "Spend 1 Ruin to roll 7d6. Ancient Machines.",
     "conviction": 6,
     "resolve": 5,
     "speed": 5,
@@ -49369,7 +49369,7 @@
         "description": "Roll 1d6 when this Threat dies; it heals 1 Wound for each Icon rolled."
       }
     ],
-    "determination": "Spend 1 Ruin to roll 5d6. Ancient Machines (page 5).",
+    "determination": "Spend 1 Ruin to roll 5d6. Ancient Machines.",
     "conviction": 6,
     "resolve": 5,
     "speed": 5,
@@ -49450,7 +49450,7 @@
         "description": "When an enemy attempts to charge this Threat, it may spend 1 Ruin and use its Reflexive Action to make a ranged attack against the charging enemy before the charge move begins."
       }
     ],
-    "determination": "Spend 1 Ruin to roll 7d6. Ancient Machines (page 5). Living Metal (page 5). Excess Icons rolled heal previously suffered Wounds.",
+    "determination": "Spend 1 Ruin to roll 7d6. Ancient Machines. Living Metal. Excess Icons rolled heal previously suffered Wounds.",
     "conviction": 6,
     "resolve": 5,
     "speed": 8,
@@ -49523,7 +49523,7 @@
         "description": "Roll 3d6 when this Threat dies; it heals 1 Wound for each Icon rolled."
       }
     ],
-    "determination": "Spend 1 Ruin to roll 7d6. Ancient Machines (page 5). Living Metal (page 5). Excess Icons rolled heal previously suffered Wounds.",
+    "determination": "Spend 1 Ruin to roll 7d6. Ancient Machines. Living Metal. Excess Icons rolled heal previously suffered Wounds.",
     "conviction": 6,
     "resolve": 5,
     "speed": 8,
@@ -49603,7 +49603,7 @@
         "description": "Roll 3d6 when this Threat dies; it heals 1 Wound for each Icon rolled."
       }
     ],
-    "determination": "Spend 1 Ruin to roll 7d6. Ancient Machines (page 5). Living Metal (page 5). Excess Icons rolled heal previously suffered Wounds.",
+    "determination": "Spend 1 Ruin to roll 7d6. Ancient Machines. Living Metal. Excess Icons rolled heal previously suffered Wounds.",
     "conviction": 6,
     "resolve": 5,
     "speed": 8,
@@ -49691,7 +49691,7 @@
         "description": "Roll 3d6 when this Threat dies; it heals 1 Wound for each Icon rolled."
       }
     ],
-    "determination": "Spend 1 Ruin to roll 5d6. Ancient Machines (page 5). Living Metal (page 5). Excess Icons rolled heal previously suffered Wounds.",
+    "determination": "Spend 1 Ruin to roll 5d6. Ancient Machines. Living Metal. Excess Icons rolled heal previously suffered Wounds.",
     "conviction": 6,
     "resolve": 5,
     "speed": 10,
@@ -49761,7 +49761,7 @@
         "description": "Roll 3d6 when this Threat dies; it heals 1 Wound for each Icon rolled."
       }
     ],
-    "determination": "Spend 1 Ruin to roll 7d6. Ancient Machines (page 5). Living Metal (page 5). Excess Icons rolled heal previously suffered Wounds.",
+    "determination": "Spend 1 Ruin to roll 7d6. Ancient Machines. Living Metal. Excess Icons rolled heal previously suffered Wounds.",
     "conviction": 6,
     "resolve": 5,
     "speed": 8,
@@ -49772,7 +49772,7 @@
   {
     "id": "canoptek_plasmacyte_aaa",
     "name": "CANOPTEK PLASMACYTE",
-    "description": "Canoptek Plasmacytes are subservient machines engineered to support the Necrons of the Destroyer Cult.\n\nTheir original purpose was to siphon corrupted energies and dangerous engrams from slumbering Necrons, but the Destroyer Cult have found a new use for the by-products of this process.\n\nThe energies contained within a Plasmacyte, twisted and corrupted by the cruel, malicious engrams they've extracted from dormant Necrons, can be injected into a Necron to drive them into a savage, destructive frenzy... with only a small risk of a catastrophic failure in the Necron's systems.\n\nFew free-willed Necrons would be willing to enter such a state, but nihilistic, hateful Destroyers find such a berserk state to be a small price to pay to see the living annihilated.",
+    "description": "Canoptek Plasmacytes are subservient machines engineered to support the Necrons of the Destroyer Cult.\n\nTheir original purpose was to siphon corrupted energies and dangerous engrams from slumbering Necrons, but the Destroyer Cult have found a new use for the by-products of this process.\n\nThe energies contained within a Plasmacyte, twisted and corrupted by the cruel, malicious engrams they've extracted from dormant Necrons, can be injected into a Necron to drive them into a savage, destructive frenzy.. with only a small risk of a catastrophic failure in the Necron's systems.\n\nFew free-willed Necrons would be willing to enter such a state, but nihilistic, hateful Destroyers find such a berserk state to be a small price to pay to see the living annihilated.",
     "tierThreat": {
       "1": "E",
       "2": "E",
@@ -49824,7 +49824,7 @@
         "description": "Choose one [DYNASTY] DESTROYER within 3m. That [DYNASTY] DESTROYER suffers 1d3 Mortal Wounds and becomes Frenzied."
       }
     ],
-    "determination": "Spend 1 Ruin to roll 3d6. Ancient Machines (page 5).",
+    "determination": "Spend 1 Ruin to roll 3d6. Ancient Machines.",
     "conviction": 6,
     "resolve": 5,
     "speed": 8,
@@ -49887,7 +49887,7 @@
         "description": "Roll 1d6 when this Threat dies; it heals 1 Wound for each Icon rolled."
       }
     ],
-    "determination": "Spend 1 Ruin to roll 7d6. Ancient Machines (page 5).",
+    "determination": "Spend 1 Ruin to roll 7d6. Ancient Machines.",
     "conviction": 6,
     "resolve": 5,
     "speed": 5,
@@ -49960,7 +49960,7 @@
         "description": "Roll 2d6 when this Threat dies; it heals 1 Wound for each Icon rolled."
       }
     ],
-    "determination": "Spend 1 Ruin to roll 8d6. Ancient Machines (page 5). Living Metal (page 5). Excess Icons rolled heal previously suffered Wounds.",
+    "determination": "Spend 1 Ruin to roll 8d6. Ancient Machines. Living Metal. Excess Icons rolled heal previously suffered Wounds.",
     "conviction": 6,
     "resolve": 5,
     "speed": 5,
@@ -50036,7 +50036,7 @@
         "description": "When this Threat makes a ranged attack, spend 1 Ruin to add the Mortal (1) trait to the weapon."
       }
     ],
-    "determination": "Spend 1 Ruin to roll 7d6. Ancient Machines (page 5). Living Metal (page 5). Excess Icons rolled heal previously suffered Wounds.",
+    "determination": "Spend 1 Ruin to roll 7d6. Ancient Machines. Living Metal. Excess Icons rolled heal previously suffered Wounds.",
     "conviction": 7,
     "resolve": 6,
     "speed": 6,
@@ -50129,7 +50129,7 @@
         "description": "Spend 1 Ruin to roll 4d6 when this Threat dies; it heals 1 Wound for each Icon rolled. Once per scene."
       }
     ],
-    "determination": "Roll 8d6. Ancient Machines (page 5). Living Metal (page 5). Excess Icons rolled heal previously suffered Wounds.",
+    "determination": "Roll 8d6. Ancient Machines. Living Metal. Excess Icons rolled heal previously suffered Wounds.",
     "conviction": 7,
     "resolve": 6,
     "speed": 6,
@@ -50247,7 +50247,7 @@
         "description": "Spend 1 Ruin to roll 5d6 when this Threat dies; it heals 1 Wound for each Icon rolled. Once per scene."
       }
     ],
-    "determination": "Roll 8d6. This Threat may roll Determination against Mortal Wounds. Ancient Machines (page 5). Living Metal (page 5). Excess Icons rolled heal previously suffered Wounds.",
+    "determination": "Roll 8d6. This Threat may roll Determination against Mortal Wounds. Ancient Machines. Living Metal. Excess Icons rolled heal previously suffered Wounds.",
     "conviction": 8,
     "resolve": 7,
     "speed": 6,
@@ -50352,7 +50352,7 @@
         "description": "Spend 1 Ruin to roll 6d6 when this Threat dies; it heals 1 Wound for each Icon rolled. Once per scene."
       }
     ],
-    "determination": "Roll 10d6. This Threat may roll Determination against Mortal Wounds. Ancient Machines (page 5). Living Metal (page 5). Excess Icons rolled heal previously suffered Wounds.",
+    "determination": "Roll 10d6. This Threat may roll Determination against Mortal Wounds. Ancient Machines. Living Metal. Excess Icons rolled heal previously suffered Wounds.",
     "conviction": 7,
     "resolve": 6,
     "speed": 8,
@@ -50435,7 +50435,7 @@
         "description": "Spend 1 Ruin to roll 6d6 when this Threat dies; it heals 1 Wound for each Icon rolled."
       }
     ],
-    "determination": "Roll 10d6. This Threat may roll Determination against Mortal Wounds. Ancient Machines (page 5). Living Metal (page 5). Excess Icons rolled heal previously suffered Wounds.",
+    "determination": "Roll 10d6. This Threat may roll Determination against Mortal Wounds. Ancient Machines. Living Metal. Excess Icons rolled heal previously suffered Wounds.",
     "conviction": 7,
     "resolve": 6,
     "speed": 8,
@@ -50516,7 +50516,7 @@
         "description": "Spend 1 Ruin to roll 4d6 when this Threat dies; it heals 1 Wound for each Icon rolled. Once per scene."
       }
     ],
-    "determination": "Roll 6d6. Ancient Machines (page 5). Living Metal (page 5). Excess Icons rolled heal previously suffered Wounds.",
+    "determination": "Roll 6d6. Ancient Machines. Living Metal. Excess Icons rolled heal previously suffered Wounds.",
     "conviction": 7,
     "resolve": 6,
     "speed": 5,
@@ -50603,7 +50603,7 @@
         "description": "Spend 1 Ruin to roll 4d6 when this Threat dies; it heals 1 Wound for each Icon rolled. Once per scene."
       }
     ],
-    "determination": "Roll 5d6. The Threat may roll Determination against Mortal Wounds. Ancient Machines (page 5). Living Metal (page 5). Excess Icons rolled heal previously suffered Wounds.",
+    "determination": "Roll 5d6. The Threat may roll Determination against Mortal Wounds. Ancient Machines. Living Metal. Excess Icons rolled heal previously suffered Wounds.",
     "conviction": 7,
     "resolve": 6,
     "speed": 8,
@@ -50681,7 +50681,7 @@
         "description": "Spend 1 Ruin to roll 4d6 when this Threat dies; it heals 1 Wound for each Icon rolled. Once per scene."
       }
     ],
-    "determination": "Roll 5d6. Ancient Machines (page 5). Living Metal (page 5). Excess Icons rolled heal previously suffered Wounds.",
+    "determination": "Roll 5d6. Ancient Machines. Living Metal. Excess Icons rolled heal previously suffered Wounds.",
     "conviction": 7,
     "resolve": 6,
     "speed": 5,
@@ -50758,7 +50758,7 @@
         "description": "Spend 1 Ruin to roll 4d6 when this Threat dies; it heals 1 Wound for each Icon rolled. Once per scene."
       }
     ],
-    "determination": "Roll 5d6. Ancient Machines (page 5). Living Metal (page 5). Excess Icons rolled heal previously suffered Wounds.",
+    "determination": "Roll 5d6. Ancient Machines. Living Metal. Excess Icons rolled heal previously suffered Wounds.",
     "conviction": 7,
     "resolve": 6,
     "speed": 5,
@@ -50832,7 +50832,7 @@
         "description": "When an attack targets a [DYNASTY] CRYPTEK keyword within 6m, this Threat may spend 1 Ruin and use its Reflexive Action to become the target instead. The Threat rolls Determination against that attack without spending additional Ruin."
       }
     ],
-    "determination": "Spend 1 Ruin to roll 7d6. Ancient Machines (page 5). Living Metal (page 5). Excess Icons rolled heal previously suffered Wounds.",
+    "determination": "Spend 1 Ruin to roll 7d6. Ancient Machines. Living Metal. Excess Icons rolled heal previously suffered Wounds.",
     "conviction": 6,
     "resolve": 5,
     "speed": 5,
@@ -50911,7 +50911,7 @@
         "description": "Roll 2d6 when this Threat dies; it heals 1 Wound for each Icon rolled."
       }
     ],
-    "determination": "Spend 1 Ruin to roll 8d6. Ancient Machines (page 5). Living Metal (page 5). Excess Icons rolled heal previously suffered Wounds.",
+    "determination": "Spend 1 Ruin to roll 8d6. Ancient Machines. Living Metal. Excess Icons rolled heal previously suffered Wounds.",
     "conviction": 6,
     "resolve": 5,
     "speed": 10,
@@ -50991,7 +50991,7 @@
         "description": "Roll 3d6 when this Threat dies; it heals 1 Wound for each Icon rolled."
       }
     ],
-    "determination": "Spend 1 Ruin to roll 7d6. It may roll Determination against Mortal Wounds. Ancient Machines (page 5). Living Metal (page 5). Excess Icons rolled heal previously suffered Wounds.",
+    "determination": "Spend 1 Ruin to roll 7d6. It may roll Determination against Mortal Wounds. Ancient Machines. Living Metal. Excess Icons rolled heal previously suffered Wounds.",
     "conviction": 6,
     "resolve": 5,
     "speed": 12,
@@ -51078,7 +51078,7 @@
         "description": "When this Threat is destroyed, roll 1d6. On a roll of a 6, each creature within 6m suffers 1d3 Mortal Wounds."
       }
     ],
-    "determination": "Spend 1 Ruin to roll 10d6. Ancient Machines (page 5). Living Metal (page 5). Excess Icons rolled heal previously suffered Wounds.",
+    "determination": "Spend 1 Ruin to roll 10d6. Ancient Machines. Living Metal. Excess Icons rolled heal previously suffered Wounds.",
     "conviction": 6,
     "resolve": 5,
     "speed": 6,
@@ -51161,7 +51161,7 @@
         "description": "When this Threat is destroyed, roll 1d6. On a roll of an Icon, each creature within 6m suffers 1d3 Mortal Wounds."
       }
     ],
-    "determination": "Spend 1 Ruin to roll 8d6. Ancient Machines (page 5). Living Metal (page 5). Excess Icons rolled heal previously suffered Wounds.",
+    "determination": "Spend 1 Ruin to roll 8d6. Ancient Machines. Living Metal. Excess Icons rolled heal previously suffered Wounds.",
     "conviction": 6,
     "resolve": 5,
     "speed": 8,
@@ -51242,7 +51242,7 @@
         "description": "When this Threat is destroyed, roll 1d6. On a roll of an Icon, each creature within 6m suffers 1d3+3 Mortal Wounds."
       }
     ],
-    "determination": "Spend 1 Ruin to roll 11d6. Living Metal (page 5). C'Tan Shards may roll Determination against Mortal Wounds, and any Wounds negated by Determination are ignored instead of being converted to Shock. Excess Icons rolled heal previously suffered Wounds.",
+    "determination": "Spend 1 Ruin to roll 11d6. Living Metal. C'Tan Shards may roll Determination against Mortal Wounds, and any Wounds negated by Determination are ignored instead of being converted to Shock. Excess Icons rolled heal previously suffered Wounds.",
     "conviction": 8,
     "resolve": 7,
     "speed": 8,
@@ -51323,7 +51323,7 @@
         "description": "When this Threat is destroyed, roll 1d6. On a roll of an Icon, each creature within 6m suffers 1d3+3 Mortal Wounds."
       }
     ],
-    "determination": "Spend 1 Ruin to roll 11d6. Living Metal (page 5). C'Tan Shards may roll Determination against Mortal Wounds, and any Wounds negated by Determination are ignored instead of being converted to Shock. Excess Icons rolled heal previously suffered Wounds.",
+    "determination": "Spend 1 Ruin to roll 11d6. Living Metal. C'Tan Shards may roll Determination against Mortal Wounds, and any Wounds negated by Determination are ignored instead of being converted to Shock. Excess Icons rolled heal previously suffered Wounds.",
     "conviction": 8,
     "resolve": 7,
     "speed": 8,
@@ -51414,7 +51414,7 @@
         "description": "When this Threat is destroyed, roll 1d6. On a roll of an Icon, each creature within 6m suffers 1d3+3 Mortal Wounds."
       }
     ],
-    "determination": "Spend 1 Ruin to roll 11d6. Living Metal (page 5). C'Tan Shards may roll Determination against Mortal Wounds, and any Wounds negated by Determination are ignored instead of being converted to Shock. Excess Icons rolled heal previously suffered Wounds.",
+    "determination": "Spend 1 Ruin to roll 11d6. Living Metal. C'Tan Shards may roll Determination against Mortal Wounds, and any Wounds negated by Determination are ignored instead of being converted to Shock. Excess Icons rolled heal previously suffered Wounds.",
     "conviction": 8,
     "resolve": 7,
     "speed": 8,
@@ -51504,7 +51504,7 @@
         "description": "Spend 1 Ruin to roll 5d6 when this Threat dies; it heals 1 Wound for each Icon rolled. Once per scene."
       }
     ],
-    "determination": "Roll 8d6. This Threat may roll Determination against Mortal Wounds. Ancient Machines (page 5). Living Metal (page 5). Excess Icons rolled heal previously suffered Wounds.",
+    "determination": "Roll 8d6. This Threat may roll Determination against Mortal Wounds. Ancient Machines. Living Metal. Excess Icons rolled heal previously suffered Wounds.",
     "conviction": 9,
     "resolve": 8,
     "speed": 6,
@@ -51586,7 +51586,7 @@
         "description": "Spend 1 Ruin to roll 4d6 when this Threat dies; it heals 1 Wound for each Icon rolled. Once per scene."
       }
     ],
-    "determination": "Enduring Will. Roll 10d6, and re-roll up to Tier dice. Ancient Machines (page 5). Living Metal (page 5). Excess Icons rolled heal previously suffered Wounds.",
+    "determination": "Enduring Will. Roll 10d6, and re-roll up to Tier dice. Ancient Machines. Living Metal. Excess Icons rolled heal previously suffered Wounds.",
     "conviction": 8,
     "resolve": 7,
     "speed": 8,
@@ -51681,7 +51681,7 @@
         "description": "Spend 1 Ruin to roll 4d6 when this Threat dies; it heals 1 Wound for each Icon rolled. Once per scene."
       }
     ],
-    "determination": "Roll 8d6. This Threat may roll Determination against Mortal Wounds. Ancient Machines (page 5). Living Metal (page 5). Excess Icons rolled heal previously suffered Wounds.",
+    "determination": "Roll 8d6. This Threat may roll Determination against Mortal Wounds. Ancient Machines. Living Metal. Excess Icons rolled heal previously suffered Wounds.",
     "conviction": 9,
     "resolve": 9,
     "speed": 6,
@@ -51779,7 +51779,7 @@
         "description": "Spend 1 Ruin to roll 5d6 when this Threat dies; it heals 1 Wound for each Icon rolled. Once per scene."
       }
     ],
-    "determination": "Roll 9d6. This Threat may roll Determination against Mortal Wounds. Ancient Machines (page 5). Living Metal (page 5). Excess Icons rolled heal previously suffered Wounds.",
+    "determination": "Roll 9d6. This Threat may roll Determination against Mortal Wounds. Ancient Machines. Living Metal. Excess Icons rolled heal previously suffered Wounds.",
     "conviction": 8,
     "resolve": 8,
     "speed": 6,
@@ -51859,7 +51859,7 @@
         "description": "Spend 1 Ruin to roll 4d6 when this Threat dies; it heals 1 Wound for each Icon rolled. Once per scene."
       }
     ],
-    "determination": "Roll 5d6. The Threat may roll Determination against Mortal Wounds. Ancient Machines (page 5). Living Metal (page 5). Excess Icons rolled heal previously suffered Wounds.",
+    "determination": "Roll 5d6. The Threat may roll Determination against Mortal Wounds. Ancient Machines. Living Metal. Excess Icons rolled heal previously suffered Wounds.",
     "conviction": 7,
     "resolve": 6,
     "speed": 8,
@@ -51919,7 +51919,7 @@
         "description": "Spend 1 Ruin to roll 4d6 when this Threat dies; it heals 1 Wound for each Icon rolled. Once per scene."
       }
     ],
-    "determination": "Roll 11d6. The Threat may roll Determination against Mortal Wounds. Ancient Machines (page 5). Living Metal (page 5). Excess Icons rolled heal previously suffered Wounds.",
+    "determination": "Roll 11d6. The Threat may roll Determination against Mortal Wounds. Ancient Machines. Living Metal. Excess Icons rolled heal previously suffered Wounds.",
     "conviction": 7,
     "resolve": 6,
     "speed": 8,
@@ -51991,7 +51991,7 @@
         "description": "When Trazyn is slain, either add 1 to Ruin, or select another NECRON Adversary or Elite in the scene. The selected NECRON is immediately replaced by Trazyn, who has suffered 10 Wounds."
       }
     ],
-    "determination": "Roll 9d6. This Threat may roll Determination against Mortal Wounds. Ancient Machines (page 5). Living Metal (page 5). Excess Icons rolled heal previously suffered Wounds. Enduring Will: Trazyn may re-roll up to Tier dice on any Determination roll.",
+    "determination": "Roll 9d6. This Threat may roll Determination against Mortal Wounds. Ancient Machines. Living Metal. Excess Icons rolled heal previously suffered Wounds. Enduring Will: Trazyn may re-roll up to Tier dice on any Determination roll.",
     "conviction": 8,
     "resolve": 7,
     "speed": 6,
@@ -52083,7 +52083,7 @@
         "description": "Spend 1 Ruin to roll 4d6 when this Threat dies; it heals 1 Wound for each Icon rolled. Once per scene."
       }
     ],
-    "determination": "Roll 9d6. Ancient Machines (page 5). Living Metal (page 5). Excess Icons rolled heal previously suffered Wounds.",
+    "determination": "Roll 9d6. Ancient Machines. Living Metal. Excess Icons rolled heal previously suffered Wounds.",
     "conviction": 7,
     "resolve": 6,
     "speed": 6,
@@ -52128,7 +52128,7 @@
     "bonuses": [
       {
         "name": "CHAMPION",
-        "description": "This Threat may use Ruin Actions and has 1 Personal Ruin. Also, see Dark Pacts, page 13. DEATH TO THE FALSE EMPEROR: See page 8. MALICIOUS VOLLEYS: See page 8. SPACE MARINE IMPLANTS: See page 8."
+        "description": "This Threat may use Ruin Actions and has 1 Personal Ruin. Also, see. DEATH TO THE FALSE EMPEROR: MALICIOUS VOLLEYS: SPACE MARINE IMPLANTS:"
       }
     ],
     "abilities": [
@@ -52210,7 +52210,7 @@
     "bonuses": [
       {
         "name": "CHAMPION",
-        "description": "This Threat may use Ruin Actions and has 3 Personal Ruin. Also, see Dark Pacts, page 13. DEATH TO THE FALSE EMPEROR: See page 8. MALICIOUS VOLLEYS: See page 8. SPACE MARINE IMPLANTS: See page 8."
+        "description": "This Threat may use Ruin Actions and has 3 Personal Ruin. Also, see. DEATH TO THE FALSE EMPEROR: MALICIOUS VOLLEYS: SPACE MARINE IMPLANTS:"
       }
     ],
     "abilities": [
@@ -52283,7 +52283,7 @@
     "bonuses": [
       {
         "name": "CHAMPION",
-        "description": "This Threat may use Ruin Actions and has 1 Personal Ruin. Also, see Dark Pacts, page 13. DEATH TO THE FALSE EMPEROR: See page 8. MALICIOUS VOLLEYS: See page 8. SPACE MARINE IMPLANTS: See page 8."
+        "description": "This Threat may use Ruin Actions and has 1 Personal Ruin. Also, see. DEATH TO THE FALSE EMPEROR: MALICIOUS VOLLEYS: SPACE MARINE IMPLANTS:"
       }
     ],
     "abilities": [
@@ -52354,7 +52354,7 @@
     "bonuses": [
       {
         "name": "CHAMPION",
-        "description": "This Threat may use Ruin Actions and has 1 Personal Ruin. Also, see Dark Pacts, page 13. DEATH TO THE FALSE EMPEROR: See page 8. MALICIOUS VOLLEYS: See page 8. SPACE MARINE IMPLANTS: See page 8."
+        "description": "This Threat may use Ruin Actions and has 1 Personal Ruin. Also, see. DEATH TO THE FALSE EMPEROR: MALICIOUS VOLLEYS: SPACE MARINE IMPLANTS:"
       }
     ],
     "abilities": [
@@ -52371,7 +52371,7 @@
       {
         "type": "ACTION",
         "name": "Balefire Tome",
-        "description": "The Balefire Acolyte attempts to activate a psychic power. They know Smite, Psyniscience, Deny the Witch, and one power from the Dark Hereticus discipline (page 59)."
+        "description": "The Balefire Acolyte attempts to activate a psychic power. They know Smite, Psyniscience, Deny the Witch, and one power from the Dark Hereticus discipline."
       },
       {
         "type": "WRATH",
@@ -52424,7 +52424,7 @@
     "bonuses": [
       {
         "name": "CHAMPION",
-        "description": "This Threat may use Ruin Actions and has 1 Personal Ruin. Also, see Dark Pacts, page 13. DEATH TO THE FALSE EMPEROR: See page 8. MALICIOUS VOLLEYS: See page 8. SPACE MARINE IMPLANTS: See page 8."
+        "description": "This Threat may use Ruin Actions and has 1 Personal Ruin. Also, see. DEATH TO THE FALSE EMPEROR: MALICIOUS VOLLEYS: SPACE MARINE IMPLANTS:"
       }
     ],
     "abilities": [
@@ -52494,7 +52494,7 @@
     "bonuses": [
       {
         "name": "CHAMPION",
-        "description": "This Threat may use Ruin Actions and has 1 Personal Ruin. Also, see Dark Pacts, page 13. DEATH TO THE FALSE EMPEROR: See page 8. HORRIFYING DISMEMBERMENT: When this Threat kills an enemy or scores a critical hit with a melee attack, all enemies within 3m must pass a DN 3 Fear test. MALICIOUS VOLLEYS: See page 8. SPACE MARINE IMPLANTS: See page 8."
+        "description": "This Threat may use Ruin Actions and has 1 Personal Ruin. Also, see. DEATH TO THE FALSE EMPEROR: HORRIFYING DISMEMBERMENT: When this Threat kills an enemy or scores a critical hit with a melee attack, all enemies within 3m must pass a DN 3 Fear test. MALICIOUS VOLLEYS: SPACE MARINE IMPLANTS:"
       }
     ],
     "abilities": [
@@ -52564,7 +52564,7 @@
     "bonuses": [
       {
         "name": "CHAMPION",
-        "description": "This Threat may use Ruin Actions and has 1 Personal Ruin. Also, see Dark Pacts, page 13. DEATH TO THE FALSE EMPEROR: See page 8. MALICIOUS VOLLEYS: See page 8. SPACE MARINE IMPLANTS: See page 8."
+        "description": "This Threat may use Ruin Actions and has 1 Personal Ruin. Also, see. DEATH TO THE FALSE EMPEROR: MALICIOUS VOLLEYS: SPACE MARINE IMPLANTS:"
       }
     ],
     "abilities": [
@@ -52630,7 +52630,7 @@
     "bonuses": [
       {
         "name": "CHAMPION",
-        "description": "This Threat may use Ruin Actions and has 1 Personal Ruin. Also, see Dark Pacts, page 13. DEATH TO THE FALSE EMPEROR: See page 8. MALICIOUS VOLLEYS: See page 8. SPACE MARINE IMPLANTS: See page 8."
+        "description": "This Threat may use Ruin Actions and has 1 Personal Ruin. Also, see. DEATH TO THE FALSE EMPEROR: MALICIOUS VOLLEYS: SPACE MARINE IMPLANTS:"
       }
     ],
     "abilities": [
@@ -52696,7 +52696,7 @@
     "bonuses": [
       {
         "name": "CHAMPION",
-        "description": "This Threat may use Ruin Actions and has 1 Personal Ruin. Also, see Dark Pacts, page 13. CHAOS ICON: An Icon Bearer grants a bonus to all [MARK OF CHAOS] Threats within 6m, depending on the Icon Bearer's own Mark: KHORNE Threats add +1 to Speed when they Charge. TZEENTCH Threats add Inflict (On Fire) to their attacks. NURGLE Threats add Inflict (Poisoned 3) to their attacks. SLAANESH Threats may re-roll any dice which roll 1s on their attacks. UNDIVIDED Threats add +1 to Resolve and ignore the penalty for being Wounded. DEATH TO THE FALSE EMPEROR: See page 8. MALICIOUS VOLLEYS: See page 8. SPACE MARINE IMPLANTS: See page 8."
+        "description": "This Threat may use Ruin Actions and has 1 Personal Ruin. Also, see. CHAOS ICON: An Icon Bearer grants a bonus to all [MARK OF CHAOS] Threats within 6m, depending on the Icon Bearer's own Mark: KHORNE Threats add +1 to Speed when they Charge. TZEENTCH Threats add Inflict (On Fire) to their attacks. NURGLE Threats add Inflict (Poisoned 3) to their attacks. SLAANESH Threats may re-roll any dice which roll 1s on their attacks. UNDIVIDED Threats add +1 to Resolve and ignore the penalty for being Wounded. DEATH TO THE FALSE EMPEROR: MALICIOUS VOLLEYS: SPACE MARINE IMPLANTS:"
       }
     ],
     "abilities": [
@@ -52768,7 +52768,7 @@
     "bonuses": [
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 2 personal Ruin. Also, see Dark Pacts, page 13. DEATH TO THE FALSE EMPEROR: See page 8. MALICIOUS VOLLEYS: See page 8. SPACE MARINE IMPLANTS: See page 8."
+        "description": "The Threat may use Ruin Actions and has 2 personal Ruin. Also, see. DEATH TO THE FALSE EMPEROR: MALICIOUS VOLLEYS: SPACE MARINE IMPLANTS:"
       }
     ],
     "abilities": [
@@ -52849,7 +52849,7 @@
     "bonuses": [
       {
         "name": "FEARSOME",
-        "description": "When this Threat becomes Engaged with an enemy, they must immediately pass a DN 3 Fear test. CHAMPION: The Threat may use Ruin Actions and has 1 personal Ruin. Also, see Dark Pacts, page 13. DEATH TO THE FALSE EMPEROR: See page 8. MALICIOUS VOLLEYS: See page 8. SPACE MARINE IMPLANTS: See page 8."
+        "description": "When this Threat becomes Engaged with an enemy, they must immediately pass a DN 3 Fear test. CHAMPION: The Threat may use Ruin Actions and has 1 personal Ruin. Also, see. DEATH TO THE FALSE EMPEROR: MALICIOUS VOLLEYS: SPACE MARINE IMPLANTS:"
       }
     ],
     "abilities": [
@@ -52933,7 +52933,7 @@
     "bonuses": [
       {
         "name": "FEARSOME",
-        "description": "When this Threat becomes Engaged with an enemy, they must immediately pass a DN 5 Fear test. CHAMPION: The Threat may use Ruin Actions and has 2 personal Ruin. Also, see Dark Pacts, page 13. DEATH TO THE FALSE EMPEROR: See page 8. SPACE MARINE IMPLANTS: See page 8. WARPFLAMES: Enemies engaged with the Threat attempting to Fall Back must pass an Agility test (DN 2+ Double Tier); failure means that they cannot Fall Back this turn."
+        "description": "When this Threat becomes Engaged with an enemy, they must immediately pass a DN 5 Fear test. CHAMPION: The Threat may use Ruin Actions and has 2 personal Ruin. Also, see. DEATH TO THE FALSE EMPEROR: SPACE MARINE IMPLANTS: WARPFLAMES: Enemies engaged with the Threat attempting to Fall Back must pass an Agility test (DN 2+ Double Tier); failure means that they cannot Fall Back this turn."
       }
     ],
     "abilities": [
@@ -52999,7 +52999,7 @@
     "bonuses": [
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 1 personal Ruin. Also, see Dark Pacts, page 13. DEATH TO THE FALSE EMPEROR: See page 8. MALICIOUS VOLLEYS: See page 8. SPACE MARINE IMPLANTS: See page 8. STABILISATION TALONS: Havocs ignore the Heavy quality on their weapons but cannot Sprint."
+        "description": "The Threat may use Ruin Actions and has 1 personal Ruin. Also, see. DEATH TO THE FALSE EMPEROR: MALICIOUS VOLLEYS: SPACE MARINE IMPLANTS: STABILISATION TALONS: Havocs ignore the Heavy quality on their weapons but cannot Sprint."
       }
     ],
     "abilities": [
@@ -53078,7 +53078,7 @@
     "bonuses": [
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 2 personal Ruin. Also, see Dark Pacts, page 13. DEATH TO THE FALSE EMPEROR: See page 8. MALICIOUS VOLLEYS: See page 8. SPACE MARINE IMPLANTS: See page 8. UNRELENTING FIREPOWER: Obliterators ignore the Heavy trait on all the weapons they produce and may fire those weapons when engaged in melee as if those weapons had the Pistol trait."
+        "description": "The Threat may use Ruin Actions and has 2 personal Ruin. Also, see. DEATH TO THE FALSE EMPEROR: MALICIOUS VOLLEYS: SPACE MARINE IMPLANTS: UNRELENTING FIREPOWER: Obliterators ignore the Heavy trait on all the weapons they produce and may fire those weapons when engaged in melee as if those weapons had the Pistol trait."
       }
     ],
     "abilities": [
@@ -53090,7 +53090,7 @@
       {
         "type": "ACTION",
         "name": "Obliterator Weapons",
-        "description": "This Threat may make a single ranged attack using one of the weapons from the Heavy Weapons list on page 11."
+        "description": "This Threat may make a single ranged attack using one of the weapons from the Heavy Weapons list."
       },
       {
         "type": "RUIN",
@@ -53146,7 +53146,7 @@
     "bonuses": [
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 2 personal Ruin. Also, see Dark Pacts, page 13. DEATH TO THE FALSE EMPEROR: See page 8. SPACE MARINE IMPLANTS: See page 8. UNRELENTING SLAUGHTER: When a Mutilator makes a multi-attack, they may reduce the DN penalty by the game's Tier."
+        "description": "The Threat may use Ruin Actions and has 2 personal Ruin. Also, see. DEATH TO THE FALSE EMPEROR: SPACE MARINE IMPLANTS: UNRELENTING SLAUGHTER: When a Mutilator makes a multi-attack, they may reduce the DN penalty by the game's Tier."
       }
     ],
     "abilities": [
@@ -53208,7 +53208,7 @@
     "bonuses": [
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 3 personal Ruin. Also, see Dark Pacts, page 13. DEATH TO THE FALSE EMPEROR: See page 8. LASHING APPENDAGES: When this Threat makes a Multi-Attack, it may reduce the DN penalty by the game's Tier."
+        "description": "The Threat may use Ruin Actions and has 3 personal Ruin. Also, see. DEATH TO THE FALSE EMPEROR: LASHING APPENDAGES: When this Threat makes a Multi-Attack, it may reduce the DN penalty by the game's Tier."
       }
     ],
     "abilities": [
@@ -53279,7 +53279,7 @@
     "bonuses": [
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 1 personal Ruin. Also, see Dark Pacts, page 13. DEATH TO THE FALSE EMPEROR: See page 8. MALICIOUS VOLLEYS: See page 8. SPACE MARINE IMPLANTS: See page 8. TACTICAL DREADNOUGHT ARMOUR: A warrior in Terminator Armour ignores the Heavy quality on any weapons they wield."
+        "description": "The Threat may use Ruin Actions and has 1 personal Ruin. Also, see. DEATH TO THE FALSE EMPEROR: MALICIOUS VOLLEYS: SPACE MARINE IMPLANTS: TACTICAL DREADNOUGHT ARMOUR: A warrior in Terminator Armour ignores the Heavy quality on any weapons they wield."
       }
     ],
     "abilities": [
@@ -55309,7 +55309,7 @@
       {
         "type": "ACTION",
         "name": "Prayers to the Dark Gods",
-        "description": "The Cult Demagogue may attempt a Persuasion test as a Simple Action to perform a Chaos Prayer (page 12). The Cult Demagogue knows Dark Zealotry and one other Prayer."
+        "description": "The Cult Demagogue may attempt a Persuasion test as a Simple Action to perform a Chaos Prayer. The Cult Demagogue knows Dark Zealotry and one other Prayer."
       },
       {
         "type": "RUIN",
@@ -55647,7 +55647,7 @@
       },
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 3 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "The Threat may use Ruin Actions and has 3 personal Ruin. Also, see."
       },
       {
         "name": "CREATURE OF CHAOS",
@@ -55729,19 +55729,19 @@
       },
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 3 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "The Threat may use Ruin Actions and has 3 personal Ruin. Also, see."
       },
       {
         "name": "DEATH TO THE FALSE EMPEROR",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "MALICIOUS VOLLEYS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       }
     ],
     "abilities": [
@@ -55822,19 +55822,19 @@
       },
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 3 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "The Threat may use Ruin Actions and has 3 personal Ruin. Also, see."
       },
       {
         "name": "DEATH TO THE FALSE EMPEROR",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "MALICIOUS VOLLEYS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       }
     ],
     "abilities": [
@@ -55866,7 +55866,7 @@
       {
         "type": "ACTION",
         "name": "Prayers to the Dark Gods",
-        "description": "The Dark Apostle may attempt a Persuasion test as a Simple Action to perform a Chaos Prayer (page 12). The Dark Apostle knows Dark Zealotry and one other Prayer."
+        "description": "The Dark Apostle may attempt a Persuasion test as a Simple Action to perform a Chaos Prayer. The Dark Apostle knows Dark Zealotry and one other Prayer."
       },
       {
         "type": "RUIN",
@@ -55927,19 +55927,19 @@
       },
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 3 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "The Threat may use Ruin Actions and has 3 personal Ruin. Also, see."
       },
       {
         "name": "DEATH TO THE FALSE EMPEROR",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "MALICIOUS VOLLEYS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       }
     ],
     "abilities": [
@@ -56016,11 +56016,11 @@
     "bonuses": [
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 2 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "The Threat may use Ruin Actions and has 2 personal Ruin. Also, see."
       },
       {
         "name": "DEATH TO THE FALSE EMPEROR",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "LIVING WEAPONS PLATFORM",
@@ -56028,11 +56028,11 @@
       },
       {
         "name": "MALICIOUS VOLLEYS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       }
     ],
     "abilities": [
@@ -56133,19 +56133,19 @@
       },
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 3 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "The Threat may use Ruin Actions and has 3 personal Ruin. Also, see."
       },
       {
         "name": "DEATH TO THE FALSE EMPEROR",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "MALICIOUS VOLLEYS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       }
     ],
     "abilities": [
@@ -56231,19 +56231,19 @@
       },
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 3 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "The Threat may use Ruin Actions and has 3 personal Ruin. Also, see."
       },
       {
         "name": "DEATH TO THE FALSE EMPEROR",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "MALICIOUS VOLLEYS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       }
     ],
     "abilities": [
@@ -56270,7 +56270,7 @@
       {
         "type": "ACTION",
         "name": "Dark Hereticus",
-        "description": "The Chaos Sorcerer attempts to activate a psychic power they know. The Chaos Sorcerer knows Smite, Deny the Witch, Psyniscience, and two powers from the Dark Hereticus discipline on page 59."
+        "description": "The Chaos Sorcerer attempts to activate a psychic power they know. The Chaos Sorcerer knows Smite, Deny the Witch, Psyniscience, and two powers from the Dark Hereticus discipline."
       },
       {
         "type": "RUIN",
@@ -56331,19 +56331,19 @@
       },
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 3 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "The Threat may use Ruin Actions and has 3 personal Ruin. Also, see."
       },
       {
         "name": "DEATH TO THE FALSE EMPEROR",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "MALICIOUS VOLLEYS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "TACTICAL DREADNOUGHT ARMOUR",
@@ -56374,7 +56374,7 @@
       {
         "type": "ACTION",
         "name": "Dark Hereticus",
-        "description": "The Chaos Sorcerer attempts to activate a psychic power they know. The Chaos Sorcerer knows Smite, Deny the Witch, Psyniscience, and two powers from the Dark Hereticus discipline on page 59."
+        "description": "The Chaos Sorcerer attempts to activate a psychic power they know. The Chaos Sorcerer knows Smite, Deny the Witch, Psyniscience, and two powers from the Dark Hereticus discipline."
       },
       {
         "type": "RUIN",
@@ -56433,19 +56433,19 @@
       },
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 5 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "The Threat may use Ruin Actions and has 5 personal Ruin. Also, see."
       },
       {
         "name": "DEATH TO THE FALSE EMPEROR",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "MALICIOUS VOLLEYS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       }
     ],
     "abilities": [
@@ -56526,19 +56526,19 @@
       },
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 5 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "The Threat may use Ruin Actions and has 5 personal Ruin. Also, see."
       },
       {
         "name": "DEATH TO THE FALSE EMPEROR",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "MALICIOUS VOLLEYS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       }
     ],
     "abilities": [
@@ -56621,19 +56621,19 @@
       },
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 5 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "The Threat may use Ruin Actions and has 5 personal Ruin. Also, see."
       },
       {
         "name": "DEATH TO THE FALSE EMPEROR",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "MALICIOUS VOLLEYS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "TACTICAL DREADNOUGHT ARMOUR",
@@ -56700,7 +56700,7 @@
     "bonuses": [
       {
         "name": "CHAMPION",
-        "description": "This Threat may take Ruin Actions and has 8 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "This Threat may take Ruin Actions and has 8 personal Ruin. Also, see."
       },
       {
         "name": "DAEMON OF KHORNE",
@@ -56720,7 +56720,7 @@
       },
       {
         "name": "DAEMONIC ALLEGIANCE",
-        "description": "The Daemon Prince must have a Mark of Chaos (page 8)"
+        "description": "The Daemon Prince must have a Mark of Chaos"
       },
       {
         "name": "DAEMONIC AURA",
@@ -56728,7 +56728,7 @@
       },
       {
         "name": "DEATH TO THE FALSE EMPEROR",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "MONSTROUS CREATURE",
@@ -56822,7 +56822,7 @@
       },
       {
         "name": "DEATH TO THE FALSE EMPEROR",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "DREADNOUGHT",
@@ -56830,7 +56830,7 @@
       },
       {
         "name": "MALICIOUS VOLLEYS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "MONSTROUS CREATURE",
@@ -56921,7 +56921,7 @@
     "bonuses": [
       {
         "name": "DAEMON ENGINE",
-        "description": "See page 8."
+        "description": ""
       },
       {
         "name": "DREADFUL BARRAGE",
@@ -56929,7 +56929,7 @@
       },
       {
         "name": "DEATH TO THE FALSE EMPEROR",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "MONSTROUS CREATURE",
@@ -57020,7 +57020,7 @@
     "bonuses": [
       {
         "name": "DAEMON ENGINE",
-        "description": "See page 8."
+        "description": ""
       },
       {
         "name": "DREADFUL BARRAGE",
@@ -57028,7 +57028,7 @@
       },
       {
         "name": "DEATH TO THE FALSE EMPEROR",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "MONSTROUS CREATURE",
@@ -57114,11 +57114,11 @@
     "bonuses": [
       {
         "name": "DAEMON ENGINE",
-        "description": "See page 8."
+        "description": ""
       },
       {
         "name": "DEATH TO THE FALSE EMPEROR",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "MONSTROUS CREATURE",
@@ -57203,11 +57203,11 @@
     "bonuses": [
       {
         "name": "DAEMON ENGINE",
-        "description": "See page 8."
+        "description": ""
       },
       {
         "name": "DEATH TO THE FALSE EMPEROR",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "MONSTROUS CREATURE",
@@ -57299,11 +57299,11 @@
       },
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 7 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "The Threat may use Ruin Actions and has 7 personal Ruin. Also, see."
       },
       {
         "name": "DEATH TO THE FALSE EMPEROR",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "HEADTAKER",
@@ -57319,7 +57319,7 @@
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       }
     ],
     "abilities": [
@@ -57398,7 +57398,7 @@
       },
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 13 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "The Threat may use Ruin Actions and has 13 personal Ruin. Also, see."
       },
       {
         "name": "BLACK LEGION",
@@ -57406,15 +57406,15 @@
       },
       {
         "name": "DEATH TO THE FALSE EMPEROR",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "MALICIOUS VOLLEYS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "MARK OF CHAOS ASCENDANT",
-        "description": "Abaddon has all four Marks of Chaos described on page 8."
+        "description": "Abaddon has all four Marks of Chaos."
       },
       {
         "name": "PARAGON OF HATRED",
@@ -57422,7 +57422,7 @@
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "TACTICAL DREADNOUGHT ARMOUR",
@@ -57520,11 +57520,11 @@
       },
       {
         "name": "DEATH TO THE FALSE EMPEROR",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "MALICIOUS VOLLEYS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "REAVER LORD",
@@ -57536,7 +57536,7 @@
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       }
     ],
     "abilities": [
@@ -57625,15 +57625,15 @@
       },
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 5 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "The Threat may use Ruin Actions and has 5 personal Ruin. Also, see."
       },
       {
         "name": "DEATH TO THE FALSE EMPEROR",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "SURGICAL PRECISION",
@@ -57732,7 +57732,7 @@
       },
       {
         "name": "CHAMPION",
-        "description": "This Threat may take Ruin Actions and has 13 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "This Threat may take Ruin Actions and has 13 personal Ruin. Also, see."
       },
       {
         "name": "DAEMONIC AURA",
@@ -57856,7 +57856,7 @@
     "bonuses": [
       {
         "name": "CHAMPION",
-        "description": "This Threat may use Ruin Actions and has 1 Personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "This Threat may use Ruin Actions and has 1 Personal Ruin. Also, see."
       },
       {
         "name": "Contagion: NURGLE'S GIFT",
@@ -57864,19 +57864,19 @@
       },
       {
         "name": "MALICIOUS VOLLEYS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "PLAGUE WEAPONS",
-        "description": "See page 91"
+        "description": ""
       },
       {
         "name": "REMORSELESS",
-        "description": "See page 91"
+        "description": ""
       }
     ],
     "determination": "Disgustingly Resilient. Page 91. Roll 7d6.",
@@ -58006,7 +58006,7 @@
     "bonuses": [
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 1 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "The Threat may use Ruin Actions and has 1 personal Ruin. Also, see."
       },
       {
         "name": "Contagion: NURGLE'S GIFT",
@@ -58014,19 +58014,19 @@
       },
       {
         "name": "MALICIOUS VOLLEYS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "PLAGUE WEAPONS",
-        "description": "See page 91"
+        "description": ""
       },
       {
         "name": "REMORSELESS",
-        "description": "See page 91"
+        "description": ""
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "CATAPHRACTIII TERMINATOR ARMOUR",
@@ -58102,7 +58102,7 @@
     "bonuses": [
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 1 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "The Threat may use Ruin Actions and has 1 personal Ruin. Also, see."
       },
       {
         "name": "Contagion: NURGLE'S GIFT",
@@ -58110,15 +58110,15 @@
       },
       {
         "name": "PLAGUE WEAPONS",
-        "description": "See page 91"
+        "description": ""
       },
       {
         "name": "REMORSELESS",
-        "description": "See page 91"
+        "description": ""
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "CATAPHRACTIII TERMINATOR ARMOUR",
@@ -58206,7 +58206,7 @@
       },
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 3 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "The Threat may use Ruin Actions and has 3 personal Ruin. Also, see."
       },
       {
         "name": "Contagion: NURGLE'S GIFT",
@@ -58218,15 +58218,15 @@
       },
       {
         "name": "PLAGUE WEAPONS",
-        "description": "See page 91"
+        "description": ""
       },
       {
         "name": "REMORSELESS",
-        "description": "See page 91"
+        "description": ""
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       }
     ],
     "determination": "Disgustingly Resilient. Page 91. Spend 1 Ruin to roll 7d6.",
@@ -58301,7 +58301,7 @@
     "bonuses": [
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 3 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "The Threat may use Ruin Actions and has 3 personal Ruin. Also, see."
       },
       {
         "name": "Contagion: NURGLE'S GIFT",
@@ -58309,7 +58309,7 @@
       },
       {
         "name": "PLAGUE WEAPONS",
-        "description": "See page 91"
+        "description": ""
       },
       {
         "name": "PUTREFYING STINK",
@@ -58317,11 +58317,11 @@
       },
       {
         "name": "REMORSELESS",
-        "description": "See page 91"
+        "description": ""
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       }
     ],
     "determination": "Disgustingly Resilient. Page 91. Spend 1 Ruin to roll 7d6.",
@@ -58391,7 +58391,7 @@
     "bonuses": [
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 3 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "The Threat may use Ruin Actions and has 3 personal Ruin. Also, see."
       },
       {
         "name": "Contagion: NURGLE'S GIFT",
@@ -58403,11 +58403,11 @@
       },
       {
         "name": "PLAGUE WEAPONS",
-        "description": "See page 91"
+        "description": ""
       },
       {
         "name": "REMORSELESS",
-        "description": "See page 91"
+        "description": ""
       },
       {
         "name": "SICKENING VITALITY",
@@ -58415,7 +58415,7 @@
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "TOCSIN OF MISERY",
@@ -58494,7 +58494,7 @@
     "bonuses": [
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 3 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "The Threat may use Ruin Actions and has 3 personal Ruin. Also, see."
       },
       {
         "name": "Contagion: NURGLE'S GIFT",
@@ -58502,15 +58502,15 @@
       },
       {
         "name": "MALICIOUS VOLLEYS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "PLAGUE WEAPONS",
-        "description": "See page 91"
+        "description": ""
       },
       {
         "name": "REMORSELESS",
-        "description": "See page 91"
+        "description": ""
       },
       {
         "name": "REVITALISING MALIGNANCY",
@@ -58518,7 +58518,7 @@
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       }
     ],
     "determination": "Disgustingly Resilient. Page 91. Spend 1 Ruin to roll 7d6.",
@@ -58588,7 +58588,7 @@
     "bonuses": [
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 3 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "The Threat may use Ruin Actions and has 3 personal Ruin. Also, see."
       },
       {
         "name": "Contagion: NURGLE'S GIFT",
@@ -58596,11 +58596,11 @@
       },
       {
         "name": "PLAGUE WEAPONS",
-        "description": "See page 91"
+        "description": ""
       },
       {
         "name": "REMORSELESS",
-        "description": "See page 91"
+        "description": ""
       },
       {
         "name": "THE SEVEN-FOLD CHANT",
@@ -58608,7 +58608,7 @@
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       }
     ],
     "determination": "Disgustingly Resilient. Page 91. Spend 1 Ruin to roll 7d6.",
@@ -58680,7 +58680,7 @@
     "bonuses": [
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 5 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "The Threat may use Ruin Actions and has 5 personal Ruin. Also, see."
       },
       {
         "name": "Contagion: NURGLE'S GIFT",
@@ -58688,19 +58688,19 @@
       },
       {
         "name": "MALICIOUS VOLLEYS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "PLAGUE WEAPONS",
-        "description": "See page 91"
+        "description": ""
       },
       {
         "name": "REMORSELESS",
-        "description": "See page 91"
+        "description": ""
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "VIRULENT CONDUIT",
@@ -58770,7 +58770,7 @@
       },
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 5 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "The Threat may use Ruin Actions and has 5 personal Ruin. Also, see."
       },
       {
         "name": "Contagion: NURGLE'S GIFT",
@@ -58782,15 +58782,15 @@
       },
       {
         "name": "PLAGUE WEAPONS",
-        "description": "See page 91"
+        "description": ""
       },
       {
         "name": "REMORSELESS",
-        "description": "See page 91"
+        "description": ""
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "VECTOR OF DISEASE",
@@ -58876,7 +58876,7 @@
       },
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 5 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "The Threat may use Ruin Actions and has 5 personal Ruin. Also, see."
       },
       {
         "name": "Contagion: NURGLE'S GIFT",
@@ -58888,7 +58888,7 @@
       },
       {
         "name": "MALICIOUS VOLLEYS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "MASTER OF DESTRUCTION",
@@ -58896,15 +58896,15 @@
       },
       {
         "name": "PLAGUE WEAPONS",
-        "description": "See page 91"
+        "description": ""
       },
       {
         "name": "REMORSELESS",
-        "description": "See page 91"
+        "description": ""
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       }
     ],
     "determination": "Disgustingly Resilient. Page 91. Spend 1 Ruin to roll 9d6.",
@@ -58984,7 +58984,7 @@
       },
       {
         "name": "DAEMON ENGINE",
-        "description": "See page 8."
+        "description": ""
       },
       {
         "name": "MONSTROUS CREATURE",
@@ -58992,7 +58992,7 @@
       },
       {
         "name": "PLAGUE WEAPONS",
-        "description": "See page 91"
+        "description": ""
       }
     ],
     "threatOptions": "ACTION OPTIONS: A Bloat-Drone may replace its Fleshmower with one of the following:\nTwin Plague Spitter: 13 +4ED / AP -1 / Range 6-12-18 / Salvo 4 / Flamer, Mounted (Large), Poisoned (4)\nHeavy Blight Launcher: 13 +6ED / AP -3 / Range 18-36-54 / Salvo 6 / Assault, Barrage, Blast (2), Mounted (Large), Poisoned (4)",
@@ -59089,7 +59089,7 @@
       },
       {
         "name": "DAEMON ENGINE",
-        "description": "See page 8."
+        "description": ""
       },
       {
         "name": "DREADFUL BARRAGE",
@@ -59105,7 +59105,7 @@
       },
       {
         "name": "PLAGUE WEAPONS",
-        "description": "See page 91"
+        "description": ""
       }
     ],
     "determination": "Disgustingly Resilient. Page 91. Spend 1 Ruin to roll 11d6.",
@@ -59189,7 +59189,7 @@
       },
       {
         "name": "DAEMON ENGINE",
-        "description": "See page 8."
+        "description": ""
       },
       {
         "name": "DREADFUL BARRAGE",
@@ -59201,7 +59201,7 @@
       },
       {
         "name": "PLAGUE WEAPONS",
-        "description": "See page 91"
+        "description": ""
       }
     ],
     "threatOptions": "ACTION OPTIONS: A Plagueburst Crawler may replace its two Entropy Cannons with the following:\nTwo Plague Spitters: 13 +2ED / AP -1 / Range 6-12-18 / Salvo 2 / Flamer, Mounted (Large), Poisoned (4)\nA Plagueburst Crawler may replace its Heavy Slugger with the following:\nRothail Volley Gun: 13 +1ED / AP -1 / Range 12-24-36 / Salvo 7 / Mounted (Large), Rapid Fire (3), Sustained",
@@ -59289,7 +59289,7 @@
       },
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 7 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "The Threat may use Ruin Actions and has 7 personal Ruin. Also, see."
       },
       {
         "name": "Contagion: NURGLE'S GIFT",
@@ -59309,15 +59309,15 @@
       },
       {
         "name": "PLAGUE WEAPONS",
-        "description": "See page 91"
+        "description": ""
       },
       {
         "name": "REMORSELESS",
-        "description": "See page 91"
+        "description": ""
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "VECTOR OF DISEASE",
@@ -59420,7 +59420,7 @@
       },
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 7 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "The Threat may use Ruin Actions and has 7 personal Ruin. Also, see."
       },
       {
         "name": "Contagion: NURGLE'S GIFT",
@@ -59436,7 +59436,7 @@
       },
       {
         "name": "PLAGUE WEAPONS",
-        "description": "See page 91"
+        "description": ""
       },
       {
         "name": "PRIMARCH OF THE DEATH GUARD",
@@ -59444,7 +59444,7 @@
       },
       {
         "name": "REMORSELESS",
-        "description": "See page 91"
+        "description": ""
       },
       {
         "name": "TOXIC PRESENCE",
@@ -59519,15 +59519,15 @@
     "bonuses": [
       {
         "name": "CHAMPION",
-        "description": "This Threat may use Ruin Actions and has 1 Personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "This Threat may use Ruin Actions and has 1 Personal Ruin. Also, see."
       },
       {
         "name": "DEATH TO THE FALSE EMPEROR",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "MALICIOUS VOLLEYS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "RIOTOUS CACOPHONY",
@@ -59535,11 +59535,11 @@
       },
       {
         "name": "SONIC WEAPONS",
-        "description": "See page 116"
+        "description": ""
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       }
     ],
     "determination": "Spend 1 Ruin to roll 6d6.",
@@ -59683,11 +59683,11 @@
       },
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 6 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "The Threat may use Ruin Actions and has 6 personal Ruin. Also, see."
       },
       {
         "name": "DEATH TO THE FALSE EMPEROR",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "DUELLIST'S PRIDE",
@@ -59699,15 +59699,15 @@
       },
       {
         "name": "MALICIOUS VOLLEYS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "SONIC WEAPONS",
-        "description": "See page 116"
+        "description": ""
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       }
     ],
     "determination": "Spend 1 Ruin to roll 8d6. The Threat may roll Determination against Mortal Wounds.",
@@ -59768,18 +59768,18 @@
     "bonuses": [
       {
         "name": "ARCANE AUTOMATA",
-        "description": "See page 124"
+        "description": ""
       },
       {
         "name": "MALICIOUS VOLLEYS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       }
     ],
-    "determination": "All is Dust. (page 124) Spend 1 Ruin to roll 8d6. The Threat may re-roll any dice which roll 1s, and they may roll Determination against Mortal Wounds.",
+    "determination": "All is Dust. Spend 1 Ruin to roll 8d6. The Threat may re-roll any dice which roll 1s, and they may roll Determination against Mortal Wounds.",
     "conviction": 4,
     "resolve": 4,
     "speed": 7,
@@ -59838,7 +59838,7 @@
       {
         "type": "ACTION",
         "name": "Sorcery",
-        "description": "The Aspiring Sorcerer attempts to activate a psychic power they know. The Aspiring Sorcerer knows Smite, Deny the Witch, Psyniscience, and two powers from the Discipline of Change (page 126) or Discipline of Vengeance (page 128)."
+        "description": "The Aspiring Sorcerer attempts to activate a psychic power they know. The Aspiring Sorcerer knows Smite, Deny the Witch, Psyniscience, and two powers from the Discipline of Change or Discipline of Vengeance."
       }
     ],
     "bonuses": [
@@ -59848,15 +59848,15 @@
       },
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 1 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "The Threat may use Ruin Actions and has 1 personal Ruin. Also, see."
       },
       {
         "name": "MALICIOUS VOLLEYS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       }
     ],
     "determination": "Spend 1 Ruin to roll 8d6. This Threat may roll Determination against Mortal Wounds.",
@@ -59980,22 +59980,22 @@
     "bonuses": [
       {
         "name": "ARCANE AUTOMATA",
-        "description": "See page 124"
+        "description": ""
       },
       {
         "name": "MALICIOUS VOLLEYS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "TACTICAL DREADNOUGHT ARMOUR",
         "description": "A warrior in Terminator Armour ignores the Heavy quality on any weapons they wield."
       }
     ],
-    "determination": "All is Dust. (page 124) Spend 1 Ruin to roll 9d6. The Threat may re-roll any dice which roll 1s, and they may roll Determination against Mortal Wounds.",
+    "determination": "All is Dust. Spend 1 Ruin to roll 9d6. The Threat may re-roll any dice which roll 1s, and they may roll Determination against Mortal Wounds.",
     "conviction": 5,
     "resolve": 5,
     "speed": 6,
@@ -60055,7 +60055,7 @@
       {
         "type": "ACTION",
         "name": "Sorcery",
-        "description": "The Scarab Occult Sorcerer attempts to activate a psychic power they know. The Scarab Occult Sorcerer knows Smite, Deny the Witch, Psyniscience, and two powers from the Discipline of Change (page 126) or Discipline of Vengeance (page 128)."
+        "description": "The Scarab Occult Sorcerer attempts to activate a psychic power they know. The Scarab Occult Sorcerer knows Smite, Deny the Witch, Psyniscience, and two powers from the Discipline of Change or Discipline of Vengeance."
       }
     ],
     "bonuses": [
@@ -60065,15 +60065,15 @@
       },
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 2 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "The Threat may use Ruin Actions and has 2 personal Ruin. Also, see."
       },
       {
         "name": "MALICIOUS VOLLEYS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "TACTICAL DREADNOUGHT ARMOUR",
@@ -60133,7 +60133,7 @@
       {
         "type": "ACTION",
         "name": "Sorcery",
-        "description": "The Tzaangor attempts to activate a psychic power they know. The Tzaangor Shaman knows Smite, Deny the Witch, Psyniscience, and two powers from the Discipline of Change (page 126)."
+        "description": "The Tzaangor attempts to activate a psychic power they know. The Tzaangor Shaman knows Smite, Deny the Witch, Psyniscience, and two powers from the Discipline of Change."
       }
     ],
     "bonuses": [
@@ -60295,7 +60295,7 @@
       {
         "type": "ACTION",
         "name": "Exalted Sorcery",
-        "description": "The Exalted Sorcerer attempts to activate a psychic power they know. The Exalted Sorcerer knows Smite, Deny the Witch, Psyniscience, and three powers from the Discipline of Change (page 126) or Discipline of Vengeance (page 128)."
+        "description": "The Exalted Sorcerer attempts to activate a psychic power they know. The Exalted Sorcerer knows Smite, Deny the Witch, Psyniscience, and three powers from the Discipline of Change or Discipline of Vengeance."
       },
       {
         "type": "RUIN",
@@ -60310,7 +60310,7 @@
       },
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 5 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "The Threat may use Ruin Actions and has 5 personal Ruin. Also, see."
       },
       {
         "name": "CABBALISTIC RITUALS",
@@ -60318,11 +60318,11 @@
       },
       {
         "name": "MALICIOUS VOLLEYS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       }
     ],
     "determination": "Spend 1 Ruin to roll 10d6. The Threat may roll Determination against Mortal Wounds.",
@@ -60400,7 +60400,7 @@
       {
         "type": "ACTION",
         "name": "Sorcery",
-        "description": "The Infernal Master attempts to activate a psychic power they know. The Infernal Master knows Smite, Deny the Witch, Psyniscience, and three powers from the Discipline of Change (page 126) or Discipline of Vengeance (page 128)."
+        "description": "The Infernal Master attempts to activate a psychic power they know. The Infernal Master knows Smite, Deny the Witch, Psyniscience, and three powers from the Discipline of Change or Discipline of Vengeance."
       },
       {
         "type": "RUIN",
@@ -60415,19 +60415,19 @@
       },
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 3 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "The Threat may use Ruin Actions and has 3 personal Ruin. Also, see."
       },
       {
         "name": "DEATH TO THE FALSE EMPEROR",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "MALICIOUS VOLLEYS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       }
     ],
     "determination": "Spend 1 Ruin to roll 9d6. This Threat may roll Determination against Mortal Wounds.",
@@ -60498,7 +60498,7 @@
       {
         "type": "ACTION",
         "name": "Arch-Sorcerer",
-        "description": "Ahriman attempts to activate a psychic power he knows. Ahriman knows Smite, Deny the Witch, Psyniscience, and three powers from the Discipline of Change (page 126) or Discipline of Vengeance (page 128). Due to the Black Staff of Ahriman, he may attempt to use up to two psychic powers as a multi-action, adding +2 to the DN of each."
+        "description": "Ahriman attempts to activate a psychic power he knows. Ahriman knows Smite, Deny the Witch, Psyniscience, and three powers from the Discipline of Change or Discipline of Vengeance. Due to the Black Staff of Ahriman, he may attempt to use up to two psychic powers as a multi-action, adding +2 to the DN of each."
       },
       {
         "type": "RUIN",
@@ -60518,7 +60518,7 @@
       },
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 7 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "The Threat may use Ruin Actions and has 7 personal Ruin. Also, see."
       },
       {
         "name": "CABBALISTIC RITUALS",
@@ -60526,11 +60526,11 @@
       },
       {
         "name": "MALICIOUS VOLLEYS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       }
     ],
     "determination": "Otherworldly Prescience. Spend 1 Ruin to roll 10d6. The Threat may roll Determination against Mortal Wounds. Once per scene when rolling Determination, Wounds are negated rather than converted to Shock.",
@@ -60594,7 +60594,7 @@
       {
         "type": "ACTION",
         "name": "Lord of Forbidden Lore",
-        "description": "Magnus attempts to activate a psychic power he knows. Magnus knows Smite, Deny the Witch, Psyniscience, and all powers from the Discipline of Change (page 126) or Discipline of Vengeance (page 128)."
+        "description": "Magnus attempts to activate a psychic power he knows. Magnus knows Smite, Deny the Witch, Psyniscience, and all powers from the Discipline of Change or Discipline of Vengeance."
       },
       {
         "type": "RUIN",
@@ -60614,7 +60614,7 @@
       },
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 9 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "The Threat may use Ruin Actions and has 9 personal Ruin. Also, see."
       },
       {
         "name": "CABBALISTIC RITUALS",
@@ -60710,7 +60710,7 @@
     "bonuses": [
       {
         "name": "CHAMPION",
-        "description": "This Threat may use Ruin Actions and has 1 Personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "This Threat may use Ruin Actions and has 1 Personal Ruin. Also, see."
       },
       {
         "name": "THE BLOOD TITHE",
@@ -60718,11 +60718,11 @@
       },
       {
         "name": "MALICIOUS VOLLEYS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       }
     ],
     "threatOptions": "ACCURS'D ARSENAL: A Khorne Berzerker may exchange his Chainaxe for an Astartes Chainsword or an Eviscerator. A Khorne Berzerker may replace his Bolt Pistol with a Mk. I Plasma Pistol.\nAstartes Chainsword: 14 +4ED / AP -1 / Brutal, Parry\nKhornate Eviscerator: 15 +6ED / AP -4 / Range 2 [M] / Brutal\nMk I Plasma Pistol: 13 +3ED / AP -2 / Range 6-12-18 / Salvo 2 / Rapid Fire (1), Pistol, Volatile (1d3)",
@@ -60874,7 +60874,7 @@
     "bonuses": [
       {
         "name": "CHAMPION",
-        "description": "This Threat may use Ruin Actions and has 2 Personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "This Threat may use Ruin Actions and has 2 Personal Ruin. Also, see."
       },
       {
         "name": "DUAL STRIKE",
@@ -60890,7 +60890,7 @@
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       }
     ],
     "determination": "Daemonkin. Spend 1 Ruin to roll 8d6. This Threat may roll Determination against Mortal Wounds.",
@@ -60972,7 +60972,7 @@
     "bonuses": [
       {
         "name": "CHAMPION",
-        "description": "This Threat may use Ruin Actions and has 3 Personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "This Threat may use Ruin Actions and has 3 Personal Ruin. Also, see."
       },
       {
         "name": "DUAL STRIKE",
@@ -60988,7 +60988,7 @@
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       }
     ],
     "threatOptions": "ACCURS'D ARSENAL: An Exalted Eightbound may exchange his Eightbound Eviscerator for a second Eightbound Chainfist. Alternatively, the Exalted Eightbound may replace both weapons with a Heavy Chainglaive.\nHeavy Chainglaive: 16 +4ED / AP -3 / Range 2 [M] / Brutal, Reaping",
@@ -61075,7 +61075,7 @@
       },
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 7 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "The Threat may use Ruin Actions and has 7 personal Ruin. Also, see."
       },
       {
         "name": "THE BLOOD TITHE",
@@ -61087,7 +61087,7 @@
       },
       {
         "name": "MALICIOUS VOLLEYS",
-        "description": "See page 8"
+        "description": ""
       },
       {
         "name": "MOUNTED",
@@ -61095,7 +61095,7 @@
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       }
     ],
     "determination": "Sigil of Corruption. Spend 1 Ruin to roll 8d6. The Threat may roll Determination against Mortal Wounds.",
@@ -61185,7 +61185,7 @@
       },
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 8 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "The Threat may use Ruin Actions and has 8 personal Ruin. Also, see."
       },
       {
         "name": "ARCH-SLAUGHTERER",
@@ -61197,7 +61197,7 @@
       },
       {
         "name": "SPACE MARINE IMPLANTS",
-        "description": "See page 8"
+        "description": ""
       }
     ],
     "determination": "Praise of Khorne. Spend 1 Ruin to roll 9d6, re-rolling any dice which roll 1s. Kharn may roll Determination against Mortal Wounds.",
@@ -61277,7 +61277,7 @@
     "bonuses": [
       {
         "name": "CHAMPION",
-        "description": "The Threat may use Ruin Actions and has 10 personal Ruin. Also, see Dark Pacts, page 13."
+        "description": "The Threat may use Ruin Actions and has 10 personal Ruin. Also, see."
       },
       {
         "name": "THE BLOOD TITHE (Angron)",
