@@ -7,7 +7,7 @@ const ThreatsTab = {
     filters: {
         search: '',
         selectedTier: 'all',
-        threatLevels: new Set(['T', 'E', 'A']),  // simple toggle, all active by default
+        threatLevel: 'all',                        // single-selection: 'all', 'T', 'E', or 'A'
         factions: new Set()                        // inclusive: empty = show all
     },
 
@@ -47,29 +47,25 @@ const ThreatsTab = {
         }
     },
 
-    // Threat Level: simple 3-button toggle, no "All" button. All active by default.
+    // Threat Level: single-selection radio-style with "All" button.
     populateThreatLevelFilters() {
         const container = document.getElementById('threat-level-filters');
         const levels = [
+            { key: 'all', label: 'All' },
             { key: 'T', label: 'Troops' },
             { key: 'E', label: 'Elites' },
             { key: 'A', label: 'Adversaries' }
         ];
 
         container.innerHTML = levels.map(l =>
-            `<button class="filter-btn ${this.filters.threatLevels.has(l.key) ? 'active' : ''}" data-level="${l.key}">${l.label}</button>`
+            `<button class="filter-btn ${this.filters.threatLevel === l.key ? 'active' : ''}" data-level="${l.key}">${l.label}</button>`
         ).join('');
 
         container.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', () => {
-                const level = btn.dataset.level;
-                if (this.filters.threatLevels.has(level)) {
-                    this.filters.threatLevels.delete(level);
-                    btn.classList.remove('active');
-                } else {
-                    this.filters.threatLevels.add(level);
-                    btn.classList.add('active');
-                }
+                this.filters.threatLevel = btn.dataset.level;
+                container.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
                 this.renderThreatList();
             });
         });
@@ -113,7 +109,7 @@ const ThreatsTab = {
     },
 
     clearFilters() {
-        this.filters.threatLevels = new Set(['T', 'E', 'A']);
+        this.filters.threatLevel = 'all';
         this.filters.factions.clear();
         this.populateThreatLevelFilters();
         this.populateFactionFilters();
@@ -124,7 +120,7 @@ const ThreatsTab = {
         let threats = DataLoader.filterThreats({
             search: this.filters.search,
             selectedTier: this.filters.selectedTier !== 'all' ? this.filters.selectedTier : null,
-            threatLevels: this.filters.threatLevels.size > 0 ? [...this.filters.threatLevels] : null,
+            threatLevels: this.filters.threatLevel !== 'all' ? [this.filters.threatLevel] : null,
             factions: this.filters.factions.size > 0 ? [...this.filters.factions] : null,
             excludedSources: SettingsTab.excludedSources.size > 0 ? [...SettingsTab.excludedSources] : null
         });
