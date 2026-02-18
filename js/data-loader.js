@@ -267,9 +267,14 @@ const DataLoader = {
             });
         }
 
-        // Filter by sources (using normalized source names)
+        // Filter by sources (inclusion - using normalized source names)
         if (criteria.sources && criteria.sources.length > 0) {
             threats = threats.filter(t => criteria.sources.includes(this.normalizeSource(t.source)));
+        }
+
+        // Filter by excluded sources (exclusion pattern - using normalized source names)
+        if (criteria.excludedSources && criteria.excludedSources.length > 0) {
+            threats = threats.filter(t => !criteria.excludedSources.includes(this.normalizeSource(t.source)));
         }
 
         return threats;

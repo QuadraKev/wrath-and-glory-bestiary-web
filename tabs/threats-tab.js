@@ -7,9 +7,9 @@ const ThreatsTab = {
     filters: {
         search: '',
         selectedTier: 'all',
-        threatLevels: ['T', 'E', 'A'],
-        factions: [],
-        sources: []
+        threatLevels: new Set(['T', 'E', 'A']),  // simple toggle, all active by default
+        factions: new Set(),                       // inclusive: empty = show all
+        excludedSources: new Set()                 // exclusion: empty = show all
     },
 
     init() {
@@ -28,24 +28,14 @@ const ThreatsTab = {
             this.renderThreatList();
         });
 
-        // Initialize threat level filters
-        const threatLevelFilters = document.querySelectorAll('#threat-level-filters input[type="checkbox"]');
-        threatLevelFilters.forEach(checkbox => {
-            checkbox.addEventListener('change', () => {
-                this.updateThreatLevelFilters();
-                this.renderThreatList();
-            });
-        });
-
         // Initialize clear filters button
         document.getElementById('btn-clear-filters').addEventListener('click', () => {
             this.clearFilters();
         });
 
-        // Populate faction filters
+        // Populate all filter button groups
+        this.populateThreatLevelFilters();
         this.populateFactionFilters();
-
-        // Populate source filters
         this.populateSourceFilters();
 
         // Render initial threat list
@@ -59,89 +49,115 @@ const ThreatsTab = {
         }
     },
 
+    // Threat Level: simple 3-button toggle, no "All" button. All active by default.
+    populateThreatLevelFilters() {
+        const container = document.getElementById('threat-level-filters');
+        const levels = [
+            { key: 'T', label: 'Troops' },
+            { key: 'E', label: 'Elites' },
+            { key: 'A', label: 'Adversaries' }
+        ];
+
+        container.innerHTML = levels.map(l =>
+            `<button class="filter-btn ${this.filters.threatLevels.has(l.key) ? 'active' : ''}" data-level="${l.key}">${l.label}</button>`
+        ).join('');
+
+        container.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const level = btn.dataset.level;
+                if (this.filters.threatLevels.has(level)) {
+                    this.filters.threatLevels.delete(level);
+                    btn.classList.remove('active');
+                } else {
+                    this.filters.threatLevels.add(level);
+                    btn.classList.add('active');
+                }
+                this.renderThreatList();
+            });
+        });
+    },
+
+    // Faction: inclusive filter with "All" button. Empty set = show all.
     populateFactionFilters() {
         const factions = DataLoader.getAllFactions();
         const container = document.getElementById('faction-filters');
 
-        container.innerHTML = factions.map(faction => `
-            <label class="checkbox-label">
-                <input type="checkbox" data-faction="${faction}">
-                <span>${faction}</span>
-            </label>
-        `).join('');
+        container.innerHTML = `<button class="filter-btn ${this.filters.factions.size === 0 ? 'active' : ''}" data-faction="all">All</button>` +
+            factions.map(faction =>
+                `<button class="filter-btn ${this.filters.factions.has(faction) ? 'active' : ''}" data-faction="${faction}">${faction}</button>`
+            ).join('');
 
-        // Add event listeners
-        container.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-            checkbox.addEventListener('change', () => {
-                this.updateFactionFilters();
+        container.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const faction = btn.dataset.faction;
+                if (faction === 'all') {
+                    this.filters.factions.clear();
+                } else {
+                    if (this.filters.factions.has(faction)) {
+                        this.filters.factions.delete(faction);
+                    } else {
+                        this.filters.factions.add(faction);
+                    }
+                }
+                this._updateFactionButtonStates(container);
                 this.renderThreatList();
             });
         });
     },
 
-    updateThreatLevelFilters() {
-        const checkboxes = document.querySelectorAll('#threat-level-filters input[type="checkbox"]');
-        this.filters.threatLevels = [];
-        checkboxes.forEach(cb => {
-            if (cb.checked) {
-                this.filters.threatLevels.push(cb.dataset.threat);
-            }
+    _updateFactionButtonStates(container) {
+        const allBtn = container.querySelector('[data-faction="all"]');
+        const isAll = this.filters.factions.size === 0;
+        allBtn.classList.toggle('active', isAll);
+        container.querySelectorAll('.filter-btn:not([data-faction="all"])').forEach(btn => {
+            btn.classList.toggle('active', this.filters.factions.has(btn.dataset.faction));
         });
     },
 
-    updateFactionFilters() {
-        const checkboxes = document.querySelectorAll('#faction-filters input[type="checkbox"]');
-        this.filters.factions = [];
-        checkboxes.forEach(cb => {
-            if (cb.checked) {
-                this.filters.factions.push(cb.dataset.faction);
-            }
-        });
-    },
-
+    // Sourcebook: exclusion filter with "All" button. Empty set = show all.
     populateSourceFilters() {
         const sources = DataLoader.getAllSources();
         const container = document.getElementById('source-filters');
 
-        container.innerHTML = sources.map(source => `
-            <label class="checkbox-label">
-                <input type="checkbox" data-source="${source}">
-                <span>${source}</span>
-            </label>
-        `).join('');
+        container.innerHTML = `<button class="filter-btn ${this.filters.excludedSources.size === 0 ? 'active' : ''}" data-source="all">All</button>` +
+            sources.map(source =>
+                `<button class="filter-btn ${this.filters.excludedSources.size === 0 || !this.filters.excludedSources.has(source) ? 'active' : ''}" data-source="${source}">${source}</button>`
+            ).join('');
 
-        // Add event listeners
-        container.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-            checkbox.addEventListener('change', () => {
-                this.updateSourceFilters();
+        container.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const source = btn.dataset.source;
+                if (source === 'all') {
+                    this.filters.excludedSources.clear();
+                } else {
+                    if (this.filters.excludedSources.has(source)) {
+                        this.filters.excludedSources.delete(source);
+                    } else {
+                        this.filters.excludedSources.add(source);
+                    }
+                }
+                this._updateSourceButtonStates(container);
                 this.renderThreatList();
             });
         });
     },
 
-    updateSourceFilters() {
-        const checkboxes = document.querySelectorAll('#source-filters input[type="checkbox"]');
-        this.filters.sources = [];
-        checkboxes.forEach(cb => {
-            if (cb.checked) {
-                this.filters.sources.push(cb.dataset.source);
-            }
+    _updateSourceButtonStates(container) {
+        const allBtn = container.querySelector('[data-source="all"]');
+        const isAll = this.filters.excludedSources.size === 0;
+        allBtn.classList.toggle('active', isAll);
+        container.querySelectorAll('.filter-btn:not([data-source="all"])').forEach(btn => {
+            btn.classList.toggle('active', !this.filters.excludedSources.has(btn.dataset.source));
         });
     },
 
     clearFilters() {
-        // Reset faction filters
-        document.querySelectorAll('#faction-filters input[type="checkbox"]').forEach(cb => {
-            cb.checked = false;
-        });
-        this.filters.factions = [];
-
-        // Reset source filters
-        document.querySelectorAll('#source-filters input[type="checkbox"]').forEach(cb => {
-            cb.checked = false;
-        });
-        this.filters.sources = [];
-
+        this.filters.threatLevels = new Set(['T', 'E', 'A']);
+        this.filters.factions.clear();
+        this.filters.excludedSources.clear();
+        this.populateThreatLevelFilters();
+        this.populateFactionFilters();
+        this.populateSourceFilters();
         this.renderThreatList();
     },
 
@@ -149,9 +165,9 @@ const ThreatsTab = {
         let threats = DataLoader.filterThreats({
             search: this.filters.search,
             selectedTier: this.filters.selectedTier !== 'all' ? this.filters.selectedTier : null,
-            threatLevels: this.filters.threatLevels.length > 0 ? this.filters.threatLevels : null,
-            factions: this.filters.factions.length > 0 ? this.filters.factions : null,
-            sources: this.filters.sources.length > 0 ? this.filters.sources : null
+            threatLevels: this.filters.threatLevels.size > 0 ? [...this.filters.threatLevels] : null,
+            factions: this.filters.factions.size > 0 ? [...this.filters.factions] : null,
+            excludedSources: this.filters.excludedSources.size > 0 ? [...this.filters.excludedSources] : null
         });
 
         // Sort threats alphabetically by name
