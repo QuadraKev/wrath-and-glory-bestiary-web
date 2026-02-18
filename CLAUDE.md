@@ -88,3 +88,6 @@ Source material PDFs are available locally for reference:
 6. **Adventure Modules**: Checked 11 books -- only adventure-specific NPCs, no general content to add
 7. **Encounter Builder**: Full encounter management with individuals, mobs, player characters, initiative tracking, drag-and-drop ordering, wound/shock tracking, file save/load (Save As), threat import, custom threat builder
 8. **Glossary sync**: Bestiary glossary synced with creator (all 300 psychic powers + all other categories)
+9. **Source book + page annotations**: All threats annotated with source book + page number. `DataLoader.formatSourcePage()` / `getSourceDisplayName()`. Glossary entries also annotated.
+10. **Mobile layout fixes**: `#app` uses `position: fixed; inset: 0` instead of `height: 100vh`. Header/tab-nav/footer use `flex-shrink: 0`. Tab nav scrollbar hidden. Sidebar-backdrop inside `#app` (stacking context). Mobile: threat name/quote/source centered.
+11. **Tier 5 filter**: Added Tier 5 to dropdown. MC (Monstrous Creature) treated as Adversary in filter logic.
