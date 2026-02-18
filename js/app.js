@@ -34,6 +34,7 @@ const App = {
         SettingsTab.init();
         ThreatsTab.init();
         GlossaryTab.init();
+        ReferencesTab.init();
         EncounterTab.init();
         ThreatBuilderTab.init();
 
@@ -112,6 +113,8 @@ const App = {
             ThreatBuilderTab.refresh();
         } else if (tabName === 'encounter') {
             EncounterTab.refresh();
+        } else if (tabName === 'references') {
+            ReferencesTab.refresh();
         } else if (tabName === 'settings') {
             SettingsTab.refresh();
         }

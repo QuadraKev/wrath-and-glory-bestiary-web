@@ -59,7 +59,17 @@ const DataLoader = {
         const files = [
             'threats.json',
             'threat-weapons.json',
-            'glossary.json'
+            'glossary.json',
+            'talents.json',
+            'weapons.json',
+            'armor.json',
+            'equipment.json',
+            'psychic-powers.json',
+            'weapon-upgrades.json',
+            'ascension-packages.json',
+            'archetypes.json',
+            'species.json',
+            'injuries-corruption.json'
         ];
 
         const results = await Promise.all(files.map(f => this.loadFile(f)));
@@ -67,12 +77,27 @@ const DataLoader = {
         const gameData = {
             threats: results[0] || [],
             threatWeapons: results[1] || [],
-            glossary: results[2] || {}
+            glossary: results[2] || {},
+            talents: results[3] || [],
+            weapons: results[4] || [],
+            armor: results[5] || [],
+            equipment: results[6] || [],
+            psychicPowers: results[7] || [],
+            weaponUpgrades: results[8] || [],
+            ascensionPackages: results[9] || [],
+            archetypes: results[10] || [],
+            species: results[11] || [],
+            injuriesCorruption: results[12] || {}
         };
 
         console.log('[DataLoader] All data loaded. Summary:', {
             threats: gameData.threats.length,
-            threatWeapons: gameData.threatWeapons.length
+            threatWeapons: gameData.threatWeapons.length,
+            talents: gameData.talents.length,
+            weapons: gameData.weapons.length,
+            armor: gameData.armor.length,
+            equipment: gameData.equipment.length,
+            psychicPowers: gameData.psychicPowers.length
         });
 
         return gameData;
@@ -179,6 +204,57 @@ const DataLoader = {
             return `${name}, p. ${item.page}`;
         }
         return name;
+    },
+
+    // Get all talents
+    getAllTalents() {
+        return this.cache['talents.json'] || [];
+    },
+
+    // Get all weapons (player weapons)
+    getAllWeapons() {
+        return this.cache['weapons.json'] || [];
+    },
+
+    // Get all armor
+    getAllArmor() {
+        return this.cache['armor.json'] || [];
+    },
+
+    // Get all equipment
+    getAllEquipment() {
+        return this.cache['equipment.json'] || [];
+    },
+
+    // Get all psychic powers
+    getAllPsychicPowers() {
+        return this.cache['psychic-powers.json'] || [];
+    },
+
+    // Get all weapon upgrades
+    getAllWeaponUpgrades() {
+        return this.cache['weapon-upgrades.json'] || [];
+    },
+
+    // Get ascension packages
+    getAscensionPackages() {
+        return this.cache['ascension-packages.json'] || [];
+    },
+
+    // Get all archetypes
+    getAllArchetypes() {
+        return this.cache['archetypes.json'] || [];
+    },
+
+    // Get all species
+    getAllSpecies() {
+        return this.cache['species.json'] || [];
+    },
+
+    // Get mutations
+    getMutations() {
+        const data = this.cache['injuries-corruption.json'] || {};
+        return data.mutations || [];
     },
 
     // Normalize source name for display (combines all Apocrypha sources)

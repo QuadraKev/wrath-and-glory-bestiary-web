@@ -6,7 +6,7 @@
     <meta name="robots" content="noindex, nofollow">
 
     <title>Wrath and Glory Bestiary</title>
-    <link rel="stylesheet" href="css/styles.css?v=41">
+    <link rel="stylesheet" href="css/styles.css?v=42">
 </head>
 <body>
     <div id="app">
@@ -31,6 +31,7 @@
                 <button class="tab-btn" data-tab="builder">THREAT BUILDER</button>
                 <button class="tab-btn" data-tab="encounter">ENCOUNTER BUILDER</button>
                 <button class="tab-btn" data-tab="glossary">GLOSSARY</button>
+                <button class="tab-btn" data-tab="references">REFERENCES</button>
                 <button class="tab-btn" data-tab="settings">SETTINGS</button>
             </div>
         </nav>
@@ -245,6 +246,32 @@
                 </div>
             </div>
 
+            <!-- References Tab -->
+            <div id="tab-references" class="tab-content tab-fullwidth">
+                <div class="glossary-container">
+                    <h2>References</h2>
+                    <div class="glossary-controls">
+                        <input type="text" id="references-search" placeholder="Search references..." class="search-input">
+                        <div class="glossary-filters">
+                            <button class="references-filter-btn active" data-category="all">All</button>
+                            <button class="references-filter-btn" data-category="talents">Talents</button>
+                            <button class="references-filter-btn" data-category="weapons">Weapons</button>
+                            <button class="references-filter-btn" data-category="armor">Armor</button>
+                            <button class="references-filter-btn" data-category="equipment">Equipment</button>
+                            <button class="references-filter-btn" data-category="psychicPowers">Psychic Powers</button>
+                            <button class="references-filter-btn" data-category="weaponUpgrades">Upgrades</button>
+                            <button class="references-filter-btn" data-category="ascensionPackages">Ascension</button>
+                            <button class="references-filter-btn" data-category="archetypeAbilities">Archetype Abilities</button>
+                            <button class="references-filter-btn" data-category="speciesAbilities">Species Abilities</button>
+                            <button class="references-filter-btn" data-category="mutations">Mutations</button>
+                        </div>
+                    </div>
+                    <div id="references-content">
+                        <!-- References entries populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
             <!-- Settings Tab -->
             <div id="tab-settings" class="tab-content tab-fullwidth">
                 <div class="settings-content">
@@ -275,16 +302,17 @@
     </script>
 
     <!-- Scripts -->
-    <script src="js/web-api.js?v=41"></script>
-    <script src="js/data-loader.js?v=41"></script>
-    <script src="js/glossary.js?v=41"></script>
-    <script src="js/encounter-state.js?v=41"></script>
-    <script src="js/threat-builder-state.js?v=41"></script>
-    <script src="tabs/settings-tab.js?v=41"></script>
-    <script src="tabs/threats-tab.js?v=41"></script>
-    <script src="tabs/glossary-tab.js?v=41"></script>
-    <script src="tabs/encounter-tab.js?v=41"></script>
-    <script src="tabs/threat-builder-tab.js?v=41"></script>
-    <script src="js/app.js?v=41"></script>
+    <script src="js/web-api.js?v=42"></script>
+    <script src="js/data-loader.js?v=42"></script>
+    <script src="js/glossary.js?v=42"></script>
+    <script src="js/encounter-state.js?v=42"></script>
+    <script src="js/threat-builder-state.js?v=42"></script>
+    <script src="tabs/settings-tab.js?v=42"></script>
+    <script src="tabs/threats-tab.js?v=42"></script>
+    <script src="tabs/glossary-tab.js?v=42"></script>
+    <script src="tabs/references-tab.js?v=42"></script>
+    <script src="tabs/encounter-tab.js?v=42"></script>
+    <script src="tabs/threat-builder-tab.js?v=42"></script>
+    <script src="js/app.js?v=42"></script>
 </body>
 </html>
