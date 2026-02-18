@@ -12,10 +12,12 @@ Vanilla JavaScript with global object pattern (no modules/bundling). Each file d
 - `js/glossary.js` - Tooltip system for game terms
 - `js/threat-builder-state.js` - Custom threat builder state management
 - `js/web-api.js` - Browser API shim (file save/load using File System Access API with download fallback)
-- `tabs/threats-tab.js` - Threat list, filters, detail view
+- `tabs/threats-tab.js` - Threat list, button-based toggle filters, detail view
 - `tabs/encounter-tab.js` - Encounter builder UI (sidebar settings, initiative list, detail panel)
 - `tabs/threat-builder-tab.js` - Custom threat editor with ability/bonus picker
 - `tabs/glossary-tab.js` - Glossary browser tab
+- `tabs/settings-tab.js` - Settings tab with source book filtering (gold toggle buttons)
+- `tabs/references-tab.js` - Reference browser for game data categories (searchable, filterable)
 - `css/styles.css` - Unified dark theme with CSS variables
 - `index.html` - Main HTML structure with tab layout
 
@@ -27,6 +29,7 @@ All game data lives in `data/` as JSON:
 |------|----------|
 | `threats.json` | All threat/NPC stat blocks (~784 threats) |
 | `threat-weapons.json` | Weapons used by threats (subset -- many threat ACTION abilities reference weapons by `weaponId` that aren't in this file; those abilities use an inline `stats` field as fallback) |
+| `equipment.json` | Equipment and augmetics (synced from creator app) for References tab |
 | `glossary.json` | Game terms for tooltip system (synced with creator app's glossary) |
 
 ### Source Values
@@ -92,3 +95,8 @@ Source material PDFs are available locally for reference:
 10. **Mobile layout fixes**: `#app` uses `position: fixed; inset: 0` instead of `height: 100vh`. Header/tab-nav/footer use `flex-shrink: 0`. Tab nav scrollbar hidden. Sidebar-backdrop inside `#app` (stacking context). Mobile: threat name/quote/source centered.
 11. **Tier 5 filter**: Added Tier 5 to dropdown. MC (Monstrous Creature) treated as Adversary in filter logic.
 12. **Comprehensive data audit**: Glossary synced with 482 corrections from creator app's visual PDF audit (1,184 total issues fixed across all creator data files). Includes fixed game mechanics (corruption_test, shock, resilience, regroup, respite, stealth_score), renamed psychic power keys (Minor Invocation→Malefic Invitation, Warpspeed→Warptime), and `[AI-Generated]` annotations for entries with no source PDF text.
+13. **Bestiary filter redesign**: Converted threat filters to button-based toggle UI with vertically stacked uniform-width buttons. Simplified sidebar to single scrolling column.
+14. **In-text reference removal**: Stripped inline page references from data descriptions. The `source`/`page` fields are preserved — only redundant in-text citations removed.
+15. **Settings tab**: Added dedicated Settings tab with source book filtering via gold toggle buttons.
+16. **References tab**: Searchable, filterable reference browser for Weapons, Armor, Augmetics, Equipment, Psychic Powers, Species Abilities, and Mutations. Species abilities deduplicated across variants.
+17. **Augmetics separation**: Synced equipment.json from creator (36 new augmetic entries, 67 total). Separated augmetics as their own category in References tab with dedicated filter button and body renderer showing Effect, Bonuses, Keywords, Value/Rarity.
