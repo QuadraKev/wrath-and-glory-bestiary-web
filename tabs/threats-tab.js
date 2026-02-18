@@ -8,8 +8,7 @@ const ThreatsTab = {
         search: '',
         selectedTier: 'all',
         threatLevels: new Set(['T', 'E', 'A']),  // simple toggle, all active by default
-        factions: new Set(),                       // inclusive: empty = show all
-        excludedSources: new Set()                 // exclusion: empty = show all
+        factions: new Set()                        // inclusive: empty = show all
     },
 
     init() {
@@ -33,10 +32,9 @@ const ThreatsTab = {
             this.clearFilters();
         });
 
-        // Populate all filter button groups
+        // Populate filter button groups
         this.populateThreatLevelFilters();
         this.populateFactionFilters();
-        this.populateSourceFilters();
 
         // Render initial threat list
         this.renderThreatList();
@@ -114,50 +112,11 @@ const ThreatsTab = {
         });
     },
 
-    // Sourcebook: exclusion filter with "All" button. Empty set = show all.
-    populateSourceFilters() {
-        const sources = DataLoader.getAllSources();
-        const container = document.getElementById('source-filters');
-
-        container.innerHTML = `<button class="filter-btn ${this.filters.excludedSources.size === 0 ? 'active' : ''}" data-source="all">All</button>` +
-            sources.map(source =>
-                `<button class="filter-btn ${this.filters.excludedSources.size === 0 || !this.filters.excludedSources.has(source) ? 'active' : ''}" data-source="${source}">${source}</button>`
-            ).join('');
-
-        container.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const source = btn.dataset.source;
-                if (source === 'all') {
-                    this.filters.excludedSources.clear();
-                } else {
-                    if (this.filters.excludedSources.has(source)) {
-                        this.filters.excludedSources.delete(source);
-                    } else {
-                        this.filters.excludedSources.add(source);
-                    }
-                }
-                this._updateSourceButtonStates(container);
-                this.renderThreatList();
-            });
-        });
-    },
-
-    _updateSourceButtonStates(container) {
-        const allBtn = container.querySelector('[data-source="all"]');
-        const isAll = this.filters.excludedSources.size === 0;
-        allBtn.classList.toggle('active', isAll);
-        container.querySelectorAll('.filter-btn:not([data-source="all"])').forEach(btn => {
-            btn.classList.toggle('active', !this.filters.excludedSources.has(btn.dataset.source));
-        });
-    },
-
     clearFilters() {
         this.filters.threatLevels = new Set(['T', 'E', 'A']);
         this.filters.factions.clear();
-        this.filters.excludedSources.clear();
         this.populateThreatLevelFilters();
         this.populateFactionFilters();
-        this.populateSourceFilters();
         this.renderThreatList();
     },
 
@@ -167,7 +126,7 @@ const ThreatsTab = {
             selectedTier: this.filters.selectedTier !== 'all' ? this.filters.selectedTier : null,
             threatLevels: this.filters.threatLevels.size > 0 ? [...this.filters.threatLevels] : null,
             factions: this.filters.factions.size > 0 ? [...this.filters.factions] : null,
-            excludedSources: this.filters.excludedSources.size > 0 ? [...this.filters.excludedSources] : null
+            excludedSources: SettingsTab.excludedSources.size > 0 ? [...SettingsTab.excludedSources] : null
         });
 
         // Sort threats alphabetically by name

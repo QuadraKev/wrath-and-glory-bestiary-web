@@ -82,6 +82,12 @@ const GlossaryTab = {
                 category
             }));
 
+            // Apply source filter — entries with a source must pass; entries without source always pass
+            entries = entries.filter(entry => {
+                if (!entry.source) return true;
+                return SettingsTab.isSourceEnabled(entry.source);
+            });
+
             // Apply search filter
             if (this.searchText) {
                 entries = entries.filter(entry =>

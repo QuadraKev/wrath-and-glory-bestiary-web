@@ -6,7 +6,7 @@
     <meta name="robots" content="noindex, nofollow">
 
     <title>Wrath and Glory Bestiary</title>
-    <link rel="stylesheet" href="css/styles.css?v=40">
+    <link rel="stylesheet" href="css/styles.css?v=41">
 </head>
 <body>
     <div id="app">
@@ -31,6 +31,7 @@
                 <button class="tab-btn" data-tab="builder">THREAT BUILDER</button>
                 <button class="tab-btn" data-tab="encounter">ENCOUNTER BUILDER</button>
                 <button class="tab-btn" data-tab="glossary">GLOSSARY</button>
+                <button class="tab-btn" data-tab="settings">SETTINGS</button>
             </div>
         </nav>
 
@@ -69,13 +70,6 @@
                     <div class="sidebar-section faction-section">
                         <label class="filter-label">Faction</label>
                         <div id="faction-filters" class="filter-btn-group faction-filter-group">
-                            <!-- Populated by JavaScript -->
-                        </div>
-                    </div>
-
-                    <div class="sidebar-section source-section">
-                        <label class="filter-label">Sourcebook</label>
-                        <div id="source-filters" class="filter-btn-group source-filter-group">
                             <!-- Populated by JavaScript -->
                         </div>
                     </div>
@@ -250,6 +244,16 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Settings Tab -->
+            <div id="tab-settings" class="tab-content tab-fullwidth">
+                <div class="settings-content">
+                    <h2>Settings</h2>
+                    <h3>Source Books</h3>
+                    <p class="section-desc">Enable or disable content from specific source books.</p>
+                    <div id="source-filter-buttons" class="filter-btn-group"></div>
+                </div>
+            </div>
         </div>
 
         <!-- Footer -->
@@ -271,15 +275,16 @@
     </script>
 
     <!-- Scripts -->
-    <script src="js/web-api.js?v=40"></script>
-    <script src="js/data-loader.js?v=40"></script>
-    <script src="js/glossary.js?v=40"></script>
-    <script src="js/encounter-state.js?v=40"></script>
-    <script src="js/threat-builder-state.js?v=40"></script>
-    <script src="tabs/threats-tab.js?v=40"></script>
-    <script src="tabs/glossary-tab.js?v=40"></script>
-    <script src="tabs/encounter-tab.js?v=40"></script>
-    <script src="tabs/threat-builder-tab.js?v=40"></script>
-    <script src="js/app.js?v=40"></script>
+    <script src="js/web-api.js?v=41"></script>
+    <script src="js/data-loader.js?v=41"></script>
+    <script src="js/glossary.js?v=41"></script>
+    <script src="js/encounter-state.js?v=41"></script>
+    <script src="js/threat-builder-state.js?v=41"></script>
+    <script src="tabs/settings-tab.js?v=41"></script>
+    <script src="tabs/threats-tab.js?v=41"></script>
+    <script src="tabs/glossary-tab.js?v=41"></script>
+    <script src="tabs/encounter-tab.js?v=41"></script>
+    <script src="tabs/threat-builder-tab.js?v=41"></script>
+    <script src="js/app.js?v=41"></script>
 </body>
 </html>

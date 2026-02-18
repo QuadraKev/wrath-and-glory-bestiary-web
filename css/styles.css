@@ -266,11 +266,15 @@ body {
 .faction-filter-group {
 }
 
-.sidebar-section.source-section {
-    margin-bottom: 12px;
+/* ===== Settings Tab ===== */
+.settings-content {
+    max-width: 600px;
 }
 
-.source-filter-group {
+.settings-content .section-desc {
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    font-size: 13px;
 }
 
 /* ===== Filter Buttons (checkbox replacements removed) ===== */

@@ -31,6 +31,7 @@ const App = {
         this.initTabNavigation();
 
         // Initialize tab modules
+        SettingsTab.init();
         ThreatsTab.init();
         GlossaryTab.init();
         EncounterTab.init();
@@ -111,6 +112,8 @@ const App = {
             ThreatBuilderTab.refresh();
         } else if (tabName === 'encounter') {
             EncounterTab.refresh();
+        } else if (tabName === 'settings') {
+            SettingsTab.refresh();
         }
     },
 
