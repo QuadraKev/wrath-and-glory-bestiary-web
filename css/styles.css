@@ -200,24 +200,16 @@ body {
     border-right: 1px solid var(--border-color);
     padding: 15px;
     flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+    overflow-y: auto;
     min-height: 0;
 }
 
 .sidebar-section {
-    flex-shrink: 0;
     margin-bottom: 12px;
 }
 
 .sidebar-section.faction-section {
-    flex: 1;
-    min-height: 0;
-    display: flex;
-    flex-direction: column;
     margin-bottom: 12px;
-    overflow: hidden;
 }
 
 .sidebar-section:last-child {
@@ -270,24 +262,13 @@ body {
 }
 
 .faction-filter-group {
-    flex: 1;
-    min-height: 0;
-    overflow-y: auto;
 }
 
 .sidebar-section.source-section {
-    flex: 1;
-    min-height: 0;
-    display: flex;
-    flex-direction: column;
     margin-bottom: 12px;
-    overflow: hidden;
 }
 
 .source-filter-group {
-    flex: 1;
-    min-height: 0;
-    overflow-y: auto;
 }
 
 /* ===== Filter Buttons (checkbox replacements removed) ===== */
