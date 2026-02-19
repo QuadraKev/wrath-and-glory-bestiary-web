@@ -17,22 +17,20 @@ async function _saveFile(json, fileName, pickerOptions) {
         }
     }
 
-    // Try Web Share API (works properly on mobile, avoids Chrome Android blob bugs)
-    if (navigator.canShare) {
+    // Try Web Share API (avoids Chrome Android blob download bugs)
+    if (navigator.share) {
         try {
-            const file = new File([json], fileName, { type: 'application/octet-stream' });
-            if (navigator.canShare({ files: [file] })) {
-                await navigator.share({ files: [file] });
-                const savedName = fileName.replace(/\.[^.]+$/, '');
-                return { success: true, fileName: savedName };
-            }
+            const file = new File([json], fileName, { type: 'application/json' });
+            await navigator.share({ files: [file] });
+            const savedName = fileName.replace(/\.[^.]+$/, '');
+            return { success: true, fileName: savedName };
         } catch (e) {
             if (e.name === 'AbortError') return { success: false };
-            // Fall through to blob download on other errors
+            console.warn('Web Share API failed, falling back to download:', e.name, e.message);
         }
     }
 
-    // Last resort: blob download
+    // Last resort: blob download (known to produce 0 KB files in Chrome Android)
     const blob = new Blob([json], { type: 'application/octet-stream' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
