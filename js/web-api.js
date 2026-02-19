@@ -1,9 +1,13 @@
 // Web API shim - replaces Electron's window.api with browser-native equivalents
 
+// Chrome Android supports showSaveFilePicker but its implementation is buggy
+// (0-byte files, appends .json to custom extensions) — skip it on Android
+const _isAndroid = /Android/i.test(navigator.userAgent);
+
 // Helper: save data to a file, using File System Access API > Web Share API > blob download
 async function _saveFile(json, fileName, pickerOptions) {
-    // Try File System Access API (desktop browsers)
-    if (window.showSaveFilePicker) {
+    // Try File System Access API (desktop browsers — buggy on Android)
+    if (window.showSaveFilePicker && !_isAndroid) {
         try {
             const handle = await window.showSaveFilePicker(pickerOptions);
             const writable = await handle.createWritable();
