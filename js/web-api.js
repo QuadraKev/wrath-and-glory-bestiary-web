@@ -4,6 +4,19 @@
 // (0-byte files, appends .json to custom extensions) — skip it on Android
 const _isAndroid = /Android/i.test(navigator.userAgent);
 
+// Helper: add a date-time stamp to a filename (strips any prior stamp to avoid stacking)
+function _addTimestamp(name) {
+    const stripped = name.replace(/ \d{4}-\d{2}-\d{2} \d{2}-\d{2}-\d{2}$/, '');
+    const now = new Date();
+    const ts = now.getFullYear() + '-' +
+        String(now.getMonth() + 1).padStart(2, '0') + '-' +
+        String(now.getDate()).padStart(2, '0') + ' ' +
+        String(now.getHours()).padStart(2, '0') + '-' +
+        String(now.getMinutes()).padStart(2, '0') + '-' +
+        String(now.getSeconds()).padStart(2, '0');
+    return stripped + ' ' + ts;
+}
+
 // Helper: save data to a file, using File System Access API > Web Share API > blob download
 async function _saveFile(json, fileName, pickerOptions) {
     // Try File System Access API (desktop browsers — buggy on Android)
@@ -57,7 +70,7 @@ window.api = {
 
     // Save encounter file via Save As dialog
     saveEncounterFile: async (encounterData, suggestedName) => {
-        const name = (suggestedName || 'encounter').replace(/\.encounter$/, '');
+        const name = _addTimestamp((suggestedName || 'encounter').replace(/\.encounter$/, ''));
         const json = JSON.stringify(encounterData, null, 2);
         return _saveFile(json, name + '.encounter', {
             suggestedName: name + '.encounter',
@@ -93,8 +106,9 @@ window.api = {
     // Save players file via Save As dialog
     savePlayersFile: async (playerData) => {
         const json = JSON.stringify(playerData, null, 2);
-        return _saveFile(json, 'players.players', {
-            suggestedName: 'players.players',
+        const name = _addTimestamp('players');
+        return _saveFile(json, name + '.players', {
+            suggestedName: name + '.players',
             types: [{ description: 'Player Files', accept: { 'application/json': ['.players'] } }]
         });
     },
@@ -125,7 +139,7 @@ window.api = {
 
     // Save threat file via Save As dialog
     saveThreatFile: async (threatData, suggestedName) => {
-        const name = (suggestedName || 'custom-threat').replace(/\.threat$/, '');
+        const name = _addTimestamp((suggestedName || 'custom-threat').replace(/\.threat$/, ''));
         const json = JSON.stringify(threatData, null, 2);
         return _saveFile(json, name + '.threat', {
             suggestedName: name + '.threat',
