@@ -35,8 +35,9 @@ window.api = {
         const a = document.createElement('a');
         a.href = url;
         a.download = name + '.encounter';
+        document.body.appendChild(a);
         a.click();
-        URL.revokeObjectURL(url);
+        setTimeout(() => { document.body.removeChild(a); URL.revokeObjectURL(url); }, 1000);
         return { success: true, fileName: name };
     },
 
@@ -90,8 +91,9 @@ window.api = {
         const a = document.createElement('a');
         a.href = url;
         a.download = 'players.players';
+        document.body.appendChild(a);
         a.click();
-        URL.revokeObjectURL(url);
+        setTimeout(() => { document.body.removeChild(a); URL.revokeObjectURL(url); }, 1000);
         return { success: true };
     },
 
@@ -146,8 +148,9 @@ window.api = {
         const a = document.createElement('a');
         a.href = url;
         a.download = name + '.threat';
+        document.body.appendChild(a);
         a.click();
-        URL.revokeObjectURL(url);
+        setTimeout(() => { document.body.removeChild(a); URL.revokeObjectURL(url); }, 1000);
         return { success: true, fileName: name };
     },
 
