@@ -1,5 +1,50 @@
 // Web API shim - replaces Electron's window.api with browser-native equivalents
 
+// Helper: save data to a file, using File System Access API > Web Share API > blob download
+async function _saveFile(json, fileName, pickerOptions) {
+    // Try File System Access API (desktop browsers)
+    if (window.showSaveFilePicker) {
+        try {
+            const handle = await window.showSaveFilePicker(pickerOptions);
+            const writable = await handle.createWritable();
+            await writable.write(new Blob([json], { type: 'application/json' }));
+            await writable.close();
+            const savedName = handle.name.replace(/\.[^.]+$/, '');
+            return { success: true, fileName: savedName };
+        } catch (e) {
+            if (e.name === 'AbortError') return { success: false };
+            return { success: false, error: e.message };
+        }
+    }
+
+    // Try Web Share API (works properly on mobile, avoids Chrome Android blob bugs)
+    if (navigator.canShare) {
+        try {
+            const file = new File([json], fileName, { type: 'application/octet-stream' });
+            if (navigator.canShare({ files: [file] })) {
+                await navigator.share({ files: [file] });
+                const savedName = fileName.replace(/\.[^.]+$/, '');
+                return { success: true, fileName: savedName };
+            }
+        } catch (e) {
+            if (e.name === 'AbortError') return { success: false };
+            // Fall through to blob download on other errors
+        }
+    }
+
+    // Last resort: blob download
+    const blob = new Blob([json], { type: 'application/octet-stream' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = fileName;
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(() => { document.body.removeChild(a); URL.revokeObjectURL(url); }, 1000);
+    const savedName = fileName.replace(/\.[^.]+$/, '');
+    return { success: true, fileName: savedName };
+}
+
 window.api = {
     // Load game data via fetch
     loadGameData: async (filename) => {
@@ -11,34 +56,11 @@ window.api = {
     // Save encounter file via Save As dialog
     saveEncounterFile: async (encounterData, suggestedName) => {
         const name = (suggestedName || 'encounter').replace(/\.encounter$/, '');
-        const blob = new Blob([JSON.stringify(encounterData, null, 2)], { type: 'application/json' });
-
-        if (window.showSaveFilePicker) {
-            try {
-                const handle = await window.showSaveFilePicker({
-                    suggestedName: name + '.encounter',
-                    types: [{ description: 'Encounter Files', accept: { 'application/json': ['.encounter'] } }]
-                });
-                const writable = await handle.createWritable();
-                await writable.write(blob);
-                await writable.close();
-                const savedName = handle.name.replace(/\.(encounter|json)$/, '');
-                return { success: true, fileName: savedName };
-            } catch (e) {
-                if (e.name === 'AbortError') return { success: false };
-                return { success: false, error: e.message };
-            }
-        }
-
-        // Fallback for browsers without File System Access API
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = name + '.encounter';
-        document.body.appendChild(a);
-        a.click();
-        setTimeout(() => { document.body.removeChild(a); URL.revokeObjectURL(url); }, 1000);
-        return { success: true, fileName: name };
+        const json = JSON.stringify(encounterData, null, 2);
+        return _saveFile(json, name + '.encounter', {
+            suggestedName: name + '.encounter',
+            types: [{ description: 'Encounter Files', accept: { 'application/json': ['.encounter'] } }]
+        });
     },
 
     // Load encounter file via file picker
@@ -68,33 +90,11 @@ window.api = {
 
     // Save players file via Save As dialog
     savePlayersFile: async (playerData) => {
-        const blob = new Blob([JSON.stringify(playerData, null, 2)], { type: 'application/json' });
-
-        if (window.showSaveFilePicker) {
-            try {
-                const handle = await window.showSaveFilePicker({
-                    suggestedName: 'players.players',
-                    types: [{ description: 'Player Files', accept: { 'application/json': ['.players'] } }]
-                });
-                const writable = await handle.createWritable();
-                await writable.write(blob);
-                await writable.close();
-                return { success: true };
-            } catch (e) {
-                if (e.name === 'AbortError') return { success: false };
-                return { success: false, error: e.message };
-            }
-        }
-
-        // Fallback for browsers without File System Access API
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'players.players';
-        document.body.appendChild(a);
-        a.click();
-        setTimeout(() => { document.body.removeChild(a); URL.revokeObjectURL(url); }, 1000);
-        return { success: true };
+        const json = JSON.stringify(playerData, null, 2);
+        return _saveFile(json, 'players.players', {
+            suggestedName: 'players.players',
+            types: [{ description: 'Player Files', accept: { 'application/json': ['.players'] } }]
+        });
     },
 
     // Load players file via file picker
@@ -124,34 +124,11 @@ window.api = {
     // Save threat file via Save As dialog
     saveThreatFile: async (threatData, suggestedName) => {
         const name = (suggestedName || 'custom-threat').replace(/\.threat$/, '');
-        const blob = new Blob([JSON.stringify(threatData, null, 2)], { type: 'application/json' });
-
-        if (window.showSaveFilePicker) {
-            try {
-                const handle = await window.showSaveFilePicker({
-                    suggestedName: name + '.threat',
-                    types: [{ description: 'Threat Files', accept: { 'application/json': ['.threat'] } }]
-                });
-                const writable = await handle.createWritable();
-                await writable.write(blob);
-                await writable.close();
-                const savedName = handle.name.replace(/\.(threat|json)$/, '');
-                return { success: true, fileName: savedName };
-            } catch (e) {
-                if (e.name === 'AbortError') return { success: false };
-                return { success: false, error: e.message };
-            }
-        }
-
-        // Fallback for browsers without File System Access API
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = name + '.threat';
-        document.body.appendChild(a);
-        a.click();
-        setTimeout(() => { document.body.removeChild(a); URL.revokeObjectURL(url); }, 1000);
-        return { success: true, fileName: name };
+        const json = JSON.stringify(threatData, null, 2);
+        return _saveFile(json, name + '.threat', {
+            suggestedName: name + '.threat',
+            types: [{ description: 'Threat Files', accept: { 'application/json': ['.threat'] } }]
+        });
     },
 
     // Load threat file via file picker
