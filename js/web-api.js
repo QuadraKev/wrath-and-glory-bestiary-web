@@ -4,6 +4,11 @@
 // (0-byte files, appends .json to custom extensions) — skip it on Android
 const _isAndroid = /Android/i.test(navigator.userAgent);
 
+// iOS doesn't recognize custom file extensions (.encounter, .players, .threat)
+// in <input accept="..."> — omit accept to let users browse all files
+const _isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
 // Helper: add a date-time stamp to a filename (strips any prior stamp to avoid stacking)
 function _addTimestamp(name) {
     const stripped = name.replace(/ \d{4}-\d{2}-\d{2} \d{2}-\d{2}-\d{2}$/, '');
@@ -83,7 +88,7 @@ window.api = {
         return new Promise((resolve) => {
             const input = document.createElement('input');
             input.type = 'file';
-            input.accept = '.encounter,.json';
+            if (!_isIOS) input.accept = '.encounter,.json';
             input.onchange = async () => {
                 if (!input.files || !input.files[0]) {
                     resolve({ success: false, error: 'No file selected' });
@@ -118,7 +123,7 @@ window.api = {
         return new Promise((resolve) => {
             const input = document.createElement('input');
             input.type = 'file';
-            input.accept = '.players,.json';
+            if (!_isIOS) input.accept = '.players,.json';
             input.onchange = async () => {
                 if (!input.files || !input.files[0]) {
                     resolve({ success: false, error: 'No file selected' });
@@ -152,7 +157,7 @@ window.api = {
         return new Promise((resolve) => {
             const input = document.createElement('input');
             input.type = 'file';
-            input.accept = '.threat,.json';
+            if (!_isIOS) input.accept = '.threat,.json';
             input.onchange = async () => {
                 if (!input.files || !input.files[0]) {
                     resolve({ success: false, error: 'No file selected' });

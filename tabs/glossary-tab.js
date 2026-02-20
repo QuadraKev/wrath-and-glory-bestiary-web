@@ -5,9 +5,13 @@ const GlossaryTab = {
     searchText: '',
     expandedEntries: new Set(),
     _searchTimer: null,
+    _entryMap: new Map(),
+    _orderedEntries: [],
+    _renderedCount: 0,
+    _scrollHandler: null,
 
     init() {
-        // Initialize search
+        // Initialize search (300ms debounce)
         const searchInput = document.getElementById('glossary-search');
         searchInput.addEventListener('input', (e) => {
             this.searchText = e.target.value.toLowerCase();
@@ -16,11 +20,31 @@ const GlossaryTab = {
         });
 
         // Initialize category filters
-        const filterButtons = document.querySelectorAll('.glossary-filter-btn');
-        filterButtons.forEach(btn => {
+        document.querySelectorAll('.glossary-filter-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 this.setCategory(btn.dataset.category);
             });
+        });
+
+        // Event delegation on container (set up once)
+        const container = document.getElementById('glossary-content');
+        container.addEventListener('click', (e) => {
+            const copyBtn = e.target.closest('.btn-copy');
+            if (copyBtn) {
+                e.stopPropagation();
+                const name = copyBtn.dataset.copyName;
+                const desc = copyBtn.dataset.copyDesc;
+                navigator.clipboard.writeText(`${name}: ${desc}`).then(() => {
+                    copyBtn.textContent = 'Copied!';
+                    setTimeout(() => { copyBtn.textContent = 'Copy'; }, 1500);
+                });
+                return;
+            }
+            const header = e.target.closest('.glossary-entry-header');
+            if (header) {
+                const entry = header.closest('.glossary-entry');
+                this.toggleEntry(entry.dataset.entryId, entry);
+            }
         });
 
         // Render initial glossary
@@ -69,7 +93,10 @@ const GlossaryTab = {
             ? ['characterTerms', 'conditions', 'combatTerms', 'terms', 'weaponTraits', 'armorTraits', 'keywords']
             : [this.currentCategory];
 
-        let html = '';
+        // Build entry map and ordered entries
+        this._entryMap = new Map();
+        this._orderedEntries = [];
+        const groups = [];
 
         for (const category of categories) {
             const categoryData = glossaryData[category];
@@ -82,7 +109,7 @@ const GlossaryTab = {
                 category
             }));
 
-            // Apply source filter — entries with a source must pass; entries without source always pass
+            // Apply source filter
             entries = entries.filter(entry => {
                 if (!entry.source) return true;
                 return SettingsTab.isSourceEnabled(entry.source);
@@ -101,57 +128,87 @@ const GlossaryTab = {
             // Sort alphabetically
             entries.sort((a, b) => a.name.localeCompare(b.name));
 
-            html += `
-                <div class="glossary-group">
-                    <h3 class="glossary-group-title">${this.getCategoryLabel(category)}</h3>
-                    <div class="glossary-entries">
-                        ${entries.map(entry => this.renderEntry(entry)).join('')}
-                    </div>
-                </div>
-            `;
+            groups.push({ category, label: this.getCategoryLabel(category), count: entries.length });
+
+            for (const entry of entries) {
+                const entryId = `${entry.category}-${entry.key}`;
+                this._entryMap.set(entryId, entry);
+                this._orderedEntries.push(entry);
+            }
         }
 
-        if (!html) {
+        if (this._orderedEntries.length === 0) {
             container.innerHTML = '<div class="glossary-empty">No entries found</div>';
+            this._cleanupScroll();
             return;
         }
 
-        container.innerHTML = html;
+        // Render group skeleton (headers only, entries populated progressively)
+        container.innerHTML = groups.map(g => `
+            <div class="glossary-group" data-group-category="${g.category}">
+                <h3 class="glossary-group-title">${g.label}</h3>
+                <div class="glossary-entries"></div>
+            </div>
+        `).join('');
 
-        // Attach click handlers
-        container.querySelectorAll('.glossary-entry-header').forEach(header => {
-            header.addEventListener('click', () => {
-                const entry = header.closest('.glossary-entry');
-                const entryId = entry.dataset.entryId;
-                this.toggleEntry(entryId, entry);
-            });
-        });
+        // Progressive rendering
+        this._renderedCount = 0;
+        this._renderNextBatch();
+        this._setupScroll();
+    },
 
-        // Bind copy buttons
-        container.querySelectorAll('.btn-copy').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const name = btn.dataset.copyName;
-                const desc = btn.dataset.copyDesc;
-                const text = `${name}: ${desc}`;
-                navigator.clipboard.writeText(text).then(() => {
-                    btn.textContent = 'Copied!';
-                    setTimeout(() => { btn.textContent = 'Copy'; }, 1500);
-                });
-            });
-        });
+    _renderNextBatch() {
+        if (this._renderedCount >= this._orderedEntries.length) return;
 
-        // Enhance glossary terms in descriptions
-        container.querySelectorAll('.glossary-entry-description').forEach(el => {
-            Glossary.enhanceElement(el);
-        });
+        const batch = this._orderedEntries.slice(this._renderedCount, this._renderedCount + 100);
+        if (batch.length === 0) return;
+
+        // Group batch entries by category for insertion into correct container
+        const byCategory = new Map();
+        for (const entry of batch) {
+            if (!byCategory.has(entry.category)) byCategory.set(entry.category, []);
+            byCategory.get(entry.category).push(entry);
+        }
+
+        for (const [category, entries] of byCategory) {
+            const groupEl = document.querySelector(`.glossary-group[data-group-category="${category}"] .glossary-entries`);
+            if (groupEl) {
+                groupEl.insertAdjacentHTML('beforeend', entries.map(e => this.renderEntry(e)).join(''));
+            }
+        }
+
+        this._renderedCount += batch.length;
+    },
+
+    _renderAllBatches() {
+        while (this._renderedCount < this._orderedEntries.length) {
+            this._renderNextBatch();
+        }
+    },
+
+    _setupScroll() {
+        this._cleanupScroll();
+        const scrollEl = document.getElementById('tab-glossary');
+        if (!scrollEl) return;
+        this._scrollHandler = () => {
+            if (scrollEl.scrollTop + scrollEl.clientHeight >= scrollEl.scrollHeight - 500) {
+                this._renderNextBatch();
+            }
+        };
+        scrollEl.addEventListener('scroll', this._scrollHandler, { passive: true });
+    },
+
+    _cleanupScroll() {
+        if (this._scrollHandler) {
+            const scrollEl = document.getElementById('tab-glossary');
+            if (scrollEl) scrollEl.removeEventListener('scroll', this._scrollHandler);
+            this._scrollHandler = null;
+        }
     },
 
     renderEntry(entry) {
-        const isExpanded = this.expandedEntries.has(entry.key);
         const entryId = `${entry.category}-${entry.key}`;
-        const sourceRef = DataLoader.formatSourcePage(entry);
-        const sourceRefHtml = sourceRef ? `<div class="source-ref">${sourceRef}</div>` : '';
+        const isExpanded = this.expandedEntries.has(entryId);
 
         return `
             <div class="glossary-entry ${isExpanded ? 'expanded' : ''}" data-entry-id="${entryId}">
@@ -160,12 +217,20 @@ const GlossaryTab = {
                     <span class="glossary-entry-name">${entry.name}</span>
                     <span class="glossary-entry-category">${this.getCategoryLabel(entry.category)}</span>
                 </div>
-                <div class="glossary-entry-body ${isExpanded ? '' : 'hidden'}">
+                <div class="glossary-entry-body ${isExpanded ? '' : 'hidden'}"${isExpanded ? '' : ' data-deferred'}>
+                    ${isExpanded ? this._renderBodyContent(entry) : ''}
+                </div>
+            </div>
+        `;
+    },
+
+    _renderBodyContent(entry) {
+        const sourceRef = DataLoader.formatSourcePage(entry);
+        const sourceRefHtml = sourceRef ? `<div class="source-ref">${sourceRef}</div>` : '';
+        return `
                     <div class="glossary-entry-description">${entry.description}</div>
                     ${sourceRefHtml}
                     <button class="btn-copy" data-copy-name="${this.escapeAttr(entry.name)}" data-copy-desc="${this.escapeAttr(this.stripHtml(entry.description))}">Copy</button>
-                </div>
-            </div>
         `;
     },
 
@@ -184,10 +249,17 @@ const GlossaryTab = {
             entryElement.classList.add('expanded');
             body.classList.remove('hidden');
 
+            // Materialize deferred body content
+            if (body.hasAttribute('data-deferred')) {
+                const data = this._entryMap.get(entryId);
+                if (data) body.innerHTML = this._renderBodyContent(data);
+                body.removeAttribute('data-deferred');
+            }
+
             // Update URL hash
             history.replaceState(null, '', '#glossary/' + entryId);
 
-            // Enhance glossary terms if not already done
+            // Enhance glossary terms on demand
             const description = body.querySelector('.glossary-entry-description');
             if (description && !description.dataset.enhanced) {
                 Glossary.enhanceElement(description);
@@ -206,8 +278,9 @@ const GlossaryTab = {
             btn.classList.toggle('active', btn.dataset.category === 'all');
         });
 
-        // Re-render to ensure all entries are in the DOM
+        // Re-render and force all batches so the entry is in the DOM
         this.renderGlossary();
+        this._renderAllBatches();
 
         // Find the target entry element
         const entryEl = document.querySelector(`.glossary-entry[data-entry-id="${entryId}"]`);
@@ -218,6 +291,13 @@ const GlossaryTab = {
         entryEl.classList.add('expanded');
         const body = entryEl.querySelector('.glossary-entry-body');
         body.classList.remove('hidden');
+
+        // Materialize deferred body
+        if (body.hasAttribute('data-deferred')) {
+            const data = this._entryMap.get(entryId);
+            if (data) body.innerHTML = this._renderBodyContent(data);
+            body.removeAttribute('data-deferred');
+        }
 
         // Enhance glossary terms
         const description = body.querySelector('.glossary-entry-description');
