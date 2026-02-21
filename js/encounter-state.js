@@ -386,9 +386,9 @@ const EncounterState = {
     // Calculate mob attack bonus
     getMobAttackBonus(mobId) {
         const livingCount = this.getMobLivingMembers(mobId).length;
-        const bonus = Math.min(livingCount, Math.floor(livingCount / 2));
         const max = Math.floor(livingCount / 2);
-        return { bonus, max, count: livingCount };
+        const bonus = Math.min(livingCount - 1, max);
+        return { bonus: Math.max(0, bonus), max, count: livingCount };
     },
 
     // Update mob notes

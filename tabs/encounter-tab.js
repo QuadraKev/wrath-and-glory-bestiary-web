@@ -534,7 +534,7 @@ const EncounterTab = {
                     <input type="number" class="initiative-input" value="${item.initiative ?? ''}"
                            data-id="${item.id}" data-type="individual" placeholder="Init"
                            min="0" max="99">
-                    <span class="encounter-item-name">${item.name}</span>
+                    <span class="encounter-item-name">${this.escapeHtml(item.name)}</span>
                     <select class="bonus-select bonus-${bonus}" data-id="${item.id}">
                         <option value="none" ${bonus === 'none' ? 'selected' : ''}>No Bonus</option>
                         <option value="elite" ${bonus === 'elite' ? 'selected' : ''}>Elite</option>
@@ -587,7 +587,7 @@ const EncounterTab = {
                     <input type="number" class="initiative-input" value="${item.initiative ?? ''}"
                            data-id="${item.id}" data-type="mob" placeholder="Init"
                            min="0" max="99">
-                    <span class="encounter-item-name">${mob.name}</span>
+                    <span class="encounter-item-name">${this.escapeHtml(mob.name)}</span>
                     <span class="mob-badge">MOB</span>
                 </div>
                 <div class="mob-info">

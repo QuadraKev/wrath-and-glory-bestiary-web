@@ -191,7 +191,7 @@ const ThreatBuilderTab = {
             <div class="builder-section">
                 <div class="builder-section-header">Tier / Threat</div>
                 <div class="builder-tier-row">
-                    ${renderSelect('1')}${renderSelect('2')}${renderSelect('3')}${renderSelect('4')}
+                    ${renderSelect('1')}${renderSelect('2')}${renderSelect('3')}${renderSelect('4')}${renderSelect('5')}
                 </div>
             </div>
         `;

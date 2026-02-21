@@ -109,8 +109,14 @@ const ThreatsTab = {
     },
 
     clearFilters() {
+        this.filters.search = '';
+        this.filters.selectedTier = 'all';
         this.filters.threatLevel = 'all';
         this.filters.factions.clear();
+        const searchInput = document.getElementById('search-input');
+        if (searchInput) searchInput.value = '';
+        const tierFilter = document.getElementById('tier-filter');
+        if (tierFilter) tierFilter.value = 'all';
         this.populateThreatLevelFilters();
         this.populateFactionFilters();
         this.renderThreatList();
@@ -231,14 +237,18 @@ const ThreatsTab = {
 
         // Find the default weapon (first ACTION ability) or use selected weapon
         let currentWeapon = null;
+        this.defaultWeaponId = null;
+        if (threat.abilities) {
+            const actionAbility = threat.abilities.find(a => a.type === 'ACTION' && a.weaponId);
+            if (actionAbility) {
+                this.defaultWeaponId = actionAbility.weaponId;
+            }
+        }
         if (this.selectedWeaponId) {
             currentWeapon = DataLoader.getThreatWeapon(this.selectedWeaponId);
-        } else if (threat.abilities) {
-            const actionAbility = threat.abilities.find(a => a.type === 'ACTION');
-            if (actionAbility && actionAbility.weaponId) {
-                currentWeapon = DataLoader.getThreatWeapon(actionAbility.weaponId);
-                this.selectedWeaponId = actionAbility.weaponId;
-            }
+        } else if (this.defaultWeaponId) {
+            currentWeapon = DataLoader.getThreatWeapon(this.defaultWeaponId);
+            this.selectedWeaponId = this.defaultWeaponId;
         }
 
         container.innerHTML = this.renderThreatCard(threat, currentWeapon);
@@ -386,7 +396,7 @@ const ThreatsTab = {
         const skillsHtml = this.renderSkillsRow(threat.skills);
 
         // Build abilities section
-        const abilitiesHtml = this.renderAbilities(threat.abilities, currentWeapon);
+        const abilitiesHtml = this.renderAbilities(threat.abilities, currentWeapon, this.defaultWeaponId);
 
         // Build bonuses section
         const bonusesHtml = this.renderBonuses(threat.bonuses);
@@ -528,7 +538,7 @@ const ThreatsTab = {
 
     renderResilienceRow(threat) {
         const resilience = threat.resilience || {};
-        const value = resilience.value || '-';
+        const value = resilience.value ?? '-';
         const note = resilience.note || '';
 
         return `
@@ -572,7 +582,7 @@ const ThreatsTab = {
         `;
     },
 
-    renderAbilities(abilities, currentWeapon) {
+    renderAbilities(abilities, currentWeapon, targetWeaponId) {
         if (!abilities || abilities.length === 0) return '<p class="text-muted">No abilities</p>';
 
         return abilities.map(ability => {
@@ -581,7 +591,10 @@ const ThreatsTab = {
 
             if (ability.type === 'ACTION' && ability.weaponId) {
                 // This is a weapon action - show weapon stats
-                const weapon = currentWeapon || DataLoader.getThreatWeapon(ability.weaponId);
+                // Only apply currentWeapon override to the ability whose weapon matches the selector target
+                const weapon = (currentWeapon && ability.weaponId === targetWeaponId)
+                    ? currentWeapon
+                    : DataLoader.getThreatWeapon(ability.weaponId);
                 if (weapon) {
                     statsHtml = this.formatWeaponStats(weapon);
                 } else if (ability.stats) {
@@ -665,8 +678,8 @@ const ThreatsTab = {
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="stat-value">${threat.conviction || '-'}</td>
-                        <td class="stat-value">${threat.resolve || '-'}</td>
+                        <td class="stat-value">${threat.conviction ?? '-'}</td>
+                        <td class="stat-value">${threat.resolve ?? '-'}</td>
                         <td class="stat-value">${threat.speed || '-'}</td>
                         <td class="stat-value">${threat.size || '-'}</td>
                     </tr>

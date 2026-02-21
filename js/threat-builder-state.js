@@ -284,7 +284,7 @@ const ThreatBuilderState = {
             quote: '',
             attribution: '',
             description: '',
-            tierThreat: { '1': 'T', '2': 'T', '3': '-', '4': '-' },
+            tierThreat: { '1': 'T', '2': 'T', '3': '-', '4': '-', '5': '-' },
             keywords: [],
             attributes: { S: 1, T: 1, A: 1, I: 1, Wil: 1, Int: 1, Fel: 1 },
             resilience: { value: 1, note: '' },
