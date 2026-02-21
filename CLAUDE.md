@@ -11,7 +11,7 @@ Vanilla JavaScript with global object pattern (no modules/bundling). Each file d
 - `js/encounter-state.js` - Encounter state management (individuals, mobs, player characters, initiative, file persistence)
 - `js/glossary.js` - Tooltip system for game terms
 - `js/threat-builder-state.js` - Custom threat builder state management
-- `js/web-api.js` - Browser API shim (file save/load using File System Access API with download fallback)
+- `js/web-api.js` - Browser API shim (file save/load using File System Access API with download fallback; iOS detection to skip `accept` attribute)
 - `tabs/threats-tab.js` - Threat list, button-based toggle filters, detail view
 - `tabs/encounter-tab.js` - Encounter builder UI (sidebar settings, initiative list, detail panel)
 - `tabs/threat-builder-tab.js` - Custom threat editor with ability/bonus picker
@@ -100,3 +100,5 @@ Source material PDFs are available locally for reference:
 15. **Settings tab**: Added dedicated Settings tab with source book filtering via gold toggle buttons.
 16. **References tab**: Searchable, filterable reference browser for Weapons, Armor, Augmetics, Equipment, Psychic Powers, Species Abilities, and Mutations. Species abilities deduplicated across variants.
 17. **Augmetics separation**: Synced equipment.json from creator (36 new augmetic entries, 67 total). Separated augmetics as their own category in References tab with dedicated filter button and body renderer showing Effect, Bonuses, Keywords, Value/Rarity.
+18. **Glossary & References performance**: Deferred body rendering (empty body with `data-deferred`, materialized on first expand), progressive rendering (batches of 100 entries on scroll), event delegation (single click listener on container via `e.target.closest()`), and search debounce (200-300ms). Applies to both `glossary-tab.js` and `references-tab.js`.
+19. **iOS fixes**: File loading — omit `<input accept="...">` on iOS to avoid Safari forcing .JSON extension on custom file types (.encounter, .players, .threat). Glossary tooltips — prevent double-open on tap by clearing hover timer in click handler and checking `data-glossary-key` for duplicate popups.
