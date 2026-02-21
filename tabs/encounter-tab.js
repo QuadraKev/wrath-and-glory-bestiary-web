@@ -865,13 +865,14 @@ const EncounterTab = {
                 </div>
 
                 <div class="threat-card-mini">
-                    ${this.renderThreatCardMini(threat)}
+                    ${this.renderThreatCardMini(threat, individual.weaponOverrides || {}, true)}
                 </div>
             </div>
         `;
 
         // Bind events
         this.bindDetailEvents();
+        this.bindWeaponSelectorEvents(container);
         Glossary.enhanceDescriptions(container);
     },
 
@@ -994,7 +995,7 @@ const EncounterTab = {
         `;
     },
 
-    renderThreatCardMini(threat) {
+    renderThreatCardMini(threat, weaponOverrides = {}, showWeaponSelectors = false) {
         // Full threat card for the detail panel
         const keywordsHtml = (threat.keywords || []).map(kw =>
             `<span class="threat-keyword-mini">${kw}</span>`
@@ -1012,12 +1013,26 @@ const EncounterTab = {
         // Render abilities
         const abilitiesHtml = (threat.abilities || []).map(ability => {
             let statsHtml = '';
+            let selectorHtml = '';
+
             if (ability.type === 'ACTION' && ability.weaponId) {
-                const weapon = DataLoader.getThreatWeapon(ability.weaponId);
+                // Check for weapon override
+                const overrideId = weaponOverrides[ability.weaponId];
+                let weapon;
+                if (overrideId) {
+                    weapon = DataLoader.resolveWeaponOverride(overrideId);
+                }
+                if (!weapon) {
+                    weapon = DataLoader.getThreatWeapon(ability.weaponId);
+                }
                 if (weapon) {
                     statsHtml = this.formatWeaponStats(weapon);
                 } else if (ability.stats) {
                     statsHtml = ` | ${ability.stats}`;
+                }
+
+                if (showWeaponSelectors) {
+                    selectorHtml = this.renderAbilityWeaponSelector(ability.weaponId, overrideId || '');
                 }
             } else if (ability.stats) {
                 statsHtml = ` | ${ability.stats}`;
@@ -1029,6 +1044,7 @@ const EncounterTab = {
                     <span class="ability-name-mini" data-glossary-enhance>${ability.name}</span>
                     ${statsHtml ? `<span class="ability-stats-mini" data-glossary-enhance>${statsHtml}</span>` : ''}
                     ${ability.description ? `<div class="ability-desc-mini" data-glossary-enhance>${ability.description}</div>` : ''}
+                    ${selectorHtml}
                 </div>
             `;
         }).join('');
@@ -1163,6 +1179,24 @@ const EncounterTab = {
         return result;
     },
 
+    renderAbilityWeaponSelector(originalWeaponId, currentCompositeId) {
+        const groups = DataLoader.getCombinedWeaponList();
+        const optionsHtml = groups.map(g =>
+            `<optgroup label="${this.escapeHtml(g.group)}">${g.weapons.map(w =>
+                `<option value="${this.escapeHtml(w.compositeId)}" ${w.compositeId === currentCompositeId ? 'selected' : ''}>${this.escapeHtml(w.name)}</option>`
+            ).join('')}</optgroup>`
+        ).join('');
+
+        return `
+            <div class="ability-weapon-selector">
+                <select class="ability-weapon-select" data-original-weapon-id="${originalWeaponId}">
+                    <option value="">Default</option>
+                    ${optionsHtml}
+                </select>
+            </div>
+        `;
+    },
+
     bindDetailEvents() {
         const id = this.selectedId;
 
@@ -1219,6 +1253,17 @@ const EncounterTab = {
             this.selectionType = null;
             this.renderEncounterList();
             this.renderDetail();
+        });
+    },
+
+    bindWeaponSelectorEvents(container) {
+        container.querySelectorAll('.ability-weapon-select').forEach(select => {
+            select.addEventListener('change', (e) => {
+                const originalWeaponId = e.target.dataset.originalWeaponId;
+                const compositeId = e.target.value || null;
+                EncounterState.updateWeaponOverride(this.selectedId, originalWeaponId, compositeId);
+                this.renderDetail();
+            });
         });
     },
 

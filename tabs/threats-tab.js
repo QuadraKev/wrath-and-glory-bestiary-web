@@ -2,7 +2,6 @@
 
 const ThreatsTab = {
     selectedThreatId: null,
-    selectedWeaponId: null,
     _searchTimer: null,
     filters: {
         search: '',
@@ -202,7 +201,6 @@ const ThreatsTab = {
 
     selectThreat(threatId) {
         this.selectedThreatId = threatId;
-        this.selectedWeaponId = null;
 
         // Update URL hash without triggering hashchange
         history.replaceState(null, '', '#threats/' + threatId);
@@ -235,23 +233,7 @@ const ThreatsTab = {
             return;
         }
 
-        // Find the default weapon (first ACTION ability) or use selected weapon
-        let currentWeapon = null;
-        this.defaultWeaponId = null;
-        if (threat.abilities) {
-            const actionAbility = threat.abilities.find(a => a.type === 'ACTION' && a.weaponId);
-            if (actionAbility) {
-                this.defaultWeaponId = actionAbility.weaponId;
-            }
-        }
-        if (this.selectedWeaponId) {
-            currentWeapon = DataLoader.getThreatWeapon(this.selectedWeaponId);
-        } else if (this.defaultWeaponId) {
-            currentWeapon = DataLoader.getThreatWeapon(this.defaultWeaponId);
-            this.selectedWeaponId = this.defaultWeaponId;
-        }
-
-        container.innerHTML = this.renderThreatCard(threat, currentWeapon);
+        container.innerHTML = this.renderThreatCard(threat);
 
         // Enhance glossary terms
         Glossary.enhanceDescriptions(container);
@@ -263,15 +245,6 @@ const ThreatsTab = {
                 this.showKeywordPopup(keyword, e.target);
             });
         });
-
-        // Attach weapon selector handler
-        const weaponSelector = container.querySelector('.weapon-selector');
-        if (weaponSelector) {
-            weaponSelector.addEventListener('change', (e) => {
-                this.selectedWeaponId = e.target.value || null;
-                this.renderThreatDetail(threatId);
-            });
-        }
 
         // Attach add to encounter handlers
         this.bindAddToEncounterEvents(container, threatId);
@@ -374,7 +347,7 @@ const ThreatsTab = {
         ThreatBuilderTab.refresh();
     },
 
-    renderThreatCard(threat, currentWeapon) {
+    renderThreatCard(threat) {
         // Build tier/threat table
         const tierThreatTable = this.renderTierThreatTable(threat.tierThreat);
 
@@ -396,7 +369,7 @@ const ThreatsTab = {
         const skillsHtml = this.renderSkillsRow(threat.skills);
 
         // Build abilities section
-        const abilitiesHtml = this.renderAbilities(threat.abilities, currentWeapon, this.defaultWeaponId);
+        const abilitiesHtml = this.renderAbilities(threat.abilities);
 
         // Build bonuses section
         const bonusesHtml = this.renderBonuses(threat.bonuses);
@@ -406,9 +379,6 @@ const ThreatsTab = {
 
         // Build bottom stats table
         const bottomStatsTable = this.renderBottomStatsTable(threat);
-
-        // Build weapon selector
-        const weaponSelectorHtml = this.renderWeaponSelector(threat, currentWeapon);
 
         // Build add to encounter controls (for header)
         const addToEncounterHtml = this.renderAddToEncounterHeader(threat);
@@ -463,8 +433,6 @@ const ThreatsTab = {
                         ${determinationHtml}
 
                         ${bottomStatsTable}
-
-                        ${weaponSelectorHtml}
                     </div>
                 </div>
             </div>
@@ -582,7 +550,7 @@ const ThreatsTab = {
         `;
     },
 
-    renderAbilities(abilities, currentWeapon, targetWeaponId) {
+    renderAbilities(abilities) {
         if (!abilities || abilities.length === 0) return '<p class="text-muted">No abilities</p>';
 
         return abilities.map(ability => {
@@ -590,11 +558,7 @@ const ThreatsTab = {
             let descHtml = '';
 
             if (ability.type === 'ACTION' && ability.weaponId) {
-                // This is a weapon action - show weapon stats
-                // Only apply currentWeapon override to the ability whose weapon matches the selector target
-                const weapon = (currentWeapon && ability.weaponId === targetWeaponId)
-                    ? currentWeapon
-                    : DataLoader.getThreatWeapon(ability.weaponId);
+                const weapon = DataLoader.getThreatWeapon(ability.weaponId);
                 if (weapon) {
                     statsHtml = this.formatWeaponStats(weapon);
                 } else if (ability.stats) {
@@ -685,73 +649,6 @@ const ThreatsTab = {
                     </tr>
                 </tbody>
             </table>
-        `;
-    },
-
-    renderWeaponSelector(threat, currentWeapon) {
-        // Get all available threat weapons
-        const allWeapons = DataLoader.getAllThreatWeapons();
-        if (allWeapons.length === 0) return '';
-
-        // Get the default weapon from the threat
-        let defaultWeaponId = null;
-        if (threat.abilities) {
-            const actionAbility = threat.abilities.find(a => a.type === 'ACTION' && a.weaponId);
-            if (actionAbility) {
-                defaultWeaponId = actionAbility.weaponId;
-            }
-        }
-
-        const currentWeaponId = this.selectedWeaponId || defaultWeaponId;
-
-        return `
-            <div class="weapon-selector-section">
-                <div class="weapon-selector-label">Change Weapon</div>
-                <select class="weapon-selector">
-                    <option value="">-- Select a weapon --</option>
-                    ${allWeapons.map(w => `
-                        <option value="${w.id}" ${w.id === currentWeaponId ? 'selected' : ''}>
-                            ${w.name}
-                        </option>
-                    `).join('')}
-                </select>
-                ${currentWeapon ? this.renderWeaponPreview(currentWeapon) : ''}
-            </div>
-        `;
-    },
-
-    renderWeaponPreview(weapon) {
-        return `
-            <div class="weapon-stats-preview">
-                <div class="stat-row">
-                    <span class="stat-label">Damage</span>
-                    <span class="stat-value">${weapon.damage || '-'}</span>
-                </div>
-                <div class="stat-row">
-                    <span class="stat-label">ED</span>
-                    <span class="stat-value">+${weapon.ed || 0} ED</span>
-                </div>
-                <div class="stat-row">
-                    <span class="stat-label">AP</span>
-                    <span class="stat-value">${weapon.ap || 0}</span>
-                </div>
-                <div class="stat-row">
-                    <span class="stat-label">Range</span>
-                    <span class="stat-value">${weapon.range || '-'}</span>
-                </div>
-                ${weapon.salvo ? `
-                <div class="stat-row">
-                    <span class="stat-label">Salvo</span>
-                    <span class="stat-value">${weapon.salvo}</span>
-                </div>
-                ` : ''}
-                ${weapon.traits && weapon.traits.length > 0 ? `
-                <div class="stat-row">
-                    <span class="stat-label">Traits</span>
-                    <span class="stat-value" data-glossary-enhance>${weapon.traits.join(', ')}</span>
-                </div>
-                ` : ''}
-            </div>
         `;
     },
 

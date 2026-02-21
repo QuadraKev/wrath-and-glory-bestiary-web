@@ -751,64 +751,24 @@ body {
     min-width: 70px;
 }
 
-/* Weapon Selector */
-.weapon-selector-section {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid var(--border-color);
+/* Ability Weapon Selector (Encounter Builder) */
+.ability-weapon-selector {
+    margin-top: 4px;
 }
 
-.weapon-selector-label {
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--text-secondary);
-    text-transform: uppercase;
-    margin-bottom: 8px;
-}
-
-.weapon-selector {
+.ability-weapon-select {
     width: 100%;
-    max-width: 400px;
-    padding: 10px 12px;
-    background: var(--bg-card);
+    padding: 4px 8px;
+    font-size: 12px;
+    background: var(--bg-tertiary);
     color: var(--text-primary);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-sm);
-    font-size: 14px;
-    cursor: pointer;
 }
 
-.weapon-selector:focus {
+.ability-weapon-select:focus {
     outline: none;
     border-color: var(--accent-gold);
-}
-
-.weapon-stats-preview {
-    margin-top: 10px;
-    padding: 12px;
-    background: var(--bg-tertiary);
-    border-radius: var(--radius-sm);
-    font-size: 13px;
-}
-
-.weapon-stats-preview .stat-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 4px 0;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.weapon-stats-preview .stat-row:last-child {
-    border-bottom: none;
-}
-
-.weapon-stats-preview .stat-label {
-    color: var(--text-secondary);
-}
-
-.weapon-stats-preview .stat-value {
-    color: var(--text-primary);
-    font-weight: 500;
 }
 
 /* ===== Footer ===== */

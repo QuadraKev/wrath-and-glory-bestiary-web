@@ -125,6 +125,90 @@ const DataLoader = {
         return weapons.find(w => w.id === id);
     },
 
+    // Get a single wargear weapon by ID
+    getWeapon(id) {
+        const weapons = this.getAllWeapons();
+        return weapons.find(w => w.id === id);
+    },
+
+    // Convert a wargear weapon to threat-weapon-like display format
+    normalizeWargearWeapon(weapon) {
+        if (!weapon) return null;
+        const dmg = weapon.damage || {};
+        const flatDamage = (dmg.base || 0) + (dmg.bonus || 0);
+
+        let rangeStr = '';
+        if (weapon.range && typeof weapon.range === 'object') {
+            rangeStr = `${weapon.range.short}/${weapon.range.medium}/${weapon.range.long}`;
+        } else if (weapon.range) {
+            rangeStr = String(weapon.range);
+        }
+
+        return {
+            id: weapon.id,
+            name: weapon.name,
+            type: weapon.type,
+            damage: flatDamage,
+            ed: weapon.ed ?? 0,
+            ap: weapon.ap ?? 0,
+            range: rangeStr || undefined,
+            salvo: weapon.salvo != null ? String(weapon.salvo) : undefined,
+            traits: weapon.traits || []
+        };
+    },
+
+    // Resolve a weapon override composite ID to a display-format weapon
+    resolveWeaponOverride(compositeId) {
+        if (!compositeId) return null;
+        if (compositeId.startsWith('wargear:')) {
+            const realId = compositeId.slice(8);
+            const weapon = this.getWeapon(realId);
+            return weapon ? this.normalizeWargearWeapon(weapon) : null;
+        }
+        return this.getThreatWeapon(compositeId);
+    },
+
+    // Combined weapon list cache
+    _combinedWeaponListCache: null,
+
+    // Build a merged weapon list for dropdowns (threat weapons + non-vehicle wargear weapons)
+    getCombinedWeaponList() {
+        if (this._combinedWeaponListCache) return this._combinedWeaponListCache;
+
+        const result = [];
+
+        // Threat weapons first (use ID as-is)
+        const threatWeapons = this.getAllThreatWeapons();
+        if (threatWeapons.length > 0) {
+            result.push({
+                group: 'Threat Weapons',
+                weapons: threatWeapons.map(w => ({ compositeId: w.id, name: w.name }))
+            });
+        }
+
+        // Wargear weapons grouped by category, excluding vehicle weapons
+        const allWeapons = this.getAllWeapons();
+        const categoryMap = new Map();
+        allWeapons.forEach(w => {
+            if (w.category && w.category.startsWith('Vehicle')) return;
+            const cat = w.category || 'Other';
+            if (!categoryMap.has(cat)) categoryMap.set(cat, []);
+            categoryMap.get(cat).push({ compositeId: 'wargear:' + w.id, name: w.name });
+        });
+
+        // Sort categories alphabetically
+        const sortedCategories = Array.from(categoryMap.keys()).sort();
+        sortedCategories.forEach(cat => {
+            result.push({
+                group: cat,
+                weapons: categoryMap.get(cat).sort((a, b) => a.name.localeCompare(b.name))
+            });
+        });
+
+        this._combinedWeaponListCache = result;
+        return result;
+    },
+
     // Get glossary data
     getGlossary() {
         return this.cache['glossary.json'] || {};
