@@ -865,14 +865,14 @@ const EncounterTab = {
                 </div>
 
                 <div class="threat-card-mini">
-                    ${this.renderThreatCardMini(threat, individual.weaponOverrides || {}, true)}
+                    ${this.renderThreatCardMini(threat, individual.additionalWeaponId || null, true)}
                 </div>
             </div>
         `;
 
         // Bind events
         this.bindDetailEvents();
-        this.bindWeaponSelectorEvents(container);
+        this.bindAdditionalWeaponEvents(container);
         Glossary.enhanceDescriptions(container);
     },
 
@@ -995,7 +995,7 @@ const EncounterTab = {
         `;
     },
 
-    renderThreatCardMini(threat, weaponOverrides = {}, showWeaponSelectors = false) {
+    renderThreatCardMini(threat, additionalWeaponId = null, showAdditionalWeapon = false) {
         // Full threat card for the detail panel
         const keywordsHtml = (threat.keywords || []).map(kw =>
             `<span class="threat-keyword-mini">${kw}</span>`
@@ -1013,26 +1013,13 @@ const EncounterTab = {
         // Render abilities
         const abilitiesHtml = (threat.abilities || []).map(ability => {
             let statsHtml = '';
-            let selectorHtml = '';
 
             if (ability.type === 'ACTION' && ability.weaponId) {
-                // Check for weapon override
-                const overrideId = weaponOverrides[ability.weaponId];
-                let weapon;
-                if (overrideId) {
-                    weapon = DataLoader.resolveWeaponOverride(overrideId);
-                }
-                if (!weapon) {
-                    weapon = DataLoader.getThreatWeapon(ability.weaponId);
-                }
+                const weapon = DataLoader.getThreatWeapon(ability.weaponId);
                 if (weapon) {
                     statsHtml = this.formatWeaponStats(weapon);
                 } else if (ability.stats) {
                     statsHtml = ` | ${ability.stats}`;
-                }
-
-                if (showWeaponSelectors) {
-                    selectorHtml = this.renderAbilityWeaponSelector(ability.weaponId, overrideId || '');
                 }
             } else if (ability.stats) {
                 statsHtml = ` | ${ability.stats}`;
@@ -1044,7 +1031,6 @@ const EncounterTab = {
                     <span class="ability-name-mini" data-glossary-enhance>${ability.name}</span>
                     ${statsHtml ? `<span class="ability-stats-mini" data-glossary-enhance>${statsHtml}</span>` : ''}
                     ${ability.description ? `<div class="ability-desc-mini" data-glossary-enhance>${ability.description}</div>` : ''}
-                    ${selectorHtml}
                 </div>
             `;
         }).join('');
@@ -1139,6 +1125,8 @@ const EncounterTab = {
                         <div class="mini-abilities">${abilitiesHtml}</div>
                     </div>
 
+                    ${showAdditionalWeapon ? this.renderAdditionalWeaponSection(additionalWeaponId) : ''}
+
                     ${threat.determination ? `
                         <div class="mini-section">
                             <span class="mini-section-label">Determination:</span>
@@ -1179,7 +1167,7 @@ const EncounterTab = {
         return result;
     },
 
-    renderAbilityWeaponSelector(originalWeaponId, currentCompositeId) {
+    renderAdditionalWeaponSection(currentCompositeId) {
         const groups = DataLoader.getCombinedWeaponList();
         const optionsHtml = groups.map(g =>
             `<optgroup label="${this.escapeHtml(g.group)}">${g.weapons.map(w =>
@@ -1187,12 +1175,22 @@ const EncounterTab = {
             ).join('')}</optgroup>`
         ).join('');
 
+        let weaponStatsHtml = '';
+        if (currentCompositeId) {
+            const weapon = DataLoader.resolveWeaponOverride(currentCompositeId);
+            if (weapon) {
+                weaponStatsHtml = `<div class="additional-weapon-stats">${this.formatWeaponStats(weapon)}</div>`;
+            }
+        }
+
         return `
-            <div class="ability-weapon-selector">
-                <select class="ability-weapon-select" data-original-weapon-id="${originalWeaponId}">
-                    <option value="">Default</option>
+            <div class="additional-weapon-section">
+                <div class="additional-weapon-label">Additional Weapon</div>
+                <select id="additional-weapon-select" class="additional-weapon-select">
+                    <option value="">None</option>
                     ${optionsHtml}
                 </select>
+                ${weaponStatsHtml}
             </div>
         `;
     },
@@ -1256,15 +1254,15 @@ const EncounterTab = {
         });
     },
 
-    bindWeaponSelectorEvents(container) {
-        container.querySelectorAll('.ability-weapon-select').forEach(select => {
+    bindAdditionalWeaponEvents(container) {
+        const select = container.querySelector('#additional-weapon-select');
+        if (select) {
             select.addEventListener('change', (e) => {
-                const originalWeaponId = e.target.dataset.originalWeaponId;
                 const compositeId = e.target.value || null;
-                EncounterState.updateWeaponOverride(this.selectedId, originalWeaponId, compositeId);
+                EncounterState.setAdditionalWeapon(this.selectedId, compositeId);
                 this.renderDetail();
             });
-        });
+        }
     },
 
     bindMobDetailEvents() {

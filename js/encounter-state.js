@@ -82,7 +82,7 @@ const EncounterState = {
                 mobId: null,
                 initiative: null,
                 notes: "",
-                weaponOverrides: {}
+                additionalWeaponId: null
             };
             this.individuals.push(individual);
             newIndividuals.push(individual);
@@ -160,7 +160,7 @@ const EncounterState = {
             maxShock: threat ? this.calculateMaxShock(threat, original.bonus) : original.maxShock,
             mobId: null,
             notes: "",
-            weaponOverrides: { ...(original.weaponOverrides || {}) }
+            additionalWeaponId: original.additionalWeaponId || null
         };
         this.individuals.push(duplicate);
         this.markDirty();
@@ -193,16 +193,11 @@ const EncounterState = {
         }
     },
 
-    // Update a weapon override for a specific ability on an individual
-    updateWeaponOverride(individualId, originalWeaponId, compositeId) {
+    // Set an additional weapon for an individual
+    setAdditionalWeapon(individualId, compositeId) {
         const individual = this.individuals.find(i => i.id === individualId);
         if (!individual) return;
-        if (!individual.weaponOverrides) individual.weaponOverrides = {};
-        if (compositeId) {
-            individual.weaponOverrides[originalWeaponId] = compositeId;
-        } else {
-            delete individual.weaponOverrides[originalWeaponId];
-        }
+        individual.additionalWeaponId = compositeId || null;
         this.markDirty();
     },
 

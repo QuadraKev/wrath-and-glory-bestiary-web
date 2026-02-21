@@ -751,12 +751,22 @@ body {
     min-width: 70px;
 }
 
-/* Ability Weapon Selector (Encounter Builder) */
-.ability-weapon-selector {
-    margin-top: 4px;
+/* Additional Weapon Section (Encounter Builder) */
+.additional-weapon-section {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border-color);
 }
 
-.ability-weapon-select {
+.additional-weapon-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.additional-weapon-select {
     width: 100%;
     padding: 4px 8px;
     font-size: 12px;
@@ -766,9 +776,15 @@ body {
     border-radius: var(--radius-sm);
 }
 
-.ability-weapon-select:focus {
+.additional-weapon-select:focus {
     outline: none;
     border-color: var(--accent-gold);
+}
+
+.additional-weapon-stats {
+    margin-top: 4px;
+    font-size: 12px;
+    color: var(--text-secondary);
 }
 
 /* ===== Footer ===== */
