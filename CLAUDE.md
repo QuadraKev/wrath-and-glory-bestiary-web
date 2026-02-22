@@ -29,6 +29,7 @@ All game data lives in `data/` as JSON:
 |------|----------|
 | `threats.json` | All threat/NPC stat blocks (~784 threats) |
 | `threat-weapons.json` | Weapons used by threats (subset -- many threat ACTION abilities reference weapons by `weaponId` that aren't in this file; those abilities use an inline `stats` field as fallback) |
+| `weapons.json` | Wargear weapons (synced from creator app) for weapon picker modal + References tab |
 | `equipment.json` | Equipment and augmetics (synced from creator app) for References tab |
 | `glossary.json` | Game terms for tooltip system (synced with creator app's glossary) |
 
@@ -98,7 +99,9 @@ Source material PDFs are available locally for reference:
 13. **Bestiary filter redesign**: Converted threat filters to button-based toggle UI with vertically stacked uniform-width buttons. Simplified sidebar to single scrolling column.
 14. **In-text reference removal**: Stripped inline page references from data descriptions. The `source`/`page` fields are preserved — only redundant in-text citations removed.
 15. **Settings tab**: Added dedicated Settings tab with source book filtering via gold toggle buttons.
-16. **References tab**: Searchable, filterable reference browser for Weapons, Armor, Augmetics, Equipment, Psychic Powers, Species Abilities, and Mutations. Species abilities deduplicated across variants.
+16. **References tab**: Searchable, filterable reference browser for Weapons, Grenades & Missiles, Armor, Augmetics, Equipment, Psychic Powers, Species Abilities, and Mutations. Species abilities deduplicated across variants.
 17. **Augmetics separation**: Synced equipment.json from creator (36 new augmetic entries, 67 total). Separated augmetics as their own category in References tab with dedicated filter button and body renderer showing Effect, Bonuses, Keywords, Value/Rarity.
 18. **Glossary & References performance**: Deferred body rendering (empty body with `data-deferred`, materialized on first expand), progressive rendering (batches of 100 entries on scroll), event delegation (single click listener on container via `e.target.closest()`), and search debounce (200-300ms). Applies to both `glossary-tab.js` and `references-tab.js`.
 19. **iOS fixes**: File loading — omit `<input accept="...">` on iOS to avoid Safari forcing .JSON extension on custom file types (.encounter, .players, .threat). Glossary tooltips — prevent double-open on tap by clearing hover timer in click handler and checking `data-glossary-key` for duplicate popups.
+20. **Weapon Picker Modal**: Replaced `<select>` dropdown for additional weapons in Encounter Builder with modal dialog. Text search, type filters (All/Melee/Ranged/Grenades & Missiles), faction filters (All + 7 factions). Weapon cards with stats/traits/keyword badges. Modal inside `#app` (stacking context), z-index 2000. Raw weapon IDs stored; `resolveWeaponOverride()` handles both raw IDs and legacy `wargear:` prefix. `DataLoader.getFilteredWeapons()` for search/type/faction filtering.
+21. **Grenades & Missiles category**: Separated grenades/missiles as own category in weapon picker type filter and References tab. Matching: category `Grenade`/`Missile`/`Explosive` OR keywords `GRENADE`/`MISSILE` (excludes `EXPLOSIVE` keyword — too broad).
