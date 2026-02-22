@@ -776,10 +776,51 @@ body {
     margin-bottom: 6px;
 }
 
-.additional-weapon-stats {
-    margin-top: 2px;
+.addwpn-stats-row {
+    margin-top: 4px;
     font-size: 12px;
+    color: var(--text-primary);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 2px;
+}
+
+.addwpn-stat-label {
+    color: var(--text-muted);
+    font-size: 10px;
+    text-transform: uppercase;
+    margin-right: 3px;
+}
+
+.addwpn-divider {
+    color: var(--text-muted);
+    margin: 0 3px;
+}
+
+.addwpn-traits {
+    margin-top: 3px;
+    font-size: 11px;
     color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* Ammo selection sub-step */
+.ammo-skip-row {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ammo-skip-text {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.ammo-skip-btn {
+    font-size: 11px;
+    white-space: nowrap;
 }
 
 .additional-weapon-actions {
@@ -4180,6 +4221,16 @@ body {
     border-radius: 3px;
     padding: 1px 4px;
     color: var(--accent-gold);
+}
+
+.wpcard-launcher {
+    border-left: 2px solid var(--accent-gold);
+}
+
+.wpcard-launcher-hint {
+    font-size: 10px;
+    color: var(--accent-gold);
+    margin-top: 3px;
 }
 
 /* Weapon picker modal — mobile fullscreen */

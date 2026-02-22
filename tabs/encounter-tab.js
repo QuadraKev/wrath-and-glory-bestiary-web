@@ -1153,9 +1153,14 @@ const EncounterTab = {
     },
 
     formatWeaponStats(weapon) {
+        // Combine damage + ED into one part, then separate AP/range/salvo with /
+        let damagePart = '';
+        if (weapon.damage !== undefined) damagePart = `${weapon.damage}`;
+        if (weapon.ed !== undefined) damagePart += ` +${weapon.ed} ED`;
+        damagePart = damagePart.trim();
+
         const parts = [];
-        if (weapon.damage !== undefined) parts.push(`${weapon.damage}`);
-        if (weapon.ed !== undefined) parts.push(`+${weapon.ed} ED`);
+        if (damagePart) parts.push(damagePart);
         if (weapon.ap !== undefined && weapon.ap !== 0) parts.push(`AP ${weapon.ap}`);
         if (weapon.range) parts.push(`Range ${weapon.range}`);
         if (weapon.salvo) parts.push(`Salvo ${weapon.salvo}`);
@@ -1172,10 +1177,27 @@ const EncounterTab = {
         if (currentCompositeId) {
             const weapon = DataLoader.resolveWeaponOverride(currentCompositeId);
             if (weapon) {
+                // Build structured stats display
+                let damagePart = '';
+                if (weapon.damage !== undefined) damagePart = `${weapon.damage}`;
+                if (weapon.ed !== undefined) damagePart += ` +${weapon.ed} ED`;
+                damagePart = damagePart.trim();
+
+                const statItems = [];
+                if (damagePart) statItems.push(`<span class="addwpn-stat"><span class="addwpn-stat-label">Damage</span> ${damagePart}</span>`);
+                if (weapon.ap !== undefined && weapon.ap !== 0) statItems.push(`<span class="addwpn-stat"><span class="addwpn-stat-label">AP</span> ${weapon.ap}</span>`);
+                if (weapon.range) statItems.push(`<span class="addwpn-stat"><span class="addwpn-stat-label">Range</span> ${weapon.range}</span>`);
+                if (weapon.salvo) statItems.push(`<span class="addwpn-stat"><span class="addwpn-stat-label">Salvo</span> ${weapon.salvo}</span>`);
+
+                const traitsHtml = (weapon.traits && weapon.traits.length > 0)
+                    ? `<div class="addwpn-traits" data-glossary-enhance>${weapon.traits.join(', ')}</div>`
+                    : '';
+
                 contentHtml = `
                     <div class="additional-weapon-info">
                         <div class="additional-weapon-name">${this.escapeHtml(weapon.name)}</div>
-                        <div class="additional-weapon-stats">${this.formatWeaponStats(weapon)}</div>
+                        <div class="addwpn-stats-row">${statItems.join('<span class="addwpn-divider">/</span>')}</div>
+                        ${traitsHtml}
                     </div>
                     <div class="additional-weapon-actions">
                         <button class="btn-secondary btn-change-weapon">Change</button>
@@ -1372,18 +1394,20 @@ const EncounterTab = {
             ? `${weapon.type === 'melee' ? 'Melee' : 'Ranged'} — ${weapon.category}`
             : (weapon.type === 'melee' ? 'Melee' : 'Ranged');
 
-        // Build stats line
+        // Build stats line — combine damage + ED into one part
         const statParts = [];
         const dmg = weapon.damage || {};
+        let damagePart = '';
         if (weapon.type === 'melee' && dmg.attribute) {
             const attrInitial = dmg.attribute.charAt(0).toUpperCase();
             const base = (dmg.base || 0) + (dmg.bonus || 0);
-            statParts.push(`${attrInitial}+${base}`);
+            damagePart = `${attrInitial}+${base}`;
         } else {
             const flat = (dmg.base || 0) + (dmg.bonus || 0);
-            statParts.push(`${flat}`);
+            damagePart = `${flat}`;
         }
-        statParts.push(`+${weapon.ed ?? 0} ED`);
+        damagePart += ` +${weapon.ed ?? 0} ED`;
+        statParts.push(damagePart);
         if (weapon.ap && weapon.ap !== 0) statParts.push(`AP ${weapon.ap}`);
         if (weapon.range && typeof weapon.range === 'object') {
             statParts.push(`Range ${weapon.range.short}/${weapon.range.medium}/${weapon.range.long}`);
@@ -1402,8 +1426,14 @@ const EncounterTab = {
             ? `<div class="wpcard-keywords">${weapon.keywords.map(k => `<span class="wpcard-keyword">${this.escapeHtml(k)}</span>`).join('')}</div>`
             : '';
 
+        // Launcher indicator
+        const isLauncher = DataLoader.isLauncherWeapon(weapon);
+        const launcherHtml = isLauncher
+            ? `<div class="wpcard-launcher-hint">Select to choose ammo type &rarr;</div>`
+            : '';
+
         return `
-            <div class="weapon-picker-card" data-weapon-id="${weapon.id}">
+            <div class="weapon-picker-card${isLauncher ? ' wpcard-launcher' : ''}" data-weapon-id="${weapon.id}">
                 <div class="wpcard-header">
                     <span class="wpcard-name">${this.escapeHtml(weapon.name)}</span>
                     <span class="wpcard-type">${this.escapeHtml(typeStr)}</span>
@@ -1411,6 +1441,7 @@ const EncounterTab = {
                 <div class="wpcard-stats">${statParts.join(' / ')}</div>
                 ${traitsHtml}
                 ${keywordsHtml}
+                ${launcherHtml}
             </div>
         `;
     },
@@ -1473,7 +1504,110 @@ const EncounterTab = {
             const card = e.target.closest('.weapon-picker-card');
             if (!card) return;
             const weaponId = card.dataset.weaponId;
+
+            // Check if this is a launcher weapon that needs ammo selection
+            const weapon = DataLoader.getWeapon(weaponId);
+            if (weapon && DataLoader.isLauncherWeapon(weapon)) {
+                tab.showAmmoSelection(weaponId);
+                return;
+            }
+
             EncounterState.setAdditionalWeapon(tab.selectedId, weaponId);
+            tab.closeWeaponPickerModal();
+            tab.renderDetail();
+        });
+    },
+
+    // Show ammo selection sub-step for launcher weapons
+    showAmmoSelection(launcherId) {
+        const launcher = DataLoader.getWeapon(launcherId);
+        if (!launcher) return;
+
+        this._ammoSearchFilter = '';
+
+        const content = document.querySelector('.weapon-picker-content');
+        if (!content) return;
+
+        // Replace modal content with ammo selection
+        content.innerHTML = `
+            <div class="weapon-picker-header">
+                <h3>Select Ammo for ${this.escapeHtml(launcher.name)}</h3>
+                <button class="weapon-picker-close">&times;</button>
+            </div>
+            <div class="weapon-picker-controls">
+                <button class="btn-secondary ammo-back-btn" style="margin-bottom: 8px; font-size: 11px;">&larr; Back to weapons</button>
+                <input type="text" class="weapon-picker-search ammo-search" placeholder="Search ammo...">
+                <div class="ammo-skip-row">
+                    <span class="ammo-skip-text">Or use the launcher without specific ammo:</span>
+                    <button class="btn-secondary ammo-skip-btn">Use without ammo</button>
+                </div>
+            </div>
+            <div class="weapon-picker-list" id="ammo-picker-list">
+            </div>
+            <div class="weapon-picker-footer">
+                <span class="weapon-picker-count" id="ammo-picker-count"></span>
+            </div>
+        `;
+
+        this.renderAmmoList(launcherId);
+        this.bindAmmoSelectionEvents(content, launcherId);
+        content.querySelector('.ammo-search').focus();
+    },
+
+    renderAmmoList(launcherId) {
+        const listEl = document.getElementById('ammo-picker-list');
+        const countEl = document.getElementById('ammo-picker-count');
+        if (!listEl) return;
+
+        const ammo = DataLoader.getAvailableAmmo({ search: this._ammoSearchFilter });
+        countEl.textContent = `${ammo.length} ammo type${ammo.length !== 1 ? 's' : ''}`;
+
+        if (ammo.length === 0) {
+            listEl.innerHTML = '<div class="weapon-picker-empty">No ammo types match your search</div>';
+            return;
+        }
+
+        listEl.innerHTML = ammo.map(w => this.renderWeaponPickerCard(w)).join('');
+    },
+
+    bindAmmoSelectionEvents(content, launcherId) {
+        const tab = this;
+
+        // Close button
+        content.querySelector('.weapon-picker-close').addEventListener('click', () => {
+            tab.closeWeaponPickerModal();
+        });
+
+        // Back button
+        content.querySelector('.ammo-back-btn').addEventListener('click', () => {
+            tab.closeWeaponPickerModal();
+            tab.openWeaponPickerModal();
+        });
+
+        // Skip button — use launcher without ammo
+        content.querySelector('.ammo-skip-btn').addEventListener('click', () => {
+            EncounterState.setAdditionalWeapon(tab.selectedId, launcherId);
+            tab.closeWeaponPickerModal();
+            tab.renderDetail();
+        });
+
+        // Ammo search with debounce
+        let searchTimer = null;
+        content.querySelector('.ammo-search').addEventListener('input', (e) => {
+            clearTimeout(searchTimer);
+            searchTimer = setTimeout(() => {
+                tab._ammoSearchFilter = e.target.value;
+                tab.renderAmmoList(launcherId);
+            }, 200);
+        });
+
+        // Ammo card click
+        document.getElementById('ammo-picker-list').addEventListener('click', (e) => {
+            const card = e.target.closest('.weapon-picker-card');
+            if (!card) return;
+            const ammoId = card.dataset.weaponId;
+            const compositeId = `${launcherId}+${ammoId}`;
+            EncounterState.setAdditionalWeapon(tab.selectedId, compositeId);
             tab.closeWeaponPickerModal();
             tab.renderDetail();
         });

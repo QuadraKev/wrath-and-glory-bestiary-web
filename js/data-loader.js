@@ -157,9 +157,60 @@ const DataLoader = {
         };
     },
 
+    // Check if a weapon is a launcher that requires ammo selection
+    isLauncherWeapon(weapon) {
+        if (!weapon) return false;
+        const name = (weapon.name || '').toLowerCase();
+        const cat = weapon.category || '';
+        return name.includes('launcher') && (cat === 'Grenade' || cat === 'Missile');
+    },
+
+    // Get available ammo (grenades/missiles) for the weapon picker, excluding launchers
+    getAvailableAmmo(filters = {}) {
+        const grenadeCategories = ['Grenade', 'Missile', 'Explosive'];
+        let ammo = this.getAllWeapons().filter(w => {
+            if (!w.category || w.category.startsWith('Vehicle')) return false;
+            // Must be a grenade/missile/explosive category or have GRENADE/MISSILE keyword
+            const isGrenadeCat = grenadeCategories.includes(w.category);
+            const kws = (w.keywords || []).map(k => k.toUpperCase());
+            const hasGrenadeKw = kws.includes('GRENADE') || kws.includes('MISSILE');
+            if (!isGrenadeCat && !hasGrenadeKw) return false;
+            // Exclude launchers themselves
+            if (this.isLauncherWeapon(w)) return false;
+            return true;
+        });
+
+        // Filter by source book settings
+        ammo = ammo.filter(w => SettingsTab.isSourceEnabled(w.source));
+
+        // Text search
+        if (filters.search) {
+            const search = filters.search.toLowerCase();
+            ammo = ammo.filter(w => w.name && w.name.toLowerCase().includes(search));
+        }
+
+        ammo.sort((a, b) => a.name.localeCompare(b.name));
+        return ammo;
+    },
+
     // Resolve a weapon override composite ID to a display-format weapon
     resolveWeaponOverride(compositeId) {
         if (!compositeId) return null;
+
+        // Launcher+ammo composite format: "launcherId+ammoId"
+        if (compositeId.includes('+')) {
+            const [launcherId, ammoId] = compositeId.split('+', 2);
+            const launcher = this.getWeapon(launcherId);
+            const ammo = this.getWeapon(ammoId);
+            if (launcher && ammo) {
+                return this.normalizeLauncherWithAmmo(launcher, ammo);
+            }
+            // Fall back to just the launcher or ammo
+            if (launcher) return this.normalizeWargearWeapon(launcher);
+            if (ammo) return this.normalizeWargearWeapon(ammo);
+            return null;
+        }
+
         // Legacy format: "wargear:weaponId"
         if (compositeId.startsWith('wargear:')) {
             const realId = compositeId.slice(8);
@@ -170,6 +221,35 @@ const DataLoader = {
         const weapon = this.getWeapon(compositeId);
         if (weapon) return this.normalizeWargearWeapon(weapon);
         return this.getThreatWeapon(compositeId);
+    },
+
+    // Combine launcher and ammo into a display-format weapon
+    normalizeLauncherWithAmmo(launcher, ammo) {
+        const ammoDmg = ammo.damage || {};
+        const flatDamage = (ammoDmg.base || 0) + (ammoDmg.bonus || 0);
+
+        // Use launcher's range, ammo's damage/ED/AP
+        let rangeStr = '';
+        if (launcher.range && typeof launcher.range === 'object') {
+            rangeStr = `${launcher.range.short}/${launcher.range.medium}/${launcher.range.long}`;
+        } else if (launcher.range) {
+            rangeStr = String(launcher.range);
+        }
+
+        // Combine traits from both launcher and ammo, deduplicating
+        const traitSet = new Set([...(launcher.traits || []), ...(ammo.traits || [])]);
+
+        return {
+            id: `${launcher.id}+${ammo.id}`,
+            name: `${launcher.name} (${ammo.name})`,
+            type: launcher.type,
+            damage: flatDamage,
+            ed: ammo.ed ?? 0,
+            ap: ammo.ap ?? 0,
+            range: rangeStr || undefined,
+            salvo: launcher.salvo != null ? String(launcher.salvo) : undefined,
+            traits: [...traitSet]
+        };
     },
 
     // Faction keyword map for weapon picker filtering
@@ -186,6 +266,9 @@ const DataLoader = {
     // Get filtered weapons for the weapon picker modal
     getFilteredWeapons(filters = {}) {
         let weapons = this.getAllWeapons().filter(w => !w.category || !w.category.startsWith('Vehicle'));
+
+        // Filter by source book settings
+        weapons = weapons.filter(w => SettingsTab.isSourceEnabled(w.source));
 
         // Text search — match on name, category, traits, keywords
         if (filters.search) {
