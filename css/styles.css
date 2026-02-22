@@ -861,7 +861,8 @@ body {
     padding: 20px;
 }
 
-#tab-glossary h2 {
+#tab-glossary h2,
+#tab-references h2 {
     margin-bottom: 20px;
     color: var(--accent-gold);
 }
@@ -2771,16 +2772,58 @@ body {
         width: 200px;
     }
 
+    /* Threats tab: stack list + detail vertically */
+    #tab-threats .content-split {
+        flex-direction: column;
+        gap: 15px;
+    }
+
     .threat-list-container {
-        width: 280px;
+        width: 100%;
+        max-height: 40vh;
+        flex-shrink: 0;
+    }
+
+    .threat-detail-container {
+        flex: 1;
+        min-height: 0;
+    }
+
+    /* Encounter tab: stack list + detail vertically */
+    .encounter-content-wrapper .content-split {
+        flex-direction: column;
+        gap: 15px;
     }
 
     .encounter-sidebar {
-        width: 260px;
+        width: 220px;
     }
 
     .encounter-list-container {
-        width: 320px;
+        width: 100%;
+        max-height: 40vh;
+        flex-shrink: 0;
+    }
+
+    .encounter-detail-container {
+        min-height: 0;
+    }
+
+    /* Encounter action bar: wrap buttons */
+    .encounter-action-bar {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .encounter-name-input {
+        width: auto;
+        flex: 1;
+        min-width: 120px;
+    }
+
+    .encounter-actions {
+        flex-wrap: wrap;
+        gap: 6px;
     }
 
     .content {
