@@ -202,9 +202,12 @@ const DataLoader = {
         // Type filter
         if (filters.type && filters.type !== 'all') {
             if (filters.type === 'grenade') {
-                weapons = weapons.filter(w =>
-                    w.keywords && w.keywords.some(k => k.toUpperCase() === 'GRENADE' || k.toUpperCase() === 'EXPLOSIVE')
-                );
+                const grenadeCategories = ['Grenade', 'Missile', 'Explosive'];
+                weapons = weapons.filter(w => {
+                    if (w.category && grenadeCategories.includes(w.category)) return true;
+                    const kws = (w.keywords || []).map(k => k.toUpperCase());
+                    return kws.includes('GRENADE') || kws.includes('MISSILE');
+                });
             } else {
                 weapons = weapons.filter(w => w.type === filters.type);
             }

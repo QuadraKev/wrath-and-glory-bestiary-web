@@ -1316,7 +1316,7 @@ const EncounterTab = {
                             <button class="weapon-picker-filter-btn active" data-type="all">All</button>
                             <button class="weapon-picker-filter-btn" data-type="melee">Melee</button>
                             <button class="weapon-picker-filter-btn" data-type="ranged">Ranged</button>
-                            <button class="weapon-picker-filter-btn" data-type="grenade">Grenades & Devices</button>
+                            <button class="weapon-picker-filter-btn" data-type="grenade">Grenades & Missiles</button>
                         </div>
                     </div>
                     <div class="weapon-picker-filter-row">
