@@ -160,53 +160,71 @@ const DataLoader = {
     // Resolve a weapon override composite ID to a display-format weapon
     resolveWeaponOverride(compositeId) {
         if (!compositeId) return null;
+        // Legacy format: "wargear:weaponId"
         if (compositeId.startsWith('wargear:')) {
             const realId = compositeId.slice(8);
             const weapon = this.getWeapon(realId);
             return weapon ? this.normalizeWargearWeapon(weapon) : null;
         }
+        // New format: raw weapon ID — try wargear first, fall back to threat weapons
+        const weapon = this.getWeapon(compositeId);
+        if (weapon) return this.normalizeWargearWeapon(weapon);
         return this.getThreatWeapon(compositeId);
     },
 
-    // Combined weapon list cache
-    _combinedWeaponListCache: null,
+    // Faction keyword map for weapon picker filtering
+    weaponFactionKeywordMap: {
+        'Imperium': ['IMPERIUM'],
+        'Aeldari': ['AELDARI'],
+        'Ork': ['ORK'],
+        'Drukhari': ['DRUKHARI'],
+        'Necron': ['NECRON'],
+        'Chaos': ['CHAOS'],
+        "T'au": ["T'AU EMPIRE", "T'AU"]
+    },
 
-    // Build a merged weapon list for dropdowns (threat weapons + non-vehicle wargear weapons)
-    getCombinedWeaponList() {
-        if (this._combinedWeaponListCache) return this._combinedWeaponListCache;
+    // Get filtered weapons for the weapon picker modal
+    getFilteredWeapons(filters = {}) {
+        let weapons = this.getAllWeapons().filter(w => !w.category || !w.category.startsWith('Vehicle'));
 
-        const result = [];
-
-        // Threat weapons first (use ID as-is)
-        const threatWeapons = this.getAllThreatWeapons();
-        if (threatWeapons.length > 0) {
-            result.push({
-                group: 'Threat Weapons',
-                weapons: threatWeapons.map(w => ({ compositeId: w.id, name: w.name }))
+        // Text search — match on name, category, traits, keywords
+        if (filters.search) {
+            const search = filters.search.toLowerCase();
+            weapons = weapons.filter(w => {
+                if (w.name && w.name.toLowerCase().includes(search)) return true;
+                if (w.category && w.category.toLowerCase().includes(search)) return true;
+                if (w.traits && w.traits.some(t => t.toLowerCase().includes(search))) return true;
+                if (w.keywords && w.keywords.some(k => k.toLowerCase().includes(search))) return true;
+                return false;
             });
         }
 
-        // Wargear weapons grouped by category, excluding vehicle weapons
-        const allWeapons = this.getAllWeapons();
-        const categoryMap = new Map();
-        allWeapons.forEach(w => {
-            if (w.category && w.category.startsWith('Vehicle')) return;
-            const cat = w.category || 'Other';
-            if (!categoryMap.has(cat)) categoryMap.set(cat, []);
-            categoryMap.get(cat).push({ compositeId: 'wargear:' + w.id, name: w.name });
-        });
+        // Type filter
+        if (filters.type && filters.type !== 'all') {
+            if (filters.type === 'grenade') {
+                weapons = weapons.filter(w =>
+                    w.keywords && w.keywords.some(k => k.toUpperCase() === 'GRENADE' || k.toUpperCase() === 'EXPLOSIVE')
+                );
+            } else {
+                weapons = weapons.filter(w => w.type === filters.type);
+            }
+        }
 
-        // Sort categories alphabetically
-        const sortedCategories = Array.from(categoryMap.keys()).sort();
-        sortedCategories.forEach(cat => {
-            result.push({
-                group: cat,
-                weapons: categoryMap.get(cat).sort((a, b) => a.name.localeCompare(b.name))
-            });
-        });
+        // Faction filter
+        if (filters.faction && filters.faction !== 'all') {
+            const factionKeywords = this.weaponFactionKeywordMap[filters.faction];
+            if (factionKeywords) {
+                weapons = weapons.filter(w =>
+                    w.keywords && w.keywords.some(k =>
+                        factionKeywords.some(fk => k.toUpperCase() === fk.toUpperCase())
+                    )
+                );
+            }
+        }
 
-        this._combinedWeaponListCache = result;
-        return result;
+        // Sort alphabetically by name
+        weapons.sort((a, b) => a.name.localeCompare(b.name));
+        return weapons;
     },
 
     // Get glossary data

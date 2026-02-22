@@ -1168,29 +1168,41 @@ const EncounterTab = {
     },
 
     renderAdditionalWeaponSection(currentCompositeId) {
-        const groups = DataLoader.getCombinedWeaponList();
-        const optionsHtml = groups.map(g =>
-            `<optgroup label="${this.escapeHtml(g.group)}">${g.weapons.map(w =>
-                `<option value="${this.escapeHtml(w.compositeId)}" ${w.compositeId === currentCompositeId ? 'selected' : ''}>${this.escapeHtml(w.name)}</option>`
-            ).join('')}</optgroup>`
-        ).join('');
-
-        let weaponStatsHtml = '';
+        let contentHtml = '';
         if (currentCompositeId) {
             const weapon = DataLoader.resolveWeaponOverride(currentCompositeId);
             if (weapon) {
-                weaponStatsHtml = `<div class="additional-weapon-stats">${this.formatWeaponStats(weapon)}</div>`;
+                contentHtml = `
+                    <div class="additional-weapon-info">
+                        <div class="additional-weapon-name">${this.escapeHtml(weapon.name)}</div>
+                        <div class="additional-weapon-stats">${this.formatWeaponStats(weapon)}</div>
+                    </div>
+                    <div class="additional-weapon-actions">
+                        <button class="btn-secondary btn-change-weapon">Change</button>
+                        <button class="btn-danger btn-remove-weapon">Remove</button>
+                    </div>
+                `;
+            } else {
+                contentHtml = `
+                    <div class="additional-weapon-info">
+                        <div class="additional-weapon-name" style="color: var(--text-muted)">Unknown weapon</div>
+                    </div>
+                    <div class="additional-weapon-actions">
+                        <button class="btn-secondary btn-change-weapon">Change</button>
+                        <button class="btn-danger btn-remove-weapon">Remove</button>
+                    </div>
+                `;
             }
+        } else {
+            contentHtml = `
+                <button class="btn-secondary btn-select-weapon">Select Weapon</button>
+            `;
         }
 
         return `
             <div class="additional-weapon-section">
                 <div class="additional-weapon-label">Additional Weapon</div>
-                <select id="additional-weapon-select" class="additional-weapon-select">
-                    <option value="">None</option>
-                    ${optionsHtml}
-                </select>
-                ${weaponStatsHtml}
+                ${contentHtml}
             </div>
         `;
     },
@@ -1255,14 +1267,216 @@ const EncounterTab = {
     },
 
     bindAdditionalWeaponEvents(container) {
-        const select = container.querySelector('#additional-weapon-select');
-        if (select) {
-            select.addEventListener('change', (e) => {
-                const compositeId = e.target.value || null;
-                EncounterState.setAdditionalWeapon(this.selectedId, compositeId);
+        const selectBtn = container.querySelector('.btn-select-weapon');
+        const changeBtn = container.querySelector('.btn-change-weapon');
+        const removeBtn = container.querySelector('.btn-remove-weapon');
+
+        if (selectBtn) {
+            selectBtn.addEventListener('click', () => {
+                this.openWeaponPickerModal();
+            });
+        }
+        if (changeBtn) {
+            changeBtn.addEventListener('click', () => {
+                this.openWeaponPickerModal();
+            });
+        }
+        if (removeBtn) {
+            removeBtn.addEventListener('click', () => {
+                EncounterState.setAdditionalWeapon(this.selectedId, null);
                 this.renderDetail();
             });
         }
+    },
+
+    // ===== Weapon Picker Modal =====
+
+    openWeaponPickerModal() {
+        // Remove any existing modal
+        const existing = document.querySelector('.weapon-picker-modal');
+        if (existing) existing.remove();
+
+        this._weaponPickerFilters = { search: '', type: 'all', faction: 'all' };
+
+        const factions = ['All', 'Imperium', 'Aeldari', 'Ork', 'Drukhari', 'Necron', 'Chaos', "T'au"];
+
+        const modal = document.createElement('div');
+        modal.className = 'weapon-picker-modal';
+        modal.innerHTML = `
+            <div class="weapon-picker-content">
+                <div class="weapon-picker-header">
+                    <h3>Select Weapon</h3>
+                    <button class="weapon-picker-close">&times;</button>
+                </div>
+                <div class="weapon-picker-controls">
+                    <input type="text" class="weapon-picker-search" placeholder="Search weapons...">
+                    <div class="weapon-picker-filter-row">
+                        <span class="weapon-picker-filter-label">Type</span>
+                        <div class="weapon-picker-filter-group" id="weapon-type-filters">
+                            <button class="weapon-picker-filter-btn active" data-type="all">All</button>
+                            <button class="weapon-picker-filter-btn" data-type="melee">Melee</button>
+                            <button class="weapon-picker-filter-btn" data-type="ranged">Ranged</button>
+                            <button class="weapon-picker-filter-btn" data-type="grenade">Grenades & Devices</button>
+                        </div>
+                    </div>
+                    <div class="weapon-picker-filter-row">
+                        <span class="weapon-picker-filter-label">Faction</span>
+                        <div class="weapon-picker-filter-group" id="weapon-faction-filters">
+                            ${factions.map(f => `<button class="weapon-picker-filter-btn${f === 'All' ? ' active' : ''}" data-faction="${f === 'All' ? 'all' : f}">${this.escapeHtml(f)}</button>`).join('')}
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-picker-list" id="weapon-picker-list">
+                </div>
+                <div class="weapon-picker-footer">
+                    <span class="weapon-picker-count" id="weapon-picker-count"></span>
+                </div>
+            </div>
+        `;
+
+        // Insert inside #app for proper stacking context
+        document.getElementById('app').appendChild(modal);
+        this.renderWeaponPickerList();
+        this.bindWeaponPickerEvents(modal);
+        modal.querySelector('.weapon-picker-search').focus();
+    },
+
+    closeWeaponPickerModal() {
+        const modal = document.querySelector('.weapon-picker-modal');
+        if (modal) modal.remove();
+        if (this._weaponPickerEscHandler) {
+            document.removeEventListener('keydown', this._weaponPickerEscHandler);
+            this._weaponPickerEscHandler = null;
+        }
+    },
+
+    renderWeaponPickerList() {
+        const listEl = document.getElementById('weapon-picker-list');
+        const countEl = document.getElementById('weapon-picker-count');
+        if (!listEl) return;
+
+        const weapons = DataLoader.getFilteredWeapons(this._weaponPickerFilters);
+        countEl.textContent = `${weapons.length} weapon${weapons.length !== 1 ? 's' : ''}`;
+
+        if (weapons.length === 0) {
+            listEl.innerHTML = '<div class="weapon-picker-empty">No weapons match your filters</div>';
+            return;
+        }
+
+        listEl.innerHTML = weapons.map(w => this.renderWeaponPickerCard(w)).join('');
+    },
+
+    renderWeaponPickerCard(weapon) {
+        // Type description
+        const typeStr = weapon.category
+            ? `${weapon.type === 'melee' ? 'Melee' : 'Ranged'} — ${weapon.category}`
+            : (weapon.type === 'melee' ? 'Melee' : 'Ranged');
+
+        // Build stats line
+        const statParts = [];
+        const dmg = weapon.damage || {};
+        if (weapon.type === 'melee' && dmg.attribute) {
+            const attrInitial = dmg.attribute.charAt(0).toUpperCase();
+            const base = (dmg.base || 0) + (dmg.bonus || 0);
+            statParts.push(`${attrInitial}+${base}`);
+        } else {
+            const flat = (dmg.base || 0) + (dmg.bonus || 0);
+            statParts.push(`${flat}`);
+        }
+        statParts.push(`+${weapon.ed ?? 0} ED`);
+        if (weapon.ap && weapon.ap !== 0) statParts.push(`AP ${weapon.ap}`);
+        if (weapon.range && typeof weapon.range === 'object') {
+            statParts.push(`Range ${weapon.range.short}/${weapon.range.medium}/${weapon.range.long}`);
+        } else if (weapon.range) {
+            statParts.push(`Range ${weapon.range}`);
+        }
+        if (weapon.salvo != null) statParts.push(`Salvo ${weapon.salvo}`);
+
+        // Traits
+        const traitsHtml = (weapon.traits && weapon.traits.length > 0)
+            ? `<div class="wpcard-traits">${weapon.traits.join(', ')}</div>`
+            : '';
+
+        // Keywords
+        const keywordsHtml = (weapon.keywords && weapon.keywords.length > 0)
+            ? `<div class="wpcard-keywords">${weapon.keywords.map(k => `<span class="wpcard-keyword">${this.escapeHtml(k)}</span>`).join('')}</div>`
+            : '';
+
+        return `
+            <div class="weapon-picker-card" data-weapon-id="${weapon.id}">
+                <div class="wpcard-header">
+                    <span class="wpcard-name">${this.escapeHtml(weapon.name)}</span>
+                    <span class="wpcard-type">${this.escapeHtml(typeStr)}</span>
+                </div>
+                <div class="wpcard-stats">${statParts.join(' / ')}</div>
+                ${traitsHtml}
+                ${keywordsHtml}
+            </div>
+        `;
+    },
+
+    bindWeaponPickerEvents(modal) {
+        const tab = this;
+
+        // Close button
+        modal.querySelector('.weapon-picker-close').addEventListener('click', () => {
+            tab.closeWeaponPickerModal();
+        });
+
+        // Backdrop click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                tab.closeWeaponPickerModal();
+            }
+        });
+
+        // Escape key
+        this._weaponPickerEscHandler = (e) => {
+            if (e.key === 'Escape') {
+                tab.closeWeaponPickerModal();
+            }
+        };
+        document.addEventListener('keydown', this._weaponPickerEscHandler);
+
+        // Search input with debounce
+        let searchTimer = null;
+        modal.querySelector('.weapon-picker-search').addEventListener('input', (e) => {
+            clearTimeout(searchTimer);
+            searchTimer = setTimeout(() => {
+                tab._weaponPickerFilters.search = e.target.value;
+                tab.renderWeaponPickerList();
+            }, 200);
+        });
+
+        // Type filter buttons
+        document.getElementById('weapon-type-filters').addEventListener('click', (e) => {
+            const btn = e.target.closest('.weapon-picker-filter-btn');
+            if (!btn) return;
+            document.querySelectorAll('#weapon-type-filters .weapon-picker-filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            tab._weaponPickerFilters.type = btn.dataset.type;
+            tab.renderWeaponPickerList();
+        });
+
+        // Faction filter buttons
+        document.getElementById('weapon-faction-filters').addEventListener('click', (e) => {
+            const btn = e.target.closest('.weapon-picker-filter-btn');
+            if (!btn) return;
+            document.querySelectorAll('#weapon-faction-filters .weapon-picker-filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            tab._weaponPickerFilters.faction = btn.dataset.faction;
+            tab.renderWeaponPickerList();
+        });
+
+        // Card click — event delegation on the list
+        document.getElementById('weapon-picker-list').addEventListener('click', (e) => {
+            const card = e.target.closest('.weapon-picker-card');
+            if (!card) return;
+            const weaponId = card.dataset.weaponId;
+            EncounterState.setAdditionalWeapon(tab.selectedId, weaponId);
+            tab.closeWeaponPickerModal();
+            tab.renderDetail();
+        });
     },
 
     bindMobDetailEvents() {
