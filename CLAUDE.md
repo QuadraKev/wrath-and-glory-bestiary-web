@@ -71,7 +71,7 @@ The glossary (`data/glossary.json`) should be kept in sync with the creator app'
 
 - **Cache busting**: When modifying CSS or JS files, bump the `?v=N` query string on ALL affected `<script>` and `<link>` tags in `index.html`. Always bump all version numbers together.
 - **GitHub Issues**: Do NOT resolve/close issues until the user confirms they are resolved. After closing an issue, post a comment summarizing the fix/change (what was wrong, what was changed, relevant commit hash).
-- **Commits**: Push using the QuadraKev-bot PAT (stored in Claude Code auto-memory, not in this file).
+- **Commits**: Push using the QuadraKev PAT (triggers GitHub Pages deploys). The QuadraKev-bot PAT should only be used for issues/comments — GitHub has disabled Actions/Pages builds for that account. PAT values are stored in Claude Code auto-memory, not in this file.
 
 ## Books Available (PDF)
 
@@ -105,3 +105,6 @@ Source material PDFs are available locally for reference:
 19. **iOS fixes**: File loading — omit `<input accept="...">` on iOS to avoid Safari forcing .JSON extension on custom file types (.encounter, .players, .threat). Glossary tooltips — prevent double-open on tap by clearing hover timer in click handler and checking `data-glossary-key` for duplicate popups.
 20. **Weapon Picker Modal**: Replaced `<select>` dropdown for additional weapons in Encounter Builder with modal dialog. Text search, type filters (All/Melee/Ranged/Grenades & Missiles), faction filters (All + 7 factions). Weapon cards with stats/traits/keyword badges. Modal inside `#app` (stacking context), z-index 2000. Raw weapon IDs stored; `resolveWeaponOverride()` handles both raw IDs and legacy `wargear:` prefix. `DataLoader.getFilteredWeapons()` for search/type/faction filtering.
 21. **Grenades & Missiles category**: Separated grenades/missiles as own category in weapon picker type filter and References tab. Matching: category `Grenade`/`Missile`/`Explosive` OR keywords `GRENADE`/`MISSILE` (excludes `EXPLOSIVE` keyword — too broad).
+22. **Keyword audit**: Exhaustive keyword audit across all sourcebooks. Added 8 missing keywords to glossary (TRANSPORTER + 5 others). All 330 keywords verified comprehensive.
+23. **Medium viewport layout fix**: At <=1024px, threat list + detail and encounter list + detail stack vertically (instead of cramped side-by-side). Encounter action bar wraps buttons at 1024px instead of only at 768px.
+24. **References tab header styling**: Added gold color to References tab h2 to match Glossary tab.
