@@ -166,18 +166,24 @@ const DataLoader = {
     },
 
     // Get available ammo (grenades/missiles) for the weapon picker, excluding launchers
+    // filters.launcherType: 'Grenade' or 'Missile' to restrict ammo to matching type
     getAvailableAmmo(filters = {}) {
-        const grenadeCategories = ['Grenade', 'Missile', 'Explosive'];
+        const launcherType = filters.launcherType;
         let ammo = this.getAllWeapons().filter(w => {
             if (!w.category || w.category.startsWith('Vehicle')) return false;
-            // Must be a grenade/missile/explosive category or have GRENADE/MISSILE keyword
-            const isGrenadeCat = grenadeCategories.includes(w.category);
-            const kws = (w.keywords || []).map(k => k.toUpperCase());
-            const hasGrenadeKw = kws.includes('GRENADE') || kws.includes('MISSILE');
-            if (!isGrenadeCat && !hasGrenadeKw) return false;
             // Exclude launchers themselves
             if (this.isLauncherWeapon(w)) return false;
-            return true;
+            const kws = (w.keywords || []).map(k => k.toUpperCase());
+            if (launcherType === 'Grenade') {
+                // Grenade launchers: show grenades/explosives only
+                return w.category === 'Grenade' || w.category === 'Explosive' || kws.includes('GRENADE');
+            } else if (launcherType === 'Missile') {
+                // Missile launchers: show missiles only
+                return w.category === 'Missile' || kws.includes('MISSILE');
+            }
+            // No launcher type specified: show all ammo types
+            const grenadeCategories = ['Grenade', 'Missile', 'Explosive'];
+            return grenadeCategories.includes(w.category) || kws.includes('GRENADE') || kws.includes('MISSILE');
         });
 
         // Filter by source book settings
@@ -266,6 +272,9 @@ const DataLoader = {
     // Get filtered weapons for the weapon picker modal
     getFilteredWeapons(filters = {}) {
         let weapons = this.getAllWeapons().filter(w => !w.category || !w.category.startsWith('Vehicle'));
+
+        // Exclude standalone missiles — they require a launcher and are only available as ammo
+        weapons = weapons.filter(w => w.category !== 'Missile' || this.isLauncherWeapon(w));
 
         // Filter by source book settings
         weapons = weapons.filter(w => SettingsTab.isSourceEnabled(w.source));

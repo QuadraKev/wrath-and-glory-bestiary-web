@@ -1559,7 +1559,8 @@ const EncounterTab = {
         const countEl = document.getElementById('ammo-picker-count');
         if (!listEl) return;
 
-        const ammo = DataLoader.getAvailableAmmo({ search: this._ammoSearchFilter });
+        const launcher = DataLoader.getWeapon(launcherId);
+        const ammo = DataLoader.getAvailableAmmo({ search: this._ammoSearchFilter, launcherType: launcher?.category });
         countEl.textContent = `${ammo.length} ammo type${ammo.length !== 1 ? 's' : ''}`;
 
         if (ammo.length === 0) {
