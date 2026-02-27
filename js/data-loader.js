@@ -175,11 +175,11 @@ const DataLoader = {
             if (this.isLauncherWeapon(w)) return false;
             const kws = (w.keywords || []).map(k => k.toUpperCase());
             if (launcherType === 'Grenade') {
-                // Grenade launchers: show grenades/explosives only
-                return w.category === 'Grenade' || w.category === 'Explosive' || kws.includes('GRENADE');
+                // Grenade launchers: show grenades/explosives only (by category, not keyword)
+                return w.category === 'Grenade' || w.category === 'Explosive';
             } else if (launcherType === 'Missile') {
-                // Missile launchers: show missiles only
-                return w.category === 'Missile' || kws.includes('MISSILE');
+                // Missile launchers: show missiles only (by category, not keyword)
+                return w.category === 'Missile';
             }
             // No launcher type specified: show all ammo types
             const grenadeCategories = ['Grenade', 'Missile', 'Explosive'];
