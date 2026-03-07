@@ -302,6 +302,19 @@ const EncounterTab = {
             });
         });
 
+        container.querySelectorAll('.ruin-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const id = btn.dataset.id;
+                const delta = parseInt(btn.dataset.delta);
+                EncounterState.updatePersonalRuin(id, delta);
+                this.renderEncounterList();
+                if (this.selectedId === id) {
+                    this.renderDetail();
+                }
+            });
+        });
+
         // Bind duplicate buttons
         container.querySelectorAll('.duplicate-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
@@ -560,6 +573,14 @@ const EncounterTab = {
                             <div class="stat-bar-fill shock-bar" style="width: ${shockPercent}%"></div>
                         </div>
                     </div>
+                    ${EncounterState.threatHasChampion(threat) ? `
+                    <div class="stat-tracker ruin-tracker">
+                        <span class="stat-label ruin-label">R:</span>
+                        <button class="ruin-btn" data-id="${item.id}" data-delta="-1">-</button>
+                        <span class="stat-value">${individual.personalRuin || 0}</span>
+                        <button class="ruin-btn" data-id="${item.id}" data-delta="1">+</button>
+                    </div>
+                    ` : ''}
                 </div>
                 <div class="encounter-item-actions">
                     <button class="duplicate-btn" data-id="${item.id}" data-type="individual" title="Duplicate">
@@ -845,6 +866,16 @@ const EncounterTab = {
                             <div class="tracker-bar-fill shock-bar" style="width: ${individual.maxShock > 0 ? (individual.currentShock / individual.maxShock) * 100 : 0}%"></div>
                         </div>
                     </div>
+                    ${EncounterState.threatHasChampion(threat) ? `
+                    <div class="large-tracker ruin-large">
+                        <div class="tracker-label ruin-label">Personal Ruin</div>
+                        <div class="tracker-controls">
+                            <button class="tracker-btn" id="detail-ruin-minus">-</button>
+                            <span class="tracker-value">${individual.personalRuin || 0}</span>
+                            <button class="tracker-btn" id="detail-ruin-plus">+</button>
+                        </div>
+                    </div>
+                    ` : ''}
                 </div>
 
                 ${individual.mobId ? `
@@ -1254,6 +1285,19 @@ const EncounterTab = {
 
         document.getElementById('detail-shock-plus')?.addEventListener('click', () => {
             EncounterState.updateShock(id, 1);
+            this.renderEncounterList();
+            this.renderDetail();
+        });
+
+        // Personal Ruin buttons
+        document.getElementById('detail-ruin-minus')?.addEventListener('click', () => {
+            EncounterState.updatePersonalRuin(id, -1);
+            this.renderEncounterList();
+            this.renderDetail();
+        });
+
+        document.getElementById('detail-ruin-plus')?.addEventListener('click', () => {
+            EncounterState.updatePersonalRuin(id, 1);
             this.renderEncounterList();
             this.renderDetail();
         });

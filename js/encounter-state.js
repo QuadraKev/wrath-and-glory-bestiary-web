@@ -82,7 +82,8 @@ const EncounterState = {
                 mobId: null,
                 initiative: null,
                 notes: "",
-                additionalWeaponId: null
+                additionalWeaponId: null,
+                personalRuin: this.getChampionRuin(threat)
             };
             this.individuals.push(individual);
             newIndividuals.push(individual);
@@ -160,7 +161,8 @@ const EncounterState = {
             maxShock: threat ? this.calculateMaxShock(threat, original.bonus) : original.maxShock,
             mobId: null,
             notes: "",
-            additionalWeaponId: original.additionalWeaponId || null
+            additionalWeaponId: original.additionalWeaponId || null,
+            personalRuin: threat ? this.getChampionRuin(threat) : 0
         };
         this.individuals.push(duplicate);
         this.markDirty();
@@ -189,6 +191,15 @@ const EncounterState = {
                 individual.currentWounds = Math.min(individual.currentWounds, individual.maxWounds);
                 individual.currentShock = Math.min(individual.currentShock, individual.maxShock);
             }
+            this.markDirty();
+        }
+    },
+
+    // Update personal Ruin (no maximum; minimum 0)
+    updatePersonalRuin(id, delta) {
+        const individual = this.individuals.find(i => i.id === id);
+        if (individual) {
+            individual.personalRuin = Math.max(0, (individual.personalRuin || 0) + delta);
             this.markDirty();
         }
     },
@@ -637,6 +648,20 @@ const EncounterState = {
     },
 
     // ===== Helpers =====
+
+    // Get the initial personal Ruin amount from a threat's Champion bonus (0 if none)
+    getChampionRuin(threat) {
+        if (!threat || !threat.bonuses) return 0;
+        const bonus = threat.bonuses.find(b => b.name === 'Champion');
+        if (!bonus || !bonus.description) return 0;
+        const match = bonus.description.match(/has (\d+) personal Ruin/);
+        return match ? parseInt(match[1]) : 0;
+    },
+
+    // Check if a threat has the Champion bonus
+    threatHasChampion(threat) {
+        return !!(threat && threat.bonuses && threat.bonuses.some(b => b.name === 'Champion'));
+    },
 
     // Check if a threat can be in a mob at current tier
     canBeMob(threat) {

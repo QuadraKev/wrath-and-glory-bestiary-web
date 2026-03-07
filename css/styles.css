@@ -17,6 +17,7 @@
     --accent-red: #dc2626;
     --accent-green: #22c55e;
     --accent-blue: #3b82f6;
+    --accent-purple: #9333ea;
 
     --border-color: #374151;
     --border-light: #4b5563;
@@ -1763,6 +1764,15 @@ body {
     background: var(--accent-blue);
 }
 
+.ruin-label {
+    color: var(--accent-purple) !important;
+}
+
+.ruin-tracker .stat-value {
+    min-width: 20px;
+    text-align: center;
+}
+
 /* Encounter Item Actions */
 .encounter-item-actions {
     display: flex;
@@ -1937,6 +1947,10 @@ body {
 
 .shock-large .tracker-bar-fill {
     background: var(--accent-blue);
+}
+
+.ruin-large .tracker-label {
+    color: var(--accent-purple);
 }
 
 /* Mob Membership */
