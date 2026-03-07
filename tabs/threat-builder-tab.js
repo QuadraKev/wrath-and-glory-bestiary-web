@@ -145,14 +145,11 @@ const ThreatBuilderTab = {
     renderTemplateDropdown(search, variant = 'main') {
         const dropdownId = variant === 'sidebar' ? 'builder-template-dropdown-sidebar' : 'builder-template-dropdown';
         const dropdown = document.getElementById(dropdownId);
-        const threats = DataLoader.getAllThreats();
         const searchLower = (search || '').toLowerCase();
 
-        let filtered = threats;
-        if (searchLower) {
-            filtered = threats.filter(t => t.name.toLowerCase().includes(searchLower));
-        }
-        filtered = filtered.sort((a, b) => a.name.localeCompare(b.name)).slice(0, 50);
+        const excludedSources = SettingsTab.excludedSources.size > 0 ? [...SettingsTab.excludedSources] : null;
+        let filtered = DataLoader.filterThreats({ search: searchLower, excludedSources });
+        filtered = filtered.sort((a, b) => a.name.localeCompare(b.name));
 
         if (filtered.length === 0) {
             dropdown.innerHTML = '<div class="builder-dropdown-empty">No matching threats</div>';
