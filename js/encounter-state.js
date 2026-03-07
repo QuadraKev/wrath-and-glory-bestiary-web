@@ -381,6 +381,56 @@ const EncounterState = {
         return newMob.id;
     },
 
+    // Duplicate a mob - creates a fresh copy with all living members at full health
+    duplicateMob(mobId) {
+        const mob = this.mobs.find(m => m.id === mobId);
+        if (!mob) return null;
+
+        const threat = DataLoader.getThreat(mob.threatId);
+        const livingMembers = this.getMobLivingMembers(mobId);
+        if (livingMembers.length === 0) return null;
+
+        // Create fresh individual copies for each living member
+        const newIndividualIds = [];
+        livingMembers.forEach(original => {
+            const individual = {
+                id: this.generateId(),
+                threatId: original.threatId,
+                bonus: original.bonus,
+                currentWounds: 0,
+                currentShock: 0,
+                maxWounds: original.maxWounds,
+                maxShock: original.maxShock,
+                mobId: null,
+                initiative: null,
+                notes: "",
+                additionalWeaponId: null,
+                personalRuin: threat ? this.getChampionRuin(threat) : 0
+            };
+            this.individuals.push(individual);
+            newIndividualIds.push(individual.id);
+        });
+
+        // Create the new mob
+        const newMob = {
+            id: this.generateId(),
+            threatId: mob.threatId,
+            name: mob.name,
+            initiative: null,
+            notes: ""
+        };
+
+        // Link new individuals to the new mob
+        newIndividualIds.forEach(id => {
+            const individual = this.individuals.find(i => i.id === id);
+            if (individual) individual.mobId = newMob.id;
+        });
+
+        this.mobs.push(newMob);
+        this.markDirty();
+        return newMob.id;
+    },
+
     // Disband a mob - all members become standalone
     disbandMob(mobId) {
         const members = this.getMobMembers(mobId);

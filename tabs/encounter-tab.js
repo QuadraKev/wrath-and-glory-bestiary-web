@@ -976,6 +976,7 @@ const EncounterTab = {
                 </div>
 
                 <div class="detail-actions">
+                    <button class="btn-secondary" id="btn-duplicate-mob">Duplicate</button>
                     <button class="btn-danger" id="btn-remove-mob">Remove Mob</button>
                 </div>
 
@@ -1757,6 +1758,14 @@ const EncounterTab = {
             EncounterState.updateMobNotes(mobId, e.target.value);
         });
 
+        // Duplicate mob
+        document.getElementById('btn-duplicate-mob')?.addEventListener('click', () => {
+            const newMobId = EncounterState.duplicateMob(mobId);
+            if (newMobId) {
+                this.selectItem(newMobId, 'mob');
+            }
+        });
+
         // Remove mob
         document.getElementById('btn-remove-mob')?.addEventListener('click', () => {
             EncounterState.removeMob(mobId);
@@ -1790,8 +1799,12 @@ const EncounterTab = {
             if (newId) {
                 this.selectItem(newId, 'individual');
             }
+        } else if (type === 'mob') {
+            const newMobId = EncounterState.duplicateMob(id);
+            if (newMobId) {
+                this.selectItem(newMobId, 'mob');
+            }
         }
-        // Mob duplication would create copies of all members
         this.renderEncounterList();
     },
 
