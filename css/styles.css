@@ -2974,10 +2974,11 @@ body {
         top: 0;
         left: 0;
         bottom: 0;
-        width: 260px;
+        width: 300px;
         z-index: 1100;
         transform: translateX(-100%);
         transition: transform 0.3s ease;
+        overflow-x: hidden;
         overflow-y: auto;
         padding-top: 15px;
     }
@@ -3004,13 +3005,15 @@ body {
         top: 0;
         left: 0;
         bottom: 0;
-        width: 260px;
+        width: 300px;
         z-index: 1100;
         transform: translateX(-100%);
         transition: transform 0.3s ease;
         background: var(--bg-secondary);
         border-right: 1px solid var(--border-color);
         padding: 15px;
+        overflow-x: hidden;
+        overflow-y: auto;
     }
 
     body.sidebar-open .encounter-sidebar {
@@ -3023,7 +3026,7 @@ body {
         top: 0;
         left: 0;
         bottom: 0;
-        width: 260px;
+        width: 300px;
         z-index: 1100;
         transform: translateX(-100%);
         transition: transform 0.3s ease;
