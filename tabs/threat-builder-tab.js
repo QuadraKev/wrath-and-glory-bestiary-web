@@ -15,16 +15,16 @@ const ThreatBuilderTab = {
     },
 
     bindEvents() {
-        // Template picker
-        document.getElementById('builder-template-search').addEventListener('input', (e) => {
+        // Template picker (desktop action bar — may not exist if removed from HTML)
+        document.getElementById('builder-template-search')?.addEventListener('input', (e) => {
             clearTimeout(this._templateSearchTimer);
             this._templateSearchTimer = setTimeout(() => {
                 this.renderTemplateDropdown(e.target.value);
             }, 200);
         });
-        document.getElementById('builder-template-search').addEventListener('focus', (e) => {
+        document.getElementById('builder-template-search')?.addEventListener('focus', (e) => {
             this.renderTemplateDropdown(e.target.value);
-            document.getElementById('builder-template-dropdown').classList.remove('hidden');
+            document.getElementById('builder-template-dropdown')?.classList.remove('hidden');
         });
 
         // Close dropdowns when clicking outside

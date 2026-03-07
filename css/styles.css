@@ -3250,8 +3250,9 @@ body {
         font-size: 12px;
     }
 
-    /* Glossary filters: smaller */
-    .glossary-filter-btn {
+    /* Glossary/references filters: smaller */
+    .glossary-filter-btn,
+    .references-filter-btn {
         padding: 6px 10px;
         font-size: 11px;
     }
