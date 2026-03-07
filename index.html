@@ -6,7 +6,7 @@
     <meta name="robots" content="noindex, nofollow">
 
     <title>Wrath and Glory Bestiary</title>
-    <link rel="stylesheet" href="css/styles.css?v=62">
+    <link rel="stylesheet" href="css/styles.css?v=63">
 </head>
 <body>
     <div id="app">
@@ -104,6 +104,21 @@
 
             <!-- Threat Builder Tab -->
             <div id="tab-builder" class="tab-content">
+                <!-- Builder sidebar (hamburger drawer on mobile) -->
+                <aside class="sidebar builder-sidebar" id="builder-sidebar">
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Template</h3>
+                        <div class="builder-template-wrapper">
+                            <input type="text" id="builder-template-search-sidebar" class="builder-template-input" placeholder="Search threats to load as template...">
+                            <div id="builder-template-dropdown-sidebar" class="builder-template-dropdown hidden"></div>
+                        </div>
+                    </div>
+                    <div class="sidebar-section builder-sidebar-buttons">
+                        <button id="btn-builder-save-sidebar" class="btn-secondary">Save to File</button>
+                        <button id="btn-builder-load-sidebar" class="btn-secondary">Load from File</button>
+                        <button id="btn-builder-clear-sidebar" class="btn-action btn-action-danger">Clear All</button>
+                    </div>
+                </aside>
                 <div class="builder-action-bar">
                     <div class="builder-template-section">
                         <label class="action-bar-label">Template:</label>
@@ -115,6 +130,7 @@
                     <div class="builder-actions">
                         <button id="btn-builder-save" class="btn-action">Save to File</button>
                         <button id="btn-builder-load" class="btn-action">Load from File</button>
+                        <button id="btn-builder-preview" class="btn-action btn-preview-mobile">Preview</button>
                         <span class="builder-inject-group">
                             <input type="number" id="builder-inject-count" class="builder-inject-count" value="1" min="1" max="20" title="Number to add">
                             <button id="btn-builder-inject" class="btn-action">Add to Encounter</button>
@@ -165,6 +181,10 @@
                 <div class="encounter-content-wrapper">
                 <!-- Left Sidebar - Settings & Add -->
                 <aside class="sidebar encounter-sidebar">
+                    <div class="sidebar-section encounter-name-sidebar-section">
+                        <label class="filter-label">Encounter</label>
+                        <input type="text" id="encounter-name-sidebar" class="search-input" placeholder="Unnamed Encounter">
+                    </div>
                     <div class="sidebar-section">
                         <h3 class="sidebar-title">Encounter Settings</h3>
                     </div>
@@ -198,6 +218,15 @@
 
                     <div class="sidebar-section">
                         <button id="btn-sort-initiative" class="btn-secondary">Sort by Initiative</button>
+                    </div>
+                    <div class="sidebar-section encounter-sidebar-actions">
+                        <h3 class="sidebar-title">Encounter Actions</h3>
+                        <div class="encounter-sidebar-action-buttons">
+                            <button id="btn-save-encounter-sidebar" class="btn-secondary">Save Encounter</button>
+                            <button id="btn-load-encounter-sidebar" class="btn-secondary">Load Encounter</button>
+                            <button id="btn-import-threat-sidebar" class="btn-secondary">Import Threat</button>
+                            <button id="btn-clear-encounter-sidebar" class="btn-danger">Clear Encounter</button>
+                        </div>
                     </div>
                 </aside>
 
@@ -292,6 +321,17 @@
         </footer>
 
         <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+        <!-- Bottom Sheet (mobile slide-up panel) -->
+        <div class="bottom-sheet" id="bottom-sheet">
+            <div class="bottom-sheet-overlay" id="bottom-sheet-overlay"></div>
+            <div class="bottom-sheet-panel" id="bottom-sheet-panel">
+                <div class="bottom-sheet-handle-row" id="bottom-sheet-handle-row">
+                    <div class="bottom-sheet-handle-bar"></div>
+                </div>
+                <div class="bottom-sheet-content" id="bottom-sheet-content"></div>
+            </div>
+        </div>
     </div>
 
     <!-- Mobile menu toggle -->
@@ -305,17 +345,17 @@
     </script>
 
     <!-- Scripts -->
-    <script src="js/web-api.js?v=62"></script>
-    <script src="js/data-loader.js?v=62"></script>
-    <script src="js/glossary.js?v=62"></script>
-    <script src="js/encounter-state.js?v=62"></script>
-    <script src="js/threat-builder-state.js?v=62"></script>
-    <script src="tabs/settings-tab.js?v=62"></script>
-    <script src="tabs/threats-tab.js?v=62"></script>
-    <script src="tabs/glossary-tab.js?v=62"></script>
-    <script src="tabs/references-tab.js?v=62"></script>
-    <script src="tabs/encounter-tab.js?v=62"></script>
-    <script src="tabs/threat-builder-tab.js?v=62"></script>
-    <script src="js/app.js?v=62"></script>
+    <script src="js/web-api.js?v=63"></script>
+    <script src="js/data-loader.js?v=63"></script>
+    <script src="js/glossary.js?v=63"></script>
+    <script src="js/encounter-state.js?v=63"></script>
+    <script src="js/threat-builder-state.js?v=63"></script>
+    <script src="tabs/settings-tab.js?v=63"></script>
+    <script src="tabs/threats-tab.js?v=63"></script>
+    <script src="tabs/glossary-tab.js?v=63"></script>
+    <script src="tabs/references-tab.js?v=63"></script>
+    <script src="tabs/encounter-tab.js?v=63"></script>
+    <script src="tabs/threat-builder-tab.js?v=63"></script>
+    <script src="js/app.js?v=63"></script>
 </body>
 </html>

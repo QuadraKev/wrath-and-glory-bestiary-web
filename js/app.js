@@ -1,3 +1,77 @@
+// ===== Bottom Sheet (shared mobile slide-up panel) =====
+
+const BottomSheet = {
+    _onCloseFn: null,
+    _touchStartY: 0,
+    _touchCurrentY: 0,
+
+    isOpen() {
+        return document.getElementById('bottom-sheet')?.classList.contains('open') || false;
+    },
+
+    open(renderFn, onCloseFn) {
+        const sheet = document.getElementById('bottom-sheet');
+        const content = document.getElementById('bottom-sheet-content');
+        if (!sheet || !content) return;
+        this._onCloseFn = onCloseFn || null;
+        content.innerHTML = '';
+        renderFn(content);
+        sheet.classList.add('open');
+    },
+
+    close() {
+        const sheet = document.getElementById('bottom-sheet');
+        if (!sheet || !this.isOpen()) return;
+        sheet.classList.remove('open');
+        const fn = this._onCloseFn;
+        this._onCloseFn = null;
+        if (fn) fn();
+        // Clear content after animation
+        setTimeout(() => {
+            const content = document.getElementById('bottom-sheet-content');
+            if (content) content.innerHTML = '';
+        }, 320);
+    },
+
+    updateContent(renderFn) {
+        const content = document.getElementById('bottom-sheet-content');
+        if (content && this.isOpen()) {
+            content.innerHTML = '';
+            renderFn(content);
+        }
+    },
+
+    init() {
+        document.getElementById('bottom-sheet-overlay')?.addEventListener('click', () => this.close());
+
+        const handleRow = document.getElementById('bottom-sheet-handle-row');
+        const panel = document.getElementById('bottom-sheet-panel');
+        if (!handleRow || !panel) return;
+
+        // Tap handle bar to close
+        handleRow.addEventListener('click', () => this.close());
+
+        // Swipe down on handle bar to dismiss
+        handleRow.addEventListener('touchstart', (e) => {
+            this._touchStartY = e.touches[0].clientY;
+            this._touchCurrentY = e.touches[0].clientY;
+        }, { passive: true });
+
+        handleRow.addEventListener('touchmove', (e) => {
+            this._touchCurrentY = e.touches[0].clientY;
+            const deltaY = this._touchCurrentY - this._touchStartY;
+            if (deltaY > 0) panel.style.transform = `translateY(${deltaY}px)`;
+        }, { passive: true });
+
+        handleRow.addEventListener('touchend', () => {
+            panel.style.transform = '';
+            if (this._touchCurrentY - this._touchStartY > 60) this.close();
+            this._touchStartY = 0;
+            this._touchCurrentY = 0;
+        });
+    }
+};
+
 // Main Application Controller
 
 const App = {
@@ -15,6 +89,9 @@ const App = {
         // Initialize glossary system
         await Glossary.init();
         console.log('Glossary initialized.');
+
+        // Initialize bottom sheet
+        BottomSheet.init();
 
         // Initialize encounter state
         EncounterState.init();
@@ -92,6 +169,7 @@ const App = {
 
     // Switch to a different main tab
     switchTab(tabName) {
+        BottomSheet.close();
         this.currentTab = tabName;
 
         // Update tab button states

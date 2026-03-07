@@ -27,12 +27,17 @@ const ThreatBuilderTab = {
             document.getElementById('builder-template-dropdown').classList.remove('hidden');
         });
 
-        // Close dropdown when clicking outside
+        // Close dropdowns when clicking outside
         document.addEventListener('click', (e) => {
             const dropdown = document.getElementById('builder-template-dropdown');
             const search = document.getElementById('builder-template-search');
             if (dropdown && !dropdown.contains(e.target) && e.target !== search) {
                 dropdown.classList.add('hidden');
+            }
+            const dropdownSidebar = document.getElementById('builder-template-dropdown-sidebar');
+            const searchSidebar = document.getElementById('builder-template-search-sidebar');
+            if (dropdownSidebar && !dropdownSidebar.contains(e.target) && e.target !== searchSidebar) {
+                dropdownSidebar.classList.add('hidden');
             }
         });
 
@@ -64,6 +69,56 @@ const ThreatBuilderTab = {
             }
         });
 
+        // Mobile sidebar: template search
+        document.getElementById('builder-template-search-sidebar')?.addEventListener('input', (e) => {
+            clearTimeout(this._templateSearchTimer);
+            this._templateSearchTimer = setTimeout(() => {
+                this.renderTemplateDropdown(e.target.value, 'sidebar');
+            }, 200);
+        });
+        document.getElementById('builder-template-search-sidebar')?.addEventListener('focus', (e) => {
+            this.renderTemplateDropdown(e.target.value, 'sidebar');
+        });
+
+        // Mobile sidebar: save/load/clear
+        document.getElementById('btn-builder-save-sidebar')?.addEventListener('click', async () => {
+            const result = await ThreatBuilderState.saveThreatToFile();
+            if (result.success) this.showNotification('Threat saved to file!');
+            else if (result.error) this.showNotification('Error: ' + result.error);
+        });
+
+        document.getElementById('btn-builder-load-sidebar')?.addEventListener('click', async () => {
+            const result = await ThreatBuilderState.loadThreatFromFile();
+            if (result.success) {
+                this.refresh();
+                this.showNotification('Threat loaded from file!');
+            } else if (result.error && result.error !== 'Cancelled') {
+                this.showNotification('Error: ' + result.error);
+            }
+        });
+
+        document.getElementById('btn-builder-clear-sidebar')?.addEventListener('click', () => {
+            if (confirm('Clear all fields? This cannot be undone.')) {
+                ThreatBuilderState.clear();
+                ThreatBuilderState.clearAutoSave();
+                this.refresh();
+            }
+        });
+
+        // Preview button (mobile) — slide up bottom sheet
+        document.getElementById('btn-builder-preview')?.addEventListener('click', () => {
+            const threatData = ThreatBuilderState.getThreatData();
+            BottomSheet.open(div => {
+                if (!threatData) {
+                    div.innerHTML = '<div class="threat-detail-placeholder"><p>Edit threat details to see a preview</p></div>';
+                    return;
+                }
+                const html = this.renderPreviewCard(threatData);
+                div.innerHTML = `<div class="builder-preview-label">Preview</div>${html}`;
+                Glossary.enhanceDescriptions(div);
+            });
+        });
+
         document.getElementById('btn-builder-inject').addEventListener('click', () => {
             const count = parseInt(document.getElementById('builder-inject-count').value) || 1;
 
@@ -87,8 +142,9 @@ const ThreatBuilderTab = {
 
     // ===== Template Dropdown =====
 
-    renderTemplateDropdown(search) {
-        const dropdown = document.getElementById('builder-template-dropdown');
+    renderTemplateDropdown(search, variant = 'main') {
+        const dropdownId = variant === 'sidebar' ? 'builder-template-dropdown-sidebar' : 'builder-template-dropdown';
+        const dropdown = document.getElementById(dropdownId);
         const threats = DataLoader.getAllThreats();
         const searchLower = (search || '').toLowerCase();
 
@@ -109,12 +165,16 @@ const ThreatBuilderTab = {
         dropdown.classList.remove('hidden');
 
         // Bind click handlers
+        const searchInputId = variant === 'sidebar' ? 'builder-template-search-sidebar' : 'builder-template-search';
         dropdown.querySelectorAll('.builder-dropdown-item').forEach(item => {
             item.addEventListener('click', () => {
                 ThreatBuilderState.loadTemplate(item.dataset.id);
-                document.getElementById('builder-template-search').value = '';
+                const searchEl = document.getElementById(searchInputId);
+                if (searchEl) searchEl.value = '';
                 dropdown.classList.add('hidden');
                 this.refresh();
+                // Close sidebar after picking a template on mobile
+                if (variant === 'sidebar') document.body.classList.remove('sidebar-open');
             });
         });
     },

@@ -2906,59 +2906,109 @@ body {
         transform: translateX(0);
     }
 
-    /* Threats tab: stack list + detail vertically */
+    /* Builder sidebar as fixed drawer */
+    .builder-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 260px;
+        z-index: 1100;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        padding: 15px;
+        overflow-y: auto;
+    }
+
+    body.sidebar-open .builder-sidebar {
+        transform: translateX(0);
+    }
+
+    /* Show bottom sheet on mobile */
+    .bottom-sheet {
+        display: block;
+    }
+
+    /* Threats tab: full-height list, detail hidden (use bottom sheet) */
     #tab-threats .content-split {
         flex-direction: column;
-        gap: 15px;
     }
 
     .threat-list-container {
         width: 100%;
-        max-height: 40vh;
-        flex-shrink: 0;
+        flex: 1;
+        max-height: none;
     }
 
     .threat-detail-container {
-        flex: 1;
-        min-height: 0;
+        display: none;
     }
 
-    /* Encounter tab: stack list + detail vertically */
+    /* Encounter tab: full-height list, detail hidden (use bottom sheet) */
     .encounter-content-wrapper {
         flex-direction: column;
     }
 
     .encounter-content-wrapper .content-split {
         flex-direction: column;
-        gap: 15px;
     }
 
     .encounter-list-container {
         width: 100%;
-        max-height: 40vh;
-        flex-shrink: 0;
+        flex: 1;
+        max-height: none;
     }
 
     .encounter-detail-container {
-        min-height: 0;
+        display: none;
     }
 
-    /* Encounter action bar: wrap */
+    /* Encounter action bar: show only round counter, centered */
     .encounter-action-bar {
-        flex-wrap: wrap;
-        gap: 8px;
-        padding: 10px 15px;
+        justify-content: center;
+        padding: 8px 15px;
+        gap: 0;
     }
 
-    .encounter-name-input {
-        width: auto;
-        flex: 1;
-        min-width: 120px;
+    .encounter-name-section {
+        display: none;
     }
 
     .encounter-actions {
-        flex-wrap: wrap;
-        gap: 6px;
+        display: none;
+    }
+
+    .encounter-round-section {
+        margin: 0 auto;
+    }
+
+    /* Show encounter name + actions in sidebar */
+    .encounter-name-sidebar-section {
+        display: block;
+    }
+
+    .encounter-sidebar-actions {
+        display: block;
+    }
+
+    /* Builder action bar: show only Preview + inject on mobile */
+    .builder-template-section {
+        display: none;
+    }
+
+    #btn-builder-save,
+    #btn-builder-load,
+    #btn-builder-clear {
+        display: none;
+    }
+
+    .btn-preview-mobile {
+        display: inline-flex;
+    }
+
+    /* Hide builder preview panel (use bottom sheet instead) */
+    .builder-preview {
+        display: none;
     }
 
     .threat-card-source,
@@ -3080,27 +3130,7 @@ body {
         padding: 10px;
     }
 
-    .threat-list-container {
-        max-height: 35vh;
-    }
-
-    .encounter-list-container {
-        max-height: 35vh;
-    }
-
-    /* Encounter action bar: stack */
-    .encounter-action-bar {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .encounter-name-section {
-        flex-wrap: wrap;
-    }
-
-    .encounter-actions {
-        justify-content: flex-start;
-    }
+    /* Encounter action bar: already centered via 768px rule */
 
     .btn-action {
         padding: 6px 10px;
@@ -3144,6 +3174,117 @@ body {
     .add-to-encounter-header-controls {
         align-items: flex-start;
     }
+}
+
+/* ===== Bottom Sheet (mobile slide-up panel) ===== */
+.bottom-sheet {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1200;
+    pointer-events: none;
+}
+
+.bottom-sheet.open {
+    pointer-events: all;
+}
+
+.bottom-sheet-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.bottom-sheet.open .bottom-sheet-overlay {
+    opacity: 1;
+}
+
+.bottom-sheet-panel {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: calc(var(--header-height) + var(--nav-height));
+    background: var(--bg-secondary);
+    border-radius: 12px 12px 0 0;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.bottom-sheet.open .bottom-sheet-panel {
+    transform: translateY(0);
+}
+
+.bottom-sheet-handle-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0 6px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.bottom-sheet-handle-bar {
+    width: 40px;
+    height: 4px;
+    background: var(--border-light);
+    border-radius: 2px;
+}
+
+.bottom-sheet-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 15px 20px;
+}
+
+/* Builder sidebar */
+.builder-sidebar {
+    background: var(--bg-secondary);
+    border-right: 1px solid var(--border-color);
+}
+
+.builder-sidebar-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.builder-sidebar-buttons .btn-secondary,
+.builder-sidebar-buttons .btn-action {
+    width: 100%;
+}
+
+/* Encounter sidebar actions */
+.encounter-sidebar-action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.encounter-sidebar-action-buttons .btn-secondary,
+.encounter-sidebar-action-buttons .btn-danger {
+    width: 100%;
+}
+
+/* Preview button — hidden on desktop, shown on mobile */
+.btn-preview-mobile {
+    display: none;
+}
+
+/* Encounter name sidebar section — hidden on desktop */
+.encounter-name-sidebar-section {
+    display: none;
+}
+
+/* Encounter sidebar actions — hidden on desktop */
+.encounter-sidebar-actions {
+    display: none;
 }
 
 /* ===== Auto-Save Banner ===== */

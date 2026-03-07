@@ -34,7 +34,21 @@ const EncounterTab = {
 
         document.getElementById('encounter-name').addEventListener('input', (e) => {
             EncounterState.updateSettings({ name: e.target.value });
+            const sidebar = document.getElementById('encounter-name-sidebar');
+            if (sidebar) sidebar.value = e.target.value;
         });
+
+        document.getElementById('encounter-name-sidebar')?.addEventListener('input', (e) => {
+            EncounterState.updateSettings({ name: e.target.value });
+            const main = document.getElementById('encounter-name');
+            if (main) main.value = e.target.value;
+        });
+
+        // Sidebar action buttons
+        document.getElementById('btn-save-encounter-sidebar')?.addEventListener('click', () => this.handleSave());
+        document.getElementById('btn-load-encounter-sidebar')?.addEventListener('click', () => this.handleLoad());
+        document.getElementById('btn-import-threat-sidebar')?.addEventListener('click', () => this.handleImportThreat());
+        document.getElementById('btn-clear-encounter-sidebar')?.addEventListener('click', () => this.handleClear());
 
         // Save/Load events
         document.getElementById('btn-save-encounter').addEventListener('click', () => {
@@ -90,6 +104,8 @@ const EncounterTab = {
         document.getElementById('encounter-tier').value = EncounterState.settings.tier;
         document.getElementById('encounter-players').value = EncounterState.settings.playerCount;
         document.getElementById('encounter-name').value = EncounterState.settings.name;
+        const sidebarName = document.getElementById('encounter-name-sidebar');
+        if (sidebarName) sidebarName.value = EncounterState.settings.name;
         this.renderRoundDisplay();
     },
 
@@ -369,13 +385,17 @@ const EncounterTab = {
         const items = container.querySelectorAll('.encounter-item');
 
         items.forEach(el => {
-            // Use mousedown on drag handle to initiate drag
             const handle = el.querySelector('.drag-handle');
             if (handle) {
                 handle.addEventListener('mousedown', (e) => {
                     e.preventDefault();
-                    this.startDrag(e, el, container);
+                    this.startDrag(e.clientY, e.clientX, el, container);
                 });
+                handle.addEventListener('touchstart', (e) => {
+                    e.preventDefault();
+                    const t = e.touches[0];
+                    this.startDrag(t.clientY, t.clientX, el, container);
+                }, { passive: false });
             }
 
             // Disable native drag since we're using custom implementation
@@ -383,9 +403,8 @@ const EncounterTab = {
         });
     },
 
-    startDrag(e, element, container) {
+    startDrag(clientY, clientX, element, container) {
         const rect = element.getBoundingClientRect();
-        const containerRect = container.getBoundingClientRect();
 
         // Create a clone for dragging
         const clone = element.cloneNode(true);
@@ -416,36 +435,39 @@ const EncounterTab = {
             container: container,
             itemId: element.dataset.id,
             itemType: element.dataset.type,
-            startY: e.clientY,
-            offsetY: e.clientY - rect.top,
+            startY: clientY,
+            offsetY: clientY - rect.top,
             elementHeight: rect.height + 8 // Include gap
         };
 
-        // Bind move and up handlers
+        // Bind move and end handlers (mouse + touch)
         document.addEventListener('mousemove', this.handleDragMove);
         document.addEventListener('mouseup', this.handleDragEnd);
+        document.addEventListener('touchmove', this.handleDragMove, { passive: false });
+        document.addEventListener('touchend', this.handleDragEnd);
     },
 
     handleDragMove: function(e) {
         const tab = EncounterTab;
         if (!tab.dragState.dragging) return;
+        if (e.cancelable) e.preventDefault();
 
-        const { clone, placeholder, container, offsetY, elementHeight } = tab.dragState;
+        const { clone, placeholder, container, offsetY } = tab.dragState;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
 
         // Move the clone
-        clone.style.top = (e.clientY - offsetY) + 'px';
+        clone.style.top = (clientY - offsetY) + 'px';
 
         // Get all non-hidden items
         const items = Array.from(container.querySelectorAll('.encounter-item:not(.drag-original-hidden)'));
-        const placeholderIndex = Array.from(container.children).indexOf(placeholder);
 
-        // Find where to insert placeholder based on mouse position
+        // Find where to insert placeholder based on pointer position
         let newIndex = items.length;
         for (let i = 0; i < items.length; i++) {
             const itemRect = items[i].getBoundingClientRect();
             const itemMiddle = itemRect.top + itemRect.height / 2;
 
-            if (e.clientY < itemMiddle) {
+            if (clientY < itemMiddle) {
                 newIndex = Array.from(container.children).indexOf(items[i]);
                 break;
             }
@@ -479,6 +501,8 @@ const EncounterTab = {
         // Remove event listeners
         document.removeEventListener('mousemove', tab.handleDragMove);
         document.removeEventListener('mouseup', tab.handleDragEnd);
+        document.removeEventListener('touchmove', tab.handleDragMove);
+        document.removeEventListener('touchend', tab.handleDragEnd);
 
         // Reset drag state
         tab.dragState.dragging = false;
@@ -632,7 +656,31 @@ const EncounterTab = {
         this.selectionType = type;
         this.clearMultiSelection();
         this.renderEncounterList();
-        this.renderDetail();
+
+        if (window.innerWidth <= 768) {
+            BottomSheet.open(
+                div => this._renderDetailContent(div),
+                () => {
+                    this.selectedId = null;
+                    this.selectionType = null;
+                    this.renderEncounterList();
+                }
+            );
+        } else {
+            this.renderDetail();
+        }
+    },
+
+    // Render detail content into any container (used by both desktop detail panel and mobile bottom sheet)
+    _renderDetailContent(container) {
+        if (!this.selectedId) return;
+        if (this.selectionType === 'individual') {
+            this.renderIndividualDetail(container);
+        } else if (this.selectionType === 'mob') {
+            this.renderMobDetail(container);
+        } else if (this.selectionType === 'player') {
+            this.renderPlayerDetail(container);
+        }
     },
 
     toggleMultiSelect(id, type) {
@@ -761,6 +809,14 @@ const EncounterTab = {
     // ===== Detail Panel =====
 
     renderDetail() {
+        // On mobile, update the bottom sheet if it's open; otherwise use the desktop panel
+        if (window.innerWidth <= 768) {
+            if (BottomSheet.isOpen() && this.selectedId) {
+                BottomSheet.updateContent(div => this._renderDetailContent(div));
+            }
+            return;
+        }
+
         const container = document.getElementById('encounter-detail');
 
         if (!this.selectedId) {
@@ -772,13 +828,7 @@ const EncounterTab = {
             return;
         }
 
-        if (this.selectionType === 'individual') {
-            this.renderIndividualDetail(container);
-        } else if (this.selectionType === 'mob') {
-            this.renderMobDetail(container);
-        } else if (this.selectionType === 'player') {
-            this.renderPlayerDetail(container);
-        }
+        this._renderDetailContent(container);
     },
 
     renderPlayerDetail(container) {

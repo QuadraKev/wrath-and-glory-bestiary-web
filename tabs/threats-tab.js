@@ -216,16 +216,29 @@ const ThreatsTab = {
             selectedItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
 
-        // Render detail
-        this.renderThreatDetail(threatId);
+        // Render detail — use bottom sheet on mobile
+        if (window.innerWidth <= 768) {
+            BottomSheet.open(
+                div => this.renderThreatDetail(threatId, div),
+                () => {
+                    this.selectedThreatId = null;
+                    document.querySelectorAll('.threat-list-item.selected')
+                        .forEach(el => el.classList.remove('selected'));
+                    history.replaceState(null, '', ' ');
+                }
+            );
+        } else {
+            this.renderThreatDetail(threatId);
+        }
     },
 
-    renderThreatDetail(threatId) {
+    renderThreatDetail(threatId, container = null) {
         const threat = DataLoader.getThreat(threatId);
-        const container = document.getElementById('threat-detail');
+        const el = container || document.getElementById('threat-detail');
+        if (!el) return;
 
         if (!threat) {
-            container.innerHTML = `
+            el.innerHTML = `
                 <div class="threat-detail-placeholder">
                     <p>Threat not found</p>
                 </div>
@@ -233,13 +246,13 @@ const ThreatsTab = {
             return;
         }
 
-        container.innerHTML = this.renderThreatCard(threat);
+        el.innerHTML = this.renderThreatCard(threat);
 
         // Enhance glossary terms
-        Glossary.enhanceDescriptions(container);
+        Glossary.enhanceDescriptions(el);
 
         // Attach keyword click handlers
-        container.querySelectorAll('.threat-keyword').forEach(kw => {
+        el.querySelectorAll('.threat-keyword').forEach(kw => {
             kw.addEventListener('click', (e) => {
                 const keyword = e.target.textContent;
                 this.showKeywordPopup(keyword, e.target);
@@ -247,10 +260,10 @@ const ThreatsTab = {
         });
 
         // Attach add to encounter handlers
-        this.bindAddToEncounterEvents(container, threatId);
+        this.bindAddToEncounterEvents(el, threatId);
 
         // Attach copy handler
-        const copyBtn = container.querySelector('#btn-copy-threat');
+        const copyBtn = el.querySelector('#btn-copy-threat');
         if (copyBtn) {
             copyBtn.addEventListener('click', () => {
                 const text = this.buildThreatCopyText(threat);
@@ -262,7 +275,7 @@ const ThreatsTab = {
         }
 
         // Attach customize handler
-        const customizeBtn = container.querySelector('#btn-customize-threat');
+        const customizeBtn = el.querySelector('#btn-customize-threat');
         if (customizeBtn) {
             customizeBtn.addEventListener('click', () => {
                 this.customizeThreat(threatId);
