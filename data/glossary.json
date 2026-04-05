@@ -3710,7 +3710,7 @@
       "dn": "Target’s Defence",
       "cost": 15,
       "source": "apocrypha",
-      "page": 259,
+      "page": 258,
       "description": "...re +1ED with the Agonizing trait.<br><br><b>Potency:</b> [1] +1ED [2] +10m range"
     },
     "constrict_aoa": {
@@ -3719,7 +3719,7 @@
       "dn": "Target’s Toughness",
       "cost": 10,
       "source": "apocrypha",
-      "page": 259,
+      "page": 258,
       "description": "...:</b> [2] +1 DN to the target’s Toughness tests. [2] +1 Shock from a failed test"
     },
     "enhanced_senses_aoa": {
@@ -3728,7 +3728,7 @@
       "dn": "4",
       "cost": 10,
       "source": "apocrypha",
-      "page": 259,
+      "page": 258,
       "description": "...ts using that sense.<br><br><b>Potency:</b> [1] add +1 to your Passive Awareness"
     },
     "seal_wounds_aoa": {
@@ -3737,7 +3737,7 @@
       "dn": "5",
       "cost": 10,
       "source": "apocrypha",
-      "page": 259,
+      "page": 258,
       "description": "...ttribute.<br><br><b>Potency:</b> [2] Each target regains +1 Wound. [1] +5m range"
     },
     "toxic_siphon_aoa": {
@@ -3746,7 +3746,7 @@
       "dn": "Rating of Target’s Poisoned condition",
       "cost": 5,
       "source": "apocrypha",
-      "page": 259,
+      "page": 258,
       "description": "...<b>Discipline:</b> Biomancy<br><b>DN:</b> Rating of Target’s Poisoned condition<br><b>XP Cost:</b> 5<br><b>Activation:</b> Action<br><b>Duration:</b> Instant<br><b>Range:</b> Touch<br><b>Keywords:</b> PSYCHIC<br><br><b>Effect:</b> You draw poisons from the flesh. If the target has the Poisoned X condition, it is removed instantly. The target is Staggered on their next turn.<br><br><b>Potency:</b> *[2] The target is not Staggered. [3] +10m range"
     },
     "auto_s_ance_aoa": {
@@ -3755,7 +3755,7 @@
       "dn": "3",
       "cost": 10,
       "source": "apocrypha",
-      "page": 260,
+      "page": 259,
       "description": "...r gains one additional Exalted Icon to spend on Potency effects for their power."
     },
     "detect_corruption_aoa": {
@@ -3764,7 +3764,7 @@
       "dn": "3",
       "cost": 5,
       "source": "apocrypha",
-      "page": 260,
+      "page": 259,
       "description": "...ect the presence of otherwise-invisible warp gates, dark pacts, possession, etc."
     },
     "divine_shot_aoa": {
@@ -3773,7 +3773,7 @@
       "dn": "Target’s Defence",
       "cost": 15,
       "source": "apocrypha",
-      "page": 260,
+      "page": 259,
       "description": "...<b>Discipline:</b> Divination<br><b>DN:</b> Target’s Defence<br><b>XP Cost:</b> 15<br><b>Activation:</b> Action<br><b>Duration:</b> Instant<br><b>Range:</b> Self<br><b>Keywords:</b> PSYCHIC<br><br><b>Effect:</b> Using this power enables you to make nearly impossible ranged shots, allowing you to strike virtually any target you can perceive. You concentrate on a single firearm or other projectile weapon in your possession, and the ammunition it carries, before casting your psychic gaze into the Warp to search down the near-infinite paths of the future. When you use this power, choose a single ranged weapon you’re carrying, which has ammunition. You fire a single shot from this weapon against a single target—no multi- targets allowed—which hits instantly if the power is successfully used, at any distance up to the weapon’s normal maximum range.<br><br><b>Potency:</b> [1] The attack inflicts +1ED. [2] One ED from the attack counts as if it had rolled a 6."
     },
     "dowsing_aoa": {
@@ -3782,7 +3782,7 @@
       "dn": "6",
       "cost": 10,
       "source": "apocrypha",
-      "page": 261,
+      "page": 260,
       "description": "...target, in addition to knowing exactly how far away it is and in what direction."
     },
     "glimpse_aoa": {
@@ -3791,7 +3791,7 @@
       "dn": "6",
       "cost": 20,
       "source": "apocrypha",
-      "page": 215,
+      "page": 260,
       "description": "...e power grants an extra +1 bonus dice *[3] Activation reduced to a Simple Action"
     },
     "precognitive_strike_aoa": {
@@ -3800,7 +3800,7 @@
       "dn": "5",
       "cost": 20,
       "source": "apocrypha",
-      "page": 261,
+      "page": 260,
       "description": ".../b> [2] You add an extra +1 bonus die to Ballistic Skill and Weapon Skill tests."
     },
     "precognitive_dodge_aoa": {
@@ -3809,7 +3809,7 @@
       "dn": "3",
       "cost": 10,
       "source": "apocrypha",
-      "page": 261,
+      "page": 260,
       "description": "...is increased by a further +1. *[2] You are not Staggered after using this power."
     },
     "the_action_again_aoa": {
@@ -3818,7 +3818,7 @@
       "dn": "6",
       "cost": 15,
       "source": "apocrypha",
-      "page": 261,
+      "page": 260,
       "description": "...<b>Discipline:</b> Divination<br><b>DN:</b> 6<br><b>XP Cost:</b> 15<br><b>Activation:</b> Simple Action<br><b>Duration:</b> 1 Round<br><b>Range:</b> Self<br><b>Keywords:</b> PSYCHIC<br><br><b>Effect:</b> With this power, you snatch a glimpse of the future and briefly see the outcome of your actions. Through this flash of insight. If the power is successful, you may re-roll any test you attempt until the end of your next turn.<br><br><b>Potency:</b> [1] The power’s duration increases by +1 Round."
     },
     "blinding_flash_aoa": {
@@ -3827,7 +3827,7 @@
       "dn": "4",
       "cost": 10,
       "source": "apocrypha",
-      "page": 262,
+      "page": 261,
       "description": "...<br><b>Potency:</b> [1] The DN of the Agility test increases by +1 [2] +4m range"
     },
     "burning_fist_aoa": {
@@ -3836,7 +3836,7 @@
       "dn": "5",
       "cost": 10,
       "source": "apocrypha",
-      "page": 262,
+      "page": 261,
       "description": "...ict (On Fire) quality.<br><br><b>Potency:</b> [1] Your unarmed attacks gain +1ED"
     },
     "douse_flame_aoa": {
@@ -3845,7 +3845,7 @@
       "dn": "6",
       "cost": 15,
       "source": "apocrypha",
-      "page": 262,
+      "page": 261,
       "description": "...FIRE keyword will not function.<br><br><b>Potency:</b> [1] Increase range by +5m"
     },
     "firebolt_aoa": {
@@ -3854,7 +3854,7 @@
       "dn": "Target’s Defence",
       "cost": 10,
       "source": "apocrypha",
-      "page": 262,
+      "page": 261,
       "description": "...ict (On Fire) trait.<br><br><b>Potency:</b> [1] +1ED [1] The attack gains -1 AP."
     },
     "fire_storm_aoa": {
@@ -3863,7 +3863,7 @@
       "dn": "7",
       "cost": 15,
       "source": "apocrypha",
-      "page": 262,
+      "page": 261,
       "description": "...<b>Discipline:</b> Pyromancy<br><b>DN:</b> 7<br><b>XP Cost:</b> 15<br><b>Activation:</b> Action<br><b>Duration:</b> Instant<br><b>Range:</b> 20m<br><b>Keywords:</b> FIRE, PSYCHIC<br><br><b>Effect:</b> You instantly create an intense conflagration about your target as the air itself ignites, burning all within to cinders. You create a Blast (6) anywhere you can see within range. Creatures within that area suffer Willpower +8 +3ED damage, with the Inflict (On Fire) trait.<br><br><b>Potency:</b> [1] +1ED [2] +2 to the size of the Blast"
     },
     "holocaust_aoa": {
@@ -3872,7 +3872,7 @@
       "dn": "8",
       "cost": 25,
       "source": "apocrypha",
-      "page": 263,
+      "page": 262,
       "description": "...not roll Determination against Mortal Wounds inflicted by this power Telekinesis"
     },
     "death_grip_aoa": {
@@ -3881,7 +3881,7 @@
       "dn": "Target’s Toughness",
       "cost": 10,
       "source": "apocrypha",
-      "page": 263,
+      "page": 262,
       "description": "...ntil the end of their next turn. *[2] The target suffers the Bleeding condition."
     },
     "force_barrage_aoa": {
@@ -3890,7 +3890,7 @@
       "dn": "Target’s Defence",
       "cost": 20,
       "source": "apocrypha",
-      "page": 263,
+      "page": 262,
       "description": "...illpower, rounding up.<br><br><b>Potency:</b> [1] You hit one additional target."
     },
     "force_bolt_aoa": {
@@ -3899,7 +3899,7 @@
       "dn": "Target’s Defence",
       "cost": 15,
       "source": "apocrypha",
-      "page": 263,
+      "page": 262,
       "description": "...ked Prone is increased by one step (to Large, then to Huge, then to Gargantuan)."
     },
     "levitation_aoa": {
@@ -3908,7 +3908,7 @@
       "dn": "4",
       "cost": 20,
       "source": "apocrypha",
-      "page": 263,
+      "page": 262,
       "description": "...<b>Discipline:</b> Telekinesis<br><b>DN:</b> 4<br><b>XP Cost:</b> 20<br><b>Activation:</b> Action<br><b>Duration:</b> Sustained<br><b>Range:</b> Self<br><b>Keywords:</b> KINETIC, PSYCHIC<br><br><b>Effect:</b> You call upon your telekinetic abilities to lift yourself into the air. While this power remains in effect, you can lift yourself up to Willpower metres in the air. This is not true flight, only vertical movement.<br><br><b>Potency:</b> [1] You lift yourself +1 metre."
     },
     "precision_telekinesis_aoa": {
@@ -3917,7 +3917,7 @@
       "dn": "7",
       "cost": 25,
       "source": "apocrypha",
-      "page": 264,
+      "page": 263,
       "description": "...b>Potency:</b> [2] Manipulate one additional object within range. [3] +10m range"
     },
     "psychic_blade_aoa": {
@@ -3926,7 +3926,7 @@
       "dn": "6",
       "cost": 20,
       "source": "apocrypha",
-      "page": 264,
+      "page": 263,
       "description": "...icts +1ED. [3] The weapon gains Rending (3) *[2] The weapon gains a range of 2m."
     },
     "psycho_kinetic_mist_aoa": {
@@ -3935,7 +3935,7 @@
       "dn": "3",
       "cost": 10,
       "source": "apocrypha",
-      "page": 264,
+      "page": 263,
       "description": "...ides an Armour Rating equal to your Willpower, but the range is reduced to Self."
     },
     "telekinesis_aoa": {
@@ -3944,7 +3944,7 @@
       "dn": "4",
       "cost": 10,
       "source": "apocrypha",
-      "page": 263,
+      "page": 262,
       "description": "...<b>Discipline:</b> Telekinesis<br><b>DN:</b> 4<br><b>XP Cost:</b> 10<br><b>Activation:</b> Action<br><b>Duration:</b> Sustained<br><b>Range:</b> 10m<br><b>Keywords:</b> KINETIC, PSYCHIC<br><br><b>Effect:</b> A basic form of telekinesis, you can use your will to move inanimate objects around. You may lift and move any object you can see within range which weighs no more than your Willpower x5 kg. Lifted objects may be moved anywhere within range, but you cannot move an object fast enough to make an attack. Any objects still suspended when the power ends drop to the ground.<br><br><b>Potency:</b> [1] +5m range"
     },
     "beacon_aoa": {
@@ -3953,7 +3953,7 @@
       "dn": "5",
       "cost": 10,
       "source": "apocrypha",
-      "page": 11,
+      "page": 264,
       "description": "...g through the Warp adds +2 bonus dice to their tests if they can see the beacon."
     },
     "chaos_mind_aoa": {
@@ -3962,7 +3962,7 @@
       "dn": "Target’s Willpower (Opposed)",
       "cost": 15,
       "source": "apocrypha",
-      "page": 265,
+      "page": 264,
       "description": "...rom the backlash.<br><br><b>Potency:</b> [1] The target suffers +1 Mortal Wound."
     },
     "inspire_aoa": {
@@ -3971,7 +3971,7 @@
       "dn": "5",
       "cost": 10,
       "source": "apocrypha",
-      "page": 12,
+      "page": 264,
       "description": "...ion Attacks while they remain within range.<br><br><b>Potency:</b> [2] +2m range"
     },
     "mental_alacrity_aoa": {
@@ -3980,7 +3980,7 @@
       "dn": "5",
       "cost": 20,
       "source": "apocrypha",
-      "page": 265,
+      "page": 264,
       "description": "...<b>Discipline:</b> Telepathy<br><b>DN:</b> 5<br><b>XP Cost:</b> 20<br><b>Activation:</b> Action<br><b>Duration:</b> 1 Round<br><b>Range:</b> Willpower metres<br><b>Keywords:</b> TELEPATHY, PSYCHIC<br><br><b>Effect:</b> Within the Scholastica Psykana and the Adeptus Astra Telepathica, there are many exercises and meditations that are taught to Sanctioned Psykers and Astropaths to enhance their senses and their mental clarity. While this power remains in effect, you or one ally within range adds +3 bonus dice to all Intellect-based tests until the end of their next turn.<br><br><b>Potency:</b> [1] The bonus increased by +1 [1] The power lasts for +1 Round."
     },
     "mind_ward_aoa": {
@@ -3989,7 +3989,7 @@
       "dn": "3",
       "cost": 5,
       "source": "apocrypha",
-      "page": 266,
+      "page": 265,
       "description": "...condition. *[1] You are also immune to Fear. *[2] You are also immune to Terror."
     },
     "projection_aoa": {
@@ -3998,7 +3998,7 @@
       "dn": "7",
       "cost": 20,
       "source": "apocrypha",
-      "page": 266,
+      "page": 265,
       "description": "..., which is unconscious. Every minute you sustain this power, you suffer 1 Shock."
     },
     "see_me_not_aoa": {
@@ -4007,7 +4007,7 @@
       "dn": "Target’s Willpower",
       "cost": 15,
       "source": "apocrypha",
-      "page": 266,
+      "page": 265,
       "description": "...<b>Discipline:</b> Telepathy<br><b>DN:</b> Target’s Willpower<br><b>XP Cost:</b> 15<br><b>Activation:</b> Action<br><b>Duration:</b> Sustained<br><b>Range:</b> 20m<br><b>Keywords:</b> TELEPATHY, PSYCHIC<br><br><b>Effect:</b> You erase your presence from the minds of others. This is more than mere invisibility: those affected by the power simply cannot perceive your presence. Their senses still work, but their minds will not acknowledge you. While this power is in effect, the target cannot perceive you in any way, though they will still be able to see the results of your actions. If ever a target is confronted with evidence of your presence (such as being attacked by you, or seeing a door open because of you), they may attempt a Willpower test with a DN of 3 to try and shake off this power’s effects.<br><br><b>Potency:</b> [2] The target’s Willpower test DN increases by +1 [2] +10m range"
     },
     "astral_aim_aoa": {
@@ -4016,7 +4016,7 @@
       "dn": "5",
       "cost": 10,
       "source": "apocrypha",
-      "page": 267,
+      "page": 266,
       "description": "...t of your next turn.<br><br><b>Potency:</b> [2] +1 bonus dice to ranged attacks."
     },
     "gate_of_infinity_aoa": {
@@ -4025,7 +4025,7 @@
       "dn": "6",
       "cost": 25,
       "source": "apocrypha",
-      "page": 267,
+      "page": 266,
       "description": "...ust also be more than 10m from an enemy.<br><br><b>Potency:</b> [3] +500m range."
     },
     "hammerhand_aoa": {
@@ -4034,7 +4034,7 @@
       "dn": "6",
       "cost": 15,
       "source": "apocrypha",
-      "page": 267,
+      "page": 266,
       "description": "...<b>Discipline:</b> Sanctic<br><b>DN:</b> 6<br><b>XP Cost:</b> 15<br><b>Activation:</b> Action<br><b>Duration:</b> 1 Round<br><b>Range:</b> 5m<br><b>Keywords:</b> PSYCHIC<br><br><b>Effect:</b> Focusing the raging power of your mind, you augment your strength to the point where your fists can crush flesh and bone with a single blow. You add +3ED to the damage of all melee attacks until the start of your next turn.<br><br><b>Potency:</b> [2] +1ED to damage."
     },
     "purge_soul_aoa": {
@@ -4043,7 +4043,7 @@
       "dn": "Target’s Resolve",
       "cost": 15,
       "source": "apocrypha",
-      "page": 268,
+      "page": 267,
       "description": "...ed until the start of its next turn.<br><br><b>Potency:</b> [1] +1 Mortal Wound."
     },
     "rites_of_banishment_aoa": {
@@ -4052,7 +4052,7 @@
       "dn": "Target’s Defence",
       "cost": 0,
       "source": "apocrypha",
-      "page": 267,
+      "page": 266,
       "description": "<b>XP Cost:</b> 0 (10 if buying this power separately)"
     },
     "sanctuary_aoa": {
@@ -4061,7 +4061,7 @@
       "dn": "6",
       "cost": 25,
       "source": "apocrypha",
-      "page": 268,
+      "page": 267,
       "description": "...rt of your next turn.<br><br><b>Potency:</b> [2] +1 Determination [3] +5m range."
     },
     "vortex_of_doom_aoa": {
@@ -4070,7 +4070,7 @@
       "dn": "8",
       "cost": 30,
       "source": "apocrypha",
-      "page": 268,
+      "page": 267,
       "description": "...<b>Discipline:</b> Sanctic<br><b>DN:</b> 8<br><b>XP Cost:</b> 30<br><b>Activation:</b> Full Action<br><b>Duration:</b> 1 Round<br><b>Range:</b> 25m<br><b>Keywords:</b> PSYCHIC<br><br><b>Effect:</b> The psyker tears a rift between realspace and the Warp, condemning his foes to oblivion. The power affects all creatures in a Blast (6), dragging them into a howling vortex. Every creature within the area suffers 1d3 Mortal Wounds.<br><br><b>Potency:</b> [2] +1 Mortal Wound per target. *[2] Increase the area of effect to Blast (10). *[2] Time to activate reduced to an Action."
     },
     "hallucination_aoa": {
@@ -4079,7 +4079,7 @@
       "dn": "Target’s Resolve",
       "cost": 10,
       "source": "apocrypha",
-      "page": 269,
+      "page": 268,
       "description": "...effect.<br><br><b>Potency:</b> [2] +1 DN to Resolve tests. [2] +1 DN to attacks."
     },
     "mind_raid_aoa": {
@@ -4088,7 +4088,7 @@
       "dn": "Target’s Resolve",
       "cost": 15,
       "source": "apocrypha",
-      "page": 269,
+      "page": 268,
       "description": "...o suffers 1 Mortal Wound [1] The GM reveals one additional piece of information."
     },
     "shrouding_aoa": {
@@ -4097,7 +4097,7 @@
       "dn": "5",
       "cost": 10,
       "source": "apocrypha",
-      "page": 269,
+      "page": 268,
       "description": "...my Awareness tests [2] Affect an additional number of allies equal to Willpower."
     },
     "soul_sight_aoa": {
@@ -4106,7 +4106,7 @@
       "dn": "4",
       "cost": 8,
       "source": "apocrypha",
-      "page": 269,
+      "page": 268,
       "description": "...<b>Discipline:</b> Obscuration<br><b>DN:</b> 4<br><b>XP Cost:</b> 8<br><b>Activation:</b> Action<br><b>Duration:</b> Sustained<br><b>Range:</b> 35m<br><b>Keywords:</b> TELEPATHY, PSYCHIC<br><br><b>Effect:</b> You share your warp-sight with your brethren, causing their eyes to glow with an ethereal light. So empowered, no foe can escape their omniscient gaze: the souls of their targets flare like beacons in the dark. If successful, select a number of allies within range equal to your Willpower. While this power remains, the affected allies may re-roll any failures on their ranged attacks and ignore any Defence bonuses from cover.<br><br><b>Potency:</b> [1] +1 bonus die to affected allies’ Awareness tests."
     },
     "temporal_corridor_aoa": {
@@ -4115,7 +4115,7 @@
       "dn": "6",
       "cost": 20,
       "source": "apocrypha",
-      "page": 270,
+      "page": 269,
       "description": "...2] Targets receive +1 Speed for this move. *[2] Activation reduced to an Action."
     },
     "tenebrous_curse_aoa": {
@@ -4124,7 +4124,7 @@
       "dn": "5",
       "cost": 15,
       "source": "apocrypha",
-      "page": 270,
+      "page": 269,
       "description": "...<b>Discipline:</b> Obscuration<br><b>DN:</b> 5<br><b>XP Cost:</b> 15<br><b>Activation:</b> Full Action<br><b>Duration:</b> Instant<br><b>Range:</b> 5m<br><b>Keywords:</b> PSYCHIC<br><br><b>Effect:</b> As you twist your hand, a psychic bolt lances through the minds of your foes. As they reel from the assault, their own shadows seem to spring to malicious life, grasping and tearing with frenzied determination. The power affects all creatures in a Blast (6) within range. Affected targets suffer 1 Mortal Wound and are Staggered until the start of your next turn.<br><br><b>Potency:</b> [3] Targets suffer +1 Mortal Wound. *[2] Increase the area of effect to a Blast (10). *[2] Targets are Restrained instead of Staggered."
     },
     "aspect_of_stone_aoa": {
@@ -4133,7 +4133,7 @@
       "dn": "4",
       "cost": 15,
       "source": "apocrypha",
-      "page": 271,
+      "page": 270,
       "description": "...t one ally with the IMPERIAL FISTS keyword within 12 metres instead of yourself."
     },
     "chasm_aoa": {
@@ -4142,7 +4142,7 @@
       "dn": "5",
       "cost": 25,
       "source": "apocrypha",
-      "page": 271,
+      "page": 270,
       "description": "...<b>Discipline:</b> Geokinesis<br><b>DN:</b> 5<br><b>XP Cost:</b> 25<br><b>Activation:</b> Full Action<br><b>Duration:</b> Instant<br><b>Range:</b> 35m<br><b>Keywords:</b> PSYCHIC<br><br><b>Effect:</b> You slam your palms together, and then pull them slowly apart. As you do, a wide chasm opens beneath the feet of your foes, and they tumble screaming into the darkness below In such a state, you are nigh- unstoppable. This power affects all creatures in a Blast (6) within range. The ground under the target area opens up, creating a sheer-walled pit with a depth equal to ten times your Willpower in metres. Any creature in the area, excluding those which can fly, may attempt an Agility test with a DN of 5 to scramble away; if they succeed, they move up to half their Speed away from the chasm. If they fail, they suffer falling damage as they plummet to the bottom. The pit remains once the power has been used. You suffer 1d3+2 Shock when you use this power, as it is draining to manifest.<br><br><b>Potency:</b> *[2] Time to activate reduced to a Combat Action. *[2] Increase the area of effect to a Blast (10)."
     },
     "fortify_aoa": {
@@ -4151,7 +4151,7 @@
       "dn": "3",
       "cost": 15,
       "source": "apocrypha",
-      "page": 271,
+      "page": 270,
       "description": "...y:</b> [3] The target recovers +1 Wound. [2] The target also recovers 1d3 Shock."
     },
     "iron_inferno_aoa": {
@@ -4160,7 +4160,7 @@
       "dn": "5",
       "cost": 10,
       "source": "apocrypha",
-      "page": 272,
+      "page": 271,
       "description": "...he On Fire condition.<br><br><b>Potency:</b> [3] Targets suffer +1 Mortal Wound."
     },
     "tectonic_purge_aoa": {
@@ -4169,7 +4169,7 @@
       "dn": "5",
       "cost": 8,
       "source": "apocrypha",
-      "page": 272,
+      "page": 271,
       "description": "...nemies within the area are Hindered. [2] Enemies within the area are Vulnerable."
     },
     "wrack_and_ruin_aoa": {
@@ -4178,7 +4178,7 @@
       "dn": "5",
       "cost": 10,
       "source": "apocrypha",
-      "page": 272,
+      "page": 271,
       "description": "...<b>Discipline:</b> Geokinesis<br><b>DN:</b> 5<br><b>XP Cost:</b> 10<br><b>Activation:</b> Action<br><b>Duration:</b> Instant<br><b>Range:</b> 35m<br><b>Keywords:</b> PSYCHIC<br><br><b>Effect:</b> Reaching out with your mind, you sense every fault, hairline crack, and structural weakness in an enemy fortification, then build empyric resonance within them until the stronghold shakes itself apart. The power affects creatures in a Blast (6) that you can see within range. Roll 1d6 for each enemy in the blast who is in cover or in difficult terrain; on an Exalted Icon, they suffer a Mortal Wound and are Staggered. If the targets are within an enclosed structure, then instead roll 1d6 and each Icon inflicts 1d3 Mortal Wounds and causes them to be Restrained.<br><br><b>Potency:</b> [3] Affected enemies suffer +1 Mortal Wounds. *[2] Increase the area of effect to a Blast (10). *[3] If there is a building or enclosing structure within the blast, then it begins to collapse."
     },
     "empyric_channelling_aoa": {
@@ -4187,7 +4187,7 @@
       "dn": "4",
       "cost": 8,
       "source": "apocrypha",
-      "page": 273,
+      "page": 272,
       "description": "... The targeted psyker may re-roll a single Wrath die which rolled a Complication."
     },
     "precognition_aoa": {
@@ -4196,7 +4196,7 @@
       "dn": "5",
       "cost": 10,
       "source": "apocrypha",
-      "page": 273,
+      "page": 272,
       "description": "...Potency:</b> [2] +1 bonus to Defence [1] You receive a single bonus Glory point."
     },
     "psychic_shackles_aoa": {
@@ -4205,7 +4205,7 @@
       "dn": "5",
       "cost": 10,
       "source": "apocrypha",
-      "page": 273,
+      "page": 272,
       "description": "...<b>Discipline:</b> Indomitus<br><b>DN:</b> 5<br><b>XP Cost:</b> 10<br><b>Activation:</b> Action<br><b>Duration:</b> 1 round<br><b>Range:</b> 12m<br><b>Keywords:</b> PSYCHIC<br><br><b>Effect:</b> You plunge into your foe’s mind, trammelling their soul and crushing their will to fight, stalling their advance in its tracks. The power affects all creatures in a Blast (6) within range. Affected targets suffer 1d3 Shock and are Staggered until the start of your next turn.<br><br><b>Potency:</b> [1] +1 Shock [2] Affected enemies are Restrained instead of Staggered. *[2] Increase the area of effect to a Blast (10). Scrier's Gaze This power is identical to the Divination power of the same name. Its presence in the Indomitus discipline allows characters to select that power without also knowing the Divination discipline."
     },
     "storm_of_the_emperor_s_wrath_aoa": {
@@ -4214,7 +4214,7 @@
       "dn": "5",
       "cost": 15,
       "source": "apocrypha",
-      "page": 274,
+      "page": 273,
       "description": "... +1 to rating of Haywire trait. *[2] Increase the area of effect to a Blast (10)"
     },
     "telepathic_assault_aoa": {
@@ -4223,7 +4223,7 @@
       "dn": "Target’s Willpower",
       "cost": 15,
       "source": "apocrypha",
-      "page": 274,
+      "page": 273,
       "description": "... defences, flaying and twisting his psyche at will. DARK ANGELS Librarians only."
     },
     "aversion_aoa": {
@@ -4232,7 +4232,7 @@
       "dn": "6",
       "cost": 8,
       "source": "apocrypha",
-      "page": 274,
+      "page": 273,
       "description": "...ncrease Hindered effect by +1. *[2] Increase the area of effect to a Blast (10)."
     },
     "engulfing_fear_aoa": {
@@ -4241,7 +4241,7 @@
       "dn": "6",
       "cost": 10,
       "source": "apocrypha",
-      "page": 274,
+      "page": 273,
       "description": "...<b>Discipline:</b> Interromancy<br><b>DN:</b> 6<br><b>XP Cost:</b> 10<br><b>Activation:</b> Action<br><b>Duration:</b> Sustained<br><b>Range:</b> 12m<br><b>Keywords:</b> TELEPATHY, PSYCHIC<br><br><b>Effect:</b> You inveigle your way into the minds of your foes. Subtly, you twist and heighten their fears. While this power remains in effect, all enemies within range treat all 6s on Resolve tests as 1s.<br><br><b>Potency:</b> *[2] Enemies within range must also take a Fear test (DN 5), treating you as the source of their fear."
     },
     "mind_wipe_aoa": {
@@ -4250,7 +4250,7 @@
       "dn": "Target’s Willpower (Opposed)",
       "cost": 15,
       "source": "apocrypha",
-      "page": 275,
+      "page": 274,
       "description": "...und it is sustained.<br><br><b>Potency:</b> [1] The target also suffers 1 Shock."
     },
     "mindworm_aoa": {
@@ -4259,7 +4259,7 @@
       "dn": "Target’s Willpower",
       "cost": 15,
       "source": "apocrypha",
-      "page": 275,
+      "page": 274,
       "description": "...] +1 Mortal Wound. [1] +1 Shock. [2] The target answers one additional question."
     },
     "righteous_repugnance_aoa": {
@@ -4268,7 +4268,7 @@
       "dn": "7",
       "cost": 10,
       "source": "apocrypha",
-      "page": 275,
+      "page": 274,
       "description": "...affected ally also receives +1d on melee attacks while under the power’s effect."
     },
     "trephination_aoa": {
@@ -4277,7 +4277,7 @@
       "dn": "Target’s Resolve",
       "cost": 15,
       "source": "apocrypha",
-      "page": 275,
+      "page": 274,
       "description": "...<b>Discipline:</b> Interromancy<br><b>DN:</b> Target’s Resolve<br><b>XP Cost:</b> 15<br><b>Activation:</b> Action<br><b>Duration:</b> Instant<br><b>Range:</b> 25m<br><b>Keywords:</b> TELEPATHY, PSYCHIC<br><br><b>Effect:</b> You gather your thoughts into a white- hot spike to plunge straight into a victim’s mind, leaving the foe’s brain matter dribbling from their ears. You target one enemy with a psychic ranged attack. If hit, the target suffers 1d3 Mortal Wounds and is exhausted until the start of its next turn.<br><br><b>Potency:</b> [1] +1 Mortal Wound."
     },
     "flaming_blast_aoa": {
@@ -4286,7 +4286,7 @@
       "dn": "5",
       "cost": 8,
       "source": "apocrypha",
-      "page": 276,
+      "page": 275,
       "description": "...b>Potency:</b> [2] +1ED damage. *[2] Increase the area effected to a Blast (10)."
     },
     "fire_shield_aoa": {
@@ -4295,7 +4295,7 @@
       "dn": "5",
       "cost": 10,
       "source": "apocrypha",
-      "page": 276,
+      "page": 275,
       "description": "...On Fire.<br><br><b>Potency:</b> *[2] Increase the area effected to a Blast (10)."
     },
     "burning_hands_aoa": {
@@ -4304,7 +4304,7 @@
       "dn": "7",
       "cost": 10,
       "source": "apocrypha",
-      "page": 276,
+      "page": 275,
       "description": "...rtal (1) traits.<br><br><b>Potency:</b> [1] Your melee attacks deal +1ED damage."
     },
     "drakeskin_aoa": {
@@ -4313,7 +4313,7 @@
       "dn": "5",
       "cost": 15,
       "source": "apocrypha",
-      "page": 276,
+      "page": 275,
       "description": "...<b>Discipline:</b> Promethean<br><b>DN:</b> 5<br><b>XP Cost:</b> 15<br><b>Activation:</b> Action<br><b>Duration:</b> Sustained<br><b>Range:</b> 12m<br><b>Keywords:</b> PSYCHIC<br><br><b>Effect:</b> You summon a shimmering layer of translucent scales around your allies, harder even than the impervious hides of the great Drakes of Nocturne. Select an ally within Range. The ally gains +2 Resilience and +2 Determination while the power remains in effect.<br><br><b>Potency:</b> [2] +1 Resilience. [2] +1 Determination."
     },
     "fury_of_nocturne_aoa": {
@@ -4322,7 +4322,7 @@
       "dn": "6",
       "cost": 20,
       "source": "apocrypha",
-      "page": 277,
+      "page": 276,
       "description": "...crease DN of Agility test by +1 *[3] Increase the area effected to a Blast (20)."
     },
     "draconic_aspect_aoa": {
@@ -4331,7 +4331,7 @@
       "dn": "6",
       "cost": 15,
       "source": "apocrypha",
-      "page": 277,
+      "page": 276,
       "description": "...<b>Discipline:</b> Promethean<br><b>DN:</b> 6<br><b>XP Cost:</b> 15<br><b>Activation:</b> Action<br><b>Duration:</b> Sustained<br><b>Range:</b> Self<br><b>Keywords:</b> PSYCHIC<br><br><b>Effect:</b> Summoning the wrath of the indigenous creatures of Nocturne, you take on elements of the appearance of a great fire- breathing drake. With burning eyes and flame streaming from your nostrils, you inspire dread in your foes. The power affects all creatures in a Blast (6) within range. While this power remains in effect, all enemies within 12 metres of you add +2 to the DN of all Resolve tests they attempt.<br><br><b>Potency:</b> [2] +1 DN"
     },
     "blood_boil_aoa": {
@@ -4340,7 +4340,7 @@
       "dn": "Target’s Toughness",
       "cost": 15,
       "source": "apocrypha",
-      "page": 278,
+      "page": 277,
       "description": "... Wounds and 1d6 Shock.<br><br><b>Potency:</b> [2] +1 Mortal Wound. [1] +1 Shock."
     },
     "quickening_aoa": {
@@ -4349,7 +4349,7 @@
       "dn": "7",
       "cost": 20,
       "source": "apocrypha",
-      "page": 278,
+      "page": 277,
       "description": "...reases by +1 [3] DN reduction for Multi-Attack and Multi- Action increased by 2."
     },
     "shield_of_sanguinius_aoa": {
@@ -4358,7 +4358,7 @@
       "dn": "6",
       "cost": 10,
       "source": "apocrypha",
-      "page": 278,
+      "page": 277,
       "description": ".../b> [2] Bonus to Defence increases by +1 [1] Bonus to Resilience increases by +1"
     },
     "the_blood_lance_aoa": {
@@ -4367,7 +4367,7 @@
       "dn": "6",
       "cost": 15,
       "source": "apocrypha",
-      "page": 278,
+      "page": 277,
       "description": "...<b>Discipline:</b> Sanguinary<br><b>DN:</b> 6<br><b>XP Cost:</b> 15<br><b>Activation:</b> Action<br><b>Duration:</b> Instant<br><b>Range:</b> 25m<br><b>Keywords:</b> KINETIC, PSYCHIC<br><br><b>Effect:</b> You conjure a mighty lance, infused with his innermost rage. Hefting this empyric projectile, your hurl it with all of your psychokinetic might, sending it hurtling through the enemy ranks to maim and impale. This is a psychic ranged attack, which hits all enemies along a straight line 25m long and 1m wide, running from the psyker. Each enemy along this line suffers 1d3 mortal wounds and is staggered.<br><br><b>Potency:</b> [3] +1 Mortal Wound to each target."
     },
     "unleash_rage_aoa": {
@@ -4376,7 +4376,7 @@
       "dn": "6",
       "cost": 10,
       "source": "apocrypha",
-      "page": 279,
+      "page": 278,
       "description": "...while Frenzied. [2] The affected ally adds +1ED to melee attacks while Frenzied."
     },
     "wings_of_sanguinius_aoa": {
@@ -4385,7 +4385,7 @@
       "dn": "5",
       "cost": 10,
       "source": "apocrypha",
-      "page": 279,
+      "page": 278,
       "description": "...<b>Discipline:</b> Sanguinary<br><b>DN:</b> 5<br><b>XP Cost:</b> 10<br><b>Activation:</b> Action<br><b>Duration:</b> Sustained<br><b>Range:</b> Self<br><b>Keywords:</b> PSYCHIC<br><br><b>Effect:</b> Blood-red wings of psychic energy spring from your back, allowing you to soar across the battlefield like an avenging angel. You gain the ability to fly, with a speed equal to your normal speed plus your Psychic Mastery skill. You may immediately move as part of the action used to manifest this psychic power.<br><br><b>Potency:</b> [2] Flying Speed increases by +1"
     },
     "blasting_gale_aoa": {
@@ -4394,7 +4394,7 @@
       "dn": "6",
       "cost": 15,
       "source": "apocrypha",
-      "page": 280,
+      "page": 279,
       "description": "...[2] Targets are also knocked Prone. [2] Targets are also Hindered or Vulnerable."
     },
     "lightning_call_aoa": {
@@ -4403,7 +4403,7 @@
       "dn": "6",
       "cost": 15,
       "source": "apocrypha",
-      "page": 280,
+      "page": 279,
       "description": "...o have not been rolled for.<br><br><b>Potency:</b> [2] +1ED damage to one target"
     },
     "ride_the_winds_aoa": {
@@ -4412,7 +4412,7 @@
       "dn": "5",
       "cost": 8,
       "source": "apocrypha",
-      "page": 280,
+      "page": 279,
       "description": "...Potency:</b> [2] +1 Speed. [2] Affect additional allies equal to your Willpower."
     },
     "storm_wreathed_aoa": {
@@ -4421,7 +4421,7 @@
       "dn": "5",
       "cost": 10,
       "source": "apocrypha",
-      "page": 280,
+      "page": 279,
       "description": "...<b>Discipline:</b> Stormspeaking<br><b>DN:</b> 5<br><b>XP Cost:</b> 10<br><b>Activation:</b> Action<br><b>Duration:</b> 1 Round<br><b>Range:</b> 12m<br><b>Keywords:</b> PSYCHIC<br><br><b>Effect:</b> At your behest, the roiling clouds funnel into a furious vortex that swirls down to surround your advancing comrades. Lightning crackles around them, and leaps from their bodies to strike down the foe. If this power is successful, select a number of allies within range equal to your Willpower. If the affected allies Charge before the start of your next turn, their melee attacks gain the Inflict (Staggered) and Agonizing traits.<br><br><b>Potency:</b> [2] Affect additional allies equal to your Willpower. [2] Affected allies add +1 to their Defence."
     },
     "spirits_of_chogoris_aoa": {
@@ -4430,7 +4430,7 @@
       "dn": "5",
       "cost": 15,
       "source": "apocrypha",
-      "page": 281,
+      "page": 280,
       "description": "...cy:</b> [2] +1 DN to Fear test. *[2] Increase the area affected to a Blast (10)."
     },
     "eye_of_the_storm_aoa": {
@@ -4439,7 +4439,7 @@
       "dn": "5",
       "cost": 20,
       "source": "apocrypha",
-      "page": 281,
+      "page": 280,
       "description": "...<b>Discipline:</b> Stormspeaking<br><b>DN:</b> 5<br><b>XP Cost:</b> 20<br><b>Activation:</b> Full Action<br><b>Duration:</b> Sustained<br><b>Range:</b> 12m<br><b>Keywords:</b> PSYCHIC<br><br><b>Effect:</b> Summoning a hurricane, you become the heart of a screaming cyclone. Wherever you stride, the enemy are plucked from their feet and dashed to ruin by its elemental fury. When you use this power, and at the start of each turn you sustain it, all enemies within range must attempt a DN 4 Athletics test, adding +2 DN if they are flying. Failure means that the creature is knocked Prone and hurled 3d6 metres in a random direction; if they impact any solid object in this random move, determine damage as if they had fallen.<br><br><b>Potency:</b> [2] +1 DN to Athletics test. [1] Add +d6 metres to the distance hurled."
     },
     "blessing_of_the_machine_god_aoa": {
@@ -4448,7 +4448,7 @@
       "dn": "4",
       "cost": 10,
       "source": "apocrypha",
-      "page": 282,
+      "page": 281,
       "description": "...The vehicle’s weapons inflict +1ED damage. *[2] Activation reduced to an Action."
     },
     "objuration_mechanicum_aoa": {
@@ -4457,7 +4457,7 @@
       "dn": "6",
       "cost": 15,
       "source": "apocrypha",
-      "page": 282,
+      "page": 281,
       "description": "...wer lasts for one additional turn. [2] Increase the power’s range by +10 metres."
     },
     "fury_of_medusa_aoa": {
@@ -4466,7 +4466,7 @@
       "dn": "5",
       "cost": 15,
       "source": "apocrypha",
-      "page": 282,
+      "page": 281,
       "description": "...ts 3 Mortal Wounds.<br><br><b>Potency:</b> [2] Each enemy rolls 1 additional d6."
     },
     "psysteel_armour_aoa": {
@@ -4475,7 +4475,7 @@
       "dn": "5",
       "cost": 15,
       "source": "apocrypha",
-      "page": 282,
+      "page": 281,
       "description": "...<b>Discipline:</b> Technomancy<br><b>DN:</b> 5<br><b>XP Cost:</b> 15<br><b>Activation:</b> Action<br><b>Duration:</b> Sustained<br><b>Range:</b> 12m<br><b>Keywords:</b> PSYCHIC<br><br><b>Effect:</b> At your command, warp energy flows in streamers from thin air and winds itself around your allies, glowing like forge-hot steel. The flowing Psysteel coats the armour of nearby vehicles or else wraps fellow warriors in a second skin capable of turning aside bullet and blade alike. Select a number of visible allies within range equal to your Willpower, or a single allied vehicle you can see within range. The target adds +2 to Resilience while this power remains in effect.<br><br><b>Potency:</b> [2] +1 Resilience [2] Affects an additional number of allies equal to Willpower, or one additional vehicle."
     },
     "reforge_aoa": {
@@ -4484,7 +4484,7 @@
       "dn": "4",
       "cost": 8,
       "source": "apocrypha",
-      "page": 32,
+      "page": 282,
       "description": "...ency:</b> [1] A vehicle recovers +1 wound. *[2] Activation reduced to an Action."
     },
     "machine_flense_aoa": {
@@ -4493,7 +4493,7 @@
       "dn": "5",
       "cost": 20,
       "source": "apocrypha",
-      "page": 283,
+      "page": 282,
       "description": "...oud the Sons of Russ in a cloak of roiling clouds. SPACE WOLVES Librarians only."
     },
     "fury_of_the_wolf_spirits_aoa": {
@@ -4502,7 +4502,7 @@
       "dn": "7",
       "cost": 10,
       "source": "apocrypha",
-      "page": 283,
+      "page": 282,
       "description": "...eapon as part of this action.<br><br><b>Potency:</b> [1] Add +1ED to the weapon."
     },
     "jaws_of_the_world_wolf_aoa": {
@@ -4511,7 +4511,7 @@
       "dn": "7",
       "cost": 20,
       "source": "apocrypha",
-      "page": 283,
+      "page": 282,
       "description": "...<b>Discipline:</b> Tempestas<br><b>DN:</b> 7<br><b>XP Cost:</b> 20<br><b>Activation:</b> Full Action<br><b>Duration:</b> Instant<br><b>Range:</b> 35m<br><b>Keywords:</b> PSYCHIC<br><br><b>Effect:</b> You implore the spirit of the world upon which you walk to open its rock-fanged maw. The power affects all creatures in a Blast (6) within range. Those affected must pass an Agility test (DN 5) or suffer 1d3+2 Mortal Wounds and be knocked prone.<br><br><b>Potency:</b> [2] +1 Mortal Wound. [1] +1 DN to Agility test. *[2] Affected area is a Blast (10)."
     },
     "living_lightning_aoa": {
@@ -4520,7 +4520,7 @@
       "dn": "6",
       "cost": 15,
       "source": "apocrypha",
-      "page": 284,
+      "page": 283,
       "description": "...maining within range.<br><br><b>Potency:</b> [2] +1 Mortal Wound to each target."
     },
     "murderous_hurricane_aoa": {
@@ -4529,7 +4529,7 @@
       "dn": "5",
       "cost": 10,
       "source": "apocrypha",
-      "page": 284,
+      "page": 283,
       "description": "...s instead of 1. [1] +1 to Vulnerable effect. *[2] Affected area is a Blast (10)."
     },
     "storm_caller_aoa": {
@@ -4538,7 +4538,7 @@
       "dn": "8",
       "cost": 20,
       "source": "apocrypha",
-      "page": 284,
+      "page": 283,
       "description": "...+1 Defence. *[1] Enemies within the power’s range count as in difficult terrain."
     },
     "tempest_s_wrath_aoa": {
@@ -4547,7 +4547,7 @@
       "dn": "6",
       "cost": 10,
       "source": "apocrypha",
-      "page": 284,
+      "page": 283,
       "description": "<b>Keywords:</b> PSYCHIC"
     },
     "umbral_form_aoa": {
@@ -4556,7 +4556,7 @@
       "dn": "4",
       "cost": 10,
       "source": "apocrypha",
-      "page": 285,
+      "page": 284,
       "description": "...ce [2] +1 bonus dice to Stealth tests *[2] Activation reduced to a Simple Action"
     },
     "enveloping_darkness_aoa": {
@@ -4565,7 +4565,7 @@
       "dn": "6",
       "cost": 15,
       "source": "apocrypha",
-      "page": 285,
+      "page": 284,
       "description": "...red rating. [2] Add +1 to Vulnerable rating. *[2] Affected area is a Blast (10)."
     },
     "spectral_blade_aoa": {
@@ -4574,7 +4574,7 @@
       "dn": "4",
       "cost": 10,
       "source": "apocrypha",
-      "page": 285,
+      "page": 284,
       "description": "...<b>Discipline:</b> Umbramancy<br><b>DN:</b> 4<br><b>XP Cost:</b> 10<br><b>Activation:</b> Action<br><b>Duration:</b> Sustained<br><b>Range:</b> Self<br><b>Keywords:</b> TELEPATHY, PSYCHIC<br><br><b>Effect:</b> You implant your foes with the psychosomatic suggestion that your weapon is irresistibly sharp, striking them down with the psychic feedback of their own warped perceptions. While this power remains in effect, you add half your Willpower to the base damage of all melee attacks you make (if you’re already wielding a Force Weapon, add your entire Willpower score instead, replacing both this effect and the benefit from the Force Weapon trait). In addition, if your Willpower is higher than that of your target, then the AP of your weapon is improved to -4.<br><br><b>Potency:</b> [2] +1 ED to your melee weapon’s damage. *[2] Weapon gains the Inflict (Bleeding) trait. *[2] Activation reduced to a Simple Action"
     },
     "shadowstep_aoa": {
@@ -4583,7 +4583,7 @@
       "dn": "6",
       "cost": 20,
       "source": "apocrypha",
-      "page": 286,
+      "page": 285,
       "description": "..., as a Free Action. [2] +1 Defence to the ally until the turn after they appear."
     },
     "the_abyss_aoa": {
@@ -4592,7 +4592,7 @@
       "dn": "5",
       "cost": 20,
       "source": "apocrypha",
-      "page": 286,
+      "page": 285,
       "description": "...ou sustain this power.<br><br><b>Potency:</b> [3] Enemies suffer +1 Mortal Wound"
     },
     "the_darkness_within_aoa": {
@@ -4601,7 +4601,7 @@
       "dn": "5",
       "cost": 20,
       "source": "apocrypha",
-      "page": 286,
+      "page": 285,
       "description": "...<b>Discipline:</b> Umbramancy<br><b>DN:</b> 5<br><b>XP Cost:</b> 20<br><b>Activation:</b> Action<br><b>Duration:</b> Sustained<br><b>Range:</b> 18m<br><b>Keywords:</b> PSYCHIC<br><br><b>Effect:</b> You send your mind forth, calling not to the visible shadows surrounding your foes but rather to the fears and doubts that shadow their souls. Select a number of enemies that you can see within range equal to your Willpower. When this power is used, and at the start of each turn it is sustained, each selected enemy must pass a Resolve test (DN 4) or suffer 1d3+2 Shock.<br><br><b>Potency:</b> [1] +1 DN to Resolve test [1] +1 Shock [2] Affect an additional number of enemies equal to your Willpower."
     },
     "gaze_of_the_emperor_aoa": {
@@ -4610,7 +4610,7 @@
       "dn": "5",
       "cost": 15,
       "source": "apocrypha",
-      "page": 287,
+      "page": 286,
       "description": "...ds instead.<br><br><b>Potency:</b> [2] Roll +1 d6 for each enemy. [1] +6m range."
     },
     "mental_shackles_aoa": {
@@ -4619,7 +4619,7 @@
       "dn": "5",
       "cost": 15,
       "source": "apocrypha",
-      "page": 287,
+      "page": 286,
       "description": "...<b>Discipline:</b> Psykana<br><b>DN:</b> 5<br><b>XP Cost:</b> 15<br><b>Activation:</b> Action<br><b>Duration:</b> 1 Round<br><b>Range:</b> 18m<br><b>Keywords:</b> TELEPATHY, PSYCHIC<br><br><b>Effect:</b> You impose forbidding psychic prohibitions on the foe, causing the victims’ limbs to feel like leaden weights and miring their minds in an illusory fog. Select enemies within a Blast (6) within range. Until the start of your next turn, the affected enemies are Staggered.<br><br><b>Potency:</b> *[2] Enemies are Restrained instead of Staggered. [1] Increase Blast size by +2."
     },
     "nightshroud_aoa": {
@@ -4628,7 +4628,7 @@
       "dn": "5",
       "cost": 10,
       "source": "apocrypha",
-      "page": 288,
+      "page": 287,
       "description": "...heir Stealth Score by +1 at the start of each turn this power remains in effect."
     },
     "psychic_barrier_aoa": {
@@ -4637,7 +4637,7 @@
       "dn": "5",
       "cost": 20,
       "source": "apocrypha",
-      "page": 288,
+      "page": 287,
       "description": "... a number of dice equal to your Willpower instead of their normal Determination."
     },
     "psychic_maelstrom_aoa": {
@@ -4646,7 +4646,7 @@
       "dn": "5",
       "cost": 20,
       "source": "apocrypha",
-      "page": 288,
+      "page": 287,
       "description": "...] +1 DN [1] Blast rating is increased by +2. [2] Each target is thrown +1 metre."
     },
     "terrifying_visions_aoa": {
@@ -4655,7 +4655,7 @@
       "dn": "5",
       "cost": 20,
       "source": "apocrypha",
-      "page": 288,
+      "page": 287,
       "description": "...<b>Discipline:</b> Psykana<br><b>DN:</b> 5<br><b>XP Cost:</b> 20<br><b>Activation:</b> Action<br><b>Duration:</b> 1 Round<br><b>Range:</b> 18m<br><b>Keywords:</b> TELEPATHY, PSYCHIC<br><br><b>Effect:</b> You fill your enemies’ minds with nightmarish images and visions of torment, eroding cohesive thought and sense of duty. This affects all enemies within a Blast (6) you can see within range. Until the start of your next turn, the affected enemies add +2 DN to all Resolve tests they’re required to make.<br><br><b>Potency:</b> [2] Enemies affected are also Hindered. [1] Blast rating is increased by +2."
     },
     "psychic_fortitude_aoa": {
@@ -4664,7 +4664,7 @@
       "dn": "3",
       "cost": 10,
       "source": "apocrypha",
-      "page": 289,
+      "page": 288,
       "description": "...esolve and Conviction.<br><br><b>Potency:</b> [1] +1 Resolve. [1] +1 Conviction."
     },
     "terrify_aoa": {
@@ -4673,7 +4673,7 @@
       "dn": "Target’s Resolve",
       "cost": 20,
       "source": "apocrypha",
-      "page": 241,
+      "page": 288,
       "description": "...ctions while under the effects of Terror. [1] The enemy suffers 1 Shock as well."
     },
     "dominate_aoa": {
@@ -4682,7 +4682,7 @@
       "dn": "Target’s Conviction",
       "cost": 20,
       "source": "apocrypha",
-      "page": 289,
+      "page": 288,
       "description": "...<b>Discipline:</b> Telethesia<br><b>DN:</b> Target’s Conviction<br><b>XP Cost:</b> 20<br><b>Activation:</b> Full Action<br><b>Duration:</b> Sustained<br><b>Range:</b> 12m<br><b>Keywords:</b> TELEPATHY, PSYCHIC<br><br><b>Effect:</b> You reach into a target’s mind and assume control over their conscious thoughts, pushing them to act as you see fit. This affects a single enemy you can see within range. While the power remains in effect, when the enemy acts, you may choose the actions they take. However, enemies affected are also Exhausted. You suffer 1 Shock each round you sustain this power.<br><br><b>Potency:</b> *[3] Enemies affected may take actions freely and are not Exhausted. *[2] Instead of the normal effect, you may leave a single command within the target’s mind, which remains for a number of days equal to your Willpower. This version of the power is not Sustained. You choose a single action the target is compelled to take, and the specific conditions which they will take that action. The target will not remember being given the command until after they have performed the action. [1] +1 bonus die on a single action taken by the target."
     },
     "mental_interrogation_aoa": {
@@ -4691,7 +4691,7 @@
       "dn": "Target’s Conviction",
       "cost": 20,
       "source": "apocrypha",
-      "page": 290,
+      "page": 289,
       "description": "...gotten, or which had been forcibly hidden. These questions inflict 2 Shock each."
     },
     "psychic_pursuit_aoa": {
@@ -4700,7 +4700,7 @@
       "dn": "6",
       "cost": 15,
       "source": "apocrypha",
-      "page": 290,
+      "page": 289,
       "description": "...t’s maximum Wounds and Shock are reduced by 1. [1] Duration increased by +1 day."
     },
     "castigation_aoa": {
@@ -4709,7 +4709,7 @@
       "dn": "Target’s Conviction",
       "cost": 25,
       "source": "apocrypha",
-      "page": 290,
+      "page": 289,
       "description": "...<b>Discipline:</b> Telethesia<br><b>DN:</b> Target’s Conviction<br><b>XP Cost:</b> 25<br><b>Activation:</b> Action<br><b>Duration:</b> Instant<br><b>Range:</b> 18m<br><b>Keywords:</b> TELEPATHY, PSYCHIC<br><br><b>Effect:</b> Your foes are wracked with intense psychic pain, due punishment for their sin of existence. Select an enemy you can see within range. If the power is successful, the target suffers 1d3+3 Shock and is knocked Prone.<br><br><b>Potency:</b> [2] Enemies affected are also Hindered. [1] +1 Shock."
     },
     "scourging_aoa": {
@@ -4718,7 +4718,7 @@
       "dn": "Target’s Conviction",
       "cost": 15,
       "source": "apocrypha",
-      "page": 291,
+      "page": 290,
       "description": "...he duration is increased by +1 Round. [1] The Hindered effect is increased by 1."
     },
     "psychic_veil_aoa": {
@@ -4727,7 +4727,7 @@
       "dn": "4",
       "cost": 10,
       "source": "apocrypha",
-      "page": 291,
+      "page": 290,
       "description": ".../b> [1] Stealth Score increased by +1 [2] The duration is increased by +1 Round."
     },
     "warding_incantation_aoa": {
@@ -4736,7 +4736,7 @@
       "dn": "5",
       "cost": 15,
       "source": "apocrypha",
-      "page": 291,
+      "page": 290,
       "description": "...<b>Discipline:</b> Telethesia<br><b>DN:</b> 5<br><b>XP Cost:</b> 15<br><b>Activation:</b> Action<br><b>Duration:</b> 1 Round<br><b>Range:</b> 12m<br><b>Keywords:</b> PSYCHIC<br><br><b>Effect:</b> You chant a protective invocation, raising a wall of adjuratory empyric wards around your allies. Select a number of allies you can see within range equal to your Willpower. Until the start of your next turn, affected allies add +3 to their Resilience, and may roll Determination against Mortal Wounds.<br><br><b>Potency:</b> [2] The duration is increased by +1 Round. [1] +1 Resilience. *[1] Affected allies attacked by DAEMONS may re-roll any dice which roll a 1 on their Determination rolls."
     },
     "banishment_aoa": {
@@ -4745,7 +4745,7 @@
       "dn": "Target’s Willpower",
       "cost": 25,
       "source": "apocrypha",
-      "page": 267,
+      "page": 291,
       "description": "...e warp.<br><br><b>Potency:</b> [1] +1 Mortal Wound. *[1] The target is Hindered."
     },
     "rebuke_the_mutant_aoa": {
@@ -4754,7 +4754,7 @@
       "dn": "3",
       "cost": 10,
       "source": "apocrypha",
-      "page": 292,
+      "page": 291,
       "description": "...><b>Potency:</b> [1] +1 DN to the Fear test. [2] Targets suffer +1 Mortal Wound."
     },
     "sanctuary_theosophamy_aoa": {
@@ -4763,7 +4763,7 @@
       "dn": "5",
       "cost": 15,
       "source": "apocrypha",
-      "page": 268,
+      "page": 291,
       "description": "...<b>Discipline:</b> Theosophamy<br><b>DN:</b> 5<br><b>XP Cost:</b> 15<br><b>Activation:</b> Action<br><b>Duration:</b> Sustained<br><b>Range:</b> Self<br><b>Keywords:</b> PSYCHIC<br><br><b>Effect:</b> By tapping into the various breaches and cracks that exist in the real world, you are able to wrap yourself within tendrils of warp energy and use them to gird yourself against harm. While this power remains in effect, an enemy who wishes to target you with a ranged attack or move within 3m of you must pass a DN 3 Willpower test; if they fail, they forgo their turn as the power holds them at bay. Further, you may roll Determination against Mortal Wounds while this power remains in effect. The effect ends instantly when you make a ranged attack.<br><br><b>Potency:</b> *[2] The power affects you and all allies you can see within 5m. [1] Willpower test has +1 DN."
     },
     "seal_the_breach_aoa": {
@@ -4772,7 +4772,7 @@
       "dn": "6",
       "cost": 15,
       "source": "apocrypha",
-      "page": 293,
+      "page": 292,
       "description": "...is increased to Willpower x 10m. [1] +1 DN to Psychic Mastery tests for PSYKERS."
     },
     "soul_of_adamantium_aoa": {
@@ -4781,7 +4781,7 @@
       "dn": "3",
       "cost": 10,
       "source": "apocrypha",
-      "page": 293,
+      "page": 292,
       "description": "...ts which use your Willpower or your Resolve as their DN increase their DN by +1."
     },
     "warp_weapon_aoa": {
@@ -4790,7 +4790,7 @@
       "dn": "4",
       "cost": 15,
       "source": "apocrypha",
-      "page": 293,
+      "page": 292,
       "description": "...<b>Discipline:</b> Theosophamy<br><b>DN:</b> 4<br><b>XP Cost:</b> 15<br><b>Activation:</b> Simple Action<br><b>Duration:</b> 1 Round<br><b>Range:</b> Touch<br><b>Keywords:</b> PSYCHIC<br><br><b>Effect:</b> Your undying faith in the God-Emperor allows you to perform amazing feats that can normally only be performed by warp entities. By tapping into the flow of warp energy that passes through the Materium, you use your faith to imbue a single melee weapon with aethyric power. Until the end of your next turn, one melee weapon you hold in your grasp gains the Blessed (1) and Warp Weapon traits.<br><br><b>Potency:</b> *[1] Increase Blessed rating to 2 [1] The power’s effects last +1 Round."
     },
     "a_cloud_in_the_warp_aoa": {
@@ -4799,7 +4799,7 @@
       "dn": "3",
       "cost": 10,
       "source": "apocrypha",
-      "page": 294,
+      "page": 293,
       "description": "... affects you and any allies within a distance equal to your Willpower in metres."
     },
     "aether_doldrums_aoa": {
@@ -4808,7 +4808,7 @@
       "dn": "5",
       "cost": 15,
       "source": "apocrypha",
-      "page": 294,
+      "page": 293,
       "description": "...<b>Discipline:</b> Navigator<br><b>DN:</b> 5<br><b>XP Cost:</b> 15<br><b>Activation:</b> Action<br><b>Duration:</b> 1 Round<br><b>Range:</b> Self<br><b>Keywords:</b> NAVIS NOBILITE, PSYCHIC<br><br><b>Effect:</b> A skilled Navigator can mark a point of calm in even the most tumultuous Warp storm. On a smaller scale, they can also find a stillness in the flows of the Immaterium, dampening psychic powers and even repelling the daemonic. You cause an area of calm Warp centred on you, with a radius equal to your Intellect in metres, which lasts until the start of your next turn. Psychic powers used by PSYKERS within that area, or targeted within that area, increase their DN by +2. DAEMONS must pass a DN 5 Resolve test if they attempt to enter the area; if they fail, they stop at the edge and are Staggered. When this power’s effect ends, you suffer 1d3+1 Shock.<br><br><b>Potency:</b> [1] +1 DN to Psychic Powers. [1] +1 DN to DAEMON Resolve tests. [2] This power lasts +1 Round. *[2] DAEMONS which fail their Resolve test also suffer 1d3 Mortal Wounds."
     },
     "baleful_watcher_aoa": {
@@ -4817,7 +4817,7 @@
       "dn": "Target’s Conviction",
       "cost": 15,
       "source": "apocrypha",
-      "page": 295,
+      "page": 294,
       "description": "... must answer truthfully.<br><br><b>Potency:</b> [1] Ask one additional question."
     },
     "ebb_and_flow_aoa": {
@@ -4826,7 +4826,7 @@
       "dn": "Target’s Willpower",
       "cost": 20,
       "source": "apocrypha",
-      "page": 258,
+      "page": 294,
       "description": "...3] On the first turn after the target is affected, they cannot take any actions."
     },
     "evil_eye_aoa": {
@@ -4835,7 +4835,7 @@
       "dn": "Target’s Willpower",
       "cost": 10,
       "source": "apocrypha",
-      "page": 295,
+      "page": 294,
       "description": "...<b>Discipline:</b> Navigator<br><b>DN:</b> Target’s Willpower<br><b>XP Cost:</b> 10<br><b>Activation:</b> Action<br><b>Duration:</b> 1d6 Days<br><b>Range:</b> 5m<br><b>Keywords:</b> NAVIS NOBILITE, PSYCHIC<br><br><b>Effect:</b> On many worlds, three-eyed mutants who can peer into your soul are thought of as bogey-men to scare children into obedience and people whisper that they are a tainted breed that can curse good, Emperor-fearing citizens with a glance. These legends contain a seed of truth, for techniques exist which cause their victims to attract malign entities to plague their mind and soul. Select a single enemy you can see within range. While this power remains in effect, the target is Hindered and suffers a Complication on any Wrath die which rolls 1, 2, or 3. This power lasts until the duration expires, or until the target creature spends 1 Wrath (or the GM spends 1 Ruin if the target is an NPC). You may not have more than one foe cursed by this power at any time.<br><br><b>Potency:</b> [1] +1 to Hindered condition. [2] A PSYKER affected adds +10 to all rolls on the Perils of the Warp table."
     },
     "eye_of_oblivion_aoa": {
@@ -4844,7 +4844,7 @@
       "dn": "4",
       "cost": 15,
       "source": "apocrypha",
-      "page": 296,
+      "page": 295,
       "description": "... The target may not roll Determination against an attack affected by this power."
     },
     "foreshadowing_aoa": {
@@ -4853,7 +4853,7 @@
       "dn": "4",
       "cost": 20,
       "source": "apocrypha",
-      "page": 296,
+      "page": 295,
       "description": "...<b>Discipline:</b> Navigator<br><b>DN:</b> 4<br><b>XP Cost:</b> 20<br><b>Activation:</b> Action<br><b>Duration:</b> 1 Round<br><b>Range:</b> Self<br><b>Keywords:</b> NAVIS NOBILITE, PSYCHIC<br><br><b>Effect:</b> By using your eye to filter small secrets from the near future, you can choose to make slight adjustments to his actions to avoid harm and manipulate the course of events. Choosing to dig too deeply into the future for secrets may leave you vulnerable to the Warp’s deceptions, however. If the power is successful, you may draw three secrets from the future. At any point before the end of your next turn, you may spend each secret to select a single d6 that has just been rolled—by any character—and change the result to any number. However, each die which you change to a 6 allows the GM to change a single d6 roll to a 1 later in the same scene. Similarly, each die which you change to a 1 allows the GM to change a single d6 roll to a 6 later in the scene.<br><br><b>Potency:</b> [1] The power lasts +1 round. [1] You draw one additional secret."
     },
     "gaze_into_the_abyss_aoa": {
@@ -4862,7 +4862,7 @@
       "dn": "4",
       "cost": 10,
       "source": "apocrypha",
-      "page": 297,
+      "page": 296,
       "description": "...are of any use of psychic powers within a distance of your Intellect x10 metres."
     },
     "held_in_my_gaze_aoa": {
@@ -4871,7 +4871,7 @@
       "dn": "Target’s Willpower",
       "cost": 20,
       "source": "apocrypha",
-      "page": 297,
+      "page": 296,
       "description": "...d3 Shock.<br><br><b>Potency:</b> [1] Increase the range to 10x Intellect metres."
     },
     "inward_view_aoa": {
@@ -4880,7 +4880,7 @@
       "dn": "4",
       "cost": 15,
       "source": "apocrypha",
-      "page": 297,
+      "page": 296,
       "description": "...<b>Discipline:</b> Navigator<br><b>DN:</b> 4<br><b>XP Cost:</b> 15<br><b>Activation:</b> Five Minutes<br><b>Duration:</b> 1 Hour<br><b>Range:</b> Self<br><b>Keywords:</b> NAVIS NOBILITE, PSYCHIC<br><br><b>Effect:</b> There are many myths about the “third eye” into the soul, their origins supposedly harking from Ancient Terra. The Navis Nobilite know that such stories are not wholly myth, and they understand that it is entirely possible to discover hidden knowledge through particular forms of introspective meditation. If this power is successful, you immediately recover 1d3+2 Shock, and add +2 bonus dice to the first Investigation or Scholar test you attempt during the power’s duration. You may use this power as part of a Regroup. Once you have used this power, you may not use it again until after you have taken a Respite.<br><br><b>Potency:</b> [1] Recover +1 Shock. [1] Increase duration by +1 hour. *[2] You may use the bonus dice on Psychic Mastery tests."
     },
     "pass_unscathed_aoa": {
@@ -4889,7 +4889,7 @@
       "dn": "6",
       "cost": 20,
       "source": "apocrypha",
-      "page": 298,
+      "page": 297,
       "description": "...asts.<br><br><b>Potency:</b> [1] The power’s duration is increased by +1 minute."
     },
     "seek_the_path_aoa": {
@@ -4898,7 +4898,7 @@
       "dn": "4",
       "cost": 15,
       "source": "apocrypha",
-      "page": 298,
+      "page": 297,
       "description": "...</b> [1] The power grants an additional bonus die. [1] The power lasts +1 round."
     },
     "the_course_untravelled_aoa": {
@@ -4907,7 +4907,7 @@
       "dn": "6",
       "cost": 20,
       "source": "apocrypha",
-      "page": 298,
+      "page": 297,
       "description": "...our Intellect in metres. *[2] The power can now be activated as a Simple Action."
     },
     "the_lidless_stare_aoa": {
@@ -4916,7 +4916,7 @@
       "dn": "Target’s Willpower",
       "cost": 0,
       "source": "apocrypha",
-      "page": 294,
+      "page": 297,
       "description": "...<b>Discipline:</b> Navigator<br><b>DN:</b> Target’s Willpower<br><b>XP Cost:</b> 0<br><b>Activation:</b> Action<br><b>Duration:</b> Instant<br><b>Range:</b> 18m<br><b>Keywords:</b> NAVIS NOBILITE, PSYCHIC<br><br><b>Effect:</b> If you open your warp eye fully, anyone gazing into its depths will witness the power and mind-breaking unreality of the Warp. In an instant, they witness the chaos boiling beneath the skin of existence. For many, it is the last thing they see. Select a single enemy you can see (and who can see you) within range. This is a Gaze Power. The target immediately suffers 1d3+1 Mortal Wounds and suffers the Fear condition. After this power is used, you suffer 1d3+1 Shock.<br><br><b>Potency:</b> [2] +1 Mortal Wound"
     },
     "tides_of_time_and_space_aoa": {
@@ -4925,7 +4925,7 @@
       "dn": "5",
       "cost": 25,
       "source": "apocrypha",
-      "page": 299,
+      "page": 298,
       "description": "...y Keep the Initiative without spending Glory once while this power is in effect."
     },
     "tracks_in_the_stars_aoa": {
@@ -4934,7 +4934,7 @@
       "dn": "3",
       "cost": 10,
       "source": "apocrypha",
-      "page": 299,
+      "page": 298,
       "description": "...u may track a ship's trail if it is no older than years equal to your Intellect."
     },
     "vision_of_hell_aoa": {
@@ -4943,7 +4943,7 @@
       "dn": "Target’s Resolve",
       "cost": 20,
       "source": "apocrypha",
-      "page": 299,
+      "page": 298,
       "description": "... you suffer 1d3+2 Shock.<br><br><b>Potency:</b> [1] The target suffers +1 Shock."
     },
     "void_watcher_aoa": {
@@ -4952,7 +4952,7 @@
       "dn": "3",
       "cost": 20,
       "source": "apocrypha",
-      "page": 299,
+      "page": 298,
       "description": "... spaceborne object you’ve detected. The GM must answer this question truthfully."
     },
     "warp_vigil_aoa": {
@@ -4961,7 +4961,7 @@
       "dn": "4",
       "cost": 15,
       "source": "apocrypha",
-      "page": 300,
+      "page": 299,
       "description": "...<b>Discipline:</b> Navigator<br><b>DN:</b> 4<br><b>XP Cost:</b> 15<br><b>Activation:</b> Full Action<br><b>Duration:</b> 1 Scene<br><b>Range:</b> Self<br><b>Keywords:</b> NAVIS NOBILITE, PSYCHIC<br><br><b>Effect:</b> Navigators must be ever watchful for danger when guiding a vessel through the Warp and be capable of reacting at a moment’s notice to the caprices of the Immaterium. While this power remains in effect, you increase your Defence by +2, and you may take two reflexive actions per round instead of one.<br><br><b>Potency:</b> [1] +1 Defence *[2] Each time an attack misses you, you may move up to your Speed as a Reflexive Action."
     },
     "death_hex_aoa": {
@@ -4970,7 +4970,7 @@
       "dn": "7",
       "cost": 15,
       "source": "apocrypha",
-      "page": 301,
+      "page": 300,
       "description": "...2] The area affected is a Blast (10). [1] -1 Resilience to the affected enemies."
     },
     "gift_of_chaos_aoa": {
@@ -4979,7 +4979,7 @@
       "dn": "Target’s Toughness",
       "cost": 25,
       "source": "apocrypha",
-      "page": 301,
+      "page": 300,
       "description": "... instead of dying.<br><br><b>Potency:</b> [2] +1 Mortal Wound and +1 Corruption."
     },
     "diabolic_strength_aoa": {
@@ -4988,7 +4988,7 @@
       "dn": "5",
       "cost": 15,
       "source": "apocrypha",
-      "page": 301,
+      "page": 300,
       "description": "...<b>Discipline:</b> Dark Hereticus<br><b>DN:</b> 5<br><b>XP Cost:</b> 15<br><b>Activation:</b> Action<br><b>Duration:</b> Sustained<br><b>Range:</b> 12m<br><b>Keywords:</b> CHAOS, PSYCHIC<br><br><b>Effect:</b> The unholy energies of Chaos course through the recipient, swelling their frame with the strength to tear tanks asunder. Select an ally with the CHAOS keyword within range. The ally’s Strength is increased by +4, and they receive +2 bons dice on melee attacks, while this power remains in effect.<br><br><b>Potency:</b> [2] +1 Strength [1] +1ED to the affected ally’s melee damage."
     },
     "warptime_aoa": {
@@ -4997,7 +4997,7 @@
       "dn": "5",
       "cost": 20,
       "source": "apocrypha",
-      "page": 302,
+      "page": 301,
       "description": "...p to your Speed.<br><br><b>Potency:</b> [1] +1 Speed to all affected characters."
     },
     "weaver_of_fates_aoa": {
@@ -5006,7 +5006,7 @@
       "dn": "6",
       "cost": 15,
       "source": "apocrypha",
-      "page": 302,
+      "page": 301,
       "description": "...al to your Willpower [1] +1 Resilience [2] +1 bonus dice on Determination rolls."
     },
     "miasma_of_pestilence_aoa": {
@@ -5015,7 +5015,7 @@
       "dn": "6",
       "cost": 15,
       "source": "apocrypha",
-      "page": 302,
+      "page": 301,
       "description": "...</b> *[2] Affect an additional number of affected allies equal to your Willpower"
     },
     "delightful_agonies_aoa": {
@@ -5024,7 +5024,7 @@
       "dn": "6",
       "cost": 15,
       "source": "apocrypha",
-      "page": 302,
+      "page": 301,
       "description": "Those whose minds are touched by the Sorcerer's caress are wracked by waves of exquisite pain, and the real injuries of battle are trivial by comparison. Select a number of allies with the SLAANESH keyword within range equal to your Willpower. Until the start of your next turn, the affected allies may roll Determination against Mortal Wounds, and do not suffer any Shock when they roll Determination—each Icon rolled simply negates a Wound or Mortal Wound."
     },
     "baleful_devolution_aoa": {
@@ -5033,7 +5033,7 @@
       "dn": "7",
       "cost": 15,
       "source": "apocrypha",
-      "page": 304,
+      "page": 303,
       "description": "...ortal Wound when they first transform. [2] Increase the size of the Blast by +2."
     },
     "cacodaemonic_curse_aoa": {
@@ -5042,7 +5042,7 @@
       "dn": "5",
       "cost": 15,
       "source": "apocrypha",
-      "page": 304,
+      "page": 303,
       "description": "...*[2] Affected weapons suffer a complication on any Wrath die roll of 1, 2, or 3."
     },
     "doombolt_aoa": {
@@ -5051,7 +5051,7 @@
       "dn": "Target’s Defence",
       "cost": 20,
       "source": "apocrypha",
-      "page": 304,
+      "page": 303,
       "description": "...<b>Discipline:</b> Discipline of Change<br><b>DN:</b> Target’s Defence<br><b>XP Cost:</b> 20<br><b>Activation:</b> Action<br><b>Duration:</b> Instant<br><b>Range:</b> 18m<br><b>Keywords:</b> CHAOS, TZEENTCH, PSYCHIC<br><br><b>Effect:</b> You hurl a bolt of roiling energy that horribly twists its target into abhorrent and mutated new shapes. This is a psychic ranged attack, which targets the nearest enemy within range and line of sight and inflicts Willpower +9 +3ED damage with an AP of -2 and has the Agonizing and Corrupting traits.<br><br><b>Potency:</b> [1] +1ED."
     },
     "glamour_of_tzeentch_aoa": {
@@ -5060,7 +5060,7 @@
       "dn": "5",
       "cost": 20,
       "source": "apocrypha",
-      "page": 305,
+      "page": 304,
       "description": "...otency:</b> [2] +1 Defence. [1] Affected allies add +1 die to all Stealth tests."
     },
     "perplex_aoa": {
@@ -5069,7 +5069,7 @@
       "dn": "6",
       "cost": 20,
       "source": "apocrypha",
-      "page": 305,
+      "page": 304,
       "description": "... than 25m away.<br><br><b>Potency:</b> [2] Increase the size of the Blast by +2."
     },
     "pyric_flux_aoa": {
@@ -5078,7 +5078,7 @@
       "dn": "4",
       "cost": 10,
       "source": "apocrypha",
-      "page": 305,
+      "page": 304,
       "description": "... gain +2ED.<br><br><b>Potency:</b> [1] Affected weapons gain an additional +1ED."
     },
     "temporal_manipulation_aoa": {
@@ -5087,7 +5087,7 @@
       "dn": "4",
       "cost": 20,
       "source": "apocrypha",
-      "page": 305,
+      "page": 304,
       "description": "...<b>Discipline:</b> Discipline of Change<br><b>DN:</b> 4<br><b>XP Cost:</b> 20<br><b>Activation:</b> Full Action<br><b>Duration:</b> Instant<br><b>Range:</b> 12m<br><b>Keywords:</b> CHAOS, TZEENTCH, PSYCHIC<br><br><b>Effect:</b> Fashioning a pocket of dilated time around an injured ally, the psyker accelerates the rate at which their flesh reknits. Select a single CHAOS ally within range and line of sight: that ally immediately regains wounds equal to your Intellect.<br><br><b>Potency:</b> [2] The ally regains +1 Wound. [1] The ally regains 1 Shock."
     },
     "tzeentch_s_firestorm_aoa": {
@@ -5096,7 +5096,7 @@
       "dn": "Target’s Defence",
       "cost": 15,
       "source": "apocrypha",
-      "page": 306,
+      "page": 305,
       "description": "...<b>Discipline:</b> Discipline of Change<br><b>DN:</b> Target’s Defence<br><b>XP Cost:</b> 15<br><b>Activation:</b> Action<br><b>Duration:</b> Instant<br><b>Range:</b> 18m<br><b>Keywords:</b> CHAOS, TZEENTCH, PSYCHIC, FIRE<br><br><b>Effect:</b> You conjure a raging storm of pink and blue fire down from the skies, that mutates your foes and leaves capering daemons that claw and bite in its wake. This targets an enemy within range and line of sight. If successful, roll nine d6. For each Icon rolled, the target suffers 1 Mortal Wound. For each Exalted Icon rolled, the target suffers 1d3 Mortal Wounds.<br><br><b>Potency:</b> *[3] Increase the number rolled on each d6 by 1 (i.e., a roll of 3 or 4 is an Icon, while a 5 or 6 is an Exalted Icon). [1] If a target is killed by damage from this power, a single Pink Horror of Tzeentch is summoned, appearing on the same spot as the slain target. Weaver of Fates This is identical to the power of the same name in the Dark Hereticus discipline."
     },
     "crushing_orb_aoa": {
@@ -5105,7 +5105,7 @@
       "dn": "Target’s Strength",
       "cost": 10,
       "source": "apocrypha",
-      "page": 307,
+      "page": 306,
       "description": "... Wound and the Restrained condition.<br><br><b>Potency:</b> [2] +1 Mortal Wound."
     },
     "fateful_divergence_aoa": {
@@ -5114,7 +5114,7 @@
       "dn": "3",
       "cost": 10,
       "source": "apocrypha",
-      "page": 307,
+      "page": 306,
       "description": "...y:</b> [1] The target may re-roll one additional die during this power’s effect."
     },
     "focus_will_aoa": {
@@ -5123,7 +5123,7 @@
       "dn": "5",
       "cost": 10,
       "source": "apocrypha",
-      "page": 307,
+      "page": 306,
       "description": "...<b>Discipline:</b> Runes of Fortune<br><b>DN:</b> 5<br><b>XP Cost:</b> 10<br><b>Activation:</b> Action<br><b>Duration:</b> 1 Round<br><b>Range:</b> 6m<br><b>Keywords:</b> AELDARI, PSYCHIC<br><br><b>Effect:</b> You channel your mind to aid a fellow seer. You select a single Psyker within range. Whenever the target attempts a Psychic Mastery test before the end of their next turn, they may add +1 bonus dice to their test, or +2 bonus dice if they have the ASURYANI keyword.<br><br><b>Potency:</b> [1] The target may add an additional +1d to their Psychic Mastery test."
     },
     "ghostwalk_aoa": {
@@ -5132,7 +5132,7 @@
       "dn": "5",
       "cost": 10,
       "source": "apocrypha",
-      "page": 308,
+      "page": 307,
       "description": "...fect one additional target. [2] The targets’ Speed is increased by a further +1."
     },
     "impair_senses_aoa": {
@@ -5141,7 +5141,7 @@
       "dn": "5",
       "cost": 10,
       "source": "apocrypha",
-      "page": 308,
+      "page": 307,
       "description": "...ffected is a Blast (10). [1] An additional +1DN to the targets’ Awareness tests."
     },
     "witch_strike_aoa": {
@@ -5150,7 +5150,7 @@
       "dn": "3",
       "cost": 10,
       "source": "apocrypha",
-      "page": 308,
+      "page": 307,
       "description": "...<b>Discipline:</b> Runes of Fortune<br><b>DN:</b> 3<br><b>XP Cost:</b> 10<br><b>Activation:</b> Simple Action<br><b>Duration:</b> 1 Round<br><b>Range:</b> Self<br><b>Keywords:</b> AELDARI, PSYCHIC<br><br><b>Effect:</b> Focusing a still greater portion of your power into your weapon, each strike blasts foes with potent aetheric energies. Until the start of your next turn, you add +2ED to the damage of one melee weapon you are wielding which has the Force trait.<br><br><b>Potency:</b> [2] An additional +1ED."
     },
     "vaul_s_song_aoa": {
@@ -5159,7 +5159,7 @@
       "dn": "5",
       "cost": 10,
       "source": "apocrypha",
-      "page": 309,
+      "page": 308,
       "description": "...d instantly.<br><br><b>Potency:</b> [1] +1 Wounds (vehicle or wraith-construct)."
     },
     "webway_step_aoa": {
@@ -5168,7 +5168,7 @@
       "dn": "6",
       "cost": 20,
       "source": "apocrypha",
-      "page": 309,
+      "page": 308,
       "description": "...y who is within 3m of you when the power is used. [2] Increase the range by 25m."
     },
     "wraithtomb_aoa": {
@@ -5177,7 +5177,7 @@
       "dn": "7",
       "cost": 15,
       "source": "apocrypha",
-      "page": 309,
+      "page": 308,
       "description": "...<b>Discipline:</b> Runes of Shaping<br><b>DN:</b> 7<br><b>XP Cost:</b> 15<br><b>Activation:</b> Action<br><b>Duration:</b> Sustained<br><b>Range:</b> 10m<br><b>Keywords:</b> AELDARI, PSYCHIC<br><br><b>Effect:</b> You conjure and weave a tangle of wraithvines, psychic constructs that take the form of thorny tendrils which enwrap themselves around the target. Though they will not remain coherent without wraithbone or psychocrystal to make the structure tangible, the vines are solid enough for the moment. This power targets a single creature, vehicle, or structure within range. If a creature or vehicle, the target is restrained and hindered (3) while the power remains in effect. If a structure is the target, then the wraithvines wrap themselves around and into the structure in a manner determined by the Bonesinger and the GM: it may seal over or force open doors, ensnare and shut down automated defences, create a climbable surface, or something similar.<br><br><b>Potency:</b> [1] Hindered condition increases by +1"
     },
     "doom_aoa": {
@@ -5186,7 +5186,7 @@
       "dn": "6",
       "cost": 25,
       "source": "apocrypha",
-      "page": 202,
+      "page": 309,
       "description": "...ge roll.<br><br><b>Potency:</b> *[2] The area affected is a Blast (10). [1] +1ED"
     },
     "eldritch_storm_aoa": {
@@ -5195,7 +5195,7 @@
       "dn": "6",
       "cost": 30,
       "source": "apocrypha",
-      "page": 310,
+      "page": 309,
       "description": "...pon traits.<br><br><b>Potency:</b> [1] The size of the Blast is increased by +5."
     },
     "executioner_aoa": {
@@ -5204,7 +5204,7 @@
       "dn": "6",
       "cost": 30,
       "source": "apocrypha",
-      "page": 250,
+      "page": 309,
       "description": "...er of hits equal to your Willpower.<br><br><b>Potency:</b> [1] +1ED to each hit."
     },
     "fortune_aoa": {
@@ -5213,7 +5213,7 @@
       "dn": "6",
       "cost": 30,
       "source": "apocrypha",
-      "page": 4,
+      "page": 309,
       "description": "...<b>Discipline:</b> Runes of Fate<br><b>DN:</b> 6<br><b>XP Cost:</b> 30<br><b>Activation:</b> Action<br><b>Duration:</b> 1 Round<br><b>Range:</b> 50m<br><b>Keywords:</b> AELDARI, PSYCHIC<br><br><b>Effect:</b> You scry possible futures to foresee imminent danger, then aid your allies in avoiding it. The terrors of the warp recoil from your mind, while shots pass through thin air where Asuryani warriors stood a moment before. Select a number of allies equal to your Willpower within range. Until the start of your next turn, when they roll Determination, they roll a number of dice equal to your Intellect, and each Icon rolled negates a single Wound or Mortal Wound, rather than converting Wounds into Shock.<br><br><b>Potency:</b> [1] Affect one extra ally."
     },
     "guide_aoa": {
@@ -5222,7 +5222,7 @@
       "dn": "6",
       "cost": 25,
       "source": "apocrypha",
-      "page": 11,
+      "page": 310,
       "description": "...><br><b>Potency:</b> [1] +1 bonus dice to the ranged attacks of affected allies."
     },
     "mindwar_aoa": {
@@ -5231,7 +5231,7 @@
       "dn": "Target’s Willpower (opposed)",
       "cost": 25,
       "source": "apocrypha",
-      "page": 311,
+      "page": 310,
       "description": "...se the use of one psychic power they know (your choice) until they next Regroup."
     },
     "will_of_asuryan_aoa": {
@@ -5240,7 +5240,7 @@
       "dn": "4",
       "cost": 20,
       "source": "apocrypha",
-      "page": 311,
+      "page": 310,
       "description": "...<b>Discipline:</b> Runes of Fate<br><b>DN:</b> 4<br><b>XP Cost:</b> 20<br><b>Activation:</b> Action<br><b>Duration:</b> 1 Round<br><b>Range:</b> 12m<br><b>Keywords:</b> AELDARI, TELEPATHY, PSYCHIC<br><br><b>Effect:</b> Sensing an approaching crux of destiny, you summon the certainty and confidence of ancient days. Doubt and fear are washed away, and those nearby gain impervious resolve from this indomitable aura. All friendly characters with the AELDARI keyword within range will automatically pass all Resolve tests and are immune to fear, terror, and intimidation-based Interaction attacks until the start of the Farseer’s next turn. In addition, you may Deny the Witch as a Reflexive Action in response to an enemy psychic power used within 25m of you once before their next turn.<br><br><b>Potency:</b> *[2] Affected allies also automatically pass Conviction tests. [1] You gain +1 bonus dice on Psychic Mastery tests to Deny the Witch."
     },
     "fog_of_dreams_aoa": {
@@ -5249,7 +5249,7 @@
       "dn": "5",
       "cost": 20,
       "source": "apocrypha",
-      "page": 201,
+      "page": 311,
       "description": "...ncy:</b> *[2] The area affected is a Blast (10). [1] DN penalty increases by +1."
     },
     "mirror_of_minds_aoa": {
@@ -5258,7 +5258,7 @@
       "dn": "6",
       "cost": 25,
       "source": "apocrypha",
-      "page": 312,
+      "page": 311,
       "description": "...ain. Each target after the first requires this potency option be selected again."
     },
     "shards_of_light_aoa": {
@@ -5267,7 +5267,7 @@
       "dn": "7",
       "cost": 20,
       "source": "apocrypha",
-      "page": 201,
+      "page": 311,
       "description": "...ncy:</b> *[2] The area affected is a Blast (10). [2] +1 Mortal Wound per target."
     },
     "twilight_pathways_aoa": {
@@ -5276,7 +5276,7 @@
       "dn": "6",
       "cost": 15,
       "source": "apocrypha",
-      "page": 312,
+      "page": 311,
       "description": "...<b>Discipline:</b> Phantasmancy<br><b>DN:</b> 6<br><b>XP Cost:</b> 15<br><b>Activation:</b> Action<br><b>Duration:</b> Instant<br><b>Range:</b> 5m<br><b>Keywords:</b> AELDARI, PSYCHIC<br><br><b>Effect:</b> Eerie half-lit tunnels blink into existence, opening new paths of manoeuvre and attack. You and any number of allies within range may immediately move up to your Speed.<br><br><b>Potency:</b> [2] +1 Speed to all affected characters."
     },
     "veil_of_tears_aoa": {
@@ -5285,7 +5285,7 @@
       "dn": "6",
       "cost": 15,
       "source": "apocrypha",
-      "page": 201,
+      "page": 312,
       "description": "... Affected allies gain +1d on Stealth tests. [2] Affected allies gain +1 Defence."
     },
     "webway_dance_aoa": {
@@ -5294,7 +5294,7 @@
       "dn": "6",
       "cost": 25,
       "source": "apocrypha",
-      "page": 313,
+      "page": 312,
       "description": "...<b>Discipline:</b> Phantasmancy<br><b>DN:</b> 6<br><b>XP Cost:</b> 25<br><b>Activation:</b> Action<br><b>Duration:</b> 1 Round<br><b>Range:</b> 12m<br><b>Keywords:</b> AELDARI, PSYCHIC<br><br><b>Effect:</b> The veil between realspace and the Webway grows thin, allowing Harlequins to jink away from danger in directions that shouldn’t exist, only to reappear unharmed moments later. Until the start of your next turn, you and any allies within range may roll Determination without suffering Shock—Icons rolled simply negate Wounds instead.<br><br><b>Potency:</b> *[3] Whenever an ally rolls Determination, they may move up to half their speed afterwards. *[2] Whenever an ally rolls Determination, they may use their Agility instead of their Toughness for the roll. [2] +1 bonus dice on all Determination rolls for affected characters."
     },
     "ancestor_s_grace_aoa": {
@@ -5303,7 +5303,7 @@
       "dn": "4",
       "cost": 20,
       "source": "apocrypha",
-      "page": 314,
+      "page": 313,
       "description": "...o twice the psyker’s Willpower. [2] Affected allies gain +1d on all skill tests."
     },
     "gaze_of_ynnead_aoa": {
@@ -5312,7 +5312,7 @@
       "dn": "5",
       "cost": 15,
       "source": "apocrypha",
-      "page": 314,
+      "page": 313,
       "description": "... target suffers 1d3+2 Mortal Wounds.<br><br><b>Potency:</b> [3] +1 Mortal Wound."
     },
     "shield_of_ynnead_aoa": {
@@ -5321,7 +5321,7 @@
       "dn": "6",
       "cost": 15,
       "source": "apocrypha",
-      "page": 314,
+      "page": 313,
       "description": ".../b> [1] Affected allies gain +1 Resilience. [2] Affected allies gain +1 Defence."
     },
     "storm_of_whispers_aoa": {
@@ -5330,7 +5330,7 @@
       "dn": "5",
       "cost": 15,
       "source": "apocrypha",
-      "page": 314,
+      "page": 313,
       "description": "...<b>Discipline:</b> Revenant<br><b>DN:</b> 5<br><b>XP Cost:</b> 15<br><b>Activation:</b> Action<br><b>Duration:</b> 1 Round<br><b>Range:</b> 6m<br><b>Keywords:</b> AELDARI, TELEPATHY, PSYCHIC<br><br><b>Effect:</b> Your voice joins with those of the dead to drive the foe insane. All enemies within range must make a Fear test (DN 5); enemies who fail this test suffer 1d3+1 Shock, and 1 Mortal Wound if they suffer a complication on their Fear Test.<br><br><b>Potency:</b> [2] Fear test DN increased by +1 [1] Shock inflicted increased by +1"
     },
     "unbind_souls_aoa": {
@@ -5339,7 +5339,7 @@
       "dn": "5",
       "cost": 20,
       "source": "apocrypha",
-      "page": 315,
+      "page": 314,
       "description": "... affected is a Blast (10). [1] +1ED to all attacks against the affected enemies."
     },
     "word_of_the_phoenix_aoa": {
@@ -5348,7 +5348,7 @@
       "dn": "5",
       "cost": 15,
       "source": "apocrypha",
-      "page": 315,
+      "page": 314,
       "description": "...<b>Discipline:</b> Revenant<br><b>DN:</b> 5<br><b>XP Cost:</b> 15<br><b>Activation:</b> Action<br><b>Duration:</b> Instant<br><b>Range:</b> 18m<br><b>Keywords:</b> AELDARI, PSYCHIC<br><br><b>Effect:</b> You call upon the rebirthing energies of the mythical phoenix. The power affects one ally within range; that ally regains 1d3 wounds, or 1d3+2 if they have the YNNARI keyword. If you target an ally who has died since the end f your last turn, they are immediately restored to life. A character resurrected in this way has wounds and shock equal to their maximums.<br><br><b>Potency:</b> [1] +1 Wound healed."
     },
     "da_jump_aoa": {
@@ -5357,7 +5357,7 @@
       "dn": "6",
       "cost": 15,
       "source": "apocrypha",
-      "page": 316,
+      "page": 315,
       "description": "...l number of allies equal to your Willpower. *[2] Activation reduced to an Action"
     },
     "da_krunch_aoa": {
@@ -5366,7 +5366,7 @@
       "dn": "7",
       "cost": 15,
       "source": "apocrypha",
-      "page": 316,
+      "page": 315,
       "description": "...to repeat the effect. [3] Roll to repeat the power’s effects an additional time."
     },
     "fists_of_gork_aoa": {
@@ -5375,7 +5375,7 @@
       "dn": "5",
       "cost": 8,
       "source": "apocrypha",
-      "page": 316,
+      "page": 315,
       "description": "...<b>Discipline:</b> WAAAGH!<br><b>DN:</b> 5<br><b>XP Cost:</b> 8<br><b>Activation:</b> Action<br><b>Duration:</b> 1 Round<br><b>Range:</b> 12m<br><b>Keywords:</b> ORK, PSYCHIC<br><br><b>Effect:</b> You channel Waaagh energy into your own fists or those of another Ork, providing strength enough to punch through the armour of tanks. This power affects you or one ally with the ORK keyword within range. Until the end of your next turn, the affected character’s Strength is increased by +4 and they receive +2 bonus dice on all melee attacks.<br><br><b>Potency:</b> [1] +1 Strength [1] +1ED damage on melee attacks. *[2] Activation reduced to a Simple Action"
     },
     "roar_of_mork_aoa": {
@@ -5384,7 +5384,7 @@
       "dn": "7",
       "cost": 15,
       "source": "apocrypha",
-      "page": 317,
+      "page": 316,
       "description": "...1 DN *[2] Enemies within range must make a Resolve test (DN 3) or become pinned."
     },
     "warpath_aoa": {
@@ -5393,7 +5393,7 @@
       "dn": "6",
       "cost": 15,
       "source": "apocrypha",
-      "page": 317,
+      "page": 316,
       "description": "...<b>Discipline:</b> WAAAGH!<br><b>DN:</b> 6<br><b>XP Cost:</b> 15<br><b>Activation:</b> Action<br><b>Duration:</b> 1 Round<br><b>Range:</b> 18m<br><b>Keywords:</b> ORK, PSYCHIC<br><br><b>Effect:</b> You disperse the Waaagh energy coursing through your frame into the Ork warriors around you, stoking their already bellicose nature into a roaring fever pitch. Select a number of allies with the ORK keyword equal to your Willpower within range. The affected allies add +2 bonus dice to all melee attacks they attempt until the start of your next turn, and they may ignore up to 2 points of DN increase for taking the Multi-Attack or Multi-Action options.<br><br><b>Potency:</b> [1] Increase DN reduction by 1. [1] +1 bonus dice to melee attacks. [2] Affect an number of additional allies equal to your Willpower."
     },
     "interface_echo_aoa": {
@@ -5402,7 +5402,7 @@
       "dn": "4",
       "cost": 15,
       "source": "apocrypha",
-      "page": 318,
+      "page": 317,
       "description": "...diately gain 1 Glory.<br><br><b>Potency:</b> [2] Gain +1 Glory *[3] Gain 1 Wrath"
     },
     "fortify_skeinwrought_aoa": {
@@ -5411,7 +5411,7 @@
       "dn": "5",
       "cost": 10,
       "source": "apocrypha",
-      "page": 271,
+      "page": 317,
       "description": "...lls.<br><br><b>Potency:</b> [1] +1 dice on Determination rolls [1] +1 Resilience"
     },
     "ancestral_wrath_aoa": {
@@ -5420,7 +5420,7 @@
       "dn": "5",
       "cost": 20,
       "source": "apocrypha",
-      "page": 318,
+      "page": 317,
       "description": "...the Brutal trait.<br><br><b>Potency:</b> [1] +1ED [2] Increase Blast size by +2."
     },
     "grudgepyre_aoa": {
@@ -5429,7 +5429,7 @@
       "dn": "Target’s Willpower (opposed test)",
       "cost": 25,
       "source": "apocrypha",
-      "page": 318,
+      "page": 317,
       "description": "...<b>Discipline:</b> Skeinwrought<br><b>DN:</b> Target’s Willpower (opposed test)<br><b>XP Cost:</b> 25<br><b>Activation:</b> Action<br><b>Duration:</b> Instant<br><b>Range:</b> 18m<br><b>Keywords:</b> LEAGUES OF VOTANN, PSYCHIC, FIRE<br><br><b>Effect:</b> Harnessing the Kin’s gestalt hatred for a begrudged foe, you engulfs your victim in a pillar of flame that scours them from existence. Select a single enemy within range and line of sight and make an Opposed Willpower test against them. If you succeed, the target suffers 1d3+3 Mortal Wounds.<br><br><b>Potency:</b> [1] +1 Mortal Wound"
     },
     "null_vortex_aoa": {
@@ -5438,7 +5438,7 @@
       "dn": "7",
       "cost": 25,
       "source": "apocrypha",
-      "page": 319,
+      "page": 318,
       "description": "...<b>Potency:</b> *[3] Enemies within the power’s range cannot roll Determination."
     },
     "crushing_contempt_aoa": {
@@ -5447,7 +5447,7 @@
       "dn": "5",
       "cost": 20,
       "source": "apocrypha",
-      "page": 319,
+      "page": 318,
       "description": "...<b>Discipline:</b> Skeinwrought<br><b>DN:</b> 5<br><b>XP Cost:</b> 20<br><b>Activation:</b> Full Action<br><b>Duration:</b> 1 Round<br><b>Range:</b> 18m<br><b>Keywords:</b> LEAGUES OF VOTANN, PSYCHIC<br><br><b>Effect:</b> Your glowering stare bores into the enemy, your manifest disdain and anger intensifying by the moment until they feel its weight as a physical force. It causes them to stagger and strain simply to keep from collapsing altogether. This targets all enemies in a Blast (6) within range and line of sight. Enemies affected suffer 1d3 Shock and must attempt a Resolve test with a DN of 5; if they fail, they are Prone and Staggered until the start of your next turn.<br><br><b>Potency:</b> *[2] Enemies are Restrained instead of Staggered. [1] +1 Shock"
     },
     "death_hex": {
