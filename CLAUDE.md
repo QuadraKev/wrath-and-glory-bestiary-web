@@ -4,6 +4,13 @@ Web-based threat/NPC reference tool for the Wrath & Glory tabletop RPG.
 
 **Style Guide**: See `../STYLE_GUIDE.md` for naming conventions, CSS patterns, JS patterns, and data file conventions shared across all Wrath & Glory projects.
 
+## Quick Start
+
+No build step — serve the directory with any static HTTP server:
+```bash
+python3 -m http.server 8000    # then open http://localhost:8000
+```
+
 ## Architecture
 
 Vanilla JavaScript with global object pattern (no modules/bundling). Each file defines a global `const` object (e.g., `const EncounterTab = {...}`). No build step -- served directly as static files.
@@ -75,7 +82,7 @@ The glossary (`data/glossary.json`) should be kept in sync with the creator app'
 - **GitHub Issues**: Do NOT resolve/close issues until the user confirms they are resolved. After closing an issue, post a comment summarizing the fix/change (what was wrong, what was changed, relevant commit hash).
 - **Commits**: Push using the QuadraKev PAT. GitHub Actions workflow (`.github/workflows/deploy.yml`) handles Pages deploys on push to main. Use `--author="QuadraKev-Claude <claude-quadrakev@noreply>"` on all commits to differentiate AI-assisted work from the user's personal commits.
 - **GitHub Issues/PRs/Comments**: Use the QuadraKev PAT and include a note (e.g., "Created by Claude Code") to indicate AI authorship. Do NOT use the QuadraKev-bot account — it was flagged by GitHub for TOS violation (one account per person).
-- PAT is available in the `$GH_TOKEN` environment variable (set in `~/.bashrc`).
+- PAT is available in the Windows `$env:GH_TOKEN` environment variable. When pushing from WSL, pass it through (e.g., embed in the remote URL).
 
 ## Books Available (PDF)
 
