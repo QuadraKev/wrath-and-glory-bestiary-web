@@ -15,7 +15,43 @@
       "PSYCHIC"
     ],
     "source": "core",
-    "page": 215
+    "page": 272
+  },
+  {
+    "id": "psyniscience",
+    "name": "Psyniscience",
+    "discipline": "Universal",
+    "dn": 3,
+    "activation": "Free Action",
+    "duration": "Instant",
+    "range": "50m",
+    "multiTarget": false,
+    "cost": 0,
+    "effect": "You can sense the presence of the Warp pressing in against the material world. Existing or imminent distortions of the barrier between Materium and Immaterium in your immediate presence may betray themselves in the flicker of shadows, a brief chill on the flesh, or in a thousand other ways.\nYou can attempt to detect the presence of Warp phenomena within range and line of sight, including sustained psychic powers, psychic powers being activated, and similar effects as decided by the GM.\nThis won't show the source of any such phenomenon, only that it is present within the restrictions, nor does it detect any Psykers. It does, however, provide enough information to activate Deny the Witch.\nIf you attempt to activate this power and fail, the mysteries of the Warp assail your mind. You are automatically under the effects of Fear.\nAs it is not considered a psychic power, Psyniscience can't trigger the Perils of the Warp.",
+    "potency": null,
+    "keywords": [
+      "PSYCHIC"
+    ],
+    "source": "core",
+    "page": 267
+  },
+  {
+    "id": "deny_the_witch",
+    "name": "Deny the Witch",
+    "discipline": "Universal",
+    "dn": "2 + DN of target power",
+    "activation": "Action",
+    "duration": "Instant",
+    "range": "50m",
+    "multiTarget": false,
+    "cost": 0,
+    "effect": "You can unravel another psyker's attempt to manipulate the Warp.\nAll characters with the PSYKER keyword can attempt to prevent the activation of a psychic power within range, or nullify an already active Sustained or timed duration psychic power. Your character must be aware that a power is being used in order to Deny the Witch.\nThe DN for Deny the Witch is 2 + the DN of the psychic power you are trying to deny. If the power you are trying to deny has increased potency from shifting an Exalted Icon, the DN is increased by +1 for each Exalted Icon shifted.\nIf Deny the Witch succeeds, the power fails to activate or immediately stops working.\nUnlike other Actions, this can be used to deny a power occurring before your Turn, but this uses your Combat Action for the Round. If you have used your Action for the Round then you can't Deny the Witch.",
+    "potency": null,
+    "keywords": [
+      "PSYCHIC"
+    ],
+    "source": "core",
+    "page": 267
   },
   {
     "id": "chameleon",
@@ -33,7 +69,7 @@
       "PSYCHIC"
     ],
     "source": "core",
-    "page": 265
+    "page": 268
   },
   {
     "id": "compel",
@@ -51,7 +87,7 @@
       "PSYCHIC"
     ],
     "source": "core",
-    "page": 260
+    "page": 268
   },
   {
     "id": "conceal_phenomena",
@@ -199,7 +235,7 @@
       "PSYCHIC"
     ],
     "source": "core",
-    "page": 138
+    "page": 270
   },
   {
     "id": "psychic_torch",
@@ -275,7 +311,7 @@
       "PSYCHIC"
     ],
     "source": "core",
-    "page": 265
+    "page": 271
   },
   {
     "id": "enfeeble",
@@ -378,7 +414,7 @@
     "multiTarget": false,
     "cost": 20,
     "prerequisite": "At least one other Biomancy Power",
-    "effect": "...When you activate this power, choose one of the following effects. The effect lasts until you stop Sustaining this psychic power. You assume the appearance of any individual with a roughly equivalent mass to your own. ... Alternatively, you modify your body with one of the following options. Some of these modifications are obviously visible and likely grotesque, and those who see them will likely view them as mutations. You manifest wings, allowing you to fly freely at your normal Speed. You develop gills, giving you immunity to the Suffocating Condition whilst breathing underwater. Your appendages become webbed, making water normal terrain instead of difficult terrain. Your corneas are massively altered, giving you the same benefits as Preysense Goggles. You harden your outer skin, giving you a +4 Resilience bonus.",
+    "effect": "Your physical form is completely mutable to your will. Through thought alone you can change your body however you wish.\nWhen you activate this power, choose one of the following effects. The effect lasts until you stop Sustaining this psychic power.\nYou assume the appearance of any individual with a roughly equivalent mass to your own. If you are attempting to emulate a person you have met, you can alter your vocal chords to match theirs, as long as you have heard them speak. You are biologically identical to whatever you have tried to emulate, but may still be required to make Deception (Fel) Tests to convince people you are who you say and appear to be.\nAlternatively, you modify your body with one of the following options. Some of these modifications are obviously visible and likely grotesque, and those who see them will likely view them as mutations. You manifest wings, allowing you to fly freely at your normal Speed. You develop gills, giving you immunity to the Suffocating Condition whilst breathing underwater. Your appendages become webbed, making water normal terrain instead of difficult terrain. Your corneas are massively altered, giving you the same benefits as Preysense Goggles. You harden your outer skin, giving you a +4 Resilience bonus.",
     "potency": "[2] +1 bonus die to Deception Tests when emulating another individual. [3] You may select a second body modification when modifying your body.",
     "keywords": [
       "PSYCHIC"
@@ -402,7 +438,7 @@
       "PSYCHIC"
     ],
     "source": "core",
-    "page": 262
+    "page": 274
   },
   {
     "id": "prescience",
@@ -415,7 +451,7 @@
     "multiTarget": false,
     "cost": 15,
     "prerequisite": "At least one other Divination Power",
-    "effect": "...the roll automatically counts as if a single 1 had been rolled on a Wrath Dice (i.e. meaning that if no 1s were rolled on a Wrath Dice of the Psychic test, it would still count as 1 Wrath Dice showing a 1 and require a roll on the Perils of the Warp table). You may not use Prescience more than once in any scene.",
+    "effect": "You peer into the depths of the Warp and see past the glimmering possibilities rippling on the surface. Past the glamour and misleading promises of what might be, you catch glimpses and images of what really will be — at least in the near future.\nOnce activated, Prescience allows you to reroll 1 dice (not the Wrath Dice) in any Tests you make for the remainder of the scene.\nIn addition, you may petition the timeless beings that dwell in the Warp to answer a single question about what may come to pass. The GM chooses the being that responds to your question and privately communicates their response. The response itself may be a short phrase, a single word, an emotion, or something else entirely — the beings of the Warp are unfathomable to mortal minds, and may be helpful, unhelpful, or utterly uncaring of your question.\nThe Immaterium, and those entities that dwell in it that concern themselves with the vagaries of time as it pertains to the mortal realms, are loathe to surrender this sort of detail regarding the future. A Psyker risks much in prying in this manner. When making the Psychic Mastery (Wil) Test for this power, the roll automatically counts as if a single 1 had been rolled on a Wrath Dice (i.e. meaning that if no 1s were rolled on a Wrath Dice of the Psychic test, it would still count as 1 Wrath Dice showing a 1 and require a roll on the Perils of the Warp table).\nYou may not use Prescience more than once in any scene.",
     "potency": "[1] Activation reduced by 5 minutes (minimum 5). [2]* You may ask the GM an additional question about the future.",
     "keywords": [
       "PSYCHIC"
@@ -439,7 +475,7 @@
       "PSYCHIC"
     ],
     "source": "core",
-    "page": 184
+    "page": 274
   },
   {
     "id": "psychometry",
@@ -452,7 +488,7 @@
     "multiTarget": false,
     "cost": 15,
     "prerequisite": "At least one other Divination power",
-    "effect": "...Initially, only the psychic traces of the specific emotion enter your senses, for example the sour-steel taste of murderous rage or the pungent, decaying stench of regret. The longer you remain in place...",
+    "effect": "Intense emotions leave lasting marks on the timeless threads of the Warp. By opening your mind, you receive echoes of the past psychically emanating from a place or an object.\nWhen you use this power you are able to glimpse visions of past events in an area where an individual expressed an emotional outburst.\nInitially, only the psychic traces of the specific emotion enter your senses, for example the sour-steel taste of murderous rage or the pungent, decaying stench of regret.\nThe longer you remain in place and sustain the power, the more information you receive about the events surrounding the emotional outburst. Your senses can detect past events that happen in a 10 m diameter sphere centred on yourself.\n1 Hour: Though vague and indistinct, your senses can perceive the events immediately preceding, during, and after the emotional outburst. Individuals appear ghostly with impermanent, hazy forms, and all sounds are muffled, echoing whispers.\n6 Hours: You can perceive the events preceding, during, and after the emotional outburst within range in clear focus.\n12 Hours: You glean a deeper understanding of what took place from the Warp; you may ask the GM a single question about the event that took place.\nYou can also use this psychic power on a specific object you are in physical contact with instead of a location. The nature of the visions you receive are the same, but the range of any visions is halved and centered on the object.",
     "potency": "[1] You may share your vision with any ally in range of the psychic power. [2] The range of the power is doubled. [2] Your visions take half the listed time to manifest.",
     "keywords": [
       "PSYCHIC"
@@ -495,7 +531,7 @@
       "PSYCHIC"
     ],
     "source": "core",
-    "page": 259
+    "page": 275
   },
   {
     "id": "flame_breath",
@@ -514,7 +550,7 @@
       "PSYCHIC"
     ],
     "source": "core",
-    "page": 259
+    "page": 276
   },
   {
     "id": "mindfire",
@@ -534,7 +570,7 @@
       "PSYCHIC"
     ],
     "source": "core",
-    "page": 259
+    "page": 276
   },
   {
     "id": "molten_beam",
@@ -553,7 +589,7 @@
       "PSYCHIC"
     ],
     "source": "core",
-    "page": 259
+    "page": 276
   },
   {
     "id": "spontaneous_combustion",
@@ -572,7 +608,7 @@
       "PSYCHIC"
     ],
     "source": "core",
-    "page": 259
+    "page": 276
   },
   {
     "id": "wall_of_flame",
@@ -591,7 +627,7 @@
       "PSYCHIC"
     ],
     "source": "core",
-    "page": 259
+    "page": 277
   },
   {
     "id": "assail",
@@ -610,7 +646,7 @@
       "PSYCHIC"
     ],
     "source": "core",
-    "page": 259
+    "page": 277
   },
   {
     "id": "crush",
@@ -629,7 +665,7 @@
       "PSYCHIC"
     ],
     "source": "core",
-    "page": 198
+    "page": 277
   },
   {
     "id": "levitation",
@@ -648,7 +684,7 @@
       "PSYCHIC"
     ],
     "source": "core",
-    "page": 259
+    "page": 277
   },
   {
     "id": "telekinetic_dome",
@@ -668,7 +704,7 @@
       "PSYCHIC"
     ],
     "source": "core",
-    "page": 259
+    "page": 278
   },
   {
     "id": "grav_warp",
@@ -687,7 +723,7 @@
       "PSYCHIC"
     ],
     "source": "core",
-    "page": 259
+    "page": 278
   },
   {
     "id": "shock_wave",
@@ -706,7 +742,7 @@
       "PSYCHIC"
     ],
     "source": "core",
-    "page": 261
+    "page": 278
   },
   {
     "id": "erasure",
@@ -726,7 +762,7 @@
       "PSYCHIC"
     ],
     "source": "core",
-    "page": 259
+    "page": 278
   },
   {
     "id": "fog_the_mind",
@@ -745,7 +781,7 @@
       "PSYCHIC"
     ],
     "source": "core",
-    "page": 259
+    "page": 279
   },
   {
     "id": "mind_probe",
@@ -765,7 +801,7 @@
       "PSYCHIC"
     ],
     "source": "core",
-    "page": 259
+    "page": 279
   },
   {
     "id": "psychic_shriek",
@@ -783,7 +819,7 @@
       "PSYCHIC"
     ],
     "source": "core",
-    "page": 259
+    "page": 279
   },
   {
     "id": "telepathy_power",
@@ -802,7 +838,7 @@
       "PSYCHIC"
     ],
     "source": "core",
-    "page": 3
+    "page": 279
   },
   {
     "id": "terrify",
@@ -821,7 +857,7 @@
       "PSYCHIC"
     ],
     "source": "core",
-    "page": 170
+    "page": 280
   },
   {
     "id": "dark_flame",
@@ -841,7 +877,7 @@
       "PSYCHIC"
     ],
     "source": "core",
-    "page": 259
+    "page": 281
   },
   {
     "id": "possession",
@@ -861,7 +897,7 @@
       "PSYCHIC"
     ],
     "source": "core",
-    "page": 206
+    "page": 281
   },
   {
     "id": "soul_shrivel",
@@ -881,7 +917,7 @@
       "PSYCHIC"
     ],
     "source": "core",
-    "page": 259
+    "page": 281
   },
   {
     "id": "touch_of_corruption",
@@ -901,7 +937,7 @@
       "PSYCHIC"
     ],
     "source": "core",
-    "page": 259
+    "page": 281
   },
   {
     "id": "infernal_gaze",
@@ -921,7 +957,7 @@
       "PSYCHIC"
     ],
     "source": "core",
-    "page": 259
+    "page": 281
   },
   {
     "id": "conceal_reveal",
@@ -941,7 +977,7 @@
       "PSYCHIC"
     ],
     "source": "core",
-    "page": 282
+    "page": 283
   },
   {
     "id": "embolden_horrify",
@@ -1127,7 +1163,7 @@
       "PSYCHIC"
     ],
     "source": "aeldari",
-    "page": 49
+    "page": 70
   },
   {
     "id": "mirror_of_minds",
@@ -1167,7 +1203,7 @@
       "PSYCHIC"
     ],
     "source": "aeldari",
-    "page": 49
+    "page": 71
   },
   {
     "id": "twilight_pathways",
@@ -1227,7 +1263,7 @@
       "PSYCHIC"
     ],
     "source": "aeldari",
-    "page": 49
+    "page": 71
   },
   {
     "id": "doom",
@@ -1247,7 +1283,7 @@
       "PSYCHIC"
     ],
     "source": "aeldari",
-    "page": 12
+    "page": 74
   },
   {
     "id": "executioner",
@@ -1287,7 +1323,7 @@
       "PSYCHIC"
     ],
     "source": "aeldari",
-    "page": 23
+    "page": 74
   },
   {
     "id": "guide",
@@ -1307,7 +1343,7 @@
       "PSYCHIC"
     ],
     "source": "aeldari",
-    "page": 17
+    "page": 74
   },
   {
     "id": "mind_war",
@@ -1474,7 +1510,7 @@
     "name": "Bio-Lightning (Abundance of Apocrypha)",
     "discipline": "Biomancy",
     "source": "apocrypha",
-    "page": 259,
+    "page": 258,
     "cost": 15,
     "dn": "Target’s Defence",
     "activation": "Action",
@@ -1492,7 +1528,7 @@
     "name": "Constrict (Abundance of Apocrypha)",
     "discipline": "Biomancy",
     "source": "apocrypha",
-    "page": 259,
+    "page": 258,
     "cost": 10,
     "dn": "Target’s Toughness",
     "activation": "Action",
@@ -1510,7 +1546,7 @@
     "name": "Enhanced Senses (Abundance of Apocrypha)",
     "discipline": "Biomancy",
     "source": "apocrypha",
-    "page": 259,
+    "page": 258,
     "cost": 10,
     "dn": 4,
     "activation": "Action",
@@ -1528,7 +1564,7 @@
     "name": "Seal Wounds (Abundance of Apocrypha)",
     "discipline": "Biomancy",
     "source": "apocrypha",
-    "page": 259,
+    "page": 258,
     "cost": 10,
     "dn": 5,
     "activation": "Action",
@@ -1546,7 +1582,7 @@
     "name": "Toxic Siphon (Abundance of Apocrypha)",
     "discipline": "Biomancy",
     "source": "apocrypha",
-    "page": 259,
+    "page": 258,
     "cost": 5,
     "dn": "Rating of Target’s Poisoned condition",
     "activation": "Action",
@@ -1564,7 +1600,7 @@
     "name": "Auto-Séance (Abundance of Apocrypha)",
     "discipline": "Divination",
     "source": "apocrypha",
-    "page": 260,
+    "page": 259,
     "cost": 10,
     "dn": 3,
     "activation": "Full Action",
@@ -1582,7 +1618,7 @@
     "name": "Detect Corruption (Abundance of Apocrypha)",
     "discipline": "Divination",
     "source": "apocrypha",
-    "page": 260,
+    "page": 259,
     "cost": 5,
     "dn": 3,
     "activation": "Action",
@@ -1600,7 +1636,7 @@
     "name": "Divine Shot (Abundance of Apocrypha)",
     "discipline": "Divination",
     "source": "apocrypha",
-    "page": 260,
+    "page": 259,
     "cost": 15,
     "dn": "Target’s Defence",
     "activation": "Action",
@@ -1618,7 +1654,7 @@
     "name": "Dowsing (Abundance of Apocrypha)",
     "discipline": "Divination",
     "source": "apocrypha",
-    "page": 261,
+    "page": 260,
     "cost": 10,
     "dn": 6,
     "activation": "Full Action",
@@ -1636,7 +1672,7 @@
     "name": "Glimpse (Abundance of Apocrypha)",
     "discipline": "Divination",
     "source": "apocrypha",
-    "page": 215,
+    "page": 260,
     "cost": 20,
     "dn": 6,
     "activation": "Action",
@@ -1654,7 +1690,7 @@
     "name": "Precognitive Strike (Abundance of Apocrypha)",
     "discipline": "Divination",
     "source": "apocrypha",
-    "page": 261,
+    "page": 260,
     "cost": 20,
     "dn": 5,
     "activation": "Simple Action",
@@ -1672,7 +1708,7 @@
     "name": "Precognitive Dodge (Abundance of Apocrypha)",
     "discipline": "Divination",
     "source": "apocrypha",
-    "page": 261,
+    "page": 260,
     "cost": 10,
     "dn": 3,
     "activation": "Reflexive Action",
@@ -1690,7 +1726,7 @@
     "name": "The Action Again (Abundance of Apocrypha)",
     "discipline": "Divination",
     "source": "apocrypha",
-    "page": 261,
+    "page": 260,
     "cost": 15,
     "dn": 6,
     "activation": "Simple Action",
@@ -1708,7 +1744,7 @@
     "name": "Blinding Flash (Abundance of Apocrypha)",
     "discipline": "Pyromancy",
     "source": "apocrypha",
-    "page": 262,
+    "page": 261,
     "cost": 10,
     "dn": 4,
     "activation": "Action",
@@ -1726,7 +1762,7 @@
     "name": "Burning Fist (Abundance of Apocrypha)",
     "discipline": "Pyromancy",
     "source": "apocrypha",
-    "page": 262,
+    "page": 261,
     "cost": 10,
     "dn": 5,
     "activation": "Action",
@@ -1745,7 +1781,7 @@
     "name": "Douse Flame (Abundance of Apocrypha)",
     "discipline": "Pyromancy",
     "source": "apocrypha",
-    "page": 262,
+    "page": 261,
     "cost": 15,
     "dn": 6,
     "activation": "Action",
@@ -1763,7 +1799,7 @@
     "name": "Firebolt (Abundance of Apocrypha)",
     "discipline": "Pyromancy",
     "source": "apocrypha",
-    "page": 262,
+    "page": 261,
     "cost": 10,
     "dn": "Target’s Defence",
     "activation": "Action",
@@ -1782,7 +1818,7 @@
     "name": "Fire Storm (Abundance of Apocrypha)",
     "discipline": "Pyromancy",
     "source": "apocrypha",
-    "page": 262,
+    "page": 261,
     "cost": 15,
     "dn": 7,
     "activation": "Action",
@@ -1801,7 +1837,7 @@
     "name": "Holocaust (Abundance of Apocrypha)",
     "discipline": "Pyromancy",
     "source": "apocrypha",
-    "page": 263,
+    "page": 262,
     "cost": 25,
     "dn": 8,
     "activation": "Full Action",
@@ -1820,7 +1856,7 @@
     "name": "Death Grip (Abundance of Apocrypha)",
     "discipline": "Telekinesis",
     "source": "apocrypha",
-    "page": 263,
+    "page": 262,
     "cost": 10,
     "dn": "Target’s Toughness",
     "activation": "Action",
@@ -1839,7 +1875,7 @@
     "name": "Force Barrage (Abundance of Apocrypha)",
     "discipline": "Telekinesis",
     "source": "apocrypha",
-    "page": 263,
+    "page": 262,
     "cost": 20,
     "dn": "Target’s Defence",
     "activation": "Full Action",
@@ -1858,7 +1894,7 @@
     "name": "Force Bolt (Abundance of Apocrypha)",
     "discipline": "Telekinesis",
     "source": "apocrypha",
-    "page": 263,
+    "page": 262,
     "cost": 15,
     "dn": "Target’s Defence",
     "activation": "Action",
@@ -1877,7 +1913,7 @@
     "name": "Levitation (Abundance of Apocrypha)",
     "discipline": "Telekinesis",
     "source": "apocrypha",
-    "page": 263,
+    "page": 262,
     "cost": 20,
     "dn": 4,
     "activation": "Action",
@@ -1896,7 +1932,7 @@
     "name": "Precision Telekinesis (Abundance of Apocrypha)",
     "discipline": "Telekinesis",
     "source": "apocrypha",
-    "page": 264,
+    "page": 263,
     "cost": 25,
     "dn": 7,
     "activation": "Action",
@@ -1915,7 +1951,7 @@
     "name": "Psychic Blade (Abundance of Apocrypha)",
     "discipline": "Telekinesis",
     "source": "apocrypha",
-    "page": 264,
+    "page": 263,
     "cost": 20,
     "dn": 6,
     "activation": "Action",
@@ -1934,7 +1970,7 @@
     "name": "Psycho-Kinetic Mist (Abundance of Apocrypha)",
     "discipline": "Telekinesis",
     "source": "apocrypha",
-    "page": 264,
+    "page": 263,
     "cost": 10,
     "dn": 3,
     "activation": "Action",
@@ -1953,7 +1989,7 @@
     "name": "Telekinesis (Abundance of Apocrypha)",
     "discipline": "Telekinesis",
     "source": "apocrypha",
-    "page": 263,
+    "page": 262,
     "cost": 10,
     "dn": 4,
     "activation": "Action",
@@ -1972,7 +2008,7 @@
     "name": "Beacon (Abundance of Apocrypha)",
     "discipline": "Telepathy",
     "source": "apocrypha",
-    "page": 11,
+    "page": 264,
     "cost": 10,
     "dn": 5,
     "activation": "Full Action",
@@ -1991,7 +2027,7 @@
     "name": "Chaos Mind (Abundance of Apocrypha)",
     "discipline": "Telepathy",
     "source": "apocrypha",
-    "page": 265,
+    "page": 264,
     "cost": 15,
     "dn": "Target’s Willpower (Opposed)",
     "activation": "Action",
@@ -2010,7 +2046,7 @@
     "name": "Inspire (Abundance of Apocrypha)",
     "discipline": "Telepathy",
     "source": "apocrypha",
-    "page": 12,
+    "page": 264,
     "cost": 10,
     "dn": 5,
     "activation": "Action",
@@ -2029,7 +2065,7 @@
     "name": "Mental Alacrity (Abundance of Apocrypha)",
     "discipline": "Telepathy",
     "source": "apocrypha",
-    "page": 265,
+    "page": 264,
     "cost": 20,
     "dn": 5,
     "activation": "Action",
@@ -2048,7 +2084,7 @@
     "name": "Mind Ward (Abundance of Apocrypha)",
     "discipline": "Telepathy",
     "source": "apocrypha",
-    "page": 266,
+    "page": 265,
     "cost": 5,
     "dn": 3,
     "activation": "Action",
@@ -2067,7 +2103,7 @@
     "name": "Projection (Abundance of Apocrypha)",
     "discipline": "Telepathy",
     "source": "apocrypha",
-    "page": 266,
+    "page": 265,
     "cost": 20,
     "dn": 7,
     "activation": "Full Action",
@@ -2085,7 +2121,7 @@
     "name": "See Me Not (Abundance of Apocrypha)",
     "discipline": "Telepathy",
     "source": "apocrypha",
-    "page": 266,
+    "page": 265,
     "cost": 15,
     "dn": "Target’s Willpower",
     "activation": "Action",
@@ -2104,7 +2140,7 @@
     "name": "Astral Aim (Abundance of Apocrypha)",
     "discipline": "Sanctic",
     "source": "apocrypha",
-    "page": 267,
+    "page": 266,
     "cost": 10,
     "dn": 5,
     "activation": "Simple Action",
@@ -2122,7 +2158,7 @@
     "name": "Gate of Infinity (Abundance of Apocrypha)",
     "discipline": "Sanctic",
     "source": "apocrypha",
-    "page": 267,
+    "page": 266,
     "cost": 25,
     "dn": 6,
     "activation": "Full Action",
@@ -2140,7 +2176,7 @@
     "name": "Hammerhand (Abundance of Apocrypha)",
     "discipline": "Sanctic",
     "source": "apocrypha",
-    "page": 267,
+    "page": 266,
     "cost": 15,
     "dn": 6,
     "activation": "Action",
@@ -2158,7 +2194,7 @@
     "name": "Purge Soul (Abundance of Apocrypha)",
     "discipline": "Sanctic",
     "source": "apocrypha",
-    "page": 268,
+    "page": 267,
     "cost": 15,
     "dn": "Target’s Resolve",
     "activation": "Action",
@@ -2176,7 +2212,7 @@
     "name": "Rites of Banishment (Abundance of Apocrypha)",
     "discipline": "Sanctic",
     "source": "apocrypha",
-    "page": 267,
+    "page": 266,
     "cost": 0,
     "dn": "Target’s Defence",
     "activation": "Action",
@@ -2194,7 +2230,7 @@
     "name": "Sanctuary (Abundance of Apocrypha)",
     "discipline": "Sanctic",
     "source": "apocrypha",
-    "page": 268,
+    "page": 267,
     "cost": 25,
     "dn": 6,
     "activation": "Action",
@@ -2212,7 +2248,7 @@
     "name": "Vortex of Doom (Abundance of Apocrypha)",
     "discipline": "Sanctic",
     "source": "apocrypha",
-    "page": 268,
+    "page": 267,
     "cost": 30,
     "dn": 8,
     "activation": "Full Action",
@@ -2230,7 +2266,7 @@
     "name": "Hallucination (Abundance of Apocrypha)",
     "discipline": "Obscuration",
     "source": "apocrypha",
-    "page": 269,
+    "page": 268,
     "cost": 10,
     "dn": "Target’s Resolve",
     "activation": "Action",
@@ -2249,7 +2285,7 @@
     "name": "Mind Raid (Abundance of Apocrypha)",
     "discipline": "Obscuration",
     "source": "apocrypha",
-    "page": 269,
+    "page": 268,
     "cost": 15,
     "dn": "Target’s Resolve",
     "activation": "Action",
@@ -2268,7 +2304,7 @@
     "name": "Shrouding (Abundance of Apocrypha)",
     "discipline": "Obscuration",
     "source": "apocrypha",
-    "page": 269,
+    "page": 268,
     "cost": 10,
     "dn": 5,
     "activation": "Action",
@@ -2287,7 +2323,7 @@
     "name": "Soul Sight (Abundance of Apocrypha)",
     "discipline": "Obscuration",
     "source": "apocrypha",
-    "page": 269,
+    "page": 268,
     "cost": 8,
     "dn": 4,
     "activation": "Action",
@@ -2306,7 +2342,7 @@
     "name": "Temporal Corridor (Abundance of Apocrypha)",
     "discipline": "Obscuration",
     "source": "apocrypha",
-    "page": 270,
+    "page": 269,
     "cost": 20,
     "dn": 6,
     "activation": "Full Action",
@@ -2324,7 +2360,7 @@
     "name": "Tenebrous Curse (Abundance of Apocrypha)",
     "discipline": "Obscuration",
     "source": "apocrypha",
-    "page": 270,
+    "page": 269,
     "cost": 15,
     "dn": 5,
     "activation": "Full Action",
@@ -2342,7 +2378,7 @@
     "name": "Aspect of Stone (Abundance of Apocrypha)",
     "discipline": "Geokinesis",
     "source": "apocrypha",
-    "page": 271,
+    "page": 270,
     "cost": 15,
     "dn": 4,
     "activation": "Full Action",
@@ -2360,7 +2396,7 @@
     "name": "Chasm (Abundance of Apocrypha)",
     "discipline": "Geokinesis",
     "source": "apocrypha",
-    "page": 271,
+    "page": 270,
     "cost": 25,
     "dn": 5,
     "activation": "Full Action",
@@ -2378,7 +2414,7 @@
     "name": "Fortify (Abundance of Apocrypha)",
     "discipline": "Geokinesis",
     "source": "apocrypha",
-    "page": 271,
+    "page": 270,
     "cost": 15,
     "dn": 3,
     "activation": "Full Action",
@@ -2396,7 +2432,7 @@
     "name": "Iron Inferno (Abundance of Apocrypha)",
     "discipline": "Geokinesis",
     "source": "apocrypha",
-    "page": 272,
+    "page": 271,
     "cost": 10,
     "dn": 5,
     "activation": "Action",
@@ -2414,7 +2450,7 @@
     "name": "Tectonic Purge (Abundance of Apocrypha)",
     "discipline": "Geokinesis",
     "source": "apocrypha",
-    "page": 272,
+    "page": 271,
     "cost": 8,
     "dn": 5,
     "activation": "Action",
@@ -2432,7 +2468,7 @@
     "name": "Wrack and Ruin (Abundance of Apocrypha)",
     "discipline": "Geokinesis",
     "source": "apocrypha",
-    "page": 272,
+    "page": 271,
     "cost": 10,
     "dn": 5,
     "activation": "Action",
@@ -2450,7 +2486,7 @@
     "name": "Empyric Channelling (Abundance of Apocrypha)",
     "discipline": "Indomitus",
     "source": "apocrypha",
-    "page": 273,
+    "page": 272,
     "cost": 8,
     "dn": 4,
     "activation": "Full Action",
@@ -2468,7 +2504,7 @@
     "name": "Precognition (Abundance of Apocrypha)",
     "discipline": "Indomitus",
     "source": "apocrypha",
-    "page": 273,
+    "page": 272,
     "cost": 10,
     "dn": 5,
     "activation": "Action",
@@ -2486,7 +2522,7 @@
     "name": "Psychic Shackles (Abundance of Apocrypha)",
     "discipline": "Indomitus",
     "source": "apocrypha",
-    "page": 273,
+    "page": 272,
     "cost": 10,
     "dn": 5,
     "activation": "Action",
@@ -2504,7 +2540,7 @@
     "name": "Storm of the Emperor’s Wrath (Abundance of Apocrypha)",
     "discipline": "Indomitus",
     "source": "apocrypha",
-    "page": 274,
+    "page": 273,
     "cost": 15,
     "dn": 5,
     "activation": "Action",
@@ -2522,7 +2558,7 @@
     "name": "Telepathic Assault (Abundance of Apocrypha)",
     "discipline": "Indomitus",
     "source": "apocrypha",
-    "page": 274,
+    "page": 273,
     "cost": 15,
     "dn": "Target’s Willpower",
     "activation": "Action",
@@ -2541,7 +2577,7 @@
     "name": "Aversion (Abundance of Apocrypha)",
     "discipline": "Interromancy",
     "source": "apocrypha",
-    "page": 274,
+    "page": 273,
     "cost": 8,
     "dn": 6,
     "activation": "Action",
@@ -2560,7 +2596,7 @@
     "name": "Engulfing Fear (Abundance of Apocrypha)",
     "discipline": "Interromancy",
     "source": "apocrypha",
-    "page": 274,
+    "page": 273,
     "cost": 10,
     "dn": 6,
     "activation": "Action",
@@ -2579,7 +2615,7 @@
     "name": "Mind Wipe (Abundance of Apocrypha)",
     "discipline": "Interromancy",
     "source": "apocrypha",
-    "page": 275,
+    "page": 274,
     "cost": 15,
     "dn": "Target’s Willpower (Opposed)",
     "activation": "Full Action",
@@ -2598,7 +2634,7 @@
     "name": "Mindworm (Abundance of Apocrypha)",
     "discipline": "Interromancy",
     "source": "apocrypha",
-    "page": 275,
+    "page": 274,
     "cost": 15,
     "dn": "Target’s Willpower",
     "activation": "Action",
@@ -2617,7 +2653,7 @@
     "name": "Righteous Repugnance (Abundance of Apocrypha)",
     "discipline": "Interromancy",
     "source": "apocrypha",
-    "page": 275,
+    "page": 274,
     "cost": 10,
     "dn": 7,
     "activation": "Action",
@@ -2636,7 +2672,7 @@
     "name": "Trephination (Abundance of Apocrypha)",
     "discipline": "Interromancy",
     "source": "apocrypha",
-    "page": 275,
+    "page": 274,
     "cost": 15,
     "dn": "Target’s Resolve",
     "activation": "Action",
@@ -2655,7 +2691,7 @@
     "name": "Flaming Blast (Abundance of Apocrypha)",
     "discipline": "Promethean",
     "source": "apocrypha",
-    "page": 276,
+    "page": 275,
     "cost": 8,
     "dn": 5,
     "activation": "Action",
@@ -2674,7 +2710,7 @@
     "name": "Fire Shield (Abundance of Apocrypha)",
     "discipline": "Promethean",
     "source": "apocrypha",
-    "page": 276,
+    "page": 275,
     "cost": 10,
     "dn": 5,
     "activation": "Action",
@@ -2693,7 +2729,7 @@
     "name": "Burning Hands (Abundance of Apocrypha)",
     "discipline": "Promethean",
     "source": "apocrypha",
-    "page": 276,
+    "page": 275,
     "cost": 10,
     "dn": 7,
     "activation": "Action",
@@ -2712,7 +2748,7 @@
     "name": "Drakeskin (Abundance of Apocrypha)",
     "discipline": "Promethean",
     "source": "apocrypha",
-    "page": 276,
+    "page": 275,
     "cost": 15,
     "dn": 5,
     "activation": "Action",
@@ -2730,7 +2766,7 @@
     "name": "Fury of Nocturne (Abundance of Apocrypha)",
     "discipline": "Promethean",
     "source": "apocrypha",
-    "page": 277,
+    "page": 276,
     "cost": 20,
     "dn": 6,
     "activation": "Action",
@@ -2749,7 +2785,7 @@
     "name": "Draconic Aspect (Abundance of Apocrypha)",
     "discipline": "Promethean",
     "source": "apocrypha",
-    "page": 277,
+    "page": 276,
     "cost": 15,
     "dn": 6,
     "activation": "Action",
@@ -2767,7 +2803,7 @@
     "name": "Blood Boil (Abundance of Apocrypha)",
     "discipline": "Sanguinary",
     "source": "apocrypha",
-    "page": 278,
+    "page": 277,
     "cost": 15,
     "dn": "Target’s Toughness",
     "activation": "Action",
@@ -2785,7 +2821,7 @@
     "name": "Quickening (Abundance of Apocrypha)",
     "discipline": "Sanguinary",
     "source": "apocrypha",
-    "page": 278,
+    "page": 277,
     "cost": 20,
     "dn": 7,
     "activation": "Action",
@@ -2803,7 +2839,7 @@
     "name": "Shield of Sanguinius (Abundance of Apocrypha)",
     "discipline": "Sanguinary",
     "source": "apocrypha",
-    "page": 278,
+    "page": 277,
     "cost": 10,
     "dn": 6,
     "activation": "Action",
@@ -2822,7 +2858,7 @@
     "name": "The Blood Lance (Abundance of Apocrypha)",
     "discipline": "Sanguinary",
     "source": "apocrypha",
-    "page": 278,
+    "page": 277,
     "cost": 15,
     "dn": 6,
     "activation": "Action",
@@ -2841,7 +2877,7 @@
     "name": "Unleash Rage (Abundance of Apocrypha)",
     "discipline": "Sanguinary",
     "source": "apocrypha",
-    "page": 279,
+    "page": 278,
     "cost": 10,
     "dn": 6,
     "activation": "Action",
@@ -2860,7 +2896,7 @@
     "name": "Wings of Sanguinius (Abundance of Apocrypha)",
     "discipline": "Sanguinary",
     "source": "apocrypha",
-    "page": 279,
+    "page": 278,
     "cost": 10,
     "dn": 5,
     "activation": "Action",
@@ -2878,7 +2914,7 @@
     "name": "Blasting Gale (Abundance of Apocrypha)",
     "discipline": "Stormspeaking",
     "source": "apocrypha",
-    "page": 280,
+    "page": 279,
     "cost": 15,
     "dn": 6,
     "activation": "Action",
@@ -2896,7 +2932,7 @@
     "name": "Lightning Call (Abundance of Apocrypha)",
     "discipline": "Stormspeaking",
     "source": "apocrypha",
-    "page": 280,
+    "page": 279,
     "cost": 15,
     "dn": 6,
     "activation": "Action",
@@ -2914,7 +2950,7 @@
     "name": "Ride the Winds (Abundance of Apocrypha)",
     "discipline": "Stormspeaking",
     "source": "apocrypha",
-    "page": 280,
+    "page": 279,
     "cost": 8,
     "dn": 5,
     "activation": "Action",
@@ -2932,7 +2968,7 @@
     "name": "Storm-Wreathed (Abundance of Apocrypha)",
     "discipline": "Stormspeaking",
     "source": "apocrypha",
-    "page": 280,
+    "page": 279,
     "cost": 10,
     "dn": 5,
     "activation": "Action",
@@ -2950,7 +2986,7 @@
     "name": "Spirits of Chogoris (Abundance of Apocrypha)",
     "discipline": "Stormspeaking",
     "source": "apocrypha",
-    "page": 281,
+    "page": 280,
     "cost": 15,
     "dn": 5,
     "activation": "Action",
@@ -2968,7 +3004,7 @@
     "name": "Eye of the Storm (Abundance of Apocrypha)",
     "discipline": "Stormspeaking",
     "source": "apocrypha",
-    "page": 281,
+    "page": 280,
     "cost": 20,
     "dn": 5,
     "activation": "Full Action",
@@ -2986,7 +3022,7 @@
     "name": "Blessing of the Machine God (Abundance of Apocrypha)",
     "discipline": "Technomancy",
     "source": "apocrypha",
-    "page": 282,
+    "page": 281,
     "cost": 10,
     "dn": 4,
     "activation": "Full Action",
@@ -3004,7 +3040,7 @@
     "name": "Objuration Mechanicum (Abundance of Apocrypha)",
     "discipline": "Technomancy",
     "source": "apocrypha",
-    "page": 282,
+    "page": 281,
     "cost": 15,
     "dn": 6,
     "activation": "Action",
@@ -3022,7 +3058,7 @@
     "name": "Fury of Medusa (Abundance of Apocrypha)",
     "discipline": "Technomancy",
     "source": "apocrypha",
-    "page": 282,
+    "page": 281,
     "cost": 15,
     "dn": 5,
     "activation": "Action",
@@ -3040,7 +3076,7 @@
     "name": "Psysteel Armour (Abundance of Apocrypha)",
     "discipline": "Technomancy",
     "source": "apocrypha",
-    "page": 282,
+    "page": 281,
     "cost": 15,
     "dn": 5,
     "activation": "Action",
@@ -3058,7 +3094,7 @@
     "name": "Reforge (Abundance of Apocrypha)",
     "discipline": "Technomancy",
     "source": "apocrypha",
-    "page": 32,
+    "page": 282,
     "cost": 8,
     "dn": 4,
     "activation": "Full Action",
@@ -3076,7 +3112,7 @@
     "name": "Machine Flense (Abundance of Apocrypha)",
     "discipline": "Technomancy",
     "source": "apocrypha",
-    "page": 283,
+    "page": 282,
     "cost": 20,
     "dn": 5,
     "activation": "Action",
@@ -3095,7 +3131,7 @@
     "name": "Fury of the Wolf Spirits (Abundance of Apocrypha)",
     "discipline": "Tempestas",
     "source": "apocrypha",
-    "page": 283,
+    "page": 282,
     "cost": 10,
     "dn": 7,
     "activation": "Action",
@@ -3113,7 +3149,7 @@
     "name": "Jaws of the World Wolf (Abundance of Apocrypha)",
     "discipline": "Tempestas",
     "source": "apocrypha",
-    "page": 283,
+    "page": 282,
     "cost": 20,
     "dn": 7,
     "activation": "Full Action",
@@ -3131,7 +3167,7 @@
     "name": "Living Lightning (Abundance of Apocrypha)",
     "discipline": "Tempestas",
     "source": "apocrypha",
-    "page": 284,
+    "page": 283,
     "cost": 15,
     "dn": 6,
     "activation": "Action",
@@ -3149,7 +3185,7 @@
     "name": "Murderous Hurricane (Abundance of Apocrypha)",
     "discipline": "Tempestas",
     "source": "apocrypha",
-    "page": 284,
+    "page": 283,
     "cost": 10,
     "dn": 5,
     "activation": "Action",
@@ -3167,7 +3203,7 @@
     "name": "Storm Caller (Abundance of Apocrypha)",
     "discipline": "Tempestas",
     "source": "apocrypha",
-    "page": 284,
+    "page": 283,
     "cost": 20,
     "dn": 8,
     "activation": "Full Action",
@@ -3185,7 +3221,7 @@
     "name": "Tempest’s Wrath (Abundance of Apocrypha)",
     "discipline": "Tempestas",
     "source": "apocrypha",
-    "page": 284,
+    "page": 283,
     "cost": 10,
     "dn": 6,
     "activation": "Action",
@@ -3204,7 +3240,7 @@
     "name": "Umbral Form (Abundance of Apocrypha)",
     "discipline": "Umbramancy",
     "source": "apocrypha",
-    "page": 285,
+    "page": 284,
     "cost": 10,
     "dn": 4,
     "activation": "Action",
@@ -3222,7 +3258,7 @@
     "name": "Enveloping Darkness (Abundance of Apocrypha)",
     "discipline": "Umbramancy",
     "source": "apocrypha",
-    "page": 285,
+    "page": 284,
     "cost": 15,
     "dn": 6,
     "activation": "Full Action",
@@ -3240,7 +3276,7 @@
     "name": "Spectral Blade (Abundance of Apocrypha)",
     "discipline": "Umbramancy",
     "source": "apocrypha",
-    "page": 285,
+    "page": 284,
     "cost": 10,
     "dn": 4,
     "activation": "Action",
@@ -3259,7 +3295,7 @@
     "name": "Shadowstep (Abundance of Apocrypha)",
     "discipline": "Umbramancy",
     "source": "apocrypha",
-    "page": 286,
+    "page": 285,
     "cost": 20,
     "dn": 6,
     "activation": "Full Action",
@@ -3277,7 +3313,7 @@
     "name": "The Abyss (Abundance of Apocrypha)",
     "discipline": "Umbramancy",
     "source": "apocrypha",
-    "page": 286,
+    "page": 285,
     "cost": 20,
     "dn": 5,
     "activation": "Full Action",
@@ -3295,7 +3331,7 @@
     "name": "The Darkness Within (Abundance of Apocrypha)",
     "discipline": "Umbramancy",
     "source": "apocrypha",
-    "page": 286,
+    "page": 285,
     "cost": 20,
     "dn": 5,
     "activation": "Action",
@@ -3313,7 +3349,7 @@
     "name": "Gaze of the Emperor (Abundance of Apocrypha)",
     "discipline": "Psykana",
     "source": "apocrypha",
-    "page": 287,
+    "page": 286,
     "cost": 15,
     "dn": 5,
     "activation": "Action",
@@ -3331,7 +3367,7 @@
     "name": "Mental Shackles (Abundance of Apocrypha)",
     "discipline": "Psykana",
     "source": "apocrypha",
-    "page": 287,
+    "page": 286,
     "cost": 15,
     "dn": 5,
     "activation": "Action",
@@ -3350,7 +3386,7 @@
     "name": "Nightshroud (Abundance of Apocrypha)",
     "discipline": "Psykana",
     "source": "apocrypha",
-    "page": 288,
+    "page": 287,
     "cost": 10,
     "dn": 5,
     "activation": "Action",
@@ -3368,7 +3404,7 @@
     "name": "Psychic Barrier (Abundance of Apocrypha)",
     "discipline": "Psykana",
     "source": "apocrypha",
-    "page": 288,
+    "page": 287,
     "cost": 20,
     "dn": 5,
     "activation": "Action",
@@ -3387,7 +3423,7 @@
     "name": "Psychic Maelstrom (Abundance of Apocrypha)",
     "discipline": "Psykana",
     "source": "apocrypha",
-    "page": 288,
+    "page": 287,
     "cost": 20,
     "dn": 5,
     "activation": "Action",
@@ -3405,7 +3441,7 @@
     "name": "Terrifying Visions (Abundance of Apocrypha)",
     "discipline": "Psykana",
     "source": "apocrypha",
-    "page": 288,
+    "page": 287,
     "cost": 20,
     "dn": 5,
     "activation": "Action",
@@ -3424,7 +3460,7 @@
     "name": "Psychic Fortitude (Abundance of Apocrypha)",
     "discipline": "Telethesia",
     "source": "apocrypha",
-    "page": 289,
+    "page": 288,
     "cost": 10,
     "dn": 3,
     "activation": "Action",
@@ -3443,7 +3479,7 @@
     "name": "Terrify (Abundance of Apocrypha)",
     "discipline": "Telethesia",
     "source": "apocrypha",
-    "page": 241,
+    "page": 288,
     "cost": 20,
     "dn": "Target’s Resolve",
     "activation": "Action",
@@ -3462,7 +3498,7 @@
     "name": "Dominate (Abundance of Apocrypha)",
     "discipline": "Telethesia",
     "source": "apocrypha",
-    "page": 289,
+    "page": 288,
     "cost": 20,
     "dn": "Target’s Conviction",
     "activation": "Full Action",
@@ -3481,7 +3517,7 @@
     "name": "Mental Interrogation (Abundance of Apocrypha)",
     "discipline": "Telethesia",
     "source": "apocrypha",
-    "page": 290,
+    "page": 289,
     "cost": 20,
     "dn": "Target’s Conviction",
     "activation": "Full Action",
@@ -3500,7 +3536,7 @@
     "name": "Psychic Pursuit (Abundance of Apocrypha)",
     "discipline": "Telethesia",
     "source": "apocrypha",
-    "page": 290,
+    "page": 289,
     "cost": 15,
     "dn": 6,
     "activation": "Action",
@@ -3519,7 +3555,7 @@
     "name": "Castigation (Abundance of Apocrypha)",
     "discipline": "Telethesia",
     "source": "apocrypha",
-    "page": 290,
+    "page": 289,
     "cost": 25,
     "dn": "Target’s Conviction",
     "activation": "Action",
@@ -3538,7 +3574,7 @@
     "name": "Scourging (Abundance of Apocrypha)",
     "discipline": "Telethesia",
     "source": "apocrypha",
-    "page": 291,
+    "page": 290,
     "cost": 15,
     "dn": "Target’s Conviction",
     "activation": "Action",
@@ -3557,7 +3593,7 @@
     "name": "Psychic Veil (Abundance of Apocrypha)",
     "discipline": "Telethesia",
     "source": "apocrypha",
-    "page": 291,
+    "page": 290,
     "cost": 10,
     "dn": 4,
     "activation": "Action",
@@ -3575,7 +3611,7 @@
     "name": "Warding Incantation (Abundance of Apocrypha)",
     "discipline": "Telethesia",
     "source": "apocrypha",
-    "page": 291,
+    "page": 290,
     "cost": 15,
     "dn": 5,
     "activation": "Action",
@@ -3593,7 +3629,7 @@
     "name": "Banishment (Abundance of Apocrypha)",
     "discipline": "Theosophamy",
     "source": "apocrypha",
-    "page": 267,
+    "page": 291,
     "cost": 25,
     "dn": "Target’s Willpower",
     "activation": "Full Action",
@@ -3611,7 +3647,7 @@
     "name": "Rebuke the Mutant (Abundance of Apocrypha)",
     "discipline": "Theosophamy",
     "source": "apocrypha",
-    "page": 292,
+    "page": 291,
     "cost": 10,
     "dn": 3,
     "activation": "Action",
@@ -3629,7 +3665,7 @@
     "name": "Sanctuary (Abundance of Apocrypha)",
     "discipline": "Theosophamy",
     "source": "apocrypha",
-    "page": 268,
+    "page": 291,
     "cost": 15,
     "dn": 5,
     "activation": "Action",
@@ -3647,7 +3683,7 @@
     "name": "Seal the Breach (Abundance of Apocrypha)",
     "discipline": "Theosophamy",
     "source": "apocrypha",
-    "page": 293,
+    "page": 292,
     "cost": 15,
     "dn": 6,
     "activation": "Full Action",
@@ -3665,7 +3701,7 @@
     "name": "Soul of Adamantium (Abundance of Apocrypha)",
     "discipline": "Theosophamy",
     "source": "apocrypha",
-    "page": 293,
+    "page": 292,
     "cost": 10,
     "dn": 3,
     "activation": "Action",
@@ -3683,7 +3719,7 @@
     "name": "Warp Weapon (Abundance of Apocrypha)",
     "discipline": "Theosophamy",
     "source": "apocrypha",
-    "page": 293,
+    "page": 292,
     "cost": 15,
     "dn": 4,
     "activation": "Simple Action",
@@ -3701,7 +3737,7 @@
     "name": "A Cloud in the Warp (Abundance of Apocrypha)",
     "discipline": "Navigator",
     "source": "apocrypha",
-    "page": 294,
+    "page": 293,
     "cost": 10,
     "dn": 3,
     "activation": "Action",
@@ -3720,7 +3756,7 @@
     "name": "Aether Doldrums (Abundance of Apocrypha)",
     "discipline": "Navigator",
     "source": "apocrypha",
-    "page": 294,
+    "page": 293,
     "cost": 15,
     "dn": 5,
     "activation": "Action",
@@ -3739,7 +3775,7 @@
     "name": "Baleful Watcher (Abundance of Apocrypha)",
     "discipline": "Navigator",
     "source": "apocrypha",
-    "page": 295,
+    "page": 294,
     "cost": 15,
     "dn": "Target’s Conviction",
     "activation": "Action",
@@ -3758,7 +3794,7 @@
     "name": "Ebb and Flow (Abundance of Apocrypha)",
     "discipline": "Navigator",
     "source": "apocrypha",
-    "page": 258,
+    "page": 294,
     "cost": 20,
     "dn": "Target’s Willpower",
     "activation": "Action",
@@ -3777,7 +3813,7 @@
     "name": "Evil Eye (Abundance of Apocrypha)",
     "discipline": "Navigator",
     "source": "apocrypha",
-    "page": 295,
+    "page": 294,
     "cost": 10,
     "dn": "Target’s Willpower",
     "activation": "Action",
@@ -3796,7 +3832,7 @@
     "name": "Eye of Oblivion (Abundance of Apocrypha)",
     "discipline": "Navigator",
     "source": "apocrypha",
-    "page": 296,
+    "page": 295,
     "cost": 15,
     "dn": 4,
     "activation": "Full Action",
@@ -3815,7 +3851,7 @@
     "name": "Foreshadowing (Abundance of Apocrypha)",
     "discipline": "Navigator",
     "source": "apocrypha",
-    "page": 296,
+    "page": 295,
     "cost": 20,
     "dn": 4,
     "activation": "Action",
@@ -3834,7 +3870,7 @@
     "name": "Gaze into the Abyss (Abundance of Apocrypha)",
     "discipline": "Navigator",
     "source": "apocrypha",
-    "page": 297,
+    "page": 296,
     "cost": 10,
     "dn": 4,
     "activation": "Action",
@@ -3853,7 +3889,7 @@
     "name": "Held in my Gaze. (Abundance of Apocrypha)",
     "discipline": "Navigator",
     "source": "apocrypha",
-    "page": 297,
+    "page": 296,
     "cost": 20,
     "dn": "Target’s Willpower",
     "activation": "Action",
@@ -3872,7 +3908,7 @@
     "name": "Inward View (Abundance of Apocrypha)",
     "discipline": "Navigator",
     "source": "apocrypha",
-    "page": 297,
+    "page": 296,
     "cost": 15,
     "dn": 4,
     "activation": "Five Minutes",
@@ -3891,7 +3927,7 @@
     "name": "Pass Unscathed (Abundance of Apocrypha)",
     "discipline": "Navigator",
     "source": "apocrypha",
-    "page": 298,
+    "page": 297,
     "cost": 20,
     "dn": 6,
     "activation": "Action",
@@ -3910,7 +3946,7 @@
     "name": "Seek the Path (Abundance of Apocrypha)",
     "discipline": "Navigator",
     "source": "apocrypha",
-    "page": 298,
+    "page": 297,
     "cost": 15,
     "dn": 4,
     "activation": "Action",
@@ -3929,7 +3965,7 @@
     "name": "The Course Untravelled (Abundance of Apocrypha)",
     "discipline": "Navigator",
     "source": "apocrypha",
-    "page": 298,
+    "page": 297,
     "cost": 20,
     "dn": 6,
     "activation": "Action",
@@ -3948,7 +3984,7 @@
     "name": "The Lidless Stare (Abundance of Apocrypha)",
     "discipline": "Navigator",
     "source": "apocrypha",
-    "page": 294,
+    "page": 297,
     "cost": 0,
     "dn": "Target’s Willpower",
     "activation": "Action",
@@ -3967,7 +4003,7 @@
     "name": "Tides of Time and Space (Abundance of Apocrypha)",
     "discipline": "Navigator",
     "source": "apocrypha",
-    "page": 299,
+    "page": 298,
     "cost": 25,
     "dn": 5,
     "activation": "Simple Action",
@@ -3986,7 +4022,7 @@
     "name": "Tracks in the Stars (Abundance of Apocrypha)",
     "discipline": "Navigator",
     "source": "apocrypha",
-    "page": 299,
+    "page": 298,
     "cost": 10,
     "dn": 3,
     "activation": "Action",
@@ -4005,7 +4041,7 @@
     "name": "Vision of Hell (Abundance of Apocrypha)",
     "discipline": "Navigator",
     "source": "apocrypha",
-    "page": 299,
+    "page": 298,
     "cost": 20,
     "dn": "Target’s Resolve",
     "activation": "Action",
@@ -4024,7 +4060,7 @@
     "name": "Void Watcher (Abundance of Apocrypha)",
     "discipline": "Navigator",
     "source": "apocrypha",
-    "page": 299,
+    "page": 298,
     "cost": 20,
     "dn": 3,
     "activation": "Action",
@@ -4043,7 +4079,7 @@
     "name": "Warp Vigil (Abundance of Apocrypha)",
     "discipline": "Navigator",
     "source": "apocrypha",
-    "page": 300,
+    "page": 299,
     "cost": 15,
     "dn": 4,
     "activation": "Full Action",
@@ -4062,7 +4098,7 @@
     "name": "Death Hex (Abundance of Apocrypha)",
     "discipline": "Dark Hereticus",
     "source": "apocrypha",
-    "page": 301,
+    "page": 300,
     "cost": 15,
     "dn": 7,
     "activation": "Action",
@@ -4081,7 +4117,7 @@
     "name": "Gift of Chaos (Abundance of Apocrypha)",
     "discipline": "Dark Hereticus",
     "source": "apocrypha",
-    "page": 301,
+    "page": 300,
     "cost": 25,
     "dn": "Target’s Toughness",
     "activation": "Action",
@@ -4100,7 +4136,7 @@
     "name": "Diabolic Strength (Abundance of Apocrypha)",
     "discipline": "Dark Hereticus",
     "source": "apocrypha",
-    "page": 301,
+    "page": 300,
     "cost": 15,
     "dn": 5,
     "activation": "Action",
@@ -4119,7 +4155,7 @@
     "name": "Warptime (Abundance of Apocrypha)",
     "discipline": "Dark Hereticus",
     "source": "apocrypha",
-    "page": 302,
+    "page": 301,
     "cost": 20,
     "dn": 5,
     "activation": "Action",
@@ -4138,7 +4174,7 @@
     "name": "Weaver of Fates (Abundance of Apocrypha)",
     "discipline": "Dark Hereticus",
     "source": "apocrypha",
-    "page": 302,
+    "page": 301,
     "cost": 15,
     "dn": 6,
     "activation": "Action",
@@ -4158,7 +4194,7 @@
     "name": "Miasma of Pestilence (Abundance of Apocrypha)",
     "discipline": "Dark Hereticus",
     "source": "apocrypha",
-    "page": 302,
+    "page": 301,
     "cost": 15,
     "dn": 6,
     "activation": "Action",
@@ -4178,7 +4214,7 @@
     "name": "Delightful Agonies (Abundance of Apocrypha)",
     "discipline": "Dark Hereticus",
     "source": "apocrypha",
-    "page": 302,
+    "page": 301,
     "cost": 15,
     "dn": 6,
     "activation": "Action",
@@ -4198,7 +4234,7 @@
     "name": "Baleful Devolution (Abundance of Apocrypha)",
     "discipline": "Discipline of Change",
     "source": "apocrypha",
-    "page": 304,
+    "page": 303,
     "cost": 15,
     "dn": 7,
     "activation": "Action",
@@ -4218,7 +4254,7 @@
     "name": "Cacodaemonic Curse (Abundance of Apocrypha)",
     "discipline": "Discipline of Change",
     "source": "apocrypha",
-    "page": 304,
+    "page": 303,
     "cost": 15,
     "dn": 5,
     "activation": "Action",
@@ -4238,7 +4274,7 @@
     "name": "Doombolt (Abundance of Apocrypha)",
     "discipline": "Discipline of Change",
     "source": "apocrypha",
-    "page": 304,
+    "page": 303,
     "cost": 20,
     "dn": "Target’s Defence",
     "activation": "Action",
@@ -4258,7 +4294,7 @@
     "name": "Glamour of Tzeentch (Abundance of Apocrypha)",
     "discipline": "Discipline of Change",
     "source": "apocrypha",
-    "page": 305,
+    "page": 304,
     "cost": 20,
     "dn": 5,
     "activation": "Action",
@@ -4278,7 +4314,7 @@
     "name": "Perplex (Abundance of Apocrypha)",
     "discipline": "Discipline of Change",
     "source": "apocrypha",
-    "page": 305,
+    "page": 304,
     "cost": 20,
     "dn": 6,
     "activation": "Action",
@@ -4298,7 +4334,7 @@
     "name": "Pyric Flux (Abundance of Apocrypha)",
     "discipline": "Discipline of Change",
     "source": "apocrypha",
-    "page": 305,
+    "page": 304,
     "cost": 10,
     "dn": 4,
     "activation": "Action",
@@ -4319,7 +4355,7 @@
     "name": "Temporal Manipulation (Abundance of Apocrypha)",
     "discipline": "Discipline of Change",
     "source": "apocrypha",
-    "page": 305,
+    "page": 304,
     "cost": 20,
     "dn": 4,
     "activation": "Full Action",
@@ -4339,7 +4375,7 @@
     "name": "Tzeentch’s Firestorm (Abundance of Apocrypha)",
     "discipline": "Discipline of Change",
     "source": "apocrypha",
-    "page": 306,
+    "page": 305,
     "cost": 15,
     "dn": "Target’s Defence",
     "activation": "Action",
@@ -4360,7 +4396,7 @@
     "name": "Crushing Orb (Abundance of Apocrypha)",
     "discipline": "Runes of Fortune",
     "source": "apocrypha",
-    "page": 307,
+    "page": 306,
     "cost": 10,
     "dn": "Target’s Strength",
     "activation": "Action",
@@ -4379,7 +4415,7 @@
     "name": "Fateful Divergence (Abundance of Apocrypha)",
     "discipline": "Runes of Fortune",
     "source": "apocrypha",
-    "page": 307,
+    "page": 306,
     "cost": 10,
     "dn": 3,
     "activation": "Action",
@@ -4398,7 +4434,7 @@
     "name": "Focus Will (Abundance of Apocrypha)",
     "discipline": "Runes of Fortune",
     "source": "apocrypha",
-    "page": 307,
+    "page": 306,
     "cost": 10,
     "dn": 5,
     "activation": "Action",
@@ -4417,7 +4453,7 @@
     "name": "Ghostwalk (Abundance of Apocrypha)",
     "discipline": "Runes of Fortune",
     "source": "apocrypha",
-    "page": 308,
+    "page": 307,
     "cost": 10,
     "dn": 5,
     "activation": "Action",
@@ -4436,7 +4472,7 @@
     "name": "Impair Senses (Abundance of Apocrypha)",
     "discipline": "Runes of Fortune",
     "source": "apocrypha",
-    "page": 308,
+    "page": 307,
     "cost": 10,
     "dn": 5,
     "activation": "Action",
@@ -4455,7 +4491,7 @@
     "name": "Witch Strike (Abundance of Apocrypha)",
     "discipline": "Runes of Fortune",
     "source": "apocrypha",
-    "page": 308,
+    "page": 307,
     "cost": 10,
     "dn": 3,
     "activation": "Simple Action",
@@ -4474,7 +4510,7 @@
     "name": "Vaul’s Song (Abundance of Apocrypha)",
     "discipline": "Runes of Shaping",
     "source": "apocrypha",
-    "page": 309,
+    "page": 308,
     "cost": 10,
     "dn": 5,
     "activation": "Action",
@@ -4493,7 +4529,7 @@
     "name": "Webway Step (Abundance of Apocrypha)",
     "discipline": "Runes of Shaping",
     "source": "apocrypha",
-    "page": 309,
+    "page": 308,
     "cost": 20,
     "dn": 6,
     "activation": "Action",
@@ -4512,7 +4548,7 @@
     "name": "Wraithtomb (Abundance of Apocrypha)",
     "discipline": "Runes of Shaping",
     "source": "apocrypha",
-    "page": 309,
+    "page": 308,
     "cost": 15,
     "dn": 7,
     "activation": "Action",
@@ -4531,7 +4567,7 @@
     "name": "Doom (Abundance of Apocrypha)",
     "discipline": "Runes of Fate",
     "source": "apocrypha",
-    "page": 202,
+    "page": 309,
     "cost": 25,
     "dn": 6,
     "activation": "Action",
@@ -4550,7 +4586,7 @@
     "name": "Eldritch Storm (Abundance of Apocrypha)",
     "discipline": "Runes of Fate",
     "source": "apocrypha",
-    "page": 310,
+    "page": 309,
     "cost": 30,
     "dn": 6,
     "activation": "Full Action",
@@ -4570,7 +4606,7 @@
     "name": "Executioner (Abundance of Apocrypha)",
     "discipline": "Runes of Fate",
     "source": "apocrypha",
-    "page": 250,
+    "page": 309,
     "cost": 30,
     "dn": 6,
     "activation": "Action",
@@ -4589,7 +4625,7 @@
     "name": "Fortune (Abundance of Apocrypha)",
     "discipline": "Runes of Fate",
     "source": "apocrypha",
-    "page": 4,
+    "page": 309,
     "cost": 30,
     "dn": 6,
     "activation": "Action",
@@ -4608,7 +4644,7 @@
     "name": "Guide (Abundance of Apocrypha)",
     "discipline": "Runes of Fate",
     "source": "apocrypha",
-    "page": 11,
+    "page": 310,
     "cost": 25,
     "dn": 6,
     "activation": "Action",
@@ -4627,7 +4663,7 @@
     "name": "Mindwar (Abundance of Apocrypha)",
     "discipline": "Runes of Fate",
     "source": "apocrypha",
-    "page": 311,
+    "page": 310,
     "cost": 25,
     "dn": "Target’s Willpower (opposed)",
     "activation": "Full Action",
@@ -4647,7 +4683,7 @@
     "name": "Will of Asuryan (Abundance of Apocrypha)",
     "discipline": "Runes of Fate",
     "source": "apocrypha",
-    "page": 311,
+    "page": 310,
     "cost": 20,
     "dn": 4,
     "activation": "Action",
@@ -4667,7 +4703,7 @@
     "name": "Fog of Dreams (Abundance of Apocrypha)",
     "discipline": "Phantasmancy",
     "source": "apocrypha",
-    "page": 201,
+    "page": 311,
     "cost": 20,
     "dn": 5,
     "activation": "Action",
@@ -4687,7 +4723,7 @@
     "name": "Mirror of Minds (Abundance of Apocrypha)",
     "discipline": "Phantasmancy",
     "source": "apocrypha",
-    "page": 312,
+    "page": 311,
     "cost": 25,
     "dn": 6,
     "activation": "Action",
@@ -4707,7 +4743,7 @@
     "name": "Shards of Light (Abundance of Apocrypha)",
     "discipline": "Phantasmancy",
     "source": "apocrypha",
-    "page": 201,
+    "page": 311,
     "cost": 20,
     "dn": 7,
     "activation": "Action",
@@ -4727,7 +4763,7 @@
     "name": "Twilight Pathways (Abundance of Apocrypha)",
     "discipline": "Phantasmancy",
     "source": "apocrypha",
-    "page": 312,
+    "page": 311,
     "cost": 15,
     "dn": 6,
     "activation": "Action",
@@ -4746,7 +4782,7 @@
     "name": "Veil of Tears (Abundance of Apocrypha)",
     "discipline": "Phantasmancy",
     "source": "apocrypha",
-    "page": 201,
+    "page": 312,
     "cost": 15,
     "dn": 6,
     "activation": "Action",
@@ -4766,7 +4802,7 @@
     "name": "Webway Dance (Abundance of Apocrypha)",
     "discipline": "Phantasmancy",
     "source": "apocrypha",
-    "page": 313,
+    "page": 312,
     "cost": 25,
     "dn": 6,
     "activation": "Action",
@@ -4785,7 +4821,7 @@
     "name": "Ancestor’s Grace (Abundance of Apocrypha)",
     "discipline": "Revenant",
     "source": "apocrypha",
-    "page": 314,
+    "page": 313,
     "cost": 20,
     "dn": 4,
     "activation": "Action",
@@ -4804,7 +4840,7 @@
     "name": "Gaze of Ynnead (Abundance of Apocrypha)",
     "discipline": "Revenant",
     "source": "apocrypha",
-    "page": 314,
+    "page": 313,
     "cost": 15,
     "dn": 5,
     "activation": "Action",
@@ -4823,7 +4859,7 @@
     "name": "Shield of Ynnead (Abundance of Apocrypha)",
     "discipline": "Revenant",
     "source": "apocrypha",
-    "page": 314,
+    "page": 313,
     "cost": 15,
     "dn": 6,
     "activation": "Action",
@@ -4842,7 +4878,7 @@
     "name": "Storm of Whispers (Abundance of Apocrypha)",
     "discipline": "Revenant",
     "source": "apocrypha",
-    "page": 314,
+    "page": 313,
     "cost": 15,
     "dn": 5,
     "activation": "Action",
@@ -4862,7 +4898,7 @@
     "name": "Unbind Souls (Abundance of Apocrypha)",
     "discipline": "Revenant",
     "source": "apocrypha",
-    "page": 315,
+    "page": 314,
     "cost": 20,
     "dn": 5,
     "activation": "Action",
@@ -4881,7 +4917,7 @@
     "name": "Word of the Phoenix (Abundance of Apocrypha)",
     "discipline": "Revenant",
     "source": "apocrypha",
-    "page": 315,
+    "page": 314,
     "cost": 15,
     "dn": 5,
     "activation": "Action",
@@ -4900,7 +4936,7 @@
     "name": "Da Jump (Abundance of Apocrypha)",
     "discipline": "WAAAGH!",
     "source": "apocrypha",
-    "page": 316,
+    "page": 315,
     "cost": 15,
     "dn": 6,
     "activation": "Full Action",
@@ -4919,7 +4955,7 @@
     "name": "Da Krunch (Abundance of Apocrypha)",
     "discipline": "WAAAGH!",
     "source": "apocrypha",
-    "page": 316,
+    "page": 315,
     "cost": 15,
     "dn": 7,
     "activation": "Action",
@@ -4938,7 +4974,7 @@
     "name": "Fists of Gork (Abundance of Apocrypha)",
     "discipline": "WAAAGH!",
     "source": "apocrypha",
-    "page": 316,
+    "page": 315,
     "cost": 8,
     "dn": 5,
     "activation": "Action",
@@ -4957,7 +4993,7 @@
     "name": "Roar of Mork (Abundance of Apocrypha)",
     "discipline": "WAAAGH!",
     "source": "apocrypha",
-    "page": 317,
+    "page": 316,
     "cost": 15,
     "dn": 7,
     "activation": "Full Action",
@@ -4977,7 +5013,7 @@
     "name": "Warpath (Abundance of Apocrypha)",
     "discipline": "WAAAGH!",
     "source": "apocrypha",
-    "page": 317,
+    "page": 316,
     "cost": 15,
     "dn": 6,
     "activation": "Action",
@@ -4996,7 +5032,7 @@
     "name": "Interface Echo (Abundance of Apocrypha)",
     "discipline": "Skeinwrought",
     "source": "apocrypha",
-    "page": 318,
+    "page": 317,
     "cost": 15,
     "dn": 4,
     "activation": "Action",
@@ -5015,7 +5051,7 @@
     "name": "Fortify (Abundance of Apocrypha)",
     "discipline": "Skeinwrought",
     "source": "apocrypha",
-    "page": 271,
+    "page": 317,
     "cost": 10,
     "dn": 5,
     "activation": "Action",
@@ -5034,7 +5070,7 @@
     "name": "Ancestral Wrath (Abundance of Apocrypha)",
     "discipline": "Skeinwrought",
     "source": "apocrypha",
-    "page": 318,
+    "page": 317,
     "cost": 20,
     "dn": 5,
     "activation": "Action",
@@ -5054,7 +5090,7 @@
     "name": "Grudgepyre (Abundance of Apocrypha)",
     "discipline": "Skeinwrought",
     "source": "apocrypha",
-    "page": 318,
+    "page": 317,
     "cost": 25,
     "dn": "Target’s Willpower (opposed test)",
     "activation": "Action",
@@ -5074,7 +5110,7 @@
     "name": "Null Vortex (Abundance of Apocrypha)",
     "discipline": "Skeinwrought",
     "source": "apocrypha",
-    "page": 319,
+    "page": 318,
     "cost": 25,
     "dn": 7,
     "activation": "Full Action",
@@ -5093,7 +5129,7 @@
     "name": "Crushing Contempt (Abundance of Apocrypha)",
     "discipline": "Skeinwrought",
     "source": "apocrypha",
-    "page": 319,
+    "page": 318,
     "cost": 20,
     "dn": 5,
     "activation": "Full Action",
@@ -5125,7 +5161,7 @@
       "PSYCHIC"
     ],
     "source": "dh",
-    "page": 126
+    "page": 116
   },
   {
     "id": "diabolic_strength",
@@ -5145,7 +5181,7 @@
       "PSYCHIC"
     ],
     "source": "dh",
-    "page": 126
+    "page": 117
   },
   {
     "id": "vortex_of_chaos",
@@ -5165,7 +5201,7 @@
       "PSYCHIC"
     ],
     "source": "dh",
-    "page": 126
+    "page": 117
   },
   {
     "id": "malefic_invitation",
@@ -5178,7 +5214,7 @@
     "multiTarget": false,
     "cost": 10,
     "prerequisite": "Psyker must have the CHAOS Keyword",
-    "effect": "The power is named 'Malefic Invitation', not 'Minor Invocation'. Its effect: The mind of a psyker is a siren call to the hostile denizens of the warp. The most foolhardy deliberately flirt with such attentions, temporarily playing host to the power of a daemonic patron... Choose a Troop-level Threat for your Tier that has the DAEMON and CHAOS Keywords. For the duration of the power, you gain access to the Threat's Bonuses and Abilities (including Daemonic Determination)...",
+    "effect": "The mind of a psyker is a siren call to the hostile denizens of the warp. The most foolhardy deliberately flirt with such attentions, temporarily playing host to the power of a daemonic patron. Not every Daemon is willing to leave the Materium once their host is done with them.\nChoose a Troop-level Threat for your Tier that has the DAEMON and CHAOS Keywords. For the duration of the power, you gain access to the Threat's Bonuses and Abilities (including Daemonic Determination). You cannot use effects that require you to spend Ruin, or use equipment you do not have, and use your own stats for any Tests required to activate the Daemon's powers. When the power ends, make a Conviction Test, with a DN equal to the possessing Daemon's Willpower. If you fail, the Daemon makes a permanent home in your body, per the Dark Passenger Perils of the Warp effect.",
     "potency": "*[1] Select an Elite-level Threat.\n*[2] Select an Adversary-level Threat.\n[3] +1 bonus die on Conviction Test to resist permanent possession.",
     "keywords": [
       "CHAOS",
@@ -5238,14 +5274,14 @@
     "multiTarget": true,
     "cost": 20,
     "prerequisite": "Psyker must have the CHAOS Keyword",
-    "effect": "...one Agent, Elite, or Adversary who would otherwise killed by the Damage inflicted is instead irreversibly transformed into a Chaos Spawn, which attacks everyone around them in a suicidal frenzy.",
+    "effect": "You unleash a strike of eldritch lightning, triggering a chain reaction of appalling transmutations for those caught in the blast.\nThe target takes 15 +9 ED Damage and 1d3 Corruption. When you activate this power, one Agent, Elite, or Adversary who would otherwise be killed by the Damage inflicted is instead irreversibly transformed into a Chaos Spawn, which attacks everyone around them in a suicidal frenzy.",
     "potency": "[1] +10m Range.\n[2] +1 Corruption.\n[1] +1 ED Damage.",
     "keywords": [
       "CHAOS",
       "PSYCHIC"
     ],
     "source": "dh",
-    "page": 51
+    "page": 119
   },
   {
     "id": "desecration_of_worlds",
@@ -5265,7 +5301,7 @@
       "PSYCHIC"
     ],
     "source": "dh",
-    "page": 126
+    "page": 119
   },
   {
     "id": "boon_of_mutation",
@@ -5285,7 +5321,7 @@
       "PSYCHIC"
     ],
     "source": "dh",
-    "page": 126
+    "page": 119
   },
   {
     "id": "gaze_of_fate",
@@ -5305,7 +5341,7 @@
       "PSYCHIC"
     ],
     "source": "dh",
-    "page": 120
+    "page": 119
   },
   {
     "id": "infernal_flames",
@@ -5326,7 +5362,7 @@
       "PSYCHIC"
     ],
     "source": "dh",
-    "page": 126
+    "page": 120
   },
   {
     "id": "twisting_path",
@@ -5368,7 +5404,7 @@
       "PSYCHIC"
     ],
     "source": "dh",
-    "page": 126
+    "page": 121
   },
   {
     "id": "soul_wrack_terror",
@@ -5409,7 +5445,7 @@
       "TELEPATHY"
     ],
     "source": "dh",
-    "page": 126
+    "page": 121
   },
   {
     "id": "phantasmagoria",
@@ -5430,7 +5466,7 @@
       "TELEPATHY"
     ],
     "source": "dh",
-    "page": 126
+    "page": 121
   },
   {
     "id": "sensory_overload",
@@ -5450,7 +5486,7 @@
       "PSYCHIC"
     ],
     "source": "dh",
-    "page": 121
+    "page": 122
   },
   {
     "id": "subversion",
@@ -5470,7 +5506,7 @@
       "PSYCHIC"
     ],
     "source": "dh",
-    "page": null
+    "page": 122
   },
   {
     "id": "fleshy_abundance",
@@ -5490,7 +5526,7 @@
       "PSYCHIC"
     ],
     "source": "dh",
-    "page": 126
+    "page": 123
   },
   {
     "id": "grandfathers_alleviation",
@@ -5510,7 +5546,7 @@
       "PSYCHIC"
     ],
     "source": "dh",
-    "page": 126
+    "page": 124
   },
   {
     "id": "glitching_curse",
@@ -5530,7 +5566,7 @@
       "PSYCHIC"
     ],
     "source": "dh",
-    "page": 126
+    "page": 124
   },
   {
     "id": "malodorous_pall",
@@ -5550,7 +5586,7 @@
       "PSYCHIC"
     ],
     "source": "dh",
-    "page": 126
+    "page": 124
   },
   {
     "id": "stream_of_pestilence",
@@ -5590,7 +5626,7 @@
       "PSYCHIC"
     ],
     "source": "dh",
-    "page": 74
+    "page": 125
   },
   {
     "id": "veil_of_time",

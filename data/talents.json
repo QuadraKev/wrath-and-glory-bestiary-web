@@ -161,7 +161,7 @@
     "effect": "When you successfully use a psychic power at the Transcendent power level, you may add up to Double Rank additional Exalted Icons to apply to the power’s Potency options. However, you add +30 to any roll on the Perils of the Warp table. You gain 3d3 Corruption when you take this talent. You may not select the Beta-level Psyker or Gamma-level Psyker talents.",
     "flavor": "Your raw power is beyond that of most psykers encountered by the Imperium, but such power is incredibly unstable.",
     "source": "apocrypha",
-    "page": 179
+    "page": 230
   },
   {
     "id": "ambush_aoa",
@@ -176,7 +176,7 @@
     "effect": "You have a perfect sense of precision and timing, and your ambushes are virtually impossible to detect. You and your squad add +Rank to your Stealth Scores, and enemies may not spend Ruin to become aware of the ambushing Striking Scorpions.",
     "flavor": "",
     "source": "apocrypha",
-    "page": 244
+    "page": 247
   },
   {
     "id": "anathema_aoa",
@@ -190,7 +190,7 @@
     "effect": "Whenever you succeed at a melee attack against a creature with the DAEMON or PSYKER keywords, your attack inflicts mortal wounds equal to your Rank in addition to any other damage inflicted. In addition, creatures with the DAEMON keyword within a number of metres of you equal to your Willpower may not attempt to roll Determination.",
     "flavor": "Your mere presence is bane to daemons and psykers.",
     "source": "apocrypha",
-    "page": 179
+    "page": 231
   },
   {
     "id": "anatomical_scourge",
@@ -221,7 +221,7 @@
     "effect": "You may re-roll any failures on any Resolve test you make.",
     "flavor": "You are one of the Defenders of Humanity, a bulwark against terror forged in the furnace of war.",
     "source": "apocrypha",
-    "page": 145
+    "page": 231
   },
   {
     "id": "angel_of_death",
@@ -261,7 +261,10 @@
       "skills": {
         "leadership": 2,
         "survival": 2
-      }
+      },
+      "keywords": [
+        "AELDARI"
+      ]
     },
     "effect": "Choose any Threat with the BEAST Keyword that is not an Adversary at your Tier. You have tamed a single creature of that type. It follows you and attempts actions in combat as you command, taking its own slot in the Initiative Order like an Agent. It does not interact with Wrath or Ruin, unless another ability indicates otherwise. If you suffer an attack whilst the creature is within half its Speed of you, it may take a DN 5 Initiative Test as a Reflexive Action. If it succeeds, the attack is redirected onto the creature. Slain creatures may be replaced for free the next time you visit the replacement creature's habitat, or a location where it is raised in captivity.",
     "flavor": "You have tamed a creature to follow your commands and respect you as its master.",
@@ -333,7 +336,7 @@
         "weaponSkill": 2
       }
     },
-    "effect": "...Your weapon must have one of the following Keywords to activate this Talent: BLADE, CHAIN, FORCE, POWER FIELD.",
+    "effect": "When you make a successful melee attack you can Shift Exalted Icons to reduce the target's Resilience instead of adding ED. Each Exalted Icon you Shift decreases the target's Resilience by 1. This Resilience is removed before you calculate damage from the attack. Your weapon must have one of the following Keywords to activate this Talent: BLADE, CHAIN, FORCE, POWER FIELD.",
     "flavor": "Your furious strikes rend armour, leaving it broken and useless.",
     "source": "core",
     "page": 129
@@ -391,7 +394,7 @@
     "choiceLabel": "Augmetic Selection",
     "choiceDescription": "Choose augmetics (two Rare or lower, or one Very Rare)",
     "source": "core",
-    "page": 90
+    "page": 129
   },
   {
     "id": "avatar_of_blood_aoa",
@@ -474,7 +477,8 @@
     "cost": 20,
     "prerequisites": {
       "keywords": [
-        "ASURYANI"
+        "ASURYANI",
+        "AELDARI"
       ]
     },
     "effect": "When you make a ranged attack, you may move up to your Speed as a Free Action. You may use this Talent up to Rank times per combat, and never more than once per Turn.",
@@ -497,7 +501,7 @@
     "effect": "You do not have to move in a straight line when you sprint. Further, when you Sprint, you may make a ranged attack with any weapon as if that weapon had the Assault trait. You do not suffer the normal +2DN on the attack for doing this. This does not apply to weapons with the Heavy trait.",
     "flavor": "The warriors of the Craftworlds are swift and certain, able to fight on the move with startling effectiveness.",
     "source": "apocrypha",
-    "page": 83
+    "page": 232
   },
   {
     "id": "battle_fortune_aoa",
@@ -535,12 +539,15 @@
     "prerequisites": {
       "skills": {
         "psychicMastery": 4
-      }
+      },
+      "keywords": [
+        "AELDARI"
+      ]
     },
     "effect": "When you successfully activate a power from the Runes of Battle Discipline, you activate both of the power's listed effects, rather than just one.",
     "flavor": "You have walked the Path of the Warlock long enough to balance its augmenting and destructive powers against one another.",
     "source": "aeldari",
-    "page": null
+    "page": 60
   },
   {
     "id": "benediction_of_darkness_aoa",
@@ -608,7 +615,8 @@
     "cost": 10,
     "prerequisites": {
       "keywords": [
-        "DRUKHARI"
+        "DRUKHARI",
+        "AELDARI"
       ],
       "other": "Influence 4+"
     },
@@ -640,7 +648,8 @@
         "weaponSkill": 2
       },
       "keywords": [
-        "DRUKHARI"
+        "DRUKHARI",
+        "AELDARI"
       ]
     },
     "effect": "When you use an AELDARI or DRUKHARI melee weapon, it gains the Rending (Rank) Trait. If it already has the Rending Trait, increase its Rending rating by +Rank.",
@@ -681,7 +690,11 @@
     "id": "bladestorm",
     "name": "Bladestorm",
     "cost": 20,
-    "prerequisites": {},
+    "prerequisites": {
+      "keywords": [
+        "AELDARI"
+      ]
+    },
     "effect": "When you use a SHURIKEN weapon, increase the Salvo rating by +Rank.",
     "flavor": "When outnumbered, as the Aeldari often are, you can even the odds with a hail of monomolecular-edged discs, discharged with an extraordinary rate of fire.",
     "source": "aeldari",
@@ -745,7 +758,7 @@
     "effect": "You gain +1d3 Corruption. After you make a melee attack, you may spend 1 Wrath to make an additional attack.",
     "flavor": "You are a blood-soaked devotee of the Lord of Skulls, and your desire to slay cannot be sated.",
     "source": "apocrypha",
-    "page": 174
+    "page": 232
   },
   {
     "id": "blood_must_flow",
@@ -794,7 +807,7 @@
     "effect": "Immediately after you kill an enemy with a melee attack, you may move up to half your Speed towards the next nearest enemy. You may make this move a number of times per round equal to your Rank.",
     "flavor": "Your fury has not been sated by those you have already slain… maybe the next one will quench your thirst for blood.",
     "source": "apocrypha",
-    "page": 154
+    "page": 232
   },
   {
     "id": "bolstering_purity",
@@ -1016,7 +1029,11 @@
     "id": "burning_bright",
     "name": "Burning Bright",
     "cost": 10,
-    "prerequisites": {},
+    "prerequisites": {
+      "keywords": [
+        "AELDARI"
+      ]
+    },
     "effect": "You reduce the number of Traumatic Injuries required to kill you by 1 (to a minimum of 1). Your party begins each session with +1 Glory (up to the usual maximum).",
     "flavor": "The doom of your people is written in stone, but you are determined to fight till the end with fire in your heart.",
     "source": "aeldari",
@@ -1274,7 +1291,7 @@
     "effect": "When you PILOT a vehicle that you share at least one keyword with, you may roll Determination for that vehicle when it suffers an attack. The dice pool for this is equal to your total Pilot (Agility) test or the vehicle’s Manoeuvrability score, whichever is lower, and you suffer 1 Shock for each Wound cancelled by this roll.",
     "flavor": "You’ve learned how to turn and manoeuvre a vehicle you’re driving to minimise the damage it receives.",
     "source": "apocrypha",
-    "page": 114
+    "page": 234
   },
   {
     "id": "concealed_cavity",
@@ -1551,7 +1568,7 @@
     "effect": "When you make a successful melee attack against a character with the IMPERIUM keyword and roll a 6 on the Wrath die, you may choose to make an additional melee attack instead of inflicting a critical hit. This additional attack cannot be used to gain more attacks.",
     "flavor": "Endless is your spite. Eternal is your hate.",
     "source": "apocrypha",
-    "page": 156
+    "page": 235
   },
   {
     "id": "death_visions_aoa",
@@ -1657,7 +1674,7 @@
     "effect": "As a Simple Action, you may use this Talent to make an Intellect-based Skill Test to recall or notice something about a target. The target can be anything, from a mag-locked door with a cantankerous machine spirit to an inscrutable Planetary Governor. If you pass the Test, the GM may give you information based on the Skill you used to make the Test. You also gain +Rank bonus dice to any Test made against that target that utilises this information. You may give this bonus to an ally if you communicate what you have learned.",
     "flavor": "Your studious mind can pick apart a problem (or person) with ease.",
     "source": "core",
-    "page": 90
+    "page": 132
   },
   {
     "id": "deductive_genius",
@@ -1686,7 +1703,7 @@
     "effect": "You are well-versed in the principles of unyielding defence, and your squad are well-drilled to ensure that no enemy can overcome them without great sacrifice. You and your squad increase Defence and Resilience by +2.",
     "flavor": "",
     "source": "apocrypha",
-    "page": 83
+    "page": 248
   },
   {
     "id": "deflect_shot",
@@ -1771,7 +1788,7 @@
         "leadership": 4
       }
     },
-    "effect": "Your devotees are a Mob of any Troop level Threat, as described in Chapter 14: Bestiary. A number of devotees...",
+    "effect": "Through reputation or assignment, you have gathered a number of followers that will do whatever you ask. If you are attacked, they intervene.\nYour devotees are a Mob of any Troop level Threat, as described in Chapter 14: Bestiary. A number of devotees equal to Double Rank +2 have decided to follow you. You may use the stats presented in Chapter 14 for each devotee, or use the following rules:\nDevotee Attributes are equal to 1 + Double Rank. Devotee Skills are equal to 1 + Double Rank. A devotee's Attributes and Skills cannot be higher than your own.\nWhenever you are hit by any form of attack, any of your devotees may make a DN5 Initiative Test as a Reflexive Action. If they succeed, the attack kills the devotee instead of hitting you.\nSlain devotees may be replaced for free with new devotees the next time you visit a major encampment or city.\nIf you take this Talent more than once, you gain more devotees of the same type you already possess.\nIf you already have followers from an archetype ability, this Talent provides additional followers of that type instead.",
     "flavor": "Through reputation or assignment, you have gathered a number of followers that will do whatever you ask. If you are attacked, they intervene.",
     "source": "core",
     "page": 132
@@ -1784,7 +1801,7 @@
     "effect": "When you suffer more Wounds than your Maximum Wounds, you are not Dying. Roll once on the Memorable Injuries table and heal 1 Wound. You may not use this Talent again until you complete a Regroup.",
     "flavor": "You're hard to kill.",
     "source": "core",
-    "page": 99
+    "page": 132
   },
   {
     "id": "dig_in_deep",
@@ -1804,7 +1821,7 @@
     "effect": "Whenever you make an Interaction Attack and you shift 2 Exalted Icons, you can inflict your target with an additional Condition. Choose the most narratively appropriate Condition from the following options: Blinded, Prone, Restrained, Staggered.",
     "flavor": "You're proficient in the art of foul play.",
     "source": "core",
-    "page": 96
+    "page": 132
   },
   {
     "id": "disarming_stare",
@@ -1900,7 +1917,7 @@
     "effect": "The Exarch’s motions in battle are misleading, even entrancing, leaving enemies off-balance and unable to perceive when the true attack will come. You may make an Athletics Interaction attack as a Simple Action, rather than a Combat Action.",
     "flavor": "",
     "source": "apocrypha",
-    "page": 245
+    "page": 248
   },
   {
     "id": "disturbing_voice",
@@ -2195,7 +2212,7 @@
     "effect": "Your companion is a single Troop level Threat of Tiny or Small size. You may use stats from the bestiary or use the following rules: Companion Attributes are equal to 1 + Double Rank. Companion Skills are equal to 1 + Double Rank. A companion’s Attributes and Skills cannot be higher than your own. Your familiar will stick close to you—within 3m—under most circumstances and will try to avoid combat unless ordered otherwise. If your familiar is within 3m of you, its Defence is increased by +2. A collection of custom-made familiars can be found in Chapter IV: Equipment.",
     "flavor": "You are accompanied by a small companion creature which aids and assists you.",
     "source": "apocrypha",
-    "page": 86
+    "page": 236
   },
   {
     "id": "fashionista",
@@ -2385,7 +2402,7 @@
     "effect": "You increase the base damage of a bayonet you wield by +Double Rank when you charge, or when you attack an enemy who charged you since your last turn.",
     "flavor": "Sharp steel, with some guts behind it, is a vital part of defending the Imperium.",
     "source": "apocrypha",
-    "page": 86
+    "page": 236
   },
   {
     "id": "flagellant",
@@ -2516,7 +2533,7 @@
     "effect": "When you attempt to use a psychic power at the Unbound or Transcendent power level, for each Exalted Icon you roll, you may roll one additional die for the Psychic Mastery test. These additional dice may not themselves grant more dice. You gain 1d3 Corruption Points when you take this talent. You may not select the Alpha-level Psyker or Beta-level Psyker talents.",
     "flavor": "Your psychic powers are particularly potent, with an intensity that few can match.",
     "source": "apocrypha",
-    "page": 232
+    "page": 237
   },
   {
     "id": "gene_wrought_might",
@@ -2588,7 +2605,7 @@
     "effect": "Whenever an ally within Rank metres of you is the target of an attack, you may spend 1 Glory as a Reflexive Action to interpose yourself and become the target of that attack instead. You cannot use this talent if you are Restrained or otherwise have impaired movement.",
     "flavor": "You are a shield for your allies.",
     "source": "apocrypha",
-    "page": 83
+    "page": 237
   },
   {
     "id": "gunnery_crew_aoa",
@@ -2616,7 +2633,7 @@
     "effect": "When you use a Salvo option when making a ranged attack, you add +Rank ED to the attack's damage.",
     "flavor": "On command, you can produce a veritable wall of firepower that few foes can withstand.",
     "source": "apocrypha",
-    "page": 232
+    "page": 237
   },
   {
     "id": "hammer_of_wrath",
@@ -2702,7 +2719,7 @@
     "effect": "You gain +Rank bonus dice to any Stealth (A) or Survival (Wil) Tests when moving through urban environments.",
     "flavor": "You are experienced at navigating the urban environments of the Imperium.",
     "source": "core",
-    "page": 96
+    "page": 135
   },
   {
     "id": "honed_to_lethality",
@@ -2874,7 +2891,8 @@
     "cost": 10,
     "prerequisites": {
       "keywords": [
-        "DRUKHARI"
+        "DRUKHARI",
+        "AELDARI"
       ]
     },
     "effect": "You may roll Determination against attacks that deal Mortal Wounds. You do not suffer DN penalties for being Wounded, unless you have suffered more than Double Rank Wounds. When you are Dying, you do not fall Prone, and suffer no limits on the Actions you can take, unless you suffer Traumatic Injuries equal to or greater than your Rank.",
@@ -3071,7 +3089,8 @@
     "cost": 20,
     "prerequisites": {
       "keywords": [
-        "DRUKHARI"
+        "DRUKHARI",
+        "AELDARI"
       ]
     },
     "effect": "As a Simple Action, you may enhance the toxins of a weapon you handle that has the Inflict (Poisoned) Trait. The weapon gains +Double Rank ED until it is next reloaded.",
@@ -3347,7 +3366,11 @@
     "id": "luck_of_the_laughing_god",
     "name": "Luck of the Laughing God",
     "cost": 10,
-    "prerequisites": {},
+    "prerequisites": {
+      "keywords": [
+        "AELDARI"
+      ]
+    },
     "effect": "Once per Test, you may reroll a single Wrath Die. You may not reroll the die more than once (even if another effect, such as spending a Wrath Point, would make you eligible to do so), and cannot reroll a Complication.",
     "flavor": "As a favoured child of Cegorach, you often enjoy his characteristic good fortune… when not chosen to be the butt of His joke.",
     "source": "aeldari",
@@ -3850,7 +3873,7 @@
     "effect": "As a Simple Action you can begin mentally reciting Ecclesiastical liturgies. As long as you sacrifice your Simple Action in this way, you gain +1 bonus Willpower, for a maximum of Double Rank Rounds. You can't use this Talent again until you complete a Respite.",
     "flavor": "The litanies of His holy word have burned themselves deep in your memory. You can recite hymns and prayers to the Emperor by rote, and can use them to bolster your mind.",
     "source": "core",
-    "page": 99
+    "page": 137
   },
   {
     "id": "overseer_aoa",
@@ -3878,7 +3901,7 @@
     "effect": "When you are Charged, you may use your Reflexive Action and spend 1 ammo to make a ranged attack against the enemy Charging you. This attack is resolved before the Charge begins, and the enemy's receives +3 Defence against this attack. This is considered a Salvo option, so you must reload your weapon after this attack before you can fire it again.",
     "flavor": "You’ve trained to be able to snap off a burst of fire at a charging foe.",
     "source": "apocrypha",
-    "page": 116
+    "page": 240
   },
   {
     "id": "pain_glove_endurant",
@@ -3979,7 +4002,8 @@
     "cost": 20,
     "prerequisites": {
       "keywords": [
-        "DRUKHARI"
+        "DRUKHARI",
+        "AELDARI"
       ]
     },
     "effect": "The first time you make a successful attack Test that kills a living creature in combat, you gain +Rank Determination. The second time you make a successful attack Test that kills a living creature in combat, you gain +Rank Speed. The third time you make a successful attack Test that kills a living creature in combat, you gain +Rank Resolve. Benefits gained from this Talent expire at the end of combat, or at the end of any combat Turn in which you do not kill a living creature.",
@@ -4178,7 +4202,7 @@
     "effect": "When you make a ranged attack with a PULSE weapon, you may spend one Glory. If you do so, each Exalted Icon you shift for Extra Damage on that attack adds +2ED rather than 1. You cannot use this talent while wearing a BATTLESUIT.",
     "flavor": "Rather than charge into hand-to-hand combat, T’au soldiers intensify their fire and lay waste to their foes methodically.",
     "source": "apocrypha",
-    "page": 82
+    "page": 242
   },
   {
     "id": "quell_the_warp_aoa",
@@ -4195,7 +4219,7 @@
     "effect": "You gain the ability to Deny the Witch even though you are not a psyker. Instead of a Psychic Mastery test, you make a Willpower test with a bonus of +Double Rank.",
     "flavor": "You can focus your mind to still disturbances in the Warp nearby.",
     "source": "apocrypha",
-    "page": 179
+    "page": 242
   },
   {
     "id": "rad_saturated",
@@ -4379,7 +4403,7 @@
     "flavor": "The righteousness of your indignation rings in the ears of those true to the Imperial Cult.",
     "isFaithTalent": true,
     "source": "core",
-    "page": 99
+    "page": 144
   },
   {
     "id": "righteous_suffering",
@@ -4424,7 +4448,8 @@
     "cost": 10,
     "prerequisites": {
       "keywords": [
-        "HARLEQUIN"
+        "HARLEQUIN",
+        "AELDARI"
       ]
     },
     "effect": "You may move up to triple your Speed when using the Charge Full-Round Action. You do not provoke Reflexive Attacks when you move out of Engagement from an enemy.",
@@ -4661,7 +4686,10 @@
     "prerequisites": {
       "skills": {
         "psychicMastery": 4
-      }
+      },
+      "keywords": [
+        "AELDARI"
+      ]
     },
     "effect": "When another Psyker within 10m of you successfully activates a psychic power, they automatically gain an extra Exalted Icon, which can be Shifted for Potency effects as normal.",
     "flavor": "You share the burden of psychic power with your allies, helping them to manifest even greater abilities.",
@@ -4750,7 +4778,7 @@
     "flavor": "Your indomitable belief steels your mind against Warp-witchery.",
     "isFaithTalent": true,
     "source": "core",
-    "page": 99
+    "page": 144
   },
   {
     "id": "shredding_fire_aoa",
@@ -4814,7 +4842,8 @@
     "cost": 20,
     "prerequisites": {
       "keywords": [
-        "HARLEQUIN"
+        "HARLEQUIN",
+        "AELDARI"
       ]
     },
     "effect": "Each time you purchase this Talent, choose to master one of the three saedath types below. An Agent can only perform one saedath at a time, but can switch to a different saedath as a Simple Action. Master of Light: Whilst performing this saedath, gain +Rank bonus dice on all Interaction Attack Tests. Master of Dark: Whilst performing this saedath, increase the AP of your melee weapons by +Rank. Master of Twilight: Whilst performing this saedath, you gain +Rank bonus dice on all Tests made whilst Glory and Ruin are equal (you cannot spend Glory to gain bonus dice on these Tests).",
@@ -5004,7 +5033,7 @@
         "ASTRA MILITARUM"
       ]
     },
-    "effect": "...Grenade launcher. You also receive 3 frag and 3 krak grenades\nHot-Shot Volley Gun (TEMPESTUS SCION only).",
+    "effect": "Many soldiers of the Astra Militarum receive training in the use of specialty weapons on the battlefield. Often, this training includes basic chants to appease the weapon's war-spirit if it becomes obstinate or recalcitrant.\nYou may select one of the following weapons as standard Wargear, replacing your primary weapon:\nCombat Shotgun, Plasma Gun, Meltagun, Long Las, Flamer, Grenade launcher (you also receive 5 frag and 3 krak grenades), or Hot-Shot Volley Gun (TEMPESTUS SCION only).",
     "flavor": "Many soldiers of the Astra Militarum receive training in the use of specialty weapons on the battlefield. Often, this training includes basic chants to appease the weapon's war-spirit if it becomes obstinate or recalcitrant.",
     "requiresChoice": true,
     "choiceType": "weapon",
@@ -5112,7 +5141,7 @@
     "effect": "You are evasive and shadowy, never directly observed, only ever glimpsed out of the corner of an enemy’s eyes; aiming at such a target is nigh-impossible. You and all members of your squad add your Rank to their Defence when in cover, in addition to of the normal bonus to defence for cover.",
     "flavor": "",
     "source": "apocrypha",
-    "page": 128
+    "page": 251
   },
   {
     "id": "stand_firm_aoa",
@@ -5182,7 +5211,7 @@
     "effect": "If this Prayer is successful, then while the Prayer remains in effect, a single group of allied T’au numbering no more than your Willpower score, within 12m of you may ignore up to Rank DN penalties when taking a Multi-Action.",
     "flavor": "The steady gaze of the Ethereal reminds those of the Fire Caste that there lies within the heart of every storm a zone of silence that remains serene even as fury rages all about it. So inspired, they apply themselves to their assigned tasks with hard-eyed calm even as they continue to hammer the foe with unrelenting firepower.",
     "source": "apocrypha",
-    "page": 181
+    "page": 258
   },
   {
     "id": "strength_from_steel",
@@ -5216,7 +5245,7 @@
     "effect": "After making a ranged attack, whether successful or not, you may spend one Glory to move up to your Speed.",
     "flavor": "You fight in an elusive manner, withdrawing from battle mere moments after striking with full force, then rallying to strike once more.",
     "source": "apocrypha",
-    "page": 83
+    "page": 243
   },
   {
     "id": "strike_from_the_shadows_aoa",
@@ -5273,7 +5302,7 @@
     "effect": "You gain +Rank bonus dice whenever you are appealing to one of your social betters, such as a planetary governor or a superior officer. If your behaviour in any way deviates from the accepted social norms of the Imperium, your GM may refuse this bonus.",
     "flavor": "You know your place and how to work Imperial feudalism to your advantage.",
     "source": "core",
-    "page": 90
+    "page": 140
   },
   {
     "id": "supporting_fire_aoa",
@@ -5287,7 +5316,7 @@
     "effect": "When an enemy uses the Charge action to charge an ally you can see within 12m of you, you may spend 1 ammo to make a ranged attack as a Reflexive action. This ranged attack is resolved before their Charge action is completed, and the enemy’s Defence is increased by +2. This is considered a Salvo attack, and thus the weapon must be reloaded after the attack.",
     "flavor": "You are always ready to deliver punishing fire against those who stray too close to your allies.",
     "source": "apocrypha",
-    "page": 80
+    "page": 244
   },
   {
     "id": "suppressing_fusillade_aoa",
@@ -5459,7 +5488,7 @@
     "effect": "When you attempt a Resolve or Conviction Test, if you roll a 6 on your Wrath die, the test is automatically successful, regardless of any other factors.",
     "flavor": "You undertook the Ta'lissera rite, bonding you with your teammates in the ultimate expression of unity and respect. That bond is unbreakable.",
     "source": "apocrypha",
-    "page": 80
+    "page": 244
   },
   {
     "id": "tank_killer_aoa",
@@ -5656,7 +5685,7 @@
     "effect": "When an attack deals less than (Rank) Wounds to you, you may immediately choose to convert them to Shock as if you had automatically received (Rank) Icons while rolling Determination. In addition, when converting Wounds to Shock through this method or with standard Determination rolls, you receive one less Shock per instance of conversion, to a minimum of 1.",
     "flavor": "Your constitution is such that no blade, bolt, or other weapon can keep you down for long.",
     "source": "voa",
-    "page": 27
+    "page": 50
   },
   {
     "id": "transhuman_physiology_aoa",
@@ -5706,7 +5735,8 @@
     "cost": 10,
     "prerequisites": {
       "keywords": [
-        "DRUKHARI"
+        "DRUKHARI",
+        "AELDARI"
       ]
     },
     "effect": "Any DRUKHARI weapon you requisition is delivered with its first weapon upgrade installed. You may choose any available weapon upgrades, so long as the Value and Rarity of the upgrade is not greater than the weapon's Value or Rarity.",
@@ -5859,7 +5889,7 @@
     "effect": "Characters of a higher social class with the IMPERIUM keyword, such as planetary governors, Imperial nobility, or manufactorum owners, ignore you completely unless you attract undue attention to yourself. Anyone attempting to notice or track you in a crowded area, or trying to remember your face, suffers +2DN.",
     "flavor": "You are forgettable and blend into crowds easily.",
     "source": "core",
-    "page": 96
+    "page": 141
   },
   {
     "id": "unshakable_vengeance",
@@ -5949,7 +5979,7 @@
     "effect": "If this Prayer is successful, you and all allies with the IMPERIUM keyword within 12m of you may re-roll up to Double Rank dice on melee attacks while the Prayer remains in effect.",
     "flavor": "Suffer not the enemies of Mankind to live. Smite them down with all your strength and fury.",
     "source": "apocrypha",
-    "page": 103
+    "page": 255
   },
   {
     "id": "war_hymns_aoa",
@@ -5963,7 +5993,7 @@
     "effect": "You may sing war hymns as a simple action, and all allies with the IMPERIUM keyword within 15+Rank metres gain +Rank bonus dice on all melee attacks until the start of your next turn.",
     "flavor": "Your voice is heard above the clamour and clangour of battle, rallying the servants of the Emperor to greater heights of piety and fury.",
     "source": "apocrypha",
-    "page": 103
+    "page": 245
   },
   {
     "id": "war_shout_aoa",
@@ -5989,7 +6019,8 @@
         "willpower": 4
       },
       "keywords": [
-        "YNNARI"
+        "YNNARI",
+        "AELDARI"
       ]
     },
     "effect": "During combat, you may call upon the spirits to heal you as a Combat Action. If you succeed on a DN 1 Resolve Test, you regain Rank Wounds, plus additional Wounds equal to the number of Shifted Exalted Icons.",
@@ -6222,7 +6253,7 @@
     "effect": "You are elusive and cannot be held in any battles but the ones they choose to fight. When you or a member of your squad moves out of Engagement with an enemy, you do not provoke Reflexive Attacks from that enemy: you are always considered to have taken the Fall Back action.",
     "flavor": "",
     "source": "apocrypha",
-    "page": 249
+    "page": 253
   },
   {
     "id": "wonders_of_the_brôkhyr_aoa",
@@ -6306,7 +6337,7 @@
     "flavor": "Nightmares lurk beyond the rays of sunlight; becoming one with the dark is the true path to glory. This is a Prayer to the Dark Gods, activated using Ruin.",
     "isPrayer": true,
     "source": "dh",
-    "page": 126
+    "page": 114
   },
   {
     "id": "daemonic_summons_dh",
@@ -6339,7 +6370,7 @@
     "flavor": "There is purity in your hatred of unbelievers who blaspheme against the Ruinous Powers. This is a Prayer to the Dark Gods, activated using Ruin.",
     "isPrayer": true,
     "source": "dh",
-    "page": 126
+    "page": 115
   },
   {
     "id": "eye_of_the_gods_dh",
@@ -6376,7 +6407,7 @@
     "flavor": "Even unbelievers cannot deny the truth of Chaos once it takes root in their soul. This is a Prayer to the Dark Gods, activated using Ruin.",
     "isPrayer": true,
     "source": "dh",
-    "page": 126
+    "page": 115
   },
   {
     "id": "forge_of_souls_dh",

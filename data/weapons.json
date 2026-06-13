@@ -20,7 +20,7 @@
       "BLADE"
     ],
     "source": "core",
-    "page": 182
+    "page": 211
   },
   {
     "id": "psykana_mercy_blade",
@@ -68,7 +68,7 @@
       "BLADE"
     ],
     "source": "core",
-    "page": 129
+    "page": 211
   },
   {
     "id": "chainsword",
@@ -96,7 +96,7 @@
       "CHAOS"
     ],
     "source": "core",
-    "page": 129
+    "page": 212
   },
   {
     "id": "power_sword",
@@ -121,7 +121,7 @@
       "POWER FIELD"
     ],
     "source": "core",
-    "page": 129
+    "page": 213
   },
   {
     "id": "death_cult_power_blade",
@@ -249,7 +249,7 @@
       "ORK"
     ],
     "source": "core",
-    "page": 115
+    "page": 213
   },
   {
     "id": "witchblade",
@@ -350,8 +350,8 @@
       "ADEPTUS MECHANICUS",
       "ARC"
     ],
-    "source": "core",
-    "page": null
+    "source": "redacted2",
+    "page": 61
   },
   {
     "id": "astartes_combat_knife",
@@ -407,7 +407,7 @@
       "IMPERIUM"
     ],
     "source": "core",
-    "page": 184
+    "page": 217
   },
   {
     "id": "lasgun",
@@ -627,7 +627,7 @@
       "BOLT"
     ],
     "source": "core",
-    "page": 182
+    "page": 217
   },
   {
     "id": "heavy_bolt_pistol",
@@ -784,7 +784,7 @@
       "ORK"
     ],
     "source": "core",
-    "page": 115
+    "page": 220
   },
   {
     "id": "shuriken_pistol",
@@ -1002,7 +1002,7 @@
       "PROJECTILE"
     ],
     "source": "core",
-    "page": 182
+    "page": 218
   },
   {
     "id": "avenger_shuriken_catapult",
@@ -1035,7 +1035,7 @@
       "SHURIKEN"
     ],
     "source": "aeldari",
-    "page": 80
+    "page": 81
   },
   {
     "id": "shuriken_rifle",
@@ -1068,7 +1068,7 @@
       "SHURIKEN"
     ],
     "source": "aeldari",
-    "page": 80
+    "page": 81
   },
   {
     "id": "death_spinner",
@@ -1368,7 +1368,7 @@
       "SHURIKEN"
     ],
     "source": "aeldari",
-    "page": 80
+    "page": 81
   },
   {
     "id": "neuro_disruptor",
@@ -1495,7 +1495,7 @@
       "POWER FIELD"
     ],
     "source": "aeldari",
-    "page": 87
+    "page": 89
   },
   {
     "id": "scorpion_chainsword",
@@ -1630,7 +1630,7 @@
       "WYCH CULT"
     ],
     "source": "aeldari",
-    "page": 86
+    "page": 87
   },
   {
     "id": "hellglaive",
@@ -1654,7 +1654,7 @@
       "HELLION"
     ],
     "source": "aeldari",
-    "page": 86
+    "page": 87
   },
   {
     "id": "agoniser",
@@ -1681,7 +1681,7 @@
       "WYCH CULT"
     ],
     "source": "aeldari",
-    "page": 87
+    "page": 89
   },
   {
     "id": "klaive",
@@ -1710,7 +1710,7 @@
       "POWER FIELD"
     ],
     "source": "aeldari",
-    "page": 87
+    "page": 89
   },
   {
     "id": "huskblade",
@@ -1762,7 +1762,7 @@
       "WYCH CULT"
     ],
     "source": "aeldari",
-    "page": 87
+    "page": 89
   },
   {
     "id": "harlequin_kiss",
@@ -1893,7 +1893,7 @@
       "ANHRATHE"
     ],
     "source": "aeldari",
-    "page": 87
+    "page": 89
   },
   {
     "id": "scissorhand",
@@ -1946,7 +1946,7 @@
       "MANDRAKE"
     ],
     "source": "aeldari",
-    "page": 86
+    "page": 87
   },
   {
     "id": "astartes_chainsword",
@@ -3434,7 +3434,7 @@
       "ADEPTA SORORITAS"
     ],
     "source": "fspg",
-    "page": 143
+    "page": 122
   },
   {
     "id": "eradication_ray",
@@ -3465,7 +3465,7 @@
       "ADEPTUS MECHANICUS"
     ],
     "source": "fspg",
-    "page": 143
+    "page": 122
   },
   {
     "id": "flechette_blaster",
@@ -3497,7 +3497,7 @@
       "ADEPTUS MECHANICUS"
     ],
     "source": "fspg",
-    "page": 143
+    "page": 122
   },
   {
     "id": "grenadier_gauntlet",
@@ -3531,7 +3531,7 @@
       "MILITARUM AUXILLA"
     ],
     "source": "fspg",
-    "page": 143
+    "page": 122
   },
   {
     "id": "macrostubber",
@@ -3570,7 +3570,7 @@
     "name": "Phosphor Serpenta",
     "type": "ranged",
     "category": "Exotic",
-    "description": "...Those struck by a slavo of vile phosphor burn quickly...",
+    "description": "A chemical sidearm of antique design, a Phosphex Serpenta fires searing incendiary bolts that cause toxic conflagrations. Those struck by a salvo of vile phosphor burn quickly as it sizzles through flesh and armour, and those that survive soon find the bright explosive burst makes them an easier target for follow-up shots.",
     "damage": {
       "base": 12,
       "attribute": null,
@@ -3775,7 +3775,7 @@
       "ADEPTUS ASTARTES"
     ],
     "source": "voa",
-    "page": 41
+    "page": 62
   },
   {
     "id": "master_crafted_void_sabre",
@@ -4068,7 +4068,7 @@
     "rarity": "Common",
     "keywords": [],
     "source": "apocrypha",
-    "page": 248
+    "page": 329
   },
   {
     "id": "force_rod_aoa",
@@ -8275,7 +8275,7 @@
       "ASURYANI"
     ],
     "source": "church",
-    "page": null
+    "page": 127
   },
   {
     "id": "cos_havoc_launcher",
@@ -10366,7 +10366,7 @@
       "ASTRA MILITARUM"
     ],
     "source": "shotguns",
-    "page": 9
+    "page": 5
   },
   {
     "id": "varonia_honorbound_pattern_shotgun",
@@ -10502,7 +10502,7 @@
       "ASTRA MILITARUM"
     ],
     "source": "shotguns",
-    "page": null
+    "page": 7
   },
   {
     "id": "avachrus_iib_enochian_sanctified_shotgun",
@@ -10699,7 +10699,7 @@
       "DRUKHARI"
     ],
     "source": "aeldari",
-    "page": 79
+    "page": 80
   },
   {
     "id": "blast_pistol",
@@ -10797,7 +10797,7 @@
       "SHURIKEN"
     ],
     "source": "aeldari",
-    "page": 80
+    "page": 81
   },
   {
     "id": "clawmounted_shuriken_catapult",
@@ -11260,7 +11260,7 @@
       "ASURYANI"
     ],
     "source": "aeldari",
-    "page": 83
+    "page": 82
   },
   {
     "id": "firepike",
@@ -11327,7 +11327,7 @@
       "MELTA"
     ],
     "source": "aeldari",
-    "page": 83
+    "page": 84
   },
   {
     "id": "splinter_cannon",
@@ -11553,7 +11553,7 @@
       "POWER FIELD"
     ],
     "source": "aeldari",
-    "page": 86
+    "page": 89
   },
   {
     "id": "demiklaive",
@@ -11582,7 +11582,7 @@
       "POWER FIELD"
     ],
     "source": "aeldari",
-    "page": 87
+    "page": 89
   },
   {
     "id": "electrocorrosive_whip",
@@ -11610,7 +11610,7 @@
       "WYCH CULT"
     ],
     "source": "aeldari",
-    "page": 87
+    "page": 89
   },
   {
     "id": "executioner",
@@ -11637,7 +11637,7 @@
       "POWER FIELD"
     ],
     "source": "aeldari",
-    "page": 87
+    "page": 89
   },
   {
     "id": "flesh_gauntlet",
@@ -11665,7 +11665,7 @@
       "HAEMONCULUS"
     ],
     "source": "aeldari",
-    "page": 87
+    "page": 89
   },
   {
     "id": "ghostaxe",
@@ -11746,7 +11746,7 @@
       "WYCH CULT"
     ],
     "source": "aeldari",
-    "page": 88
+    "page": 89
   },
   {
     "id": "ichor_injector",
@@ -11773,7 +11773,7 @@
       "HAEMONCULUS"
     ],
     "source": "aeldari",
-    "page": 86
+    "page": 87
   },
   {
     "id": "impaler",
@@ -11800,7 +11800,7 @@
       "WYCH CULT"
     ],
     "source": "aeldari",
-    "page": 86
+    "page": 87
   },
   {
     "id": "drukhari_knife",
@@ -11823,7 +11823,7 @@
       "AELDARI"
     ],
     "source": "aeldari",
-    "page": 86
+    "page": 87
   },
   {
     "id": "razorflail_sword",
@@ -11887,7 +11887,7 @@
     "name": "Shardnet",
     "type": "melee",
     "category": "Aeldari",
-    "description": "...The net deals damage every Turn or until the target succeeds on an Opposed Strength Test against the attacker (or DN 5, if the net was thrown), disentangling themself.",
+    "description": "Shardnets are weighted wire mesh covered in vicious hooks and barbs. They administer electric shocks to entangled victims, greatly impairing their ability to defend themselves, while also causing involuntary muscle spasms that cause the hooks to tear deeper. The net deals damage every Turn or until the target succeeds on an Opposed Strength Test against the attacker (or DN 5, if the net was thrown), disentangling themself.",
     "damage": {
       "base": 7,
       "attribute": null,
@@ -11909,7 +11909,7 @@
       "WYCH CULT"
     ],
     "source": "aeldari",
-    "page": 86
+    "page": 87
   },
   {
     "id": "scorpions_claw",
@@ -11996,7 +11996,7 @@
     "name": "Mindphase Gauntlet",
     "type": "melee",
     "category": "Aeldari",
-    "description": "...Multiple hits stack; even a mighty Genestealer Patriarch may be rendered slack-jawed and docile by this terrifying weapon.",
+    "description": "A Mindphase Gauntlet resembles an emaciated, skeletal hand. It counts as an unarmed attack and does not deal damage conventionally. Instead, it saps strength and willpower. A character hit by a Mindphase Gauntlet must pass a DN 3 Willpower Test or lose 1 Willpower until the end of combat. Multiple hits stack; even a mighty Genestealer Patriarch may be rendered slack-jawed and docile by this terrifying weapon.",
     "damage": {
       "base": 0,
       "attribute": "strength",
@@ -12040,7 +12040,7 @@
       "HARLEQUIN"
     ],
     "source": "aeldari",
-    "page": 88
+    "page": 89
   },
   {
     "id": "venom_blade",
@@ -12159,7 +12159,7 @@
       "GRENADE"
     ],
     "source": "aeldari",
-    "page": 82
+    "page": 91
   },
   {
     "id": "haywire_grenade",
@@ -12225,7 +12225,7 @@
       "GRENADE"
     ],
     "source": "aeldari",
-    "page": 82
+    "page": 91
   },
   {
     "id": "plasma_grenade",
@@ -12366,7 +12366,7 @@
       "CHAOS"
     ],
     "source": "core",
-    "page": 129
+    "page": 212
   },
   {
     "id": "chain_fist",
@@ -13338,7 +13338,7 @@
       "IMPERIUM"
     ],
     "source": "core",
-    "page": 185
+    "page": 220
   },
   {
     "id": "krak_grenade",

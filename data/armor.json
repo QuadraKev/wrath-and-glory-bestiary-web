@@ -60,7 +60,7 @@
       "ASTRA MILITARUM"
     ],
     "source": "core",
-    "page": 94
+    "page": 234
   },
   {
     "id": "flak_coat",
@@ -75,7 +75,7 @@
       "IMPERIUM"
     ],
     "source": "core",
-    "page": 104
+    "page": 234
   },
   {
     "id": "carapace_armour",
@@ -92,7 +92,7 @@
       "IMPERIUM"
     ],
     "source": "core",
-    "page": 104
+    "page": 234
   },
   {
     "id": "tempestus_carapace",
@@ -111,23 +111,6 @@
     "page": 233
   },
   {
-    "id": "skitarii_war_plate",
-    "name": "Skitarii War Plate",
-    "type": "heavy",
-    "description": "[AI-Generated] Augmented with servo-motors and blessed by the Omnissiah, Skitarii War Plate is grafted directly to its wearer. The armour becomes part of the warrior's enhanced body.",
-    "ar": 4,
-    "traits": [],
-    "value": 5,
-    "rarity": "Rare",
-    "keywords": [
-      "IMPERIUM",
-      "ADEPTUS MECHANICUS",
-      "SKITARII"
-    ],
-    "source": "core",
-    "page": null
-  },
-  {
     "id": "light_power_armour",
     "name": "Light Power Armour",
     "type": "medium",
@@ -142,7 +125,7 @@
       "IMPERIUM"
     ],
     "source": "core",
-    "page": 104
+    "page": 234
   },
   {
     "id": "sororitas_power_armour",
@@ -178,7 +161,7 @@
       "INQUISITION"
     ],
     "source": "core",
-    "page": 116
+    "page": 234
   },
   {
     "id": "heavy_power_armour",
@@ -471,7 +454,7 @@
     ],
     "invulnerable": true,
     "source": "aeldari",
-    "page": 91
+    "page": 92
   },
   {
     "id": "heavy_aspect_armour",
@@ -510,7 +493,7 @@
     ],
     "invulnerable": true,
     "source": "aeldari",
-    "page": 91
+    "page": 92
   },
   {
     "id": "holo_suit",
@@ -529,7 +512,7 @@
       "HARLEQUIN"
     ],
     "source": "aeldari",
-    "page": 91
+    "page": 92
   },
   {
     "id": "incubus_warsuit",
@@ -546,7 +529,7 @@
       "INCUBUS"
     ],
     "source": "aeldari",
-    "page": 91
+    "page": 92
   },
   {
     "id": "kabalite_armour",
@@ -640,7 +623,7 @@
     ],
     "invulnerable": true,
     "source": "aeldari",
-    "page": 91
+    "page": 92
   },
   {
     "id": "gloom_field",
@@ -866,7 +849,7 @@
       "WYCH CULT"
     ],
     "source": "aeldari",
-    "page": 37
+    "page": 92
   },
   {
     "id": "cloak_of_skin",
@@ -902,7 +885,7 @@
       "ASPECT WARRIOR"
     ],
     "source": "aeldari",
-    "page": 22
+    "page": 93
   },
   {
     "id": "forceshield",
@@ -923,7 +906,7 @@
     ],
     "invulnerable": true,
     "source": "aeldari",
-    "page": 33
+    "page": 92
   },
   {
     "id": "mist_shield",
@@ -944,7 +927,7 @@
     ],
     "invulnerable": true,
     "source": "aeldari",
-    "page": 56
+    "page": 92
   },
   {
     "id": "aeronautica_flight_suit_aoa",
@@ -996,7 +979,7 @@
       "OFFICIO ASSASSINORUM"
     ],
     "source": "apocrypha",
-    "page": 196
+    "page": 398
   },
   {
     "id": "auramite_custodian_power_armour_aoa",
@@ -1014,7 +997,7 @@
       "ADEPTUS CUSTODES"
     ],
     "source": "apocrypha",
-    "page": 197
+    "page": 398
   },
   {
     "id": "endurant_shield_aoa",
@@ -1386,7 +1369,7 @@
       "ADEPTUS ASTARTES"
     ],
     "source": "apocrypha",
-    "page": 190
+    "page": 404
   },
   {
     "id": "cataphractii_terminator_armour_aoa",
@@ -1486,7 +1469,7 @@
     ],
     "invulnerable": true,
     "source": "apocrypha",
-    "page": 399
+    "page": 406
   },
   {
     "id": "combat_shield_aoa",
@@ -1544,7 +1527,7 @@
     ],
     "invulnerable": true,
     "source": "apocrypha",
-    "page": 104
+    "page": 407
   },
   {
     "id": "iron_halo_aoa",
@@ -1603,7 +1586,7 @@
     ],
     "invulnerable": true,
     "source": "apocrypha",
-    "page": 179
+    "page": 408
   },
   {
     "id": "voltagheist_field_generator_aoa",
@@ -1623,7 +1606,7 @@
     ],
     "invulnerable": true,
     "source": "apocrypha",
-    "page": 110
+    "page": 408
   },
   {
     "id": "daemonic_rune_aoa",
@@ -1696,7 +1679,7 @@
     ],
     "invulnerable": true,
     "source": "apocrypha",
-    "page": 112
+    "page": 409
   },
   {
     "id": "aspect_armour_aoa",
@@ -1717,7 +1700,7 @@
     ],
     "invulnerable": true,
     "source": "apocrypha",
-    "page": 216
+    "page": 410
   },
   {
     "id": "heavy_aspect_armour_aoa",
@@ -1739,7 +1722,7 @@
     ],
     "invulnerable": true,
     "source": "apocrypha",
-    "page": 143
+    "page": 410
   },
   {
     "id": "force_shield_aeldari_aoa",
@@ -1778,7 +1761,7 @@
     ],
     "invulnerable": true,
     "source": "apocrypha",
-    "page": 203
+    "page": 410
   },
   {
     "id": "clone_field_aoa",
@@ -1814,7 +1797,7 @@
     ],
     "invulnerable": true,
     "source": "apocrypha",
-    "page": 193
+    "page": 411
   },
   {
     "id": "incubus_warsuit_aoa",
@@ -1953,7 +1936,7 @@
     ],
     "invulnerable": true,
     "source": "apocrypha",
-    "page": 173
+    "page": 412
   },
   {
     "id": "exo_armour_aoa",
@@ -1972,7 +1955,7 @@
       "LEAGUES OF VOTANN"
     ],
     "source": "apocrypha",
-    "page": 382
+    "page": 412
   },
   {
     "id": "exo_frame_aoa",
@@ -2028,7 +2011,7 @@
     ],
     "invulnerable": true,
     "source": "apocrypha",
-    "page": 173
+    "page": 412
   },
   {
     "id": "weavefield_crest_aoa",
@@ -2063,7 +2046,7 @@
       "LEAGUES OF VOTANN"
     ],
     "source": "apocrypha",
-    "page": 173
+    "page": 413
   },
   {
     "id": "void_suit_lov_aoa",
@@ -2080,7 +2063,7 @@
       "LEAGUES OF VOTANN"
     ],
     "source": "apocrypha",
-    "page": 414
+    "page": 413
   },
   {
     "id": "field_relay_amplifier_aoa",
@@ -2218,7 +2201,7 @@
       "FIRE CASTE"
     ],
     "source": "apocrypha",
-    "page": 381
+    "page": 416
   },
   {
     "id": "xv85_enforcer_battlesuit_aoa",
